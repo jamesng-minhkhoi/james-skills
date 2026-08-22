@@ -82,16 +82,20 @@ behind long press, edge swipe, or an unlabeled icon.
 
 ### 9. Let motion earn its place
 
-Use a motion brief for each animation:
+First decide whether motion is necessary. If it is, classify it as
+within-page navigation, between-page navigation, or direct manipulation. Use
+the [motion and gesture system](mobile-motion-gesture-system.md) to write a
+motion contract for each meaningful transition or gesture:
 
-| Change | Subject | User benefit | Reduced-motion fallback |
-| --- | --- | --- | --- |
-|  |  |  |  |
+| Change | Category | Subject | User benefit | Commit/cancel | Reduced-motion fallback |
+| --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |
 
 Useful motion can confirm a press, preserve spatial continuity, show progress,
 reveal a related detail, or celebrate a meaningful success. If the benefit
-cannot be named, remove the animation. Do not use a web hover effect on mobile;
-translate it into press, focus, selected, or contextual feedback.
+cannot be named, remove the animation. Direct manipulation must define progress,
+threshold, cancellation, reversal, and recovery. Do not use a web hover effect
+on mobile; translate it into press, focus, selected, or contextual feedback.
 
 ### 10. Critique in layers
 
@@ -120,9 +124,12 @@ primary action is still unclear.
 - Touch targets, safe areas, keyboard, large text, and platform conventions are
   checked.
 - No core behavior depends on hover, hidden gesture, or unlabeled icon.
+- If a gesture exists, its ownership, conflict rules, commit threshold,
+  cancellation, recovery, and visible/accessibility alternative are defined.
 - Press, loading, success, error, empty, offline, and disabled states are
   designed where applicable.
-- Motion has a purpose and reduced-motion behavior.
+- Motion is optional by design, has a named purpose and reduced-motion behavior,
+  and is proven in progress as well as at rest.
 - Screenshots show the real route and representative states, not only a mock.
 
 ## Process sources
@@ -132,6 +139,7 @@ The process is generalized from Kole Jain's public resource library and videos:
 - [Resources](https://www.kolejain.com/resources)
 - [How to think like a genius UI/UX designer](https://www.youtube.com/watch?v=HE4rLEQpiXY)
 - [Every UI/UX concept explained](https://www.youtube.com/watch?v=EcbgbKtOELY)
+- [Master the 3 Types of CRAZY Mobile UI Swipe Interactions](https://www.youtube.com/watch?v=14h1VnkQvIc)
 - [7 UI/UX mistakes beginners make](https://sozai.app/transcript/ui-ux-mistakes-beginner/)
 - [The 3 dashboard UI flaws](https://sozai.app/transcript/dashboard-ui-flaws-never-built-one/)
 - [11 micro animations](https://sozai.app/transcript/micro-animations-level-up-ui-free-figma/)

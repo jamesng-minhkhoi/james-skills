@@ -109,6 +109,14 @@ shown. A mocked success path does not prove a write occurred.
   status meaning.
 - Motion decorates replacement screens instead of explaining cause,
   continuity, progress, or result.
+- Swipe or drag behavior has no visible progress, understandable commitment,
+  cancellation, recovery, or accessible alternative.
+- A custom gesture silently competes with scrolling, a sheet, a slider, or the
+  system-edge back gesture.
+- Reduced motion removes status, focus, cause, or result feedback instead of
+  only reducing travel and decorative effects.
+- A polished animation implies success while the underlying data change is
+  static, mocked, delayed, or failed.
 
 ### Trust and risk
 
@@ -131,6 +139,9 @@ shown. A mocked success path does not prove a write occurred.
   visual-only responses.
 - Navigate using only visible entry points and platform back behavior.
 - Background and resume during input, upload, processing, and confirmation.
+- Exercise motion at rest, during a slow drag, at the threshold, after a quick
+  flick, after reversal/cancellation, and during scroll or system-gesture
+  conflict.
 - Increase text size, open the keyboard, use the smallest supported phone, and
   switch theme where supported.
 - Compare repeated screens for copy, component, token, and interaction drift.

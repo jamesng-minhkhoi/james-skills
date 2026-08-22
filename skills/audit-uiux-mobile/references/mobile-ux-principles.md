@@ -220,6 +220,17 @@ gesture-only. Provide a visible tap or button alternative for swipe-to-delete,
 drag, pull-to-refresh, custom navigation, and dismiss actions. Make gesture
 direction, cancellation, and completion understandable.
 
+### Motion and transition integrity
+
+Classify meaningful motion as within-page navigation, between-page navigation,
+or direct manipulation. Audit whether the subject preserves semantic identity,
+whether progress follows the user's input when appropriate, and whether the
+transition communicates cause, hierarchy, result, or recovery. Check the
+threshold, cancellation, reversal, interruption, focus, and rollback behavior.
+Treat decorative delay, false continuity, fake success animation, gesture
+conflict, and reduced-motion loss of meaning as observable findings. Keep
+unobserved runtime behavior **Unknown**.
+
 ### Short sessions and interruptions
 
 Assume people may be mobile, distracted, offline, interrupted by a call or

@@ -12,12 +12,16 @@ that needs more than a small local edit. Load
 hierarchy, disclosure, content, motion, or visual-language decisions. Load
 [the mobile pattern matrix](references/mobile-pattern-matrix.md) for data-heavy
 surfaces, overlays, feedback, navigation, or translating a web reference to
-mobile. Load [the critique checklist](references/mobile-critique-checklist.md)
-when reviewing rendered work or writing the handoff.
+mobile. Load [the motion and gesture system](references/mobile-motion-gesture-system.md)
+when designing navigation transitions, swipes, drags, sheets, card browsing, or
+other meaningful motion. Load [the critique checklist](references/mobile-critique-checklist.md)
+when reviewing rendered work or writing the handoff. When changing this skill,
+use the [regression evaluation](evals/craft-ui-mobile-regression.md) to compare
+the candidate against the previous version.
 
 ## Non-negotiable order
 
-`Intent → Evidence → Flow → Content → Explicitness → Structure → System → Interaction → Motion → Proof`
+`Intent → Evidence → Flow → Content → Explicitness → Structure → System → Interaction → Gesture/Transition → Motion → Proof`
 
 Do not start with gradients, shadows, colors, or isolated component polish when
 the user's path, information hierarchy, or state coverage is unclear.
@@ -132,8 +136,12 @@ Implement the states a user can actually experience:
 - empty, no-results, offline, permission-denied, and retry;
 - keyboard open, sheet open/closed, back/cancel, gesture progress, and resume.
 - For each important component, define a state map and the transition that
-  caused it. Preserve semantic identity between states so motion explains
-  continuity instead of decorating a replacement.
+  caused it. For a gesture, model at least `idle → tracking → committed |
+  cancelled → settled`. Preserve semantic identity between states so motion
+  explains continuity instead of decorating a replacement.
+- Define gesture ownership and conflicts with scrolling, system-edge back,
+  sheets, sliders, maps, tap, long press, and selection. Every core action
+  needs a visible or accessible alternative to a gesture.
 - Choose feedback deliberately: inline feedback for local correction, a toast
   for brief non-blocking confirmation, a banner for persistent status, a sheet
   for contextual work, and a blocking modal only when the decision truly
@@ -148,16 +156,21 @@ the system is silent during a save or failure.
 
 ## 8. Add purposeful motion and personality
 
+- First choose whether motion is needed. If it is, classify it as within-page
+  navigation, between-page navigation, or direct manipulation. Use the motion
+  and gesture system reference to write a motion contract before coding.
 - Animate the subject of a change: press, transition, reveal, save, progress,
-  success, error, or navigation.
+  success, error, or navigation. For direct manipulation, the motion should
+  follow the user's input and define commit, cancellation, reversal, and
+  recovery behavior.
 - Use motion to clarify continuity, hierarchy, and cause/effect; add delight
   only when it does not compete with the task.
 - Prefer subtle depth and restrained effects. A gradient, glow, glass layer, or
   shadow needs a compositional job and must survive the native runtime.
 - Use project motion tokens, respect reduced motion, and provide non-motion
   feedback for important changes.
-- Check blur, mask, glass, zero-frame, clipping, and transform-ancestor issues
-  on the actual platform.
+- Check blur, mask, glass, zero-frame, clipping, transform-ancestor, frame-rate,
+  safe-area, and platform-gesture issues on the actual platform.
 
 ## 9. Implement without breaking the product
 
@@ -180,6 +193,10 @@ Follow:
   simulator/device or closest available mobile harness.
 - Review one-second hierarchy, content fit, touch/focus feedback, safe areas,
   keyboard, localization, accessibility, motion, and interruption recovery.
+- For gesture or transition work, observe rest, in-progress, threshold,
+  completion, cancellation, conflict, reduced-motion, interruption, and
+  runtime-performance checkpoints. Record slow drags and quick flicks where
+  relevant; screenshots alone cannot prove gesture quality.
 - Compare against the approved reference or explain why none exists.
 - Report exact checks, routes/states/devices rendered, screenshots observed,
   and native/provider/production gates not observed. Never call visual work

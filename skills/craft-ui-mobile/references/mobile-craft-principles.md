@@ -134,10 +134,15 @@ can explain continuity.
 
 ## Motion and personality
 
-Motion should clarify cause, continuity, hierarchy, progress, or result. For
-each animation, name its subject, user benefit, duration/easing family, and
-reduced-motion fallback. Avoid effects that delay a consequential action or
-make a loading state look like success.
+Motion is optional and should clarify cause, continuity, hierarchy, progress,
+or result. Classify meaningful motion as within-page navigation, between-page
+navigation, or direct manipulation. For each one, name its subject, user
+benefit, progress source, commit/cancel behavior, duration/easing family, and
+reduced-motion fallback. A gesture must have a discoverable alternative for a
+core action and must not conflict silently with scrolling or system gestures.
+Avoid effects that delay a consequential action or make a loading state look
+like success. See the [motion and gesture system](mobile-motion-gesture-system.md)
+for the contract and proof matrix.
 
 Personality can enter through natural language, contextual illustration,
 meaningful empty states, and small moments of delight. Keep the tone playful

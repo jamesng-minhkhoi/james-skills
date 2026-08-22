@@ -8,6 +8,7 @@ dense data, overlays, complex state changes, or web-derived patterns.
 - [Structure and data](#structure-and-data)
 - [Feedback selection](#feedback-selection)
 - [State transitions](#state-transitions)
+- [Motion and gesture integrity](#motion-and-gesture-integrity)
 - [Web-to-mobile translation](#web-to-mobile-translation)
 - [Visual semantics](#visual-semantics)
 
@@ -59,6 +60,25 @@ Record:
 Flag impossible combinations such as editable controls during an irreversible
 submission, success while data remains unchanged, or loading that replaces the
 whole layout and causes destructive movement.
+
+## Motion and gesture integrity
+
+Use the motion and gesture audit for full evidence requirements. In this matrix,
+check the applicable category:
+
+| Interaction | Expected behavior | Flag |
+| --- | --- | --- |
+| Within-page navigation | Subject and surrounding context remain understandable | False continuity, lost position, or motion that obscures the next action |
+| Between-page navigation | Direction, hierarchy, back behavior, and source context are coherent | Route appears unrelated, back is inconsistent, or focus is lost |
+| Direct swipe or drag | Progress follows input and commitment is explainable | Unclear threshold, accidental commit, no cancellation, or no recovery |
+| No-motion surface | State changes are immediate and clearly communicated | Decorative delay or animation that adds no user benefit |
+| Gesture ownership | Scroll, sheet, nested control, and system-edge gestures have clear precedence | Custom gesture steals or blocks another expected interaction |
+| Reduced motion | Status, focus, cause, and result remain understandable | Meaning disappears when motion is reduced |
+| Runtime behavior | Motion is responsive and visually stable on the target device | Clipping, dropped frames, delayed response, or design-only behavior |
+
+Observe rest, in-progress, threshold, completion, cancellation, conflict,
+accessibility, interruption, and runtime checkpoints where applicable. Do not
+infer these from a static screenshot or source declaration.
 
 ## Web-to-mobile translation
 

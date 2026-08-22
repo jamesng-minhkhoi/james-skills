@@ -18,6 +18,9 @@ overlays, charts, complex states, or web-derived patterns, also use
 AI-generated, vibe-coded, template-heavy, or suspiciously polished projects,
 always run [the AI-generated UI forensic pass](references/ai-ui-forensics.md).
 Judge the observed product, not the tool that produced it.
+For any surface with transitions, swipes, drags, card browsing, sheets, or
+meaningful animated state changes, also use [the mobile motion and gesture
+audit](references/mobile-motion-gesture-audit.md).
 
 ## 0. Select an audit mode
 
@@ -124,8 +127,12 @@ Review findings under these headings:
   reduced motion, and decorative content hidden from assistive technology.
 - **Localization:** translated copy, long strings, diacritics, right-to-left
   behavior when supported, and no clipped or fixed-width text.
-- **Motion/native surfaces:** causal animation, cancellation/recovery, reduced
-  motion, and blur/mask/glass behavior under transforms.
+- **Motion/native surfaces:** classify within-page, between-page, direct
+  manipulation, or no-motion behavior. Audit purpose, subject continuity,
+  finger-following progress, commit threshold, cancellation, recovery, gesture
+  ownership, visible/accessibility alternatives, reduced motion, interruption,
+  and runtime behavior. Use the motion audit reference and keep unobserved
+  checkpoints **Unknown**.
 - **Visual semantics:** meaningful color roles, dark-mode composition,
   typography hierarchy, icon optics, border/elevation purpose, and whether
   effects clarify grouping, affordance, depth, or brand.
@@ -171,6 +178,7 @@ Use the mode-appropriate matrix:
 | Offline/interruption/resume | Risk-based | Required when relevant | Required |
 | Real data and control outcome | If central to finding | Required for core flow | Required |
 | Failure and rollback behavior | Risk-based | Required when applicable | Required |
+| Motion/gesture checkpoints | Risk-based | Required when motion or gestures exist | Required when motion or gestures exist |
 | Portrait/landscape/tablet/foldable | N/A unless supported | When supported | Required when supported |
 | iOS/Android platform difference | Target platform | All supported platforms | All release platforms |
 
@@ -190,7 +198,8 @@ For every finding include tag, route/component, reproduction or screenshot
 evidence, proof level, user impact, recommendation, confidence, and verification
 method. Use tags such as **FLOW**, **CONTENT**, **STRUCTURE**,
 **EXPLICITNESS**, **STATE**, **NATIVE**, **SYSTEM**, **FUNCTIONAL**,
-**ACCESS**, or **TRUST**. Do not claim a fix from source inspection alone.
+**ACCESS**, **MOTION**, or **TRUST**. Do not claim a fix from source
+inspection alone.
 
 ## 6. Report
 
