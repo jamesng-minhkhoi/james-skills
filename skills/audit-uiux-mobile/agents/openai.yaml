@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit UI/UX Mobile"
+  short_description: "Audit native mobile UI and UX"
+  default_prompt: "Use $audit-uiux-mobile to audit this mobile journey and report prioritized findings."

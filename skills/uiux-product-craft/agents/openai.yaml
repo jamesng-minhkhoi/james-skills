@@ -1,4 +1,0 @@
-interface:
-  display_name: "UI/UX Product Craft"
-  short_description: "Research, build, and verify thoughtful UI/UX"
-  default_prompt: "Use $uiux-product-craft to audit and improve this product surface end to end."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Craft UI Mobile"
+  short_description: "Design and build polished mobile UI"
+  default_prompt: "Use $craft-ui-mobile to design and implement this mobile screen or flow."

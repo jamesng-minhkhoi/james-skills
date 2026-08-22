@@ -4,8 +4,10 @@ Reusable Codex skills extracted from project work.
 
 ## Skills
 
-- [`uiux-product-craft`](skills/uiux-product-craft/SKILL.md) — research-first
-  UI/UX implementation and screenshot-based verification for mobile and web.
+- [`craft-ui-mobile`](skills/craft-ui-mobile/SKILL.md) — design and implement
+  polished native mobile UI.
+- [`audit-uiux-mobile`](skills/audit-uiux-mobile/SKILL.md) — audit mobile
+  journeys with evidence-backed visual and accessibility QA.
 
 Each skill is self-contained and can be copied or linked into a Codex skills
 directory. Keep project-specific branding, routes, and business rules in the
