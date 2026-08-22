@@ -1,0 +1,4 @@
+interface:
+  display_name: "Craft Dashboard Web"
+  short_description: "Design data-driven dashboards for scanning and decisions"
+  default_prompt: "Use $craft-dashboard-web to design, build, and verify a clear data-driven dashboard."
