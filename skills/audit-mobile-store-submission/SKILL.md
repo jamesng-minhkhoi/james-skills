@@ -1,6 +1,6 @@
 ---
 name: audit-mobile-store-submission
-description: Audit iOS App Store and Google Play submission readiness for native and Expo/React Native apps, including rejection remediation and App Review/Play review evidence packets. Use before creating or updating a store submission to inspect the production artifact, installability, runtime behavior, reviewer access, metadata, display-name identity, screenshots and recordings, privacy and data disclosures, permission UX, monetization, public URLs, account deletion, platform policy, and current Apple/Google deadlines. Produce evidence-backed blockers and open gates; do not submit or change store dashboards unless explicitly requested.
+description: Audit iOS App Store and Google Play submission readiness for native and Expo/React Native apps, including rejection remediation, artifact inspection, portal-state analysis, and App Review/Play review evidence packets. Use before creating or updating a store submission to inspect the production artifact, installability, runtime behavior, reviewer access, metadata, display-name identity, screenshots and recordings, privacy and data disclosures, permission UX, monetization, public URLs, account deletion, platform policy, and current Apple/Google deadlines. Produce evidence-backed blockers and open gates; do not submit or change store dashboards unless explicitly requested.
 ---
 
 # Audit Mobile Store Submission
@@ -17,6 +17,13 @@ on every release audit because policy deadlines and requirements change. Use
 [the evidence matrix](references/submission-evidence-matrix.md) to label what is
 implemented, observed, portal-confirmed, or still unknown.
 
+For every audit, also use [the release evidence contract](references/release-evidence-contract.md).
+For Review or Release mode, use [the reviewer test matrix](references/reviewer-test-matrix.md)
+and [the portal state model](references/portal-state-model.md). When a binary is
+available, use [the artifact inspection guide](references/artifact-inspection.md)
+and the bundled inspection script. For family, health, AI, financial, safety,
+regulated, or protected-content apps, read [claims and regulated content](references/claims-and-regulated-content.md).
+
 ## Operating rules
 
 - Audit the exact version, build number/version code, bundle ID/package name,
@@ -32,6 +39,10 @@ implemented, observed, portal-confirmed, or still unknown.
   submission ID, guideline, and requested evidence. A later resubmission is a
   new evidence snapshot; never assume the fix is present in the reviewed
   artifact.
+- Treat the signed artifact/runtime as the authority for shipped behavior, the
+  store portal as the authority for listing and processing state, and source
+  code/configuration as evidence of intent or risk only. When they conflict,
+  report the conflict instead of averaging the claims.
 - Do not guess legal ownership, privacy answers, age ratings, health claims,
   financial claims, content rights, account credentials, or portal state.
   Mark them **Unknown** and request the missing evidence.
@@ -59,6 +70,11 @@ children as a target audience, health/financial/security functionality,
 location/contacts/photos/SMS/call-log access, third-party AI, or region-specific
 behavior. These facts determine which checks apply.
 
+Before testing, create the evidence ledger from the release contract reference.
+Do not use a percentage or “mostly complete” label unless the required-item
+denominator is explicit. Every required row must be **Observed**, **Portal
+confirmed**, **Provider/legal confirmed**, **Open**, or **Unknown**.
+
 ## 1. Establish the release contract
 
 Write a context brief:
@@ -85,6 +101,11 @@ build profile, and store metadata. For Expo projects inspect `app.json` or
 `app.config.*`, `eas.json`, generated native files when present, and the exact
 EAS build profile used.
 
+If the repository contains `.codegraph/`, use CodeGraph before broad text
+search to locate release configuration, navigation, permission calls, payment
+flows, account deletion, and feature flags. Record the exact commands and
+paths used so another agent can reproduce the audit.
+
 ## 2. Verify the artifact and install path
 
 Prove the artifact is the one intended for review:
@@ -105,14 +126,27 @@ Prove the artifact is the one intended for review:
   overrides. The bundle ID/package name is identity-critical but does not cure
   a confusing display-name mismatch.
 
-Record exact commands, artifact identifiers, device/OS, install source, and
-screenshots. Source inspection can establish a risk; it cannot prove the binary
+Record exact commands, artifact identifiers, SHA-256/hash when available,
+device/OS, install source, and screenshots. Use the artifact inspection guide
+or `scripts/inspect-release-artifact.sh` when an IPA, APK, AAB, or app bundle is
+available. Source inspection can establish a risk; it cannot prove the binary
 processed, installed, launched, or reached a route.
 
 ## 3. Walk the reviewer journey
 
 Start from the actual store install path and complete the primary job. Then
 exercise representative secondary paths and all gated surfaces.
+
+Define the primary journey before testing it as `entry → action → first value →
+recovery`. Map every store claim and reviewer-requested feature to a journey
+row. “Representative” does not permit skipping a promised, paid, permission-
+gated, account, or regulated feature.
+
+Use the reviewer test matrix to test clean install, cold launch, force-quit,
+background/resume, offline and slow network, denied permissions, resettable
+accounts, locale/timezone/region, and dependency failure. Do not run the
+review path with a debugger, local server, seeded developer database, or
+privileged test state that the reviewer will not have.
 
 Check:
 
@@ -182,6 +216,11 @@ Apple/Google’s exact requested next step separately from your recommendation.
 Track whether the fix is source-only, present in a new artifact, observed on a
 device, attached to the portal, or still unverified.
 
+For each attachment, maintain an evidence-ledger row with filename, SHA-256
+when available, build/version, device/OS, capture date, portal field, and
+verification status. A recording attached to a message is not proof until its
+artifact and capture environment are identified.
+
 ## 5. Audit listing and public trust surfaces
 
 Compare the binary with every store-facing promise:
@@ -227,6 +266,12 @@ For family, baby, education, health, or development products, distinguish the
 person using the app from the person whose data is recorded. Audit age-rating,
 target-audience, child-safety, health/medical, and data-retention implications
 without inferring a legal classification from the product name alone.
+
+For every material store claim, create a claim-to-proof row: exact wording,
+screen or route, runtime/provider evidence, screenshot or recording, region,
+audience, rights/authorization, and reviewer-facing explanation. Use the claims
+reference for health, child/family, AI, financial, safety, UGC, and protected
+third-party content.
 
 Flag any declaration that is broader, narrower, older, or less specific than
 the actual binary and SDK behavior. A “no data collected” answer requires
@@ -282,6 +327,11 @@ Use both impact and evidence status:
   policy weakness likely to delay or undermine review.
 - **P3 refinement:** low-risk polish or documentation improvement.
 
+Apply these verdict gates in addition to priority: an unresolved official
+rejection is at least P1; missing required evidence in Review or Release is a
+blocker; an artifact/listing/portal mismatch is a blocker until reconciled; and
+an unobserved required behavior remains **Unknown** rather than passing.
+
 Tag each finding with one or more of `ARTIFACT`, `RUNTIME`, `ACCESS`, `METADATA`,
 `PRIVACY`, `PERMISSION`, `PAYMENTS`, `CONTENT`, `QUALITY`, `PLATFORM`,
 `PORTAL`, `REVIEW-PACKET`, `IDENTITY`, or `LEGAL`.
@@ -306,7 +356,8 @@ Return:
    missing external evidence. Give Apple and Google separate verdicts.
 3. **Blocker summary** — P0/P1 issues first, with the smallest next action.
 4. **Evidence matrix** — artifact, install, runtime, access, metadata, privacy,
-   permissions, payments, public URLs, portal, and legal gates.
+   permissions, payments, public URLs, portal, legal, and evidence-ledger
+   gates, including required-item coverage.
 5. **Platform findings** — Apple and Google sections with policy/source links.
 6. **Reviewer runbook** — account, reset, test data, configuration, and notes.
 7. **Reviewer evidence packet** — recordings, device/OS matrix, purpose,
@@ -315,7 +366,8 @@ Return:
    recordings, and portal observations.
 9. **Open gates and owners** — what requires the user, legal owner, provider,
    Apple, Google, native device, or production confirmation.
-10. **Resubmission strategy** — only after the current rejection is understood;
+10. **Portal state** — app/build/IAP or track status as directly observed.
+11. **Resubmission strategy** — only after the current rejection is understood;
    reply, appeal, fix, or resubmit based on evidence rather than guessing.
 
 Use this finding shape:

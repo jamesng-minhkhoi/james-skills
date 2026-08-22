@@ -24,11 +24,13 @@ each observed item.
 | --- | --- | --- |
 | Artifact identity | Bundle/package, version, build/version code, signing, target SDK, architecture, track | Exact intended artifact is identified and reproducible |
 | Review snapshot | Submission ID, review date/device, reviewed version/build, rejection text, attachments, current resubmission build | Every finding is tied to the artifact and evidence Apple/Google actually reviewed |
+| Reproducibility | Backend, feature flags, auth, test data, locale, timezone, region, network, reset steps | Another reviewer can repeat the observation without developer-only state |
 | Install and launch | Clean install, upgrade, first launch, startup logs, device/OS, screenshots | Installs and reaches first value without dev-only dependencies |
 | Core functionality | Route/action/result/recovery per platform | Core value works on the submitted build |
 | Stability | Crash/ANR, blank screen, timeout, slow network, offline, background/resume | No known release-blocking instability; open issues are explicit |
 | Reviewer access | Demo account, OTP/MFA/QR, reset, test data, geo/device setup, notes | Reviewer can inspect all promised features without guessing |
 | Review packet | Physical-device recording, device/OS list, purpose/audience, setup, external services, regions, rights/regulatory material | Required review information is complete, build-specific, and attached or portal-confirmed |
+| Journey coverage | Primary journey plus each promised, paid, permission-gated, account, UGC, and regulated feature | Every applicable promise has Pass, Fail, Open, or Unknown evidence |
 | Metadata | Name, descriptions, keywords, categories, screenshots, previews, ads, ratings, audience | Listing describes the exact binary and supported scope |
 | Installed identity | Store name, signed display name, launcher label, Settings/app-switcher label, native overrides | Users can find the installed app and names are sufficiently similar |
 | Public URLs | Privacy, support, terms, deletion, marketing, contact | HTTPS links load publicly and match the app |
@@ -38,8 +40,9 @@ each observed item.
 | Accounts | Sign-up, login, SSO, logout, deletion, data deletion, account recovery | Platform-specific account requirements are fulfilled |
 | Payments | Product IDs, attachment, billing framework, restore, cancel, pending, failure, test account | All monetized paths are reviewable and policy-compatible |
 | Content/rights | UGC moderation, age rating, content rating, licenses, claims, regulated docs | Rights, audience, and risk gates have owners and evidence |
+| Claims | Store/app claim, route/result, provider, audience/region, recording, authorization | Every consequential claim is supportable on the exact artifact |
 | Platform changes | SDK/API/page-size/verification/deadline checks | Current applicable requirements are checked for the release date |
-| Portal | Processing, compliance, forms, agreements, screenshots, submission state | Exact portal state is observed or explicitly open |
+| Portal | App/build/IAP or track state, processing, compliance, forms, agreements, screenshots, submission state | Exact portal state is observed or explicitly open |
 
 ## Finding template
 
@@ -57,10 +60,14 @@ each observed item.
 ## Verdict rules
 
 - **Ready:** no P0/P1 blockers and all required evidence for the selected mode
-  and platform is observed.
-- **Ready with conditions:** no known P0 blocker, but named P2/open gates have
-  owners and do not invalidate the intended submission.
+  and platform is observed at its applicable evidence level; there is no
+  unresolved official rejection and artifact/listing/portal identity agrees.
+- **Ready with conditions:** no P0/P1 blocker, but named P2/open gates have
+  owners, due dates, and do not invalidate the intended submission.
 - **Not ready:** any P0/P1 blocker, contradictory privacy/metadata, broken core
-  journey, inaccessible reviewer path, or missing required platform gate.
-- **Unknown:** the conclusion depends on unobserved portal, provider, native,
-  legal, or production evidence. State exactly what would change the verdict.
+  journey, inaccessible reviewer path, unresolved official rejection, identity
+  mismatch, or missing required platform gate/evidence.
+- **Unknown:** use only when the selected mode does not yet require the missing
+  portal, provider, native, legal, or production evidence. In Review or Release,
+  record Unknown as the reason for a Not ready gate when the evidence is
+  required but unobserved.

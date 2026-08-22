@@ -8,6 +8,7 @@ encountered or phrased, but they are anecdotal and may be incomplete.
 
 - [Apple patterns](#apple-patterns)
 - [Apple rejection/remediation signals](#apple-rejectionremediation-signals)
+- [Rejection response map](#rejection-response-map)
 - [Google Play patterns](#google-play-patterns)
 - [Cross-platform patterns](#cross-platform-patterns)
 - [Forum evidence](#forum-evidence)
@@ -122,6 +123,20 @@ review snapshots. Preserve the original reviewer device/date and map each
 requested fix to the new build, physical-device recording, screenshots, and
 App Review Information notes. Do not claim that an attached recording proves a
 fix unless its version/build and capture device are recorded.
+
+## Rejection response map
+
+Use one row for every reviewer statement, including requests embedded under a
+single guideline:
+
+| Reviewer statement | Guideline | Reviewed artifact/device | Exact requested fix | New evidence | Verification |
+| --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |
+
+Keep the reviewer’s observation and the developer’s explanation in separate
+fields. A persuasive reply is not a fix, and a source change is not evidence
+that the reviewed build changed. Close a row only after the new artifact,
+runtime path, attachment, and portal response are verified.
 
 ## Google Play patterns
 
