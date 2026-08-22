@@ -23,6 +23,8 @@ and [the portal state model](references/portal-state-model.md). When a binary is
 available, use [the artifact inspection guide](references/artifact-inspection.md)
 and the bundled inspection script. For family, health, AI, financial, safety,
 regulated, or protected-content apps, read [claims and regulated content](references/claims-and-regulated-content.md).
+After completing an audit, use [friendly PDF reporting](references/pdf-reporting.md)
+and `scripts/render-audit-pdf.py` when a non-technical deliverable is useful.
 
 ## Operating rules
 
@@ -369,6 +371,9 @@ Return:
 10. **Portal state** — app/build/IAP or track status as directly observed.
 11. **Resubmission strategy** — only after the current rejection is understood;
    reply, appeal, fix, or resubmit based on evidence rather than guessing.
+12. **Stakeholder PDF** — after the Markdown report is complete, render and
+   visually inspect a readable PDF for non-technical readers; keep the Markdown
+   as the editable source of truth.
 
 Use this finding shape:
 
