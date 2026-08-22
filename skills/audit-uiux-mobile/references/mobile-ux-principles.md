@@ -5,17 +5,30 @@ not substitutes for user research. For each applicable principle, record a
 status — **Strong**, **Concern**, **Critical**, **Unknown**, or **Not
 applicable** — plus evidence, user impact, and the smallest useful improvement.
 
+## Contents
+
+- [Explicitness spectrum](#1-explicitness-spectrum)
+- [Progressive disclosure](#2-progressive-disclosure)
+- [Core interaction heuristics](#3-core-interaction-heuristics)
+- [Content and decision quality](#4-content-and-decision-quality)
+- [Content-to-structure fit](#5-content-to-structure-fit)
+- [Functional state integrity](#6-functional-state-integrity)
+- [Principle conflicts](#7-principle-conflicts)
+- [Trust and dark-pattern review](#8-trust-and-dark-pattern-review)
+- [Mobile-specific principles](#9-mobile-specific-principles)
+- [Common failure patterns](#10-common-failure-patterns)
+
 ## 1. Explicitness spectrum
 
 Decide how much the interface should say or expose at each moment:
 
 | Level | Use for | Audit question |
 | --- | --- | --- |
-| **Direct** | Primary actions, current state, high-risk decisions, required input | Can a first-time user see what matters and what to do next? |
-| **Guided** | Context, constraints, examples, confirmation, recovery | Does the interface explain just enough at the moment of need? |
-| **Suggested** | Recommendations, next-best actions, optional shortcuts | Is the suggestion clearly optional and grounded in the user's context? |
+| **Visible** | Primary actions, current state, high-risk decisions, required input | Can a first-time user see what matters and what to do next? |
+| **Directly revealed** | Detail shown after an explicit tap, selection, or expansion | Is the reveal predictable and easy to reverse without losing context? |
+| **Contextual** | Guidance, recommendations, constraints, and actions relevant to the current object or moment | Is it available at the point of need and clearly optional when appropriate? |
 | **Deferred** | Advanced or low-frequency detail | Is the entry point discoverable, and does disclosure preserve context? |
-| **Hidden** | Internal, unavailable, or unsafe operations | Is it truly safe to hide, rather than merely inconvenient to expose? |
+| **Advanced/hidden** | Internal, unavailable, expert, or unsafe operations | Is it truly appropriate to hide, rather than merely inconvenient to expose? |
 
 Do not hide primary functionality to achieve visual minimalism. Do not turn
 optional recommendations into requirements. Do not make users guess whether a
@@ -116,7 +129,41 @@ Audit the words and choices, not only the components around them:
 - Treat suggestions as suggestions; never disguise growth, upsell, or data
   collection as a required product step.
 
-## 5. Principle conflicts
+## 5. Content-to-structure fit
+
+Audit whether the representation matches the user's information task:
+
+- lists support scanning and acting on records;
+- grouped sections expose meaningful categories or priorities;
+- timelines preserve event order and time context;
+- charts answer a defined comparison with honest axes, units, labels, range,
+  and an accessible summary;
+- tables or structured rows support field comparison, search, filter, sort,
+  truncation, selection, and density without becoming compressed desktop UI;
+- detail routes or sheets preserve enough context for the action;
+- cards represent distinct objects or decisions instead of decorating every
+  row.
+
+Test typical, empty, dense, partial, stale, and malformed data. Flag invented
+metrics, decorative charts, fake records, and containers chosen without a user
+task.
+
+## 6. Functional state integrity
+
+Audit important components as transitions, not isolated screenshots:
+
+`idle → pressed/focused → pending → success | recoverable error`
+
+Add selected, disabled, empty, no-results, offline, permission-denied, stale,
+interrupted, resumed, and rollback states where applicable. Check what caused
+the transition, where feedback appears, whether the same object preserves its
+identity, and whether users can cancel, retry, undo, or continue.
+
+An attractive loading, success, or error screen does not prove the product can
+reach it. Distinguish source-declared, manually forced, and naturally observed
+states.
+
+## 7. Principle conflicts
 
 Do not resolve these conflicts mechanically. Record the product context,
 affected users, risk, and chosen trade-off:
@@ -131,7 +178,7 @@ affected users, risk, and chosen trade-off:
 | Speed vs error prevention | Is confirmation reserved for meaningful risk rather than every action? |
 | Guidance vs autonomy | Does help support the decision without interrupting or coercing? |
 
-## 6. Trust and dark-pattern review
+## 8. Trust and dark-pattern review
 
 Flag patterns that make the user's choice less informed or less reversible:
 
@@ -149,7 +196,7 @@ Flag patterns that make the user's choice less informed or less reversible:
 Ask whether a reasonable user can understand the consequence, choose freely,
 change their mind, and recover without penalty.
 
-## 7. Mobile-specific principles
+## 9. Mobile-specific principles
 
 ### Reachability and touch comfort
 
@@ -200,7 +247,7 @@ names, roles, values, and states; support screen readers, large text, contrast,
 reduced motion, voice/switch access, and haptics or visual confirmation when
 they clarify important feedback.
 
-## 8. Common failure patterns
+## 10. Common failure patterns
 
 Flag these explicitly when observed:
 
@@ -215,7 +262,13 @@ Flag these explicitly when observed:
 - generic cards, icon soup, or decorative motion that competes with content;
 - desktop layouts compressed onto a phone instead of redesigned for reach and
   focus;
-- empty, loading, offline, or error states treated as afterthoughts.
+- empty, loading, offline, or error states treated as afterthoughts;
+- static success feedback disconnected from a real action or data change;
+- fabricated metrics, placeholder records, vague generic copy, or impossible
+  state combinations presented as real product information;
+- every screen forced into the same card/grid template regardless of task;
+- visual tokens applied consistently while behavior, navigation, and feedback
+  remain inconsistent.
 
 ## Sources and further reading
 

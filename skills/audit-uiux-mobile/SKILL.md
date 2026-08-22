@@ -1,6 +1,6 @@
 ---
 name: audit-uiux-mobile
-description: Audit native mobile UI/UX on iOS and Android with quick, deep, or release review modes. Use research-first evidence and mobile UX principles to evaluate journeys, explicitness, progressive disclosure, states, accessibility, localization, interaction, motion, trust, and screenshot-based visual QA. Do not implement fixes unless requested.
+description: Audit native mobile UI/UX on iOS and Android with quick, deep, release, and adversarial AI-generated UI review. Use research-first evidence to evaluate journeys, data-to-structure fit, explicitness, progressive disclosure, functional states, accessibility, localization, native interaction, visual systems, motion, trust, and rendered proof. Use for vibe-coded, template-generated, or suspected AI-slop mobile projects as well as conventional product audits. Do not implement fixes unless requested.
 ---
 
 # Audit UI/UX Mobile
@@ -11,6 +11,13 @@ Use [Mobile UX principles](references/mobile-ux-principles.md) as the review
 standard. Do not treat it as a box-ticking exercise: apply the principles to
 the user's actual goal, context, route, and state, and attach evidence to every
 important conclusion.
+
+For Deep or Release audits, or whenever the surface contains dense data,
+overlays, charts, complex states, or web-derived patterns, also use
+[the mobile quality matrix](references/mobile-quality-matrix.md). For
+AI-generated, vibe-coded, template-heavy, or suspiciously polished projects,
+always run [the AI-generated UI forensic pass](references/ai-ui-forensics.md).
+Judge the observed product, not the tool that produced it.
 
 ## 0. Select an audit mode
 
@@ -23,6 +30,10 @@ use **Deep** for a new or high-risk journey and **Quick** for a narrow review.
   scorecard, content/decision review, state matrix, and visual evidence review.
 - **Release:** Deep plus a device/accessibility matrix, automated checks, real
   runtime screenshots, interruption/offline checks, and explicit open gates.
+- **Forensic overlay:** Add to any mode when the project is AI-generated,
+  template-heavy, or requested as an anti-slop review. Inventory routes,
+  controls, data provenance, state transitions, and proof levels before rating
+  visual polish.
 
 ## 1. Establish context and evidence
 
@@ -35,6 +46,11 @@ Write a short context brief before inspecting details:
 - supported platforms and form factors;
 - product/design constraints and explicit scope boundary;
 - available runtime, screenshot, test, and provider evidence.
+
+For Deep, Release, and Forensic work, inventory the relevant routes, entry
+points, navigation destinations, actionable controls, data sources or fixtures,
+shared primitives, and visible states. Sampling only the prettiest route is not
+representative evidence.
 
 Read the app instructions and authoritative design docs, then inspect the
 target route, screen composition, shared primitives/tokens, state paths, and
@@ -50,11 +66,21 @@ Separate what is proven from what is assumed:
 - Production schema, provider, native device, store, and dashboard status need
   their own evidence.
 
+Label the highest proof level actually reached: **source-declared**,
+**rendered-static**, **interactive-local**, **data-connected**,
+**failure-observed**, **device-observed**, or **production-observed**. Never
+promote one level into another by inference.
+
 ## 2. Walk the journey
 
 Map the primary flow and representative secondary routes. For each surface,
 record route, state/input, user action, expected response, recovery path, and
 evidence.
+
+For important controls, verify reachability and outcome: where the control is
+found, whether it responds, what state transition occurs, whether data changes,
+and how failure or cancellation behaves. A visible button is not evidence of a
+functional action.
 
 Check the applicable states:
 
@@ -63,10 +89,12 @@ Check the applicable states:
 - long names/descriptions, missing media, unexpected values, and localization;
 - keyboard/focus, disabled controls, validation, submission, cancellation,
   back navigation, and destructive actions;
-- offline, permission, authentication, and provider failure.
+- offline, permission, authentication, and provider failure;
+- stale data, optimistic pending state, rollback, interruption, and resume when
+  the product can encounter them.
 
-For **Deep** and **Release**, record coverage for every route/state rather than
-reviewing only the default loaded screenshot.
+For **Deep**, **Release**, and **Forensic** work, record coverage for every
+in-scope route/state rather than reviewing only the default loaded screenshot.
 
 ## 3. Inspect mobile quality
 
@@ -79,25 +107,38 @@ Review findings under these headings:
 
 - **Hierarchy:** one-second focal point, primary action, scan order, and useful
   negative space.
+- **Structure and data:** whether list, grouped list, timeline, chart, table,
+  card, detail route, or sheet matches the user's information task; search,
+  filter, sort, selection, stale data, and density behavior where applicable.
 - **Composition:** product-specific visual language, meaningful card use, token
   fidelity, icon consistency, and reference parity.
 - **Interaction:** platform-sized targets or compensating hit area (commonly
   44pt on iOS and 48dp on Android), pressed/focused/disabled feedback, keyboard
   avoidance, safe areas, sheets, gestures, and back behavior.
-- **States:** stable loading footprint, actionable empty state, specific
-  recoverable error, offline response, and crowded content.
+- **States and transitions:** stable loading footprint, actionable empty state,
+  specific recoverable error, offline response, crowded content, semantic
+  continuity, optimistic rollback, and interruption recovery.
+- **Feedback surfaces:** whether inline feedback, toast, banner, sheet, modal,
+  route, or progress surface matches the consequence and preserves context.
 - **Accessibility:** role, label, state, uniqueness, Dynamic Type/large text,
   reduced motion, and decorative content hidden from assistive technology.
 - **Localization:** translated copy, long strings, diacritics, right-to-left
   behavior when supported, and no clipped or fixed-width text.
 - **Motion/native surfaces:** causal animation, cancellation/recovery, reduced
   motion, and blur/mask/glass behavior under transforms.
+- **Visual semantics:** meaningful color roles, dark-mode composition,
+  typography hierarchy, icon optics, border/elevation purpose, and whether
+  effects clarify grouping, affordance, depth, or brand.
 - **Content and decisions:** terminology, information scent, consequence
   clarity, optional versus required actions, permission timing, and whether the
   copy helps users decide before they commit.
 - **Trust and dark patterns:** cancellation, consent, destructive actions,
   urgency, defaults, hidden costs, and whether the interface pressures or
   misleads the user.
+- **Functional reality:** dead or disconnected controls, static success states,
+  hard-coded or fabricated data, placeholder content, duplicate routes,
+  impossible state combinations, and polished surfaces unsupported by product
+  behavior. Apply the forensic reference when relevant.
 
 For each relevant principle, mark **Strong**, **Concern**, **Critical**,
 **Unknown**, or **Not applicable**. Explain the user impact and cite the route,
@@ -113,6 +154,10 @@ coverage remains weak. A visually attractive screen can still fail because it
 hides the next action, overloads the first view, breaks the user's mental model,
 or makes recovery difficult.
 
+Do not use “AI slop” as a finding by itself. Translate it into an observable
+failure, user impact, evidence, and verification method. Generic aesthetics
+without user harm may be P3; a polished but nonfunctional core flow is P1.
+
 ## 4. Verify mobile conditions
 
 Use the mode-appropriate matrix:
@@ -124,6 +169,8 @@ Use the mode-appropriate matrix:
 | Keyboard and focus | If input exists | Required when relevant | Required |
 | VoiceOver/TalkBack or equivalent | Risk-based | Required for a11y findings | Required |
 | Offline/interruption/resume | Risk-based | Required when relevant | Required |
+| Real data and control outcome | If central to finding | Required for core flow | Required |
+| Failure and rollback behavior | Risk-based | Required when applicable | Required |
 | Portrait/landscape/tablet/foldable | N/A unless supported | When supported | Required when supported |
 | iOS/Android platform difference | Target platform | All supported platforms | All release platforms |
 
@@ -139,9 +186,11 @@ Classify each finding:
 - **P2:** materially harms clarity, access, consistency, or polish.
 - **P3:** minor refinement with limited user impact.
 
-For every finding include route/component, reproduction or screenshot evidence,
-user impact, recommendation, confidence, and verification method. Do not claim a
-fix from source inspection alone.
+For every finding include tag, route/component, reproduction or screenshot
+evidence, proof level, user impact, recommendation, confidence, and verification
+method. Use tags such as **FLOW**, **CONTENT**, **STRUCTURE**,
+**EXPLICITNESS**, **STATE**, **NATIVE**, **SYSTEM**, **FUNCTIONAL**,
+**ACCESS**, or **TRUST**. Do not claim a fix from source inspection alone.
 
 ## 6. Report
 
@@ -150,17 +199,21 @@ Return:
 1. **Context brief** — user, goal, risk, platforms, scope, and mode.
 2. **Executive summary** — top risks and the most important journey outcome.
 3. **Coverage matrix** — routes, states, devices, evidence, and unknowns.
-4. **Principle scorecard** — status and evidence for each relevant principle.
-5. **Findings table** — priority, principle, route/state, evidence, impact,
-   recommendation, confidence, and verification method.
-6. **Recommendation sequence** — scope boundaries and principle trade-offs.
-7. **Checks and observations** — exact commands, runtime states, devices, and
+4. **Reality check** — highest proof level, control reachability, data source,
+   and gaps between rendered, interactive, connected, and failure-tested states.
+5. **Principle scorecard** — status and evidence for each relevant principle.
+6. **Findings table** — priority, tag/principle, route/state, evidence, proof
+   level, impact, recommendation, confidence, and verification method.
+7. **AI-slop risk summary** — include only for Forensic audits; summarize
+   observed product-generic, functional, native, system, and trust failures.
+8. **Recommendation sequence** — scope boundaries and principle trade-offs.
+9. **Checks and observations** — exact commands, runtime states, devices, and
    screenshots actually observed.
-8. **Open gates** — native-device, provider, production, store, or review work.
+10. **Open gates** — native-device, provider, production, store, or review work.
 
 Use this finding shape:
 
-| Priority | Principle | Route/state | Evidence | Impact | Recommendation | Confidence |
+| Priority | Tag/principle | Route/state | Evidence + proof level | Impact | Recommendation | Confidence |
 | --- | --- | --- | --- | --- | --- | --- |
 | P0–P3 |  |  |  |  |  | High/Medium/Low |
 
