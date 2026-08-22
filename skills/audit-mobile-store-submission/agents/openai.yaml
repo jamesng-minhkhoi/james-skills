@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Mobile Store Submission"
+  short_description: "Audit App Store and Google Play readiness"
+  default_prompt: "Use $audit-mobile-store-submission to audit this mobile app for App Store and Google Play submission readiness."

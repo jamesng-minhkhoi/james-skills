@@ -1,0 +1,62 @@
+# Submission evidence matrix
+
+Use this matrix to prevent a source-level audit from being mistaken for store
+readiness. Record the exact artifact, version, device, portal, URL, and date for
+each observed item.
+
+## Evidence levels
+
+| Level | Proves | Does not prove |
+| --- | --- | --- |
+| Source | Code/config/docs declare an intention | Artifact, runtime, portal, or legal truth |
+| Build | Artifact exists with version, signing, IDs, and target settings | Install, review access, provider, or store processing |
+| Runtime | Named artifact installed and behavior was observed on a device/emulator | Portal approval, production backend, or every device |
+| Access | Reviewer can reach the gated journey with supplied instructions | Successful policy review or all accounts/regions |
+| Public URL | A named URL loads and matches the app on the observed date | Legal sufficiency or future availability |
+| Privacy/SDK | Data and permissions were traced to declarations and policies | Legal approval or undocumented provider behavior |
+| Portal | App Store Connect/Play Console status was directly observed | Native behavior, policy approval, or production rollout |
+| Provider/legal | A named provider, rights owner, or legal owner confirmed the gate | Any unconfirmed release surface |
+| Unknown | Evidence is missing, contradictory, or not observed | Readiness |
+
+## Core matrix
+
+| Area | Evidence to collect | Ready condition |
+| --- | --- | --- |
+| Artifact identity | Bundle/package, version, build/version code, signing, target SDK, architecture, track | Exact intended artifact is identified and reproducible |
+| Install and launch | Clean install, upgrade, first launch, startup logs, device/OS, screenshots | Installs and reaches first value without dev-only dependencies |
+| Core functionality | Route/action/result/recovery per platform | Core value works on the submitted build |
+| Stability | Crash/ANR, blank screen, timeout, slow network, offline, background/resume | No known release-blocking instability; open issues are explicit |
+| Reviewer access | Demo account, OTP/MFA/QR, reset, test data, geo/device setup, notes | Reviewer can inspect all promised features without guessing |
+| Metadata | Name, descriptions, keywords, categories, screenshots, previews, ads, ratings, audience | Listing describes the exact binary and supported scope |
+| Public URLs | Privacy, support, terms, deletion, marketing, contact | HTTPS links load publicly and match the app |
+| Privacy/data | SDK inventory, permissions, network/data map, policy, Apple details, Play Data Safety | Declarations agree with observed behavior and retention/deletion |
+| Permissions | Native manifest/entitlements, rationale, minimum scope, denied path, declarations | Only necessary permissions are requested and documented |
+| Accounts | Sign-up, login, SSO, logout, deletion, data deletion, account recovery | Platform-specific account requirements are fulfilled |
+| Payments | Product IDs, attachment, billing framework, restore, cancel, pending, failure, test account | All monetized paths are reviewable and policy-compatible |
+| Content/rights | UGC moderation, age rating, content rating, licenses, claims, regulated docs | Rights, audience, and risk gates have owners and evidence |
+| Platform changes | SDK/API/page-size/verification/deadline checks | Current applicable requirements are checked for the release date |
+| Portal | Processing, compliance, forms, agreements, screenshots, submission state | Exact portal state is observed or explicitly open |
+
+## Finding template
+
+| Field | Record |
+| --- | --- |
+| Priority/platform/tag | P0–P3; Apple/Google/Both; artifact/runtime/access/etc. |
+| Exact scope | App ID/package, version/build, route, URL, portal field, device, or SDK |
+| Observation | What was actually seen or measured |
+| Evidence level | Source, build, runtime, access, URL, privacy/SDK, portal, provider/legal, or unknown |
+| Policy/source | Official policy URL or forum signal with confidence note |
+| Impact | Rejection, delay, removal, user harm, or confidence risk |
+| Recommendation | Smallest useful corrective action |
+| Verification | Exact rerun, device, portal check, provider, or legal confirmation |
+
+## Verdict rules
+
+- **Ready:** no P0/P1 blockers and all required evidence for the selected mode
+  and platform is observed.
+- **Ready with conditions:** no known P0 blocker, but named P2/open gates have
+  owners and do not invalidate the intended submission.
+- **Not ready:** any P0/P1 blocker, contradictory privacy/metadata, broken core
+  journey, inaccessible reviewer path, or missing required platform gate.
+- **Unknown:** the conclusion depends on unobserved portal, provider, native,
+  legal, or production evidence. State exactly what would change the verdict.
