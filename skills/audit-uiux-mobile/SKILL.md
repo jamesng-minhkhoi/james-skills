@@ -7,6 +7,11 @@ description: Audit native mobile UI/UX on iOS and Android with research-first ev
 
 Produce an evidence-backed mobile UI/UX audit before recommending changes.
 
+Use [Mobile UX principles](references/mobile-ux-principles.md) as the review
+standard. Do not treat it as a box-ticking exercise: apply the principles to
+the user's actual goal, context, route, and state, and attach evidence to every
+important conclusion.
+
 ## 1. Establish evidence
 
 Read the app instructions and authoritative design docs, then inspect the
@@ -42,6 +47,11 @@ Check the applicable states:
 
 Review findings under these headings:
 
+- **UX principles:** explicitness, progressive disclosure, visibility of system
+  status, mental-model fit, recognition over recall, user control and freedom,
+  error prevention/recovery, consistency, flexibility, and minimalist signal-
+  to-noise. Read the reference for the mobile-specific questions.
+
 - **Hierarchy:** one-second focal point, primary action, scan order, and useful
   negative space.
 - **Composition:** product-specific visual language, meaningful card use, token
@@ -57,8 +67,14 @@ Review findings under these headings:
 - **Motion/native surfaces:** causal animation, cancellation/recovery, reduced
   motion, and blur/mask/glass behavior under transforms.
 
+For each relevant principle, mark **Strong**, **Concern**, **Critical**,
+**Unknown**, or **Not applicable**. Explain the user impact and cite the route,
+state, screenshot, source, or test that supports the rating.
+
 Reject token-only polish when hierarchy, composition, interaction, or state
-coverage remains weak.
+coverage remains weak. A visually attractive screen can still fail because it
+hides the next action, overloads the first view, breaks the user's mental model,
+or makes recovery difficult.
 
 ## 4. Prioritize
 

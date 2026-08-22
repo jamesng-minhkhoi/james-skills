@@ -1,0 +1,187 @@
+# Mobile UX principles
+
+Use these principles to evaluate a real mobile journey. They are heuristics,
+not substitutes for user research. For each applicable principle, record a
+status — **Strong**, **Concern**, **Critical**, **Unknown**, or **Not
+applicable** — plus evidence, user impact, and the smallest useful improvement.
+
+## 1. Explicitness spectrum
+
+Decide how much the interface should say or expose at each moment:
+
+| Level | Use for | Audit question |
+| --- | --- | --- |
+| **Direct** | Primary actions, current state, high-risk decisions, required input | Can a first-time user see what matters and what to do next? |
+| **Guided** | Context, constraints, examples, confirmation, recovery | Does the interface explain just enough at the moment of need? |
+| **Suggested** | Recommendations, next-best actions, optional shortcuts | Is the suggestion clearly optional and grounded in the user's context? |
+| **Deferred** | Advanced or low-frequency detail | Is the entry point discoverable, and does disclosure preserve context? |
+| **Hidden** | Internal, unavailable, or unsafe operations | Is it truly safe to hide, rather than merely inconvenient to expose? |
+
+Do not hide primary functionality to achieve visual minimalism. Do not turn
+optional recommendations into requirements. Do not make users guess whether a
+disabled, deferred, or hidden action exists.
+
+## 2. Progressive disclosure
+
+Show the information and choices needed for the current decision first; reveal
+detail as the user's intent becomes clearer. Good disclosure reduces clutter
+without reducing discoverability.
+
+Check that:
+
+- the first view answers “where am I, what matters, and what can I do?”;
+- each reveal has a visible label, familiar affordance, and predictable result;
+- the user can return without losing context, input, or progress;
+- the design does not split one simple decision across unnecessary steps;
+- advanced users have efficient paths without forcing novice users to learn
+  hidden gestures or obscure settings.
+
+## 3. Core interaction heuristics
+
+### Visibility of system status
+
+Communicate what is happening, what changed, and what comes next within a
+reasonable time. Inspect taps, navigation, saves, uploads, sync, processing,
+permissions, and background work. Match feedback intensity to consequence:
+inline status for routine updates, interruption for imminent data loss or
+urgent decisions.
+
+### Match the user's mental model
+
+Use the user's language, domain concepts, and familiar ordering. Check whether
+icons, labels, grouping, natural mapping, and navigation predict the outcome.
+Replace internal implementation terms with user language.
+
+### Recognition over recall
+
+Keep labels, choices, prior selections, constraints, and relevant context
+visible or easy to retrieve. Prefer contextual suggestions and visible options
+over asking users to remember values from another screen or step.
+
+### User control and freedom
+
+Provide clear back, cancel, close, undo, skip, and recovery paths. Let users
+leave a flow without losing work when possible. Make destructive actions
+explicit and keep gesture-only exits from becoming traps.
+
+### Error prevention
+
+Prevent expensive mistakes with sensible defaults, constraints, previews,
+confirmation at the right moment, and separation of destructive actions. Do not
+wait for a submission error when the interface can make the valid action clear.
+
+### Error recognition and recovery
+
+State what went wrong in plain language, identify the affected object or field,
+and offer the next useful action. Avoid raw error codes, vague “something went
+wrong” messages, premature validation, and red styling for routine information.
+
+### Consistency and platform standards
+
+Keep the same word, icon, gesture, position, and result consistent within the
+app. Follow iOS and Android conventions unless the product has a strong reason
+to diverge; when platforms differ, preserve platform expectations rather than
+forcing one abstraction everywhere.
+
+### Flexibility and efficiency
+
+Support a clear novice path and efficient repeat use. Consider recent items,
+defaults, search, shortcuts, accessible gestures, and personalization. Every
+gesture or shortcut needs a visible alternative for discoverability and
+accessibility.
+
+### Minimalist signal-to-noise
+
+Remove information that competes with the user's current goal, but do not
+confuse minimalism with hiding. Evaluate hierarchy, cognitive load, attention
+switches, card count, decorative elements, and the cost of every extra tap.
+
+### Help in context
+
+Prefer concise guidance at the point of need over a tutorial users must
+remember. Explain unfamiliar concepts before commitment, not after failure.
+
+## 4. Mobile-specific principles
+
+### Reachability and touch comfort
+
+Place frequent and primary actions where they are comfortable to reach for the
+target device and posture. Use platform guidance for target size — commonly
+44pt on iOS and 48dp on Android — and provide enough separation to prevent
+mistaps. Do not rely on a tiny icon, edge swipe, or long press for a critical
+action.
+
+### Safe areas, system UI, and keyboard
+
+Check status bars, display cutouts, gesture/navigation insets, bottom bars,
+orientation, split-screen or foldable states where relevant, and the software
+keyboard. The keyboard must not cover the active field or primary action, and
+content must not sit beneath an unsafe system gesture region.
+
+### Gesture discoverability and alternatives
+
+Use familiar gestures for direct manipulation, but never make a core outcome
+gesture-only. Provide a visible tap or button alternative for swipe-to-delete,
+drag, pull-to-refresh, custom navigation, and dismiss actions. Make gesture
+direction, cancellation, and completion understandable.
+
+### Short sessions and interruptions
+
+Assume people may be mobile, distracted, offline, interrupted by a call or
+notification, or returning after the app was suspended. Preserve progress,
+restore context, avoid time-boxed UI, and make resumption obvious.
+
+### Permissions, privacy, and trust
+
+Ask for permissions in context, explain the benefit before the system prompt,
+request the minimum scope, and provide a useful path when permission is denied.
+Make collection, sharing, destructive effects, and irreversible operations
+legible before commitment.
+
+### Adaptive mobile layouts
+
+Check narrow and tall phones, large text, portrait and landscape when
+supported, tablets/foldables or expanded windows where applicable, and changed
+input methods. Prefer reflow, reveal, or presentation changes over clipped,
+scaled-down desktop compositions.
+
+### Accessibility and multimodal feedback
+
+Do not rely on color, motion, sound, or a gesture alone. Provide accessible
+names, roles, values, and states; support screen readers, large text, contrast,
+reduced motion, voice/switch access, and haptics or visual confirmation when
+they clarify important feedback.
+
+## 5. Common failure patterns
+
+Flag these explicitly when observed:
+
+- token-only polish that leaves the journey or hierarchy unchanged;
+- progressive disclosure that hides needed information or has an undiscoverable
+  trigger;
+- onboarding that blocks the core value before users understand it;
+- permission prompts before context or without a denied-permission path;
+- primary actions buried among equal-weight secondary actions;
+- gesture-only functionality, auto-dismissed feedback, or time pressure;
+- validation that interrupts typing instead of helping users succeed;
+- generic cards, icon soup, or decorative motion that competes with content;
+- desktop layouts compressed onto a phone instead of redesigned for reach and
+  focus;
+- empty, loading, offline, or error states treated as afterthoughts.
+
+## Sources and further reading
+
+Use these as principles sources, not as permission to copy another product's
+visual style:
+
+- Nielsen Norman Group, [10 Usability Heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/)
+- Nielsen Norman Group, [Progressive Disclosure](https://www.nngroup.com/articles/progressive-disclosure/)
+- Nielsen Norman Group, [Recognition and Recall](https://www.nngroup.com/articles/recognition-and-recall/)
+- Nielsen Norman Group, [Hostile Error Messages](https://www.nngroup.com/articles/hostile-error-messages/)
+- Apple, [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
+- Apple, [Accessibility](https://developer.apple.com/design/human-interface-guidelines/accessibility)
+- Apple, [Feedback](https://developer.apple.com/design/human-interface-guidelines/feedback)
+- Apple, [Designing for iOS](https://developer.apple.com/design/human-interface-guidelines/designing-for-ios/)
+- Android, [Mobile layout basics](https://developer.android.com/design/ui/mobile/guides/layout-and-content/layout-basics)
+- Android, [Mobile accessibility](https://developer.android.com/design/ui/mobile/guides/foundations/accessibility)
+- Android, [System bars and insets](https://developer.android.com/design/ui/mobile/guides/foundations/system-bars)
