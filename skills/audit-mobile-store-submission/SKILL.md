@@ -1,6 +1,6 @@
 ---
 name: audit-mobile-store-submission
-description: Audit iOS App Store and Google Play submission readiness for native and Expo/React Native apps. Use before creating or updating a store submission to inspect the production artifact, installability, runtime behavior, reviewer access, metadata, screenshots, privacy and data disclosures, permissions, monetization, public URLs, account deletion, platform policy, and current Apple/Google deadlines. Produce evidence-backed blockers and open gates; do not submit or change store dashboards unless explicitly requested.
+description: Audit iOS App Store and Google Play submission readiness for native and Expo/React Native apps, including rejection remediation and App Review/Play review evidence packets. Use before creating or updating a store submission to inspect the production artifact, installability, runtime behavior, reviewer access, metadata, display-name identity, screenshots and recordings, privacy and data disclosures, permission UX, monetization, public URLs, account deletion, platform policy, and current Apple/Google deadlines. Produce evidence-backed blockers and open gates; do not submit or change store dashboards unless explicitly requested.
 ---
 
 # Audit Mobile Store Submission
@@ -27,6 +27,11 @@ implemented, observed, portal-confirmed, or still unknown.
 - Treat forum discussions as rejection signals and debugging clues, not policy
   authority. Verify each conclusion against the current official Apple or
   Google source.
+- When a rejection message, portal export, screenshot, or recording is
+  provided, preserve its exact reviewed version/build, review date, device,
+  submission ID, guideline, and requested evidence. A later resubmission is a
+  new evidence snapshot; never assume the fix is present in the reviewed
+  artifact.
 - Do not guess legal ownership, privacy answers, age ratings, health claims,
   financial claims, content rights, account credentials, or portal state.
   Mark them **Unknown** and request the missing evidence.
@@ -44,6 +49,9 @@ Choose the smallest complete mode:
   access, representative devices, and release evidence.
 - **Release:** Review plus real portal state, store processing, platform
   compliance, final screenshots, policy forms, and explicit unresolved gates.
+- **Rejection remediation:** parse the rejection message and attachments into
+  exact findings, reproduce the reviewed build where possible, map each fix to
+  a new build, and verify the complete resubmission evidence packet.
 
 Set a platform scope: **Apple**, **Google**, or **Both**. Record whether the
 app has accounts, subscriptions or purchases, ads, user-generated content,
@@ -62,8 +70,12 @@ Write a context brief:
   closed, or production;
 - backend environment, feature flags, authentication, demo data, and review
   credentials;
+- review snapshot: submission ID, review date/device, reviewed version/build,
+  rejection guidelines, portal status, reviewer attachments, and current
+  resubmission version/build;
 - monetization, permissions, SDKs, data flows, public support/privacy URLs,
-  and legal/content-rights owner;
+  legal/content-rights owner, and whether the audience is a child or an adult
+  acting for a child or other dependent;
 - scope boundary and what evidence is available.
 
 Create a release manifest from the repository and artifact. At minimum inspect
@@ -87,6 +99,11 @@ Prove the artifact is the one intended for review:
   unavailable VPN to show the core value;
 - handles slow, offline, denied-permission, expired-session, and provider
   failure states without a blank or misleading success screen.
+- keeps the installed identity discoverable: compare the marketplace name,
+  signed `CFBundleDisplayName`/`CFBundleName` (Apple), Android application
+  label, launcher label, Settings/app-switcher label, and any Expo/native name
+  overrides. The bundle ID/package name is identity-critical but does not cure
+  a confusing display-name mismatch.
 
 Record exact commands, artifact identifiers, device/OS, install source, and
 screenshots. Source inspection can establish a risk; it cannot prove the binary
@@ -116,7 +133,56 @@ data, an expiring account, a region-specific phone number, inaccessible device,
 or unavailable third-party service. Capture a reviewer runbook with reset
 steps, credentials, test data, expected results, and fallback instructions.
 
-## 4. Audit listing and public trust surfaces
+### Permission-request integrity
+
+For every sensitive or interruptive system permission, inspect the exact
+pre-permission screen and the native prompt on a physical device:
+
+- explain the feature benefit and what the app will do before requesting;
+- use a neutral CTA such as **Continue** or **Next**, never a custom **Allow**
+  button that tells the user which answer to give;
+- do not draw, imitate, highlight, point at, or otherwise coach the system
+  permission dialog or its Allow/Don’t Allow choices;
+- verify **Maybe later**, denial, limited access, repeated launch, and Settings
+  recovery. Do not re-prompt after a clear denial unless the platform allows a
+  meaningful new context;
+- confirm the user keeps the core product when notifications are denied unless
+  the feature genuinely cannot function, and explain the consequence honestly.
+
+## 4. Build the reviewer evidence packet
+
+Treat App Review Information, Play Console reviewer access, and rejection
+attachments as release artifacts. For Apple, prepare and verify the following
+against the exact build under review:
+
+1. A physical-device screen recording that starts by launching the app and
+   demonstrates the normal core flow, account registration/login/deletion,
+   paid content or subscription flow, UGC reporting/blocking, and every
+   sensitive permission prompt that applies.
+2. Device models and operating systems tested, including the recording device.
+3. App purpose, problem, target audience, and value; distinguish an adult
+   caregiver audience from a child subject or child-directed product.
+4. Setup and access instructions, credentials, MFA/OTP/QR steps, reset path,
+   sample files, test data, and expected results.
+5. External services, tools, platforms, authentication, payments, data
+   providers, analytics, ads, maps, AI, and other dependencies used by core
+   functionality.
+6. Regional differences, country/locale gates, or an explicit confirmation
+   that the reviewed behavior is consistent across regions.
+7. Regulated-industry authorization, content licenses, protected third-party
+   material rights, or other legal documentation when applicable.
+
+Record each attachment’s filename, capture date, device/OS, app version/build,
+and the exact reviewer note that points to it. A simulator screenshot or a
+generic product explanation is not equivalent to a physical-device recording
+of the submitted build.
+
+When a rejection is supplied, create one finding per guideline and preserve
+Apple/Google’s exact requested next step separately from your recommendation.
+Track whether the fix is source-only, present in a new artifact, observed on a
+device, attached to the portal, or still unverified.
+
+## 5. Audit listing and public trust surfaces
 
 Compare the binary with every store-facing promise:
 
@@ -130,6 +196,9 @@ Compare the binary with every store-facing promise:
   clean device/browser;
 - claims are specific, supportable, and consistent across metadata, app copy,
   privacy policy, data declarations, and reviewer notes;
+- marketplace name and installed display name are sufficiently similar for a
+  user to find the downloaded app. Check this on-device, not only in source or
+  App Store Connect/Play Console;
 - rights exist for icons, images, fonts, audio, content, brands, AI output,
   health data, user content, and third-party services;
 - the app is meaningfully differentiated from template/repackaged or saturated
@@ -138,7 +207,7 @@ Compare the binary with every store-facing promise:
 Do not treat a polished screenshot, a landing page, or a passing local build as
 proof that the store promise is true.
 
-## 5. Audit privacy, data, permissions, and SDKs
+## 6. Audit privacy, data, permissions, and SDKs
 
 Build a data map from code, native manifests, SDK documentation, network
 behavior, privacy policy, and store forms. Reconcile:
@@ -154,11 +223,16 @@ behavior, privacy policy, and store forms. Reconcile:
 - Google Play Data Safety, data deletion questions, privacy policy, ads,
   restricted permissions, target audience/content, and sign-in details.
 
+For family, baby, education, health, or development products, distinguish the
+person using the app from the person whose data is recorded. Audit age-rating,
+target-audience, child-safety, health/medical, and data-retention implications
+without inferring a legal classification from the product name alone.
+
 Flag any declaration that is broader, narrower, older, or less specific than
 the actual binary and SDK behavior. A “no data collected” answer requires
 evidence, not intuition.
 
-## 6. Apply platform gates
+## 7. Apply platform gates
 
 Use the current official policies and the platform watch reference. At minimum,
 check:
@@ -169,7 +243,8 @@ check:
   review information, unavailable backend, incomplete IAP, and unreproducible
   login or purchase flows;
 - accurate metadata and age rating; no hidden/dormant functionality or mismatch
-  between listing and binary;
+  between listing and binary, including marketplace name versus installed
+  display name under Guideline 2.3.8;
 - minimum functionality, web wrapper/content aggregator, copycat, spam,
   repackaged template, or saturated-category risk;
 - privacy, account deletion, permissions, tracking, third-party AI disclosure,
@@ -195,7 +270,7 @@ check:
 - developer identity, package registration, account status, repeated-rejection
   risk, and production-access requirements.
 
-## 7. Classify findings and gates
+## 8. Classify findings and gates
 
 Use both impact and evidence status:
 
@@ -209,7 +284,7 @@ Use both impact and evidence status:
 
 Tag each finding with one or more of `ARTIFACT`, `RUNTIME`, `ACCESS`, `METADATA`,
 `PRIVACY`, `PERMISSION`, `PAYMENTS`, `CONTENT`, `QUALITY`, `PLATFORM`,
-`PORTAL`, or `LEGAL`.
+`PORTAL`, `REVIEW-PACKET`, `IDENTITY`, or `LEGAL`.
 
 For every finding record:
 
@@ -221,7 +296,7 @@ For every finding record:
   **public URL**, **legal owner**, or **unknown**;
 - recommendation, owner/input required, confidence, and verification method.
 
-## 8. Report
+## 9. Report
 
 Return:
 
@@ -234,11 +309,13 @@ Return:
    permissions, payments, public URLs, portal, and legal gates.
 5. **Platform findings** — Apple and Google sections with policy/source links.
 6. **Reviewer runbook** — account, reset, test data, configuration, and notes.
-7. **Checks performed** — exact commands, devices/OS, builds, URLs, screenshots,
-   and portal observations.
-8. **Open gates and owners** — what requires the user, legal owner, provider,
+7. **Reviewer evidence packet** — recordings, device/OS matrix, purpose,
+   audience, setup, external services, regional behavior, and legal material.
+8. **Checks performed** — exact commands, devices/OS, builds, URLs, screenshots,
+   recordings, and portal observations.
+9. **Open gates and owners** — what requires the user, legal owner, provider,
    Apple, Google, native device, or production confirmation.
-9. **Resubmission strategy** — only after the current rejection is understood;
+10. **Resubmission strategy** — only after the current rejection is understood;
    reply, appeal, fix, or resubmit based on evidence rather than guessing.
 
 Use this finding shape:

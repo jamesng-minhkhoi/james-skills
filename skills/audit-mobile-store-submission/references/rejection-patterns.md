@@ -7,6 +7,7 @@ encountered or phrased, but they are anecdotal and may be incomplete.
 ## Contents
 
 - [Apple patterns](#apple-patterns)
+- [Apple rejection/remediation signals](#apple-rejectionremediation-signals)
 - [Google Play patterns](#google-play-patterns)
 - [Cross-platform patterns](#cross-platform-patterns)
 - [Forum evidence](#forum-evidence)
@@ -78,6 +79,50 @@ or an outside-the-app service. Verify the applicable Apple payment path,
 subscription state, restore, cancellation, pricing copy, and review access.
 When the business model is not obvious, explain it in metadata and review notes.
 
+## Apple rejection/remediation signals
+
+### 5.1.1 Permission pre-alerts that coach the user
+
+An app can be rejected even when it uses the standard native permission prompt
+if its custom screen appears to direct the user’s choice. Flag a pre-alert that:
+
+- uses **Allow**, **Enable**, or equivalent as the app’s own CTA immediately
+  before the system prompt;
+- draws or imitates the system dialog, highlights Allow/Don’t Allow, adds an
+  arrow, or tells the user which answer to select;
+- frames a decline as a failure when the core product remains usable; or
+- re-prompts after denial without a meaningful new context.
+
+Require a neutral **Continue** or **Next** CTA, an honest feature explanation,
+an unobstructed native prompt, and tested Maybe-later/denied/Settings paths.
+The wording and visuals must be inspected on the exact build, not inferred from
+the permission API call alone.
+
+### 2.1 App Review Information requests
+
+For a new app, Apple may request a complete review packet rather than only a
+login. Prepare a physical-device recording starting at launch, tested device
+and OS list, purpose and audience, setup and credentials, core external
+services, regional behavior, and regulated/protected-content authorization.
+Record the build and device used for every attachment. A simulator capture,
+generic explanation, or source-level claim is insufficient evidence.
+
+### 2.3.8 Marketplace versus installed name
+
+Compare the App Store name with the signed name users see on the Home Screen,
+Settings, and app switcher. Inspect `CFBundleDisplayName`, `CFBundleName`, Expo
+or native overrides, and the installed binary. A stable bundle ID does not
+resolve a confusing display-name mismatch. Repeat the check after every
+resubmission because a metadata edit and a binary edit can drift independently.
+
+### Resubmission evidence drift
+
+Treat a rejection for build 47 and a resubmission with build 49 as separate
+review snapshots. Preserve the original reviewer device/date and map each
+requested fix to the new build, physical-device recording, screenshots, and
+App Review Information notes. Do not claim that an attached recording proves a
+fix unless its version/build and capture device are recorded.
+
 ## Google Play patterns
 
 ### Broken Functionality
@@ -127,6 +172,13 @@ Verify Google Play Billing for digital goods unless a documented exception or
 regional program applies. For new personal developer accounts, check the closed
 test and production-access requirement. Also check developer identity,
 package registration, policy warnings, and prior rejection/suspension history.
+
+### Review-packet and evidence failures
+
+If Play asks for access or additional information, use the same evidence
+discipline as Apple: active credentials, every MFA/QR/location step, device and
+OS coverage, external services, regional behavior, and exact artifact/build.
+Do not substitute an internal-test result for a production-track observation.
 
 ## Cross-platform patterns
 

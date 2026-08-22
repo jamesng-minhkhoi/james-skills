@@ -23,14 +23,18 @@ each observed item.
 | Area | Evidence to collect | Ready condition |
 | --- | --- | --- |
 | Artifact identity | Bundle/package, version, build/version code, signing, target SDK, architecture, track | Exact intended artifact is identified and reproducible |
+| Review snapshot | Submission ID, review date/device, reviewed version/build, rejection text, attachments, current resubmission build | Every finding is tied to the artifact and evidence Apple/Google actually reviewed |
 | Install and launch | Clean install, upgrade, first launch, startup logs, device/OS, screenshots | Installs and reaches first value without dev-only dependencies |
 | Core functionality | Route/action/result/recovery per platform | Core value works on the submitted build |
 | Stability | Crash/ANR, blank screen, timeout, slow network, offline, background/resume | No known release-blocking instability; open issues are explicit |
 | Reviewer access | Demo account, OTP/MFA/QR, reset, test data, geo/device setup, notes | Reviewer can inspect all promised features without guessing |
+| Review packet | Physical-device recording, device/OS list, purpose/audience, setup, external services, regions, rights/regulatory material | Required review information is complete, build-specific, and attached or portal-confirmed |
 | Metadata | Name, descriptions, keywords, categories, screenshots, previews, ads, ratings, audience | Listing describes the exact binary and supported scope |
+| Installed identity | Store name, signed display name, launcher label, Settings/app-switcher label, native overrides | Users can find the installed app and names are sufficiently similar |
 | Public URLs | Privacy, support, terms, deletion, marketing, contact | HTTPS links load publicly and match the app |
 | Privacy/data | SDK inventory, permissions, network/data map, policy, Apple details, Play Data Safety | Declarations agree with observed behavior and retention/deletion |
 | Permissions | Native manifest/entitlements, rationale, minimum scope, denied path, declarations | Only necessary permissions are requested and documented |
+| Permission UX | Pre-alert copy/CTA, system-prompt sequence, dialog imitation/highlight, denial and Settings recovery | Permission context is honest and does not coach the user’s choice |
 | Accounts | Sign-up, login, SSO, logout, deletion, data deletion, account recovery | Platform-specific account requirements are fulfilled |
 | Payments | Product IDs, attachment, billing framework, restore, cancel, pending, failure, test account | All monetized paths are reviewable and policy-compatible |
 | Content/rights | UGC moderation, age rating, content rating, licenses, claims, regulated docs | Rights, audience, and risk gates have owners and evidence |
