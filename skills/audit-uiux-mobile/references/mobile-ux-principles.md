@@ -101,7 +101,55 @@ switches, card count, decorative elements, and the cost of every extra tap.
 Prefer concise guidance at the point of need over a tutorial users must
 remember. Explain unfamiliar concepts before commitment, not after failure.
 
-## 4. Mobile-specific principles
+## 4. Content and decision quality
+
+Audit the words and choices, not only the components around them:
+
+- Use familiar, specific labels that describe the result of an action.
+- Put the most important information first and make scan order intentional.
+- State constraints, pricing, privacy effects, eligibility, and irreversible
+  consequences before commitment.
+- Distinguish required, recommended, optional, unavailable, and completed
+  actions in copy and visual treatment.
+- Keep field help, validation, and error copy close to the affected control.
+- Avoid vague CTAs such as “Continue” when the next outcome can be named.
+- Treat suggestions as suggestions; never disguise growth, upsell, or data
+  collection as a required product step.
+
+## 5. Principle conflicts
+
+Do not resolve these conflicts mechanically. Record the product context,
+affected users, risk, and chosen trade-off:
+
+| Tension | Audit question |
+| --- | --- |
+| Minimalism vs discoverability | What can be removed without hiding a needed action or state? |
+| Progressive disclosure vs transparency | Is anything legally, financially, privately, or safety-relevant deferred too far? |
+| Gesture efficiency vs accessibility | Is there a visible alternative with equivalent outcome? |
+| Platform convention vs brand | Does differentiation preserve the platform mental model and back behavior? |
+| Personalization vs consistency | Can the user customize without losing stable locations and labels? |
+| Speed vs error prevention | Is confirmation reserved for meaningful risk rather than every action? |
+| Guidance vs autonomy | Does help support the decision without interrupting or coercing? |
+
+## 6. Trust and dark-pattern review
+
+Flag patterns that make the user's choice less informed or less reversible:
+
+- consent or permission before the user understands the benefit;
+- default opt-in for sensitive sharing, notifications, or paid behavior;
+- primary styling for the product's preferred outcome and weak styling for
+  cancel, skip, decline, or unsubscribe;
+- confirmshaming, artificial urgency, hidden costs, or ambiguous copy;
+- destructive actions hidden behind a gesture or placed beside a common action;
+- forced registration or onboarding before the core value is demonstrated;
+- auto-dismissed warnings, progress that cannot be paused, or loss of work on
+  interruption;
+- recommendations that look like system requirements.
+
+Ask whether a reasonable user can understand the consequence, choose freely,
+change their mind, and recover without penalty.
+
+## 7. Mobile-specific principles
 
 ### Reachability and touch comfort
 
@@ -152,7 +200,7 @@ names, roles, values, and states; support screen readers, large text, contrast,
 reduced motion, voice/switch access, and haptics or visual confirmation when
 they clarify important feedback.
 
-## 5. Common failure patterns
+## 8. Common failure patterns
 
 Flag these explicitly when observed:
 
