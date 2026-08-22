@@ -6,12 +6,18 @@ description: Design and implement polished native mobile UI for iOS and Android 
 # Craft UI Mobile
 
 Build the product journey first and the pixels second. Use
-[the mobile craft process](references/mobile-craft-process.md) when a screen
-needs more than a small local edit.
+[the mobile craft process](references/mobile-craft-process.md) for any screen
+that needs more than a small local edit. Load
+[mobile craft principles](references/mobile-craft-principles.md) when making
+hierarchy, disclosure, content, motion, or visual-language decisions. Load
+[the mobile pattern matrix](references/mobile-pattern-matrix.md) for data-heavy
+surfaces, overlays, feedback, navigation, or translating a web reference to
+mobile. Load [the critique checklist](references/mobile-critique-checklist.md)
+when reviewing rendered work or writing the handoff.
 
 ## Non-negotiable order
 
-`Intent → Flow → Content → Structure → System → Interaction → Polish → Proof`
+`Intent → Evidence → Flow → Content → Explicitness → Structure → System → Interaction → Motion → Proof`
 
 Do not start with gradients, shadows, colors, or isolated component polish when
 the user's path, information hierarchy, or state coverage is unclear.
@@ -20,13 +26,17 @@ the user's path, information hierarchy, or state coverage is unclear.
 
 - State the target user, situation, user intent, entry point, and successful
   outcome in plain language.
+- Write the moment of value: what the user should understand, decide, or do
+  after this surface. Separate that from the underlying database operation.
+- Inspect the closest shipped mobile surface, product/design docs, analytics or
+  issue evidence when available, tokens, primitives, route composition, and
+  visual references before inventing UI. Record what is evidence and what is a
+  design hypothesis.
 - Identify the primary action, secondary actions, irreversible actions, and
   what the user must understand before committing.
 - Mark the scope boundary. For UI/UX-only work, preserve queries, schemas,
   writes, permissions, analytics, navigation destinations, localization
   meaning, and feature contracts. Surface required contract changes separately.
-- Check the closest shipped mobile surface, product/design docs, tokens,
-  primitives, route composition, and visual reference before inventing UI.
 
 ## 2. Sketch the flow before the screen
 
@@ -54,7 +64,29 @@ events, a list for scan-and-act work, a chart only when its axes and comparison
 answer are clear, and a detail surface when context matters. Do not force every
 dataset into cards, tables, or decorative charts.
 
-## 4. Build the visual system before exceptions
+For data-heavy surfaces, also decide how users search, filter, sort, compare,
+select, edit, and recover from stale or empty data. See the pattern matrix.
+
+## 4. Choose the right degree of explicitness
+
+Place every action, explanation, and piece of context on an explicitness
+spectrum: always visible, visible after a direct interaction, contextual,
+deferred until needed, or hidden behind an advanced surface. Choose based on
+frequency, consequence, discoverability, and available space—not personal
+preference.
+
+- Keep primary jobs and safety-critical information visible.
+- Reveal secondary detail progressively, but provide a clear affordance and
+  preserve the user's context.
+- Never make a core action depend only on hover, long press, edge swipe, or an
+  unlabeled icon.
+- Sequence onboarding and feature education at the moment of relevance; do
+  not front-load a wall of explanation.
+
+Use the mobile pattern matrix when selecting a bottom sheet, menu, popover,
+modal, toast, banner, or full-screen route.
+
+## 5. Build the visual system before exceptions
 
 - Reuse the project's tokens and shipped primitives for type, spacing, color,
   radius, icons, shadows, buttons, inputs, lists, sheets, and feedback.
@@ -66,8 +98,14 @@ dataset into cards, tables, or decorative charts.
   platform constraints justify a deliberate break.
 - Treat dark mode, large text, contrast, safe areas, and keyboard behavior as
   system requirements when the app supports them.
+- Use semantic roles for color and typography. A ratio such as 60-30-10 may
+  help balance a composition, but it is not a substitute for meaning,
+  contrast, hierarchy, or platform conventions.
+- Keep visual materials restrained. Borders, shadows, gradients, glow, and
+  glass need a grouping, depth, emphasis, or brand job; otherwise subtract
+  them.
 
-## 5. Compose with hierarchy and subtraction
+## 6. Compose with hierarchy and subtraction
 
 - Give each screen one focal point and one visually dominant primary action.
 - Make the first viewport answer: where am I, what matters, and what can I do?
@@ -81,8 +119,11 @@ dataset into cards, tables, or decorative charts.
 - Use progressive disclosure for secondary actions, but keep the reveal
   discoverable. On mobile, replace hover-only behavior with visible buttons,
   menus, sheets, or an accessible press/gesture alternative.
+- Let context and personality support comprehension: natural language,
+  meaningful empty states, illustrations, and small moments of delight are
+  welcome when they do not compete with the task or critical information.
 
-## 6. Design the full interaction surface
+## 7. Design the full interaction surface
 
 Implement the states a user can actually experience:
 
@@ -90,13 +131,22 @@ Implement the states a user can actually experience:
   error;
 - empty, no-results, offline, permission-denied, and retry;
 - keyboard open, sheet open/closed, back/cancel, gesture progress, and resume.
+- For each important component, define a state map and the transition that
+  caused it. Preserve semantic identity between states so motion explains
+  continuity instead of decorating a replacement.
+- Choose feedback deliberately: inline feedback for local correction, a toast
+  for brief non-blocking confirmation, a banner for persistent status, a sheet
+  for contextual work, and a blocking modal only when the decision truly
+  requires interruption. See the pattern matrix.
+- For optimistic changes, define the success assumption, pending treatment,
+  rollback, retry, and stale-data behavior before implementation.
 
 Keep loading in the final footprint. Make feedback visible quickly and match
 its intensity to the consequence. Keep destructive actions explicit and
 recoverable where possible. A visually perfect default state is unfinished if
 the system is silent during a save or failure.
 
-## 7. Add purposeful motion and personality
+## 8. Add purposeful motion and personality
 
 - Animate the subject of a change: press, transition, reveal, save, progress,
   success, error, or navigation.
@@ -109,7 +159,7 @@ the system is silent during a save or failure.
 - Check blur, mask, glass, zero-frame, clipping, and transform-ancestor issues
   on the actual platform.
 
-## 8. Implement without breaking the product
+## 9. Implement without breaking the product
 
 Prefer the existing component contract. Split a large screen by meaningful
 visual regions, not arbitrary line count. Keep route files thin when the app's
@@ -119,7 +169,7 @@ and keep UI-only changes reviewable.
 When a new mental model is consequential, present two or three concrete
 directions with trade-offs before coding and honor the selected direction.
 
-## 9. Prove the result
+## 10. Prove the result
 
 Follow:
 
