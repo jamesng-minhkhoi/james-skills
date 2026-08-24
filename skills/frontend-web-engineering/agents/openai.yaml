@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Web Engineering"
+  short_description: "Build reliable production-ready web application features"
+  default_prompt: "Use $frontend-web-engineering to plan, implement, test, and verify this web application change end to end."

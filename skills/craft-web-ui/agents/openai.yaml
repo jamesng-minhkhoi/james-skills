@@ -1,4 +1,0 @@
-interface:
-  display_name: "Craft Web UI"
-  short_description: "Design polished, usable responsive web application interfaces"
-  default_prompt: "Use $craft-web-ui to plan, build, and verify a polished responsive web interface."

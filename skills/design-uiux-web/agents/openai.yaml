@@ -1,0 +1,4 @@
+interface:
+  display_name: "Craft Web UI"
+  short_description: "Design polished responsive product web UI/UX"
+  default_prompt: "Use $design-uiux-web to design this responsive product web interface and prepare a handoff."

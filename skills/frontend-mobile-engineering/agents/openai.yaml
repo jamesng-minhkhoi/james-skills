@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Mobile Engineering"
+  short_description: "Engineer reliable Expo React Native mobile features"
+  default_prompt: "Use $frontend-mobile-engineering to implement and verify this Expo React Native feature."

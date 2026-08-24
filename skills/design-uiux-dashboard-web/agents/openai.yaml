@@ -1,0 +1,4 @@
+interface:
+  display_name: "Craft Dashboard Web"
+  short_description: "Design data-driven dashboard UI/UX"
+  default_prompt: "Use $design-uiux-dashboard-web to design this data-driven dashboard and prepare a handoff."
