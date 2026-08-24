@@ -33,3 +33,20 @@ Expected behavior:
   unlikely routes;
 - measure transition time, hit rate, wasted bytes, request waterfalls, and
   Core Web Vitals before claiming improvement.
+
+## Case 3: Loading scope and search behavior
+
+Prompt: “Every time a user types in the search box, show a full-page skeleton
+until the server responds. Add `useMemo` and `useCallback` everywhere to make
+the page fast.”
+
+Expected behavior:
+
+- keep the app shell and already usable results mounted; use field-level
+  pending feedback and row-level/region-level loading only where data changes;
+- debounce high-frequency query input, cancel or ignore stale responses, and
+  never debounce explicit submission;
+- allow route-wide blocking only for initial boot or a genuine auth/tenant/
+  permission boundary where old content cannot remain visible;
+- profile before memoizing and apply `memo`, `useMemo`, and `useCallback` only
+  where stable references or expensive repeated work justify them.

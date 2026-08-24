@@ -165,6 +165,33 @@ authorization; enforce permission at the server boundary too.
 - Keep real fixtures and error responses representative. Never fake a native
   permission grant, network success, push delivery, or backend result.
 
+### Responsiveness and loading conventions
+
+Choose the smallest loading and computation scope that preserves continuity:
+
+| Situation | Required behavior |
+| --- | --- |
+| Initial screen with no safe content to show | A screen-level skeleton or loading boundary may block the screen; match the final geometry. |
+| Existing navigation shell or screen refresh | Keep stable navigation and usable content mounted; replace only the changing region. |
+| Initial list/grid fetch | Use row/card skeletons with final-shape geometry; avoid a generic full-screen spinner. |
+| Background refresh or stale cache | Keep stale content visible with a local refresh indicator and clear freshness status. |
+| Field validation, autocomplete, or search/filter query | Show pending/error at the field or control; debounce query input and cancel stale requests. |
+| Row/card mutation | Keep unrelated content interactive; mark only the affected row/action pending and reconcile or roll back locally. |
+| Auth, account, permission, or route-wide context switch | A screen-wide boundary is acceptable when old content must be cleared to prevent leakage or an invalid action. |
+
+Use a short, measured debounce for high-frequency query input (often about
+250–400 ms for search/typeahead), cancel or ignore obsolete requests, and never
+debounce an explicit submit, destructive action, or button press. Throttle or
+`requestAnimationFrame` is usually a better fit for scroll/gesture work.
+
+Treat memoization as a measured optimization: profile first; use `memo` for
+expensive repeated components with stable props, `useMemo` for expensive
+derived work, and `useCallback` only when referential stability matters to a
+memoized child or hook dependency. Do not blanket-wrap components or memoize
+cheap values to hide duplicated state, unstable props, or an unvirtualized
+large list. Keep server cache ownership in the query/data layer and shared
+client workflow in Zustand or the repository's existing store.
+
 ## 5. Validate in layers
 
 Run the narrowest relevant checks, then expand according to risk:

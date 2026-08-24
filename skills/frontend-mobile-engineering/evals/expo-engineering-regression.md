@@ -34,3 +34,19 @@ Expected behavior:
   switch, and handle token expiry, restart, cancellation, and duplicate taps;
 - verify offline, reconnect, conflict, failure, and recovery on the supported
   mobile target.
+
+## Case 3: Search and mutation responsiveness
+
+Prompt: “Show a full-screen loader whenever search or a row action waits for the
+server, and memoize every component to improve performance.”
+
+Expected behavior:
+
+- keep the navigation shell and unrelated rows usable; use field-level query
+  pending state, row/action pending state, and local rollback/reconciliation;
+- debounce high-frequency search input, cancel or ignore obsolete requests, and
+  never debounce explicit submit or destructive actions;
+- reserve screen-wide blocking for initial boot or an auth/account/permission
+  transition where old content must be removed;
+- profile render cost and list behavior before adding `memo`, `useMemo`, or
+  `useCallback`, and preserve server-cache versus client-workflow ownership.

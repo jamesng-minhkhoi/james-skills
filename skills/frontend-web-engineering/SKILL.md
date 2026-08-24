@@ -173,6 +173,32 @@ When an interaction is asynchronous, make the transition observable and
 idempotent where possible: disable or guard duplicate submission, preserve the
 user's input, show pending state, reconcile the result, and provide recovery.
 
+### Responsiveness and loading conventions
+
+Choose the smallest loading and computation scope that preserves continuity:
+
+| Situation | Required behavior |
+| --- | --- |
+| Initial route with no usable shell or safe content | Route-level skeleton or loading boundary may block the route; match the final geometry. |
+| Existing app shell or client navigation | Keep navigation, header, filters, and stable content mounted; replace only the changing region. |
+| Initial list/table fetch | Use row/card skeletons with final-shape geometry; do not invent a giant page spinner. |
+| Refresh or background revalidation | Keep usable stale content visible and show a local refresh/pending indicator. |
+| Field validation, autocomplete, or filter query | Show pending/error at the field or control; debounce query input and cancel stale requests. |
+| Row/card mutation | Keep the rest of the page interactive; mark the affected row/action pending and reconcile or roll back locally. |
+| Auth, tenant, permission, or route-wide context switch | A route-wide boundary is acceptable when old content must be removed to prevent leakage or an incorrect action. |
+
+Use a short, measured debounce for high-frequency query input (often about
+250–400 ms for search/typeahead), cancel or ignore obsolete requests, and never
+debounce an explicit submit, destructive action, or button press. Throttle or
+`requestAnimationFrame` is usually a better fit for scroll/resize work.
+
+Treat memoization as a measured optimization: profile first; use `memo` for
+expensive repeated components with stable props, `useMemo` for expensive
+derived work, and `useCallback` only when referential stability matters to a
+memoized child or hook dependency. Do not blanket-wrap components or memoize
+cheap values to hide duplicated state, unstable props, or an unvirtualized
+large list. Preserve the same server-state cache and query-key ownership.
+
 ## 6. Validate in layers
 
 Run the narrowest checks first, then expand based on risk:
