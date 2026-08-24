@@ -1,0 +1,4 @@
+interface:
+  display_name: "X Engagement"
+  short_description: "Plan authentic X engagement experiments"
+  default_prompt: "Use $x-engagement to research, draft, and measure safe, useful X engagement."
