@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit UIUX Web"
+  short_description: "Audit responsive web UI with evidence-backed UX and visual QA"
+  default_prompt: "Use $audit-uiux-web to audit this web interface across task flow, browser behavior, responsive states, accessibility, visual systems, motion, and proof."

@@ -8,6 +8,8 @@ Reusable Codex and Claude skills extracted from project work.
   polished native mobile UI.
 - [`audit-uiux-mobile`](skills/audit-uiux-mobile/SKILL.md) — audit mobile
   journeys with evidence-backed visual and accessibility QA.
+- [`audit-uiux-web`](skills/audit-uiux-web/SKILL.md) — audit responsive web
+  journeys with browser, accessibility, visual-system, motion, and proof QA.
 - [`audit-mobile-store-submission`](skills/audit-mobile-store-submission/SKILL.md)
   — audit App Store and Google Play submission readiness, rejection risks, and
   external release gates.
