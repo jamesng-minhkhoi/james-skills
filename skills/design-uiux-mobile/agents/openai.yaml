@@ -1,4 +1,4 @@
 interface:
-  display_name: "Craft UI Mobile"
+  display_name: "Design UIUX Mobile"
   short_description: "Design polished native mobile UI/UX"
   default_prompt: "Use $design-uiux-mobile to design this mobile screen or flow and prepare a clear handoff."

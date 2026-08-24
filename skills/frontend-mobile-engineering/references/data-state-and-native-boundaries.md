@@ -57,6 +57,10 @@ work, define:
 Also cover app foreground/background, process restart, interrupted permission
 requests, missing services, revoked permissions, and platform differences.
 Use config plugins and development builds when native configuration is involved.
+For push, additionally cover token registration per device/account, token
+rotation, offline retry, logout/account-switch cleanup, and notification-open
+deep links. A token fetch failure or Expo Go limitation is not proof that push
+delivery works.
 
 ## Offline and stale data
 

@@ -3,7 +3,7 @@ name: design-uiux-mobile
 description: Design polished native mobile UI/UX for iOS and Android by starting from user intent, flow, content, and states before visual polish. Use when creating mobile flows, screen compositions, navigation, sheets, forms, micro-interactions, loading/empty/error states, responsive rules, gesture contracts, motion direction, prototypes, or design handoffs. Do not implement product code, backend behavior, or release checks.
 ---
 
-# Craft UI Mobile
+# Design UIUX Mobile
 
 Design the product journey first and the pixels second. This is a UI/UX design
 skill, not an implementation or engineering skill. Produce user flows,
@@ -14,9 +14,9 @@ permissions, analytics, or native configuration. Use
 [audit-uiux-mobile](../audit-uiux-mobile/SKILL.md) for an independent audit
 after the design or implementation exists; use the repository's mobile
 engineering workflow for code.
-[the mobile craft process](references/mobile-craft-process.md) for any screen
+[the mobile UIUX process](references/mobile-craft-process.md) for any screen
 that needs more than a small local edit. Load
-[mobile craft principles](references/mobile-craft-principles.md) when making
+[mobile UIUX principles](references/mobile-craft-principles.md) when making
 hierarchy, disclosure, content, motion, or visual-language decisions. Load
 [the mobile pattern matrix](references/mobile-pattern-matrix.md) for data-heavy
 surfaces, overlays, feedback, navigation, or translating a web reference to
@@ -194,7 +194,19 @@ analytics, or native behavior works. Hand implementation to the repository's
 mobile engineering workflow.
 
 When a new mental model is consequential, present two or three concrete
-directions with trade-offs before coding and honor the selected direction.
+directions with trade-offs before handoff and honor the selected direction.
+
+### Required handoff contract
+
+Every handoff must include:
+
+- the user intent, entry/exit routes, and flow/state coverage;
+- realistic content fixtures, longest strings, nulls, and localization assumptions;
+- component states, trigger/result/recovery behavior, and accessible alternatives;
+- viewport/device, input, safe-area, keyboard, and reduced-motion checkpoints;
+- motion/gesture thresholds and cancellation rules where relevant;
+- explicit unknowns and engineering gates. Do not invent API, data, permission,
+  analytics, or native behavior to make the design appear complete.
 
 ## 10. Prove the design
 

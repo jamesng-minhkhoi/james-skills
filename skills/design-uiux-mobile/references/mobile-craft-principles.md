@@ -1,4 +1,4 @@
-# Mobile craft principles
+# Mobile UIUX principles
 
 Use this reference to make design decisions, not to impose a visual style.
 The principles are ordered by the questions that should be answered before

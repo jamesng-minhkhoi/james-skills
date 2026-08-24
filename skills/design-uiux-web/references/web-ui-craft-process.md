@@ -1,4 +1,4 @@
-# Web UI craft process
+# Web UIUX process
 
 Use for a new product route, workflow, settings area, form, editor, search
 surface, detail view, or substantial component redesign. For a tiny local fix,

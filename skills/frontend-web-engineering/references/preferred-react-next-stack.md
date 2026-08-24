@@ -32,6 +32,22 @@ When a mutation changes server truth, invalidate or reconcile the server cache,
 then update any Zustand/UI state that only represents the interaction. Do not
 let two stores silently become competing sources of truth.
 
+## Architecture selection
+
+The client-first SPA preference is strong for application-like routes, but it
+is not a blanket rule. Choose per route and record the reason:
+
+| Route constraint | Default shape | Verify |
+| --- | --- | --- |
+| Authenticated/product application shell | Client-first SPA-like route with client data ownership | cache ownership, loading/error states, bundle and interaction latency |
+| Public, shareable, SEO/initial-content route | Static or server-rendered initial content with client islands | metadata/indexing, payload, hydration, and navigation behavior |
+| Mixed route | Static/server shell plus client-owned interactive/data regions | boundary size, request waterfalls, auth, and cache behavior |
+| No clear constraint or existing stable route | Preserve the current architecture | measure before migration |
+
+Next App Router pages and layouts default to Server Components, while Next also
+officially supports strict SPAs. Treat this as a deliberate boundary choice,
+not a reason to add server actions to ordinary UI interactions.
+
 ## Next.js boundaries
 
 Choose server and client components deliberately:
@@ -98,3 +114,9 @@ Before adding one of these libraries, record:
 - accessibility and reduced-motion behavior;
 - test strategy and ownership;
 - removal or fallback path if the feature is disabled.
+
+## Official references
+
+- [Next.js single-page applications](https://nextjs.org/docs/app/guides/single-page-applications)
+- [Next.js Server and Client Components](https://nextjs.org/docs/app/getting-started/server-and-client-components)
+- [Next.js use client directive](https://nextjs.org/docs/app/api-reference/directives/use-client)

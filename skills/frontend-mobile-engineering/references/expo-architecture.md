@@ -47,6 +47,10 @@ implementation genuinely differs. Keep compatible props and a default file.
 - Prefer an Expo module/config plugin before hand-editing native projects.
 - Rebuild the development client after adding native code, a config plugin,
   permissions, URL schemes, or native app configuration.
+- Run `npx expo-doctor` after SDK, dependency, or app-config changes. For
+  managed/CNG or prebuild projects, treat generated native output as derived
+  state and verify the app config/config plugins; hand-edit native files only
+  when the repository intentionally owns that native boundary.
 - Use Expo Go only for work supported by its fixed native runtime. Use a custom
   development build for production-oriented projects or native libraries.
 - Keep app config deterministic per environment. Do not put secrets in
@@ -59,7 +63,7 @@ For Expo Router:
 - routes belong in `app`/`src/app`; route files should remain thin;
 - `_layout.tsx` owns stack/tab/modal configuration;
 - preserve route params, deep links, back behavior, and notification links;
-- use SDK-pinned Expo Router guidance; SDK 56+ projects must not import
+- use SDK-pinned Expo Router guidance; current SDK projects must not import
   external `@react-navigation/*` packages directly in application code;
 - regenerate `.expo/types/router.d.ts` or the repository's equivalent after
   route additions before typechecking when typed routes are enabled.
@@ -67,7 +71,10 @@ For Expo Router:
 ## Official references
 
 - [Expo overview and skill routing](https://docs.expo.dev/)
-- [Expo Router SDK 56 reference](https://docs.expo.dev/versions/v56.0.0/sdk/router/)
+- [Expo Router versioned reference](https://docs.expo.dev/versions/latest/sdk/router/)
 - [Expo app configuration](https://docs.expo.dev/workflow/configuration/)
 - [Development builds](https://docs.expo.dev/develop/development-builds/introduction/)
 - [EAS Build](https://docs.expo.dev/build)
+- [Expo development tools and Doctor](https://docs.expo.dev/develop/tools/)
+- [Expo runtime versions](https://docs.expo.dev/eas-update/runtime-versions/)
+- [Expo notifications](https://docs.expo.dev/versions/latest/sdk/notifications/)

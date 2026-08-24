@@ -1,4 +1,4 @@
-# Dashboard craft process
+# Dashboard UIUX process
 
 Use for a new dashboard, admin surface, analytics page, operational console,
 or dense internal tool. For a small local component fix, use only relevant

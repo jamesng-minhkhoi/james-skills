@@ -1,4 +1,4 @@
-# Landing page craft process
+# Landing page UIUX process
 
 Use this process for a new landing page, major redesign, launch page,
 campaign page, or conversion-focused homepage. For a small copy or spacing

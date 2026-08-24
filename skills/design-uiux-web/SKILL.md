@@ -3,7 +3,7 @@ name: design-uiux-web
 description: Design polished, usable responsive web UI/UX for SaaS products, settings, forms, workflows, navigation, search, detail views, and interactive components. Use when creating product-web flows, screen composition, content hierarchy, responsive rules, component/state specifications, prototypes, or design handoffs—not marketing landing pages or data-heavy dashboards. Do not implement product code or release checks.
 ---
 
-# Craft Web UI
+# Design UIUX Web
 
 Design the web product journey first and the pixels second. This is a UI/UX
 design skill, not an implementation, architecture, or release-verification
@@ -15,7 +15,7 @@ permissions, analytics, or deployment configuration.
 Use [audit-uiux-web](../audit-uiux-web/SKILL.md) for independent diagnosis
 afterward, and `frontend-web-engineering` for implementation.
 
-Load [the web UI craft process](references/web-ui-craft-process.md) for a new
+Load [the web UIUX process](references/web-ui-craft-process.md) for a new
 screen, route, workflow, or redesign. Load [web UI principles](references/web-ui-principles.md)
 when making hierarchy, disclosure, content, interaction, accessibility, or
 visual-language decisions. Load [the web pattern matrix](references/web-ui-pattern-matrix.md)
@@ -187,3 +187,11 @@ Report the design artifact, routes/states covered, content fixtures, viewport
 and input matrix, design decisions, unresolved questions, and engineering
 gates not observed. Do not call product UI complete because a static design or
 one desktop prototype looks polished.
+
+### Required handoff contract
+
+Every handoff must include routes and states covered, realistic content/data
+fixtures, responsive widths, pointer/keyboard/touch and screen-reader intent,
+focus and URL/history behavior, reduced-motion behavior, unresolved product or
+provider questions, and engineering gates not observed. Keep implementation,
+data, and release verification outside this skill.

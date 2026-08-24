@@ -1,4 +1,4 @@
-# Mobile craft process
+# Mobile UIUX process
 
 This reference turns visual polish into a repeatable product-design process.
 Use it for a new screen, redesign, or multi-state flow. For a tiny local fix,

@@ -16,6 +16,7 @@ matrix](references/web-quality-matrix.md). For AI-generated, template-heavy, or
 vibe-coded work, add the [web UI forensics](references/web-ui-forensics.md)
 pass. For any rendered or visual review, use the [web visual proof
 checklist](references/web-visual-proof.md).
+When changing this audit skill, use the [web audit regression cases](evals/ai-uiux-web-audit-regression.md).
 
 Do not edit product code unless the user explicitly asks for implementation.
 
@@ -202,6 +203,12 @@ Every finding must include route/component, state and reproduction, evidence and
 proof level, user impact, recommendation, confidence, and verification method.
 Do not claim a fix from source inspection alone.
 
+For remediation, route design findings to the relevant UIUX design skill
+(`design-uiux-web`, `design-uiux-dashboard-web`, or
+`design-uiux-landing-page-web`) and implementation findings to
+`frontend-web-engineering`. This audit names the problem and the proof needed;
+it does not replace implementation or browser verification.
+
 ## 7. Report
 
 Return:
@@ -214,7 +221,7 @@ Return:
    and gaps between static, interactive, connected, and failure-tested states.
 5. **Principle scorecard** — status and evidence for each relevant principle.
 6. **Findings table** — priority, tag/principle, route/state, evidence, proof
-   level, impact, recommendation, confidence, and verification.
+   level, impact, recommendation, owner, confidence, and verification.
 7. **Forensic summary** — only for the forensic overlay; summarize observed
    generic, functional, responsive, native-web, system, and trust failures.
 8. **Recommendation sequence** — first fixes, dependencies, scope boundaries,
@@ -226,9 +233,9 @@ Return:
 
 Use this finding shape:
 
-| Priority | Tag/principle | Route/state | Evidence + proof level | Impact | Recommendation | Confidence |
-| --- | --- | --- | --- | --- | --- | --- |
-| P0–P3 |  |  |  |  |  | High/Medium/Low |
+| Priority | Tag/principle | Route/state | Evidence + proof level | Impact | Recommendation | Owner | Confidence |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| P0–P3 |  |  |  |  |  |  | High/Medium/Low |
 
 Never call the audit complete because lint, typecheck, tests, or one desktop
 screenshot passes. A visual or motion gate not observed remains **Unknown**.

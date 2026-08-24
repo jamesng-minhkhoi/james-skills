@@ -28,6 +28,10 @@ for networking, auth, storage, environment variables, lifecycle, and offline
 behavior. Load [testing and device proof](references/testing-device-proof.md)
 for automated tests, development builds, device matrices, performance, and
 release evidence.
+When companion Expo skills are available, load the overview first and then the
+leaf skill for the boundary being changed (for example Router, data fetching,
+animation, native UI, or EAS). Pin all advice to the project's exact SDK. When
+changing this skill, use the [engineering regression cases](evals/expo-engineering-regression.md).
 
 ## 1. Frame the engineering change
 
@@ -64,6 +68,7 @@ Run read-only checks first:
 - native modules, config plugins, permissions, URL schemes, push/deep-link
   configuration, and platform-specific files;
 - unit, component, integration, E2E, build, and device harnesses.
+- `npx expo-doctor` output after SDK, dependency, or app-config changes.
 
 Detect the exact Expo SDK before version-specific advice. Use the matching Expo
 documentation version; do not apply `latest` examples to an older project.
@@ -131,8 +136,23 @@ authorization; enforce permission at the server boundary too.
   cleanup.
 - Define permission request timing, denial, restricted state, retry, and
   settings recovery. Test both first request and previously denied states.
+- For push notifications, model per-device/account registration, token
+  rotation, offline retry, logout/account-switch deregistration, and first-run,
+  denied, background, and opened-from-notification states.
 - Keep platform differences explicit with `Platform.select` or platform files;
   shared behavior must not be weakened to hide an iOS/Android mismatch.
+
+### OTA and build compatibility
+
+- If `expo-updates` or EAS Update is present, inspect `runtimeVersion`, update
+  URL, channel/branch, build profile, rollout, rollback, and code-signing
+  configuration.
+- Native code, native dependencies, config plugins, permissions, or SDK changes
+  require a new compatible build before an update can be trusted. A JavaScript
+  update must be tested against the exact runtime it targets.
+- Verify a preview-channel update and rollback path before calling production
+  delivery safe. Record the build ID, runtime, channel, update ID, and observed
+  behavior as separate evidence.
 
 ### Implementation quality
 
@@ -156,6 +176,7 @@ Run the narrowest relevant checks, then expand according to risk:
   auth/session changes, and mutation reconciliation;
 - typecheck, router-type generation when applicable, and production bundle or
   export checks required by the repository;
+- `npx expo-doctor` and dependency/config validation after relevant changes;
 - development-build or native-target tests for permissions, camera/location,
   notifications, deep links, secure storage, gestures, background/resume,
   keyboard, and platform-specific behavior;
@@ -212,7 +233,9 @@ Report:
 4. exact simulator/device, OS, build profile, fixture, permissions, network,
    and journeys actually observed;
 5. EAS/dev-build/binary/provider/store gates not observed;
-6. known limitations, rollback path, and recommended follow-up.
+6. runtime version, channel/update, rollout or rollback evidence when OTA is
+   present;
+7. known limitations, rollback path, and recommended follow-up.
 
 Keep App Store and Google Play metadata, rejection analysis, and submission
 decisions in `audit-mobile-store-submission`; this skill may produce a binary

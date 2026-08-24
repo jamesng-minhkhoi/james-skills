@@ -3,7 +3,7 @@ name: design-uiux-dashboard-web
 description: Design clear, data-driven responsive dashboard UI/UX for SaaS, admin, analytics, operations, finance, and internal tools. Use when creating dashboard information architecture, scan order, tables, charts, filters, search, bulk-action flows, drill-downs, alerts, settings, dense states, responsive rules, prototypes, or design handoffs. Do not implement product code, data plumbing, or release checks.
 ---
 
-# Craft Dashboard Web
+# Design UIUX Dashboard Web
 
 Design a dashboard as an instrument for scanning, comparing, deciding, and
 acting. Let the data, user decisions, and workflow drive the shape of the UI;
@@ -13,7 +13,7 @@ runtime verification.
 Use [audit-uiux-web](../audit-uiux-web/SKILL.md) for independent diagnosis and
 `frontend-web-engineering` for implementation.
 
-Load [the dashboard craft process](references/dashboard-craft-process.md) for
+Load [the dashboard UIUX process](references/dashboard-craft-process.md) for
 a new dashboard or major redesign. Load [data and information
 architecture](references/dashboard-data-and-information-architecture.md) when
 choosing tables, lists, timelines, charts, cards, navigation, filters, or
@@ -207,3 +207,12 @@ Report the design artifact, routes/roles/query states covered, data fixtures,
 viewport/input matrix, screenshots/recordings, design decisions, data/provider
 questions, engineering gates, and unknowns. Do not call a dashboard complete
 because the default cards look polished.
+
+### Required handoff contract
+
+Every handoff must include the decision and scan order, roles/permissions,
+realistic data fixtures and freshness assumptions, query/filter/pagination and
+mutation states, responsive widths, keyboard/screen-reader intent, chart
+semantics, reduced-motion behavior, unresolved data/provider questions, and
+engineering gates not observed. Keep implementation and data plumbing outside
+this skill.

@@ -21,6 +21,7 @@ Judge the observed product, not the tool that produced it.
 For any surface with transitions, swipes, drags, card browsing, sheets, or
 meaningful animated state changes, also use [the mobile motion and gesture
 audit](references/mobile-motion-gesture-audit.md).
+When changing this audit skill, use the [mobile audit regression cases](evals/ai-uiux-mobile-audit-regression.md).
 
 ## 0. Select an audit mode
 
@@ -201,6 +202,11 @@ method. Use tags such as **FLOW**, **CONTENT**, **STRUCTURE**,
 **ACCESS**, **MOTION**, or **TRUST**. Do not claim a fix from source
 inspection alone.
 
+For remediation, route design findings to `design-uiux-mobile` and Expo
+implementation findings to `frontend-mobile-engineering`. This audit names the
+problem and the proof needed; it does not replace implementation or device
+verification.
+
 ## 6. Report
 
 Return:
@@ -212,7 +218,7 @@ Return:
    and gaps between rendered, interactive, connected, and failure-tested states.
 5. **Principle scorecard** — status and evidence for each relevant principle.
 6. **Findings table** — priority, tag/principle, route/state, evidence, proof
-   level, impact, recommendation, confidence, and verification method.
+   level, impact, recommendation, owner, confidence, and verification method.
 7. **AI-slop risk summary** — include only for Forensic audits; summarize
    observed product-generic, functional, native, system, and trust failures.
 8. **Recommendation sequence** — scope boundaries and principle trade-offs.
@@ -222,9 +228,9 @@ Return:
 
 Use this finding shape:
 
-| Priority | Tag/principle | Route/state | Evidence + proof level | Impact | Recommendation | Confidence |
-| --- | --- | --- | --- | --- | --- | --- |
-| P0–P3 |  |  |  |  |  | High/Medium/Low |
+| Priority | Tag/principle | Route/state | Evidence + proof level | Impact | Recommendation | Owner | Confidence |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| P0–P3 |  |  |  |  |  |  | High/Medium/Low |
 
 If rendering is unavailable, say visual QA is not observed and keep confidence
 lower rather than treating tests or source code as visual proof.

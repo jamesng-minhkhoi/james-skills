@@ -22,6 +22,7 @@ when starting a new React web feature or choosing between client libraries.
 Load [perceived performance](references/perceived-performance.md) when the
 request involves speed, instant-feeling navigation, prefetching, caching,
 service workers, resource priorities, or a “make it feel faster” critique.
+When changing this skill, use the [frontend engineering regression cases](evals/frontend-web-engineering-regression.md).
 
 ## Non-negotiable order
 
@@ -34,7 +35,7 @@ replacing an existing primitive before understanding the repository's patterns.
 ## Preferred React/Next stack
 
 For new React web work, prefer Next.js with a client-first, SPA-style App Router
-experience, shadcn/ui for accessible composable primitives, Framer Motion for
+experience for app-like routes, shadcn/ui for accessible composable primitives, Framer Motion for
 light purposeful animation, TanStack libraries when client-side server-state
 behavior needs them, and Zustand for React client state. Use GSAP only as a
 secondary choice for heavy, timeline-based or scroll-triggered choreography

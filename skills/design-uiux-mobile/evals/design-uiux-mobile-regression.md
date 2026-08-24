@@ -1,4 +1,4 @@
-# Craft UI Mobile regression evaluation
+# Design UIUX Mobile regression evaluation
 
 Use this benchmark when changing the skill. Compare the previous skill and the
 candidate skill with the same prompt, product context, repository evidence,

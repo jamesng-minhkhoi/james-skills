@@ -1,7 +1,8 @@
 # Message and conversion architecture
 
-Use this reference before writing or restructuring a landing page's copy,
-sections, CTAs, proof, forms, pricing, or objection handling.
+Use this reference to map supplied landing-page content and conversion
+constraints into a UIUX hierarchy before composition. It does not authorize
+inventing copy, claims, proof, campaign strategy, or analytics behavior.
 
 ## Visitor-to-message fit
 

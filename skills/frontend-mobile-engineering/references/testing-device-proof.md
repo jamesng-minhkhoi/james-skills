@@ -31,11 +31,21 @@ For a core feature, record:
 - cold launch, warm launch, background/resume, process restart, deep link,
   back navigation, permission first-run and denial, offline/retry, and account
   switch when relevant;
+- push token registration/rotation, logout cleanup, notification-open links,
+  and update-check behavior when those capabilities are present;
 - loading, success, empty, validation error, server error, timeout, stale,
   cancellation, and recovery states.
 
 If a device, provider, push service, database, or auth environment was not
 available, mark the gate Unknown and say what remains unobserved.
+
+## OTA/update proof
+
+When EAS Update or `expo-updates` is present, record the exact build/runtime,
+channel or branch, update ID, rollout audience, and whether the update was
+accepted, rejected as incompatible, or rolled back. Test a JS-only update on
+the matching runtime and separately prove that a native/config change received
+a new build. Do not treat a dashboard publish event as device proof.
 
 ## Development build versus Expo Go
 
