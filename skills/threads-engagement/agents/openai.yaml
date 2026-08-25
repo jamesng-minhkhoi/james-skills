@@ -1,0 +1,4 @@
+interface:
+  display_name: "Threads Engagement"
+  short_description: "Research and improve Threads engagement"
+  default_prompt: "Use $threads-engagement to research relevant Threads conversations, draft or publish contextual engagement when authorized, measure outcomes, and update the learning ledger from repeated evidence."
