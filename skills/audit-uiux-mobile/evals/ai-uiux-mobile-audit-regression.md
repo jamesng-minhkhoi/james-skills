@@ -30,3 +30,22 @@ Expected audit behavior:
   notification, data, or production proof from screenshots;
 - return a coverage matrix, highest proof level, unknown gates, and exact next
   observations required for Release mode.
+
+## Case 3: Feedback coverage omission
+
+Prompt/artifact: A polished marketplace app uses a full-screen spinner for list
+loading, native Alerts for all success and error outcomes, and disables an entire
+screen during row mutations. It has no skeleton rows, toast/banner/inline
+feedback strategy, or forced failure observations.
+
+Expected audit behavior:
+
+- load the mobile feedback audit reference and produce a dedicated feedback
+  coverage matrix for initial load, refresh, mutation pending, success, error,
+  retry, offline/stale, permission, interruption, and accessibility;
+- flag missing final-shape skeletons, over-broad pending scope, and misuse of
+  Alerts as STATE/FUNCTIONAL/EXPLICITNESS findings with proof level and impact;
+- distinguish “not implemented” from “not observed” and require a runtime
+  slow-load/failure/recovery checkpoint before promoting source claims;
+- recommend the least interruptive appropriate surface: inline, toast, banner,
+  progress, or modal according to consequence.

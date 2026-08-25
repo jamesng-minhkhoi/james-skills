@@ -1,4 +1,4 @@
 interface:
   display_name: "Audit UI/UX Mobile"
   short_description: "Audit mobile UI, UX, and AI-slop risks"
-  default_prompt: "Use $audit-uiux-mobile to audit this mobile journey, run the forensic overlay when AI-generated, and report evidence-backed prioritized findings."
+  default_prompt: "Use $audit-uiux-mobile to audit this mobile journey, run the forensic overlay when AI-generated, include the mandatory feedback-state matrix, and report evidence-backed prioritized findings."

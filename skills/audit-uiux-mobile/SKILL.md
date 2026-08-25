@@ -21,6 +21,7 @@ Judge the observed product, not the tool that produced it.
 For any surface with transitions, swipes, drags, card browsing, sheets, or
 meaningful animated state changes, also use [the mobile motion and gesture
 audit](references/mobile-motion-gesture-audit.md).
+For every Deep, Release, or Forensic audit, also use [the mobile feedback audit](references/mobile-feedback-audit.md).
 When changing this audit skill, use the [mobile audit regression cases](evals/ai-uiux-mobile-audit-regression.md).
 
 ## 0. Select an audit mode
@@ -100,6 +101,33 @@ Check the applicable states:
 For **Deep**, **Release**, and **Forensic** work, record coverage for every
 in-scope route/state rather than reviewing only the default loaded screenshot.
 
+### Mandatory feedback-state gate
+
+For every primary journey and every important mutation, complete the feedback
+audit before scoring visual polish. Do not accept “there is a spinner” or “the
+test passes” as feedback coverage. Record the surface, trigger, user-visible
+state, proof level, next action, and accessibility announcement for:
+
+`idle → pressed/focused → pending → success | recoverable error → retry/undo/next`
+
+Also check initial loading, background refresh, empty/no-results, offline/stale,
+permission-denied, authentication expiry, cancellation, duplicate submission,
+background/resume, and interruption when applicable. Choose the feedback
+surface by consequence:
+
+- skeleton or final-shape placeholder for an initial list when no usable content
+  exists; keep the shell and existing content during refresh;
+- local field validation for input correction;
+- row/button-level pending treatment for a local mutation;
+- toast or inline status for brief, non-blocking confirmation;
+- durable banner or row for persistent network/system state, with recovery;
+- progress surface for uploads or long operations;
+- modal/Alert only for a blocking or destructive decision.
+
+Read `references/mobile-feedback-audit.md` for the required matrix, static
+inventory search, and runtime checkpoints. If a feedback state was not observed,
+mark it **Unknown** rather than inferring it from source or a happy-path test.
+
 ## 3. Inspect mobile quality
 
 Review findings under these headings:
@@ -124,6 +152,8 @@ Review findings under these headings:
   continuity, optimistic rollback, and interruption recovery.
 - **Feedback surfaces:** whether inline feedback, toast, banner, sheet, modal,
   route, or progress surface matches the consequence and preserves context.
+  Complete the mandatory feedback-state gate; explicitly flag missing skeletons,
+  toasts/banners, local pending states, retry/undo paths, and announcements.
 - **Accessibility:** role, label, state, uniqueness, Dynamic Type/large text,
   reduced motion, and decorative content hidden from assistive technology.
 - **Localization:** translated copy, long strings, diacritics, right-to-left
@@ -214,6 +244,8 @@ Return:
 1. **Context brief** — user, goal, risk, platforms, scope, and mode.
 2. **Executive summary** — top risks and the most important journey outcome.
 3. **Coverage matrix** — routes, states, devices, evidence, and unknowns.
+   Include a dedicated feedback coverage matrix for loading, refresh, pending,
+   success, error, offline/stale, permission, interruption, and recovery.
 4. **Reality check** — highest proof level, control reachability, data source,
    and gaps between rendered, interactive, connected, and failure-tested states.
 5. **Principle scorecard** — status and evidence for each relevant principle.
