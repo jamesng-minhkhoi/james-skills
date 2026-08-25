@@ -1,6 +1,6 @@
 ---
 name: threads-engagement
-description: Research, draft, publish, measure, and improve authentic Threads posts and replies for any project or account. Use for topic discovery, ranked-feed analysis, community engagement, product promotion, launch conversations, listening experiments, performance reviews, and converting repeated feedback into evidence-backed content patterns.
+description: Research, draft, publish, measure, and improve authentic Threads posts and replies for any project or account. Use for topic discovery, ranked-feed analysis, natural project-native or indie-builder voice, community engagement, product promotion, launch conversations, listening experiments, performance reviews, and converting repeated feedback into evidence-backed content patterns.
 ---
 
 # Threads Engagement
@@ -36,6 +36,12 @@ primary metric, two guardrails, available proof, CTA destination, and safety or
 brand constraints. Keep the skill project-agnostic: load project-specific
 claims, voice, privacy, legal, health, or platform guidance only when the
 workspace provides it.
+
+Record whether the account is a founder, builder, product, community, or
+personal account. If a voice reference exists, load it before writing. For
+indie-builder work, use the mechanics in
+[voice-adapters.md](references/voice-adapters.md); do not copy a creator's
+phrases, persona, biography, or distinctive verbal tics.
 
 If the request is live, verify the authenticated account before drafting. Do
 not use credentials, cookies, tokens, hidden browser state, or an account that
@@ -79,7 +85,23 @@ Avoid replying to several posts with the same hook, CTA, or product claim.
 Match the emotional temperature and language of the parent post. Do not use
 unrelated viral content as an ad slot.
 
-### 4. Draft for the parent conversation
+### 4. Choose a natural voice mode
+
+Choose one dominant mode before drafting:
+
+- **Quick observation:** spoken reaction or half-formed noticing → one precise
+  consequence → optional artifact or question.
+- **Build-in-public:** what shipped or changed → what surprised, broke, or was
+  harder than expected → what is being tested next.
+- **Builder education:** familiar tension → concrete artifact or example → one
+  crisp point of view → low-friction invitation.
+- **Project-native:** the account's actual vocabulary and audience language,
+  with no creator adapter when imitation would be artificial.
+
+Default Threads to the quick-observation mode. Use build-in-public when there
+is real work to show. Do not turn every post into a lesson, launch, or CTA.
+
+### 5. Draft for the parent conversation
 
 Use one of these shapes:
 
@@ -98,6 +120,17 @@ relevant, optional, and clear about the payoff. Avoid hard-sell repetition,
 link-only replies, copied creator language, fake certainty, and manufactured
 urgency.
 
+Write from a real moment, decision, artifact, mistake, or observed detail.
+Allow contractions, fragments, a small aside, or an unfinished thought when
+they fit the account. Prefer one specific noun, behavior, time, number, or
+tradeoff over a polished emotional summary. Let the image carry some context.
+
+Do not use a generic content-brief bridge such as “sharing a small peek,” “I
+like the quiet parts,” or “the kind of detail that makes everything easier.”
+Do not force a hook → three-paragraph explanation → brand CTA cadence. If the
+copy would not sound plausible as a short voice note from this account, rewrite
+it before preflight.
+
 ### 5. Run the preflight
 
 Return `ready`, `needs evidence`, `needs rewrite`, or `do not post`.
@@ -110,6 +143,15 @@ Check that:
 - every number, capability, testimonial, result, and link is verified;
 - the product mention and CTA are contextual and optional;
 - the copy is original, human, and appropriate to the account;
+- the first line sounds spoken rather than like a campaign headline;
+- the draft contains at least one concrete, account-specific observation or
+  artifact and does not rely on abstract warmth;
+- the draft passes the anti-AI-text check: no generic content-brief bridge,
+  slogan-like conclusion, unnecessary three-part list, repetitive em-dash
+  rhythm, “not X but Y” template, empty rhetorical question, or polished CTA
+  that could fit any project;
+- the selected voice mode is visible in the draft and is not an imitation of a
+  named creator;
 - health, safety, legal, financial, privacy, or other sensitive claims are
   bounded by the project's evidence and safety rules;
 - the batch has no duplicate replies, engagement exchange, follow churn,
@@ -130,8 +172,9 @@ guidance and fresh DOM/state inspection before and after each action.
 ### 7. Record outcomes and improve
 
 Before acting, record the ranking hypothesis and experiment cell. Afterward,
-record the exact content, target, CTA placement, and outcome in a project-local
-JSONL ledger. Use `references/learning-ledger.md` for the schema and run:
+record the exact content, target, voice mode, CTA placement, human feedback, and
+outcome in a project-local JSONL ledger. Use
+`references/learning-ledger.md` for the schema and run:
 
 ```bash
 python3 scripts/threads_learning.py validate --ledger <ledger.jsonl>

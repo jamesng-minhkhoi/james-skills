@@ -31,6 +31,8 @@ Required fields:
   "ranking_confidence": "low",
   "target_fit": "high",
   "decision": "reply",
+  "account_type": "founder-or-builder",
+  "voice_adapter": "spoken-builder-observation",
   "content_shape": "useful-extension",
   "pattern_key": "specific-question-plus-concrete-detail",
   "cta": "profile-soft",
@@ -44,7 +46,8 @@ Required fields:
 `record_type` may also be `snapshot` or `feedback`. Snapshots should retain
 the same `id` and add `hours_after_publish`, `attention`, `conversation`, and
 `conversion` objects. Feedback should add `source`, `text`, `sentiment`, and
-`actionable_learning`.
+`actionable_learning`. For voice feedback, use a stable label such as
+`ai-sounding`, `too-polished`, `too-salesy`, `natural`, or `specific-detail`.
 
 For every action, add an `outcome` object when results are available:
 
