@@ -1,0 +1,4 @@
+interface:
+  display_name: "Petio SEO/AEO"
+  short_description: "Audit and improve Petio search content"
+  default_prompt: "Use $seo-aeo-content to audit Petio SEO/AEO, analyze performance, and improve English content."
