@@ -1,0 +1,4 @@
+interface:
+  display_name: "Petio Marketing"
+  short_description: "Plan and learn Petio marketing content"
+  default_prompt: "Use $petio-marketing to research Petio content, learn from Buffer insights, and draft or schedule the next safe experiment."

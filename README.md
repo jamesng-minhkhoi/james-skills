@@ -23,6 +23,9 @@ Reusable Codex and Claude skills extracted from project work.
 - [`audit-mobile-store-submission`](skills/audit-mobile-store-submission/SKILL.md)
   — audit App Store and Google Play submission readiness, rejection risks, and
   external release gates.
+- [`petio-marketing`](skills/petio-marketing/SKILL.md) — plan, schedule, and
+  iteratively improve Petio marketing content using Buffer evidence and
+  platform-specific adapters.
 
 Each skill is self-contained and can be copied or linked into a Codex or Claude
 skills directory. Keep project-specific branding, routes, and business rules
