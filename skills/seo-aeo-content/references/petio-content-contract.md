@@ -43,6 +43,10 @@ gtag("event", "app_store_click", {
 
 Use `page_path`, `placement`, `article_slug`, and `locale` as dimensions. Measure article sessions and engagement separately from app-store clicks. A page with no Search Console data is not a failed page; label it `unknown` until it has had a reasonable crawl and measurement window.
 
+For MDX articles, track raw App Store links in the shared article-link renderer as well as explicit CTA components. Otherwise the highest-intent paragraph in an article can send a reader to the store without producing an `app_store_click` event.
+
+For small traffic samples, use a practical threshold of fewer than 10 sessions or 5 active users as `unknown`. Prioritize pages with a meaningful combination of reach and engagement, and fix any observed 404 page view before rewriting content.
+
 ## Health and safety boundary
 
 Petio supports preparation, tracking, label review, and better questions for a veterinarian. It does not diagnose, prescribe, rule out emergencies, guarantee food safety for an individual pet, or replace veterinary care. For toxic ingestion, repeated vomiting, breathing trouble, collapse, suspected obstruction, or another urgent concern, direct the reader to immediate veterinary or poison-control help.
