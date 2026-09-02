@@ -483,17 +483,17 @@ CTA location, and the experiment variable held constant across the batch.
 For a creator or UGC outreach request, also return:
 
 - the evidence window and creator-source URLs used for selection;
-- candidate counts by `eligible-iphone`, `android-blocked`, `paid-only`,
-  `unknown-fit`, and `do-not-contact`;
-- the personalization evidence and verified greeting for each selected
-  creator;
-- offer terms and links, with every unconfirmed term clearly marked;
+- candidate counts by status and outreach cohort, including owner-affiliate,
+  professional-trial, paid-parked, Android-waitlist, and unknown-fit;
+- each selected creator's personalization evidence and verified greeting;
+- offer terms and links, every unconfirmed term clearly marked, and brief
+  readiness as `brief-ready` or `blocked`;
 - the reply classification, next action, follow-up date, and stop reason;
-- deduplication evidence, including previously contacted and duplicate-excluded
-  counts;
-- delivery, reply, brief-request, install, activation, referral, and revenue
-  metrics, with attention and engagement kept separate from conversion.
+- deduplication evidence and contacted or duplicate-excluded counts;
+- a 10 to 15 creator experiment cell, its single changed variable, observation
+  maturity, and the next-send gate;
+- delivery, reply, brief, install, activation, referral, and revenue metrics,
+  with attention kept separate from conversion.
 
-Never report an email as sent because it was drafted or because a composer
-opened. Sending requires explicit current-task authorization, actual send
-confirmation, and a Sent-folder reconciliation.
+Never report an email as sent from a draft or open composer. Sending requires
+current-task authorization, actual confirmation, and Sent-folder reconciliation.
