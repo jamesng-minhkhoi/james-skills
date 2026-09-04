@@ -125,11 +125,112 @@ Allow contractions, fragments, a small aside, or an unfinished thought when
 they fit the account. Prefer one specific noun, behavior, time, number, or
 tradeoff over a polished emotional summary. Let the image carry some context.
 
+For Petio work, also load [Natural Petio Copy](../petio-marketing/references/natural-copy.md)
+and apply its source-backed scene, participation, AI-smell, and remove-the-brand
+gates. Use it as a rewrite aid, never as a phrase bank. For Buffer scheduling,
+also follow Petio's [Visual and CTA contract](../petio-marketing/SKILL.md#visual-and-cta-contract);
+the CTA is optional only when the brief explicitly marks the post
+`conversation-only`.
+
 Do not use a generic content-brief bridge such as “sharing a small peek,” “I
 like the quiet parts,” or “the kind of detail that makes everything easier.”
 Do not force a hook → three-paragraph explanation → brand CTA cadence. If the
 copy would not sound plausible as a short voice note from this account, rewrite
 it before preflight.
+
+### 4c. Buffer native Topic targeting
+
+When Buffer's Threads composer exposes a `Topic` field, treat it as a required
+distribution field for discovery-oriented posts. A `Thread` is the post format;
+it is not the same thing as a native Topic.
+
+- Choose one relevant Topic from Buffer's visible autocomplete or topic control.
+  Prefer the target audience's real interest (for example, pet care or
+  multi-pet households) over a broad or unrelated trending suggestion.
+- Record the exact Topic, source (`manual`, `suggested`, or `trending`), audience
+  node, and fit rationale beside the draft. Never use a celebrity or unrelated
+  trend as a reach shortcut.
+- If the composer has no Topic control, record `native_topic: unavailable` and
+  use a specific audience problem, reply surface, or conversation target as the
+  fallback. Do not claim native Topic targeting happened.
+- After saving an edit or schedule, reopen the item and verify the exact Topic,
+  caption, media, channel, and scheduled time. A blank Topic is a targeting
+  failure that must be reported or corrected before calling the post ready.
+
+### 4b. Use a copywriter's humanization loop
+
+Start with raw material, not a content prompt. Before drafting, name:
+
+- the one reader or parent-post participant being addressed;
+- the real scene, decision, mistake, behavior, or artifact;
+- the friction, surprise, tradeoff, or unresolved question;
+- the one point of view the account can honestly add;
+- what the reader gets before any brand mention or CTA.
+
+Draft two or three versions from that same material. Use these editing passes:
+
+1. **Scene:** replace an abstract claim with an actor, active verb, and concrete
+   object or action.
+2. **Tension:** keep one real complication or point of uncertainty. Do not
+   smooth every edge into positive marketing language.
+3. **Point:** make one clear observation or belief do the work. Cut the second
+   lesson, the throat-clearing, and the summary that merely repeats the point.
+4. **Rhythm:** put the meaning early, keep one idea per paragraph, vary sentence
+   length, and allow a fragment when it sounds natural aloud.
+5. **Generosity:** make the reply useful even if the reader never visits the
+   profile. A CTA is an optional next step, not the reason the post exists.
+
+Run the portability test: if the draft could move to another account without
+changing a noun, action, or opinion, it is too generic. Run the remove-brand
+test: temporarily delete the brand and CTA. If the remaining observation is
+not worth reading, return to the scene. When two drafts are equally accurate,
+prefer the clearer, slightly less polished one with more lived detail.
+
+Research basis: [Nielsen Norman Group](https://www.nngroup.com/articles/concise-scannable-and-objective-how-to-write-for-the-web/)
+supports concise, scannable, objective writing over promotional "marketese";
+[Buffer](https://buffer.com/resources/social-media-style-guide/) favors
+relatable, genuine voice, empathy, and everyday words; [GOV.UK](https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/tone-of-voice/right-tone/)
+favors specific, conversational, active, human writing; [Google's people-first
+guidance](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
+emphasizes first-hand experience and useful purpose. These are writing
+principles, not claims about a Threads ranking formula.
+
+### 4a. AI-tone banned lexicon and punctuation gate
+
+This is a reusable rewrite gate, not a guarantee about any AI detector. Apply
+it to the draft's own words only. Leave quoted parent text, proper nouns, brand
+names, technical terms, identifiers, URLs, and user-requested exact copy
+unchanged.
+
+Use these mechanical rules:
+
+- AI-TONE-01: rewrite generic AI/marketing vocabulary: delve, leverage,
+  utilize, facilitate, seamless, robust, unlock, empower, elevate, game-changer,
+  revolutionary, innovative, transformative, ecosystem, landscape, journey,
+  navigate, foster, tapestry, paradigm, synergy, holistic, actionable,
+  scalable, streamline, frictionless, cutting-edge, at the end of the day,
+  in today's world, it's worth noting, here's the thing, excited to share,
+  a testament to, small but mighty, sharing a small peek, the quiet parts,
+  the little details, or makes everything easier. Use a plain verb or a
+  specific detail instead.
+- AI-TONE-02: ban em dashes (—) and en dashes (–) as sentence punctuation.
+  Use a period, comma, colon, or parentheses. ASCII hyphens (-) are allowed
+  only in legitimate compounds, identifiers, versions, URLs, or code, never
+  as sentence separators.
+- AI-TONE-03: rewrite generic bridges, slogan endings, "not X but Y"
+  templates, empty rhetorical questions, and polished CTAs that could fit any
+  project.
+- AI-TONE-04: rewrite unnecessary three-part lists, mirrored clauses, and
+  repeated parallel phrasing when they exist mainly for rhythm.
+- AI-TONE-05: read the copy aloud once. If it sounds like a landing-page
+  caption, rewrite from the concrete moment, decision, behavior, or artifact.
+- AI-TONE-06: require one concrete anchor: a specific noun, action, time,
+  number, tradeoff, or observed detail. Abstract warmth alone fails.
+
+Mark AI-TONE: PASS only when all hard checks pass, the copy contains a
+concrete anchor, and the voice-note test passes. Otherwise mark
+AI-TONE: FAIL, identify the rule ID and exact offending phrase, and rewrite
+before posting.
 
 ### 5. Run the preflight
 
@@ -144,6 +245,9 @@ Check that:
 - the product mention and CTA are contextual and optional;
 - the copy is original, human, and appropriate to the account;
 - the first line sounds spoken rather than like a campaign headline;
+- the draft contains a real scene, one tension, one point of view, and a clear
+  reader payoff before any CTA;
+- the draft passes the portability test and remove-brand test;
 - the draft contains at least one concrete, account-specific observation or
   artifact and does not rely on abstract warmth;
 - the draft passes the anti-AI-text check: no generic content-brief bridge,

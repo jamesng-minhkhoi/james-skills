@@ -99,6 +99,33 @@ Reject or rewrite copy that has several of these symptoms:
 - a product name or link that arrives before the reader has received value;
 - polished wording that could be pasted onto any project's account.
 
+### Mechanical banned-word and punctuation gate
+
+Apply these checks to the draft's own words, not quoted parent text, proper
+nouns, brand names, technical terms, identifiers, URLs, or user-requested
+exact copy:
+
+- AI-TONE-01: rewrite delve, leverage, utilize, facilitate, seamless, robust,
+  unlock, empower, elevate, game-changer, revolutionary, innovative,
+  transformative, ecosystem, landscape, journey, navigate, foster, tapestry,
+  paradigm, synergy, holistic, actionable, scalable, streamline, frictionless,
+  cutting-edge, at the end of the day, in today's world, it's worth noting,
+  here's the thing, excited to share, a testament to, small but mighty,
+  sharing a small peek, the quiet parts, the little details, and makes
+  everything easier;
+- AI-TONE-02: do not use em dashes (—) or en dashes (–) as sentence
+  punctuation. ASCII hyphens (-) are for legitimate compounds, identifiers,
+  versions, URLs, or code only, never sentence separators;
+- AI-TONE-03: rewrite generic bridges, "not X but Y" templates, slogan
+  endings, empty questions, and polished CTAs that could fit any project;
+- AI-TONE-04: rewrite unnecessary three-part lists, mirrored clauses, or
+  repeated parallel phrasing used mainly to sound polished.
+
+Return AI-TONE: PASS only after the concrete-detail and voice-note checks also
+pass. On failure, return AI-TONE: FAIL, the rule ID, and the exact phrase to
+rewrite. This reduces templated signals; it cannot guarantee how a platform or
+detector will classify text.
+
 Run the voice-note test: read the draft aloud once. If it sounds like a
 landing-page caption, rewrite from the concrete event. Remove the product name
 and CTA temporarily; if the remaining observation is not interesting on its

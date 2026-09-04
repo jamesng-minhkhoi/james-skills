@@ -114,10 +114,91 @@ specific, and easy to respond to. Match the emotional temperature of the
 parent post. For replies, put the useful answer before any account mention or
 link.
 
+For Petio work, also load [Natural Petio Copy](../petio-marketing/references/natural-copy.md)
+and apply its source-backed scene, participation, AI-smell, and remove-the-brand
+gates. Use it as a rewrite aid, never as a phrase bank.
+
 Use a CTA only when it is the natural next step. Prefer a contextual
 self-reply or an answer to a direct request over attaching the same link to
 every post. If a link is included, say why the reader should open it and verify
 the destination.
+
+### 4b. Use a copywriter's humanization loop
+
+Start with raw material, not a content prompt. Before drafting, name:
+
+- the one reader or parent-post participant being addressed;
+- the real scene, decision, mistake, behavior, or artifact;
+- the friction, surprise, tradeoff, or unresolved question;
+- the one point of view the account can honestly add;
+- what the reader gets before any brand mention or CTA.
+
+Draft two or three versions from that same material. Use these editing passes:
+
+1. **Scene:** replace an abstract claim with an actor, active verb, and concrete
+   object or action.
+2. **Tension:** keep one real complication or point of uncertainty. Do not
+   smooth every edge into positive marketing language.
+3. **Point:** make one clear observation or belief do the work. Cut the second
+   lesson, the throat-clearing, and the summary that merely repeats the point.
+4. **Rhythm:** put the meaning early, keep one idea per paragraph, vary sentence
+   length, and allow a fragment when it sounds natural aloud.
+5. **Generosity:** make the reply useful even if the reader never visits the
+   profile. A CTA is an optional next step, not the reason the post exists.
+
+Run the portability test: if the draft could move to another account without
+changing a noun, action, or opinion, it is too generic. Run the remove-brand
+test: temporarily delete the brand and CTA. If the remaining observation is
+not worth reading, return to the scene. When two drafts are equally accurate,
+prefer the clearer, slightly less polished one with more lived detail.
+
+Research basis: [Nielsen Norman Group](https://www.nngroup.com/articles/concise-scannable-and-objective-how-to-write-for-the-web/)
+supports concise, scannable, objective writing over promotional "marketese";
+[Buffer](https://buffer.com/resources/social-media-style-guide/) favors
+relatable, genuine voice, empathy, and everyday words; [GOV.UK](https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/tone-of-voice/right-tone/)
+favors specific, conversational, active, human writing; [Google's people-first
+guidance](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
+emphasizes first-hand experience and useful purpose. These are writing
+principles, not claims about an X ranking formula.
+
+### 4a. AI-tone banned lexicon and punctuation gate
+
+Treat this as a rewrite gate for generated copy, not a promise to bypass AI
+detectors. Apply it to the draft's own words only. Do not rewrite quoted
+source text, proper nouns, brand names, technical terms, identifiers, URLs, or
+user-requested exact copy.
+
+Use these mechanical rules:
+
+- AI-TONE-01: rewrite if the draft uses generic AI/marketing vocabulary:
+  delve, leverage, utilize, facilitate, seamless, robust, unlock, empower,
+  elevate, game-changer, revolutionary, innovative, transformative, ecosystem,
+  landscape, journey, navigate, foster, tapestry, paradigm, synergy, holistic,
+  actionable, scalable, streamline, frictionless, cutting-edge, at the end of
+  the day, in today's world, it's worth noting, here's the thing, excited to
+  share, a testament to, small but mighty, sharing a small peek, the quiet
+  parts, the little details, or makes everything easier. Replace the phrase
+  with a plain verb or a specific observation.
+- AI-TONE-02: do not use em dashes (—) or en dashes (–) as sentence
+  punctuation. Use a period, comma, colon, or parentheses. An ASCII hyphen
+  (-) is allowed only inside a legitimate compound, identifier, version, URL,
+  or code. Never use hyphens as a sentence separator.
+- AI-TONE-03: rewrite generic bridges, slogan endings, "not X but Y"
+  templates, empty rhetorical questions, and polished CTAs that could fit any
+  account.
+- AI-TONE-04: rewrite unnecessary three-part lists, mirrored clauses, and
+  repeated parallel phrasing when they are being used for rhythm instead of
+  meaning.
+- AI-TONE-05: read the draft aloud once. If it sounds like a landing-page
+  caption, rewrite from the concrete event, decision, behavior, or artifact.
+- AI-TONE-06: require at least one concrete anchor, such as a specific noun,
+  action, time, number, tradeoff, or observed detail. Abstract warmth alone is
+  not enough.
+
+Mark AI-TONE: PASS only when there are no hard-trigger violations, the
+concrete-anchor check passes, and the voice-note test passes. Otherwise mark
+AI-TONE: FAIL, name the rule ID, quote the offending draft phrase, and rewrite
+before publishing.
 
 ### 5. Run the preflight
 
@@ -131,9 +212,14 @@ Check:
 - Does the reply make sense if the reader never visits the profile?
 - Is the CTA relevant, optional, and non-manipulative?
 - Is the wording original rather than a creator imitation?
+- Does the draft contain a real scene, one tension, one point of view, and a
+  clear reader payoff before any CTA?
+- Does it pass the portability test and remove-brand test?
 - Does it avoid health, legal, financial, privacy, or safety overclaiming?
 - Does it avoid bulk, duplication, irrelevant hashtags, engagement exchange,
   follow churn, and link-only behavior?
+- Does it return AI-TONE: PASS with no banned lexicon, dash-punctuation, or
+  generic-template violations?
 
 Return `ready`, `needs evidence`, `needs rewrite`, or `do not post`, with the
 reason and the exact missing evidence.
