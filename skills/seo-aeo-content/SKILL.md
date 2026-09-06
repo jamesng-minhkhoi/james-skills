@@ -7,6 +7,17 @@ description: Audit and improve Petio website SEO and answer-engine visibility. U
 
 Use this skill for an evidence-led search-content loop: audit, prioritize, implement, verify, and record what changed. It is designed for Petio's Next.js landing page and MDX blog, but the evidence rules generalize to similar content sites.
 
+## Reusable operating modes
+
+Choose the smallest workflow that matches the request:
+
+- [Daily SEO/AEO check-in](workflows/daily-check-in.md) for a bounded daily audit and one evidence-backed action.
+- [Improve an existing article](workflows/improve-existing-article.md) when a live URL has enough evidence or a clear quality/indexability defect.
+- [Write a new article](workflows/write-new-article.md) when a distinct search job is not covered by the current content set.
+- [Monthly content readout](workflows/monthly-readout.md) for trend-level decisions across the 28-day measurement window.
+
+Use the daily check-in as the default entry point. It can hand off to either the improvement or new-article workflow, but should not do both in one small daily session unless a technical blocker is also being fixed.
+
 ## Workflow
 
 1. Establish scope and evidence before changing content.

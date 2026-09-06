@@ -56,20 +56,20 @@ question to a veterinarian.
 
 Choose exactly one audience node:
 
-- `audience/new-pet-parents.md` — high anxiety and high question volume;
-- `audience/senior-pet-owners.md` — record continuity and willingness to pay;
-- `audience/multi-pet-households.md` — separate pets, food context, and reminders.
+- `audience/new-pet-parents.md`: high anxiety and high question volume;
+- `audience/senior-pet-owners.md`: record continuity and willingness to pay;
+- `audience/multi-pet-households.md`: separate pets, food context, and reminders.
 
 Load the relevant files from:
 
-- `engine/hooks.md` — hook formulas and performance log;
-- `engine/repurpose.md` — video-first, platform-native adaptation;
-- `engine/scheduling.md` — cadence, target-market time windows, and timezone
+- `engine/hooks.md`: hook formulas and performance log;
+- `engine/repurpose.md`: video-first, platform-native adaptation;
+- `engine/scheduling.md`: cadence, target-market time windows, and timezone
   warnings;
-- `engine/content-types.md` — native format definitions;
+- `engine/content-types.md`: native format definitions;
 - `radar/hot-questions.md`, `radar/audience-pains.md`, and
-  `radar/sources.md` — current demand language and external sources;
-- `plans/` and `plans/EXECUTION-LOG.md` — prior decisions, scheduled batches,
+  `radar/sources.md`: current demand language and external sources;
+- `plans/` and `plans/EXECUTION-LOG.md`: prior decisions, scheduled batches,
   and execution evidence.
 
 ## Channel/account resolution

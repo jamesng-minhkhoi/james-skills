@@ -124,6 +124,30 @@ Do not use an unrelated trending topic, hashtag, or celebrity name as a reach
 shortcut. If Buffer or X does not expose a Topic control, record the problem
 cluster in the ledger and use relevant replies as the distribution surface.
 
+## Threads native Topic targeting
+
+Buffer's Threads composer may expose a native `Topic` field. Treat this as
+separate from the `Thread`/`Ghost Post` format selector. For discovery-oriented
+Petio posts, choose one audience-relevant Topic from the visible control and
+record the exact value, source (`manual`, `suggested`, or `trending`), audience
+node, and fit rationale. Do not select an unrelated trending Topic for reach.
+
+After saving, reopen the scheduled item and verify the Topic value, caption,
+media, channel, and time. A blank Topic is a distribution defect, not proof that
+the post has been targeted. If Buffer does not expose the control, record
+`native_topic: unavailable` and fall back to a specific owner problem, relevant
+conversation, and strong first-line audience signal.
+
+Run a batch diversity check before finishing a schedule pass. For six or more
+discovery-oriented posts, use at least four relevant Topics when available and
+limit each Topic to two posts. In the current Buffer Threads workspace, the
+relevant picker choices observed were `PetHealth`, `Pets`, `MultiPet`,
+`PetFood`, and `PetCare`; treat this as a dated workspace observation, not a
+permanent taxonomy. If fewer than four relevant choices are available, record
+the constraint and distribute the posts as evenly as possible. Repeating one
+Topic across most of the batch is a targeting defect, not evidence that the
+Topic is working.
+
 Maintain an asset ledger with `asset_id`, role (`primary` or `Petio-proof`),
 source/license, channels, last-used timestamp, and reuse reason. Apply a
 seven-day minimum cooldown for the exact asset on the same channel and prefer
@@ -169,6 +193,12 @@ the caption:
   alt text/description, and asset source/license;
 - CTA wording, verified destination, and location: body, first comment, or
   self-reply/thread;
+- for non-direct acquisition posts, verify that the primary image came from a
+  relevant Buffer integration when available and that the Petio screenshot is
+  the final media item;
+- for iOS acquisition, verify the follow-up comment/self-reply or documented
+  fallback contains the App Store URL and an app screenshot; do not count a
+  landing-page-only CTA as a complete conversion path;
 - whether Buffer visibly supports that comment/thread action for the channel;
 - attention and intent metrics separately, including clicks or app-store
   actions when available.
@@ -177,9 +207,10 @@ For acquisition or install-oriented posts, missing media or a missing explicit
 download CTA is a readiness failure, not an optional detail. For a deliberately
 conversation-only post, record that objective and why a CTA was omitted.
 
-If First Comment is unavailable or upgrade-locked, use the documented body CTA
-fallback and record the capability limitation. Never report a CTA as a comment
-when it was only placed in the post body.
+If First Comment is unavailable or upgrade-locked, use the documented
+follow-up-thread or body CTA fallback and record the capability limitation.
+Never report a CTA as a comment when it was only placed in a thread post or the
+post body.
 
 ## Learning record
 

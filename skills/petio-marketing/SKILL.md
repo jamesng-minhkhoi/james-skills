@@ -20,8 +20,7 @@ viral post, or Buffer metric override a Petio safety or evidence rule.
    - `/Users/khoinguyen/Documents/GitHub/petio-mobile` only when verifying an
      app capability or screen; source code is not a substitute for a public
      product claim unless the proof ledger records it.
-2. Read `petio-content/index.md` and `petio-content/CLAUDE.md` first. Then load
-   only the relevant paths from [the Petio source map](references/petio-source-map.md).
+2. Read `petio-content/index.md` and `petio-content/CLAUDE.md` first. Then load only the relevant paths from [the Petio source map](references/petio-source-map.md); for AI-smell or viral-native work, also load [Natural Petio Copy](references/natural-copy.md).
 3. Identify the account, channel, audience, objective, date range, and requested
    mode: `draft`, `research`, `schedule`, `performance audit`, or `learn`.
 4. If Buffer is in scope, verify the authenticated workspace and current channel
@@ -192,6 +191,28 @@ topic or attaching an unrelated trending name.
   in the learning ledger and prioritize relevant replies; do not compensate by
   adding unrelated hashtags or repeating the link.
 
+### Topic diversity gate for scheduled batches
+
+Do not use one native Topic as a substitute for audience research. For a batch
+of six or more discovery-oriented posts on X or Threads, use at least four
+relevant Topics when the platform exposes that many choices, and keep any one
+Topic to no more than two posts. Assign the Topic from the post's owner job and
+audience node, not from whichever label was used most recently. A narrower mix
+is allowed only when the platform exposes fewer relevant Topics; record the
+limitation and test the next available topic rather than inventing a trend.
+
+For Threads, current relevant choices may include `PetHealth`, `Pets`,
+`MultiPet`, `PetFood`, and `PetCare`. These are examples from the authenticated
+Buffer workspace, not a permanent platform taxonomy. Re-open the Topic picker
+before each batch because the available and trending choices can change. Meta
+has reported that posts with tagged Topics generally receive more views, but
+that is directional platform evidence, not proof of recommendation or
+conversion: <https://about.fb.com/news/2025/03/new-threads-features-more-personalized-experience-you-control/>.
+
+After scheduling, verify the exact Topic on every queue card or by reopening
+the composer. If one Topic appears on more than two posts in a six-post batch,
+return `needs rewrite` and rebalance before calling the batch ready.
+
 ### Entertainment-to-traffic lane for personal accounts
 
 When the brief explicitly targets the personal `@JamesNMK` or `@jamesk.zip` lane,
@@ -294,13 +315,20 @@ Every acquisition-oriented post needs both a visual reason to stop and a
 measurable next step. The media should carry the same human situation as the
 copy, not decorate a product pitch:
 
-1. Choose one primary visual: a real pet/owner moment, a clearly licensed
-   relevant image, or a simple visualized question/checklist.
-2. Add one Petio proof visual when the channel and post format support it: a
-   verified app screen, profile, scan, record, or reminder. Do not invent UGC,
-   reviews, outcomes, or medical imagery.
-3. Add alt text or a short media description, record the asset source/license,
-   and check that the image remains legible in the platform preview.
+1. Choose one primary visual: a real pet/owner moment, or a clearly relevant
+   image from Buffer's visible integration picker (use `Select from Unsplash` or
+   `More integration options`) when one is available. The image must make literal
+   sense with the scene; never accept a merely attractive or generic result. Use
+   a local asset only when it is owned, licensed, or the integration cannot
+   provide a fit.
+2. For a non-direct product promotion, append one verified Petio screenshot as
+   the final media item. The primary image earns attention; the final screenshot
+   supplies product proof. A direct Petio promotion may lead with app screens,
+   but still needs a deliberate media order and verified capability.
+3. Add alt text or a short media description, record the source/license for both
+   media roles, and check that each image remains legible in the platform
+   preview. A non-direct acquisition post with fewer than two relevant media
+   items is `needs rewrite`.
 4. Keep a media matrix and reuse ledger so the same screenshot is not blindly
    repeated across every post. On one channel, apply a seven-day minimum
    cooldown for the exact asset; prefer a 28-day cooldown before reusing the
@@ -318,14 +346,16 @@ as required deliverables. If one is missing, return `needs rewrite` rather than
 calling the post ready. For a conversation-only post, mark that objective
 explicitly in the brief; otherwise use the acquisition default.
 
-Put the download CTA in a first comment or self-reply when the authenticated
-Buffer/channel capability supports it. On X and Threads, use the next thread
-post for a useful follow-up plus the CTA; do not make the first post a store
-link. On LinkedIn, inspect Buffer’s First Comment control. If it is unavailable
-or upgrade-locked, use a concise CTA in the body and record the limitation
-instead of pretending a comment was scheduled. Use only a verified destination
-(currently the Petio App Store listing in the source map); never claim Android
-availability or a completed install.
+Put the download CTA in the follow-up comment or self-reply when the authenticated
+Buffer/channel capability supports it. Keep the main post useful and free of a
+store link. If Buffer does not expose a comment control, use the platform's
+documented follow-up thread-post fallback and record `cta_location:
+thread-fallback`; never report that as a comment. On LinkedIn, inspect Buffer's
+First Comment control and use the same fallback rule if it is unavailable or
+upgrade-locked. Use only the verified Petio destination from the source map and
+never claim an install or unsupported store availability. For an iOS acquisition
+CTA, the follow-up must carry the verified App Store URL and an app screenshot;
+the landing-page URL alone does not satisfy the conversion deliverable.
 
 The CTA must say what to do and why it follows from the post, for example:
 “If keeping that context in one place would help, download Petio for iPhone:
@@ -471,6 +501,7 @@ For a drafting request, return each platform version with:
 - trend wrapper and source/date/confidence;
 - media direction, asset source/alt text, asset ID, last-used date, cooldown
   state, CTA destination/location, and comment or thread capability state;
+- AI-TONE result, banned-pattern scan, remove-the-brand test, and selected real-user mechanic;
 - the metric or experiment cell it belongs to.
 
 For a scheduling request, also return the exact Buffer channel, timezone,
