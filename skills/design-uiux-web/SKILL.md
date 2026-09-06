@@ -39,6 +39,12 @@ primary action, secondary actions, irreversible actions, and failure cost.
 Identify whether the surface is a route, detail view, form, editor, list,
 search result, settings area, overlay, or reusable component.
 
+For visual design or redesign, state the audience, intended character, and
+whether to preserve or overhaul the existing visual language. Use
+[contextual visual direction](references/web-ui-principles.md#contextual-visual-direction)
+to translate supplied references into concrete rules without importing
+marketing-page styling into task-oriented UI.
+
 Inspect the current route, closest shipped surface, design tokens, primitives,
 content source, analytics, permissions, and provider contracts. Separate
 evidence, hypothesis, and decision. Preserve business logic and data contracts

@@ -56,6 +56,42 @@ For each primary journey:
 Do not claim browser proof if the local server, browser, provider, or auth state
 was unavailable. Report the blocker and retain lower confidence.
 
+## Design fidelity checks
+
+For a visual build or redesign, record the design read, preserve/overhaul
+scope, reference observations, and a small set of accepted visual rules. If
+there is no handoff, derive these from the brief and existing surface. Do not
+silently substitute a default hero, palette, library, or animation preset.
+
+Capture the existing route before a redesign when available. Preserve content,
+URLs, anchors, CTA destinations, forms, analytics, and accessible behavior
+unless changes are in scope. Reuse the installed stack, tokens, icons, and
+primitives; verify dependencies and current official documentation before
+introducing a library. An aesthetic reference alone does not justify migration.
+
+Implement actual product previews with real screenshots or components. Keep
+illustrative fixtures visibly distinguishable from production evidence where
+viewers could confuse them. Do not invent customer logos, quotes, metrics, or
+results to complete a layout. Missing assets remain explicit dependencies.
+
+Run the route and compare with the reference or accepted design at matching
+viewports and states. Inspect hierarchy, type wrapping and glyph clipping,
+spacing, image crop, role-based tokens, navigation, and CTA reachability.
+Record measurements versus estimates; do not claim pixel accuracy from visual
+guesswork. Recheck material mismatches after correction.
+
+Use the browser matrix for responsive, zoom, keyboard, touch, loading, and
+failure coverage relevant to the change. Keep essential content accessible
+when motion is reduced or an effect is unavailable; verify sticky/scroll
+effects do not trap focus or obscure actions. Preserve supported themes;
+additional themes or motion are not prerequisites for visual quality.
+
+Prefer a focused browser assertion for meaningful behavior or overflow where
+useful. Do not write tests that ban font names, count decorative labels, or
+mirror CSS values merely to certify taste. A screenshot can support fidelity;
+working actions and performance need their own observations. Report remaining
+design deviations and runtime gaps separately from passing build checks.
+
 ## Failure diagnosis
 
 When a check fails, distinguish:

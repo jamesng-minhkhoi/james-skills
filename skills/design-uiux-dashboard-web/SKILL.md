@@ -46,6 +46,10 @@ Write:
 Separate evidence, hypothesis, and decision. Preserve data, permissions,
 analytics, URLs, exports, audit history, and provider contracts.
 
+For visual refreshes, state the intended character and what existing identity
+and behavior to preserve. Read the [dashboard visual direction guidance](references/dashboard-craft-process.md#visual-direction-without-losing-the-task)
+before adopting an external reference or changing density, color, or motion.
+
 ## 2. Inspect the data contract before the layout
 
 Inventory real records, schema fields, units, time zones, currencies,

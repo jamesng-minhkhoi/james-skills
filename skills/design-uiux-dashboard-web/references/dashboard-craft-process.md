@@ -15,6 +15,26 @@ cost, and the moment of value. A dashboard is not successful because it
 contains many metrics; it is successful when the user makes the right next
 decision efficiently.
 
+## Visual direction without losing the task
+
+State the audience, decision, intended character, and preserve/overhaul scope.
+Inspect the existing surface before changing it. Set density by comparison and
+scan needs, variation by hierarchy, and motion by feedback. A polished refresh
+does not imply lower density, more animation, or a new component library.
+
+For a supplied reference, record observed grid proportions, type hierarchy,
+row spacing, semantic color roles, shape rules, and focus/interaction behavior.
+Label values measured, estimated, or proposed; include the source and viewport.
+A static screenshot cannot prove sorting, responsive behavior, or transitions.
+Turn the relevant observations into design rules with responsive exceptions
+and rendered checks using typical and dense data.
+
+Keep useful repetition, tables, familiar navigation, semantic status colors,
+and chart categories. Do not apply landing-page image quotas, single-accent
+limits, hero spacing, or carousel substitutions to operational data. Express
+brand through consistent type, alignment, surfaces, and state treatment.
+Evaluate visual novelty by whether the user can still compare and act.
+
 ## 2. Inventory the data
 
 Create a data contract inventory:

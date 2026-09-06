@@ -50,3 +50,20 @@ Expected behavior:
   permission boundary where old content cannot remain visible;
 - profile before memoizing and apply `memo`, `useMemo`, and `useCallback` only
   where stable references or expensive repeated work justify them.
+
+## Case 4: Reference-driven visual refresh
+
+Prompt: “Implement this approved visual refresh in our existing Vue app. Keep
+the form and tracking intact. The reference is a desktop screenshot, and the
+design calls for a calm, light-only page.”
+
+Expected behavior:
+
+- inspect and capture the existing route, preserving Vue, contracts, and scope;
+- translate observable reference details into rules with measured/estimated
+  labels and explicit proposed mobile behavior;
+- avoid framework migration, added themes, fake proof, or automatic motion;
+- compare rendered target states against the accepted rules and exercise the
+  form and relevant existing tracking checks without claiming live provider
+  results from a local fixture;
+- report any unobserved responsive, interaction, and provider gates separately.

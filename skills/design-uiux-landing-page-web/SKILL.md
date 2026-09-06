@@ -22,6 +22,9 @@ visual system](references/responsive-visual-system.md) when choosing layout,
 type, imagery, interaction, or art direction. Load [critique and proof
 checklist](references/landing-page-critique-and-proof.md) before handoff or
 claiming the page is complete.
+For visual direction, a supplied reference, or a redesign, load
+[design direction and reference measurement](references/design-direction-and-reference.md).
+When changing this skill, review the [design regression cases](evals/design-direction-regression.md).
 
 ## Non-negotiable order
 
@@ -50,6 +53,12 @@ Write a conversion contract:
 
 Separate evidence, hypothesis, and decision. Never invent customer counts,
 reviews, partner logos, performance claims, guarantees, or regulated claims.
+
+State a brief design read: page kind, audience, intended character, primary
+decision, and whether this is new work, preservation, or a visual overhaul.
+Infer from the brief and existing surface; ask one focused question only when
+an unresolved choice would materially change the direction. Choose visual
+variation, motion, and density from that context, without a universal preset.
 
 ## 2. Inspect the existing surface
 
@@ -198,6 +207,10 @@ promise, decision path, responsive behavior, accessible interaction, content
 dependencies, and open implementation gates are explicit.
 
 ### Required handoff contract
+
+Include the design read, preserved elements, reference observations versus
+estimates, chosen visual rules, and the rendered checks for those rules. For a
+small change, include only the decisions and proof relevant to that change.
 
 Every handoff must include the supplied content/proof sources, content gaps and
 owners, CTA destinations and form states, responsive widths, keyboard/screen

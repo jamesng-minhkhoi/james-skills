@@ -22,6 +22,9 @@ when starting a new React web feature or choosing between client libraries.
 Load [perceived performance](references/perceived-performance.md) when the
 request involves speed, instant-feeling navigation, prefetching, caching,
 service workers, resource priorities, or a “make it feel faster” critique.
+For visual builds, reference matching, or redesigns, use the
+[design fidelity checks](references/testing-and-browser-proof.md#design-fidelity-checks)
+to carry the design decisions through implementation and rendered review.
 When changing this skill, use the [frontend engineering regression cases](evals/frontend-web-engineering-regression.md).
 
 ## Non-negotiable order

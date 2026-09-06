@@ -16,6 +16,8 @@ matrix](references/web-quality-matrix.md). For AI-generated, template-heavy, or
 vibe-coded work, add the [web UI forensics](references/web-ui-forensics.md)
 pass. For any rendered or visual review, use the [web visual proof
 checklist](references/web-visual-proof.md).
+For landing pages, portfolios, redesigns, or a supplied visual reference, load
+[design direction and fidelity](references/design-direction-and-fidelity.md).
 When changing this audit skill, use the [web audit regression cases](evals/ai-uiux-web-audit-regression.md).
 
 Do not edit product code unless the user explicitly asks for implementation.
@@ -186,6 +188,12 @@ Look for observable patterns, not provenance:
 For each pattern, name the observable behavior, route/state, user impact,
 proof level, confidence, and exact verification. Generic aesthetics without
 user harm may be P3; a polished but broken core journey is P1.
+
+Treat style patterns as prompts to investigate, not automatic failures. Record
+the intended direction and compare against it. A font, color, repeated grid,
+text-only hero, or absent dark theme is not a defect by itself. Separate
+usability defects, deviations from an explicit design contract, and optional
+style opportunities; optional preferences do not block completion.
 
 ## 6. Prioritize findings
 

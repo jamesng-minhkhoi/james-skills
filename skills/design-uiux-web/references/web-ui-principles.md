@@ -9,6 +9,7 @@ with evidence and user impact.
 - [Explicitness and progressive disclosure](#explicitness-and-progressive-disclosure)
 - [NN/G interaction principles](#nng-interaction-principles)
 - [Hierarchy, scanability, and rhythm](#hierarchy-scanability-and-rhythm)
+- [Contextual visual direction](#contextual-visual-direction)
 - [Signifiers and system feedback](#signifiers-and-system-feedback)
 - [User intent, conventions, and content](#user-intent-conventions-and-content)
 - [Semantic color and themes](#semantic-color-and-themes)
@@ -57,6 +58,27 @@ attention toward the content and action that matter.
 Captivating design uses structure, rhythm, restraint, and a small amount of
 intentional surprise. Complexity is justified only when it improves
 understanding, feedback, or personality.
+
+## Contextual visual direction
+
+Read the audience, task, brand, and redesign scope before choosing a look.
+Default an unspecified refresh to preserving recognizable identity and useful
+behavior. Choose variation, motion, and density for task clarity; a form or
+settings screen does not need landing-page spectacle to feel considered.
+
+Inspect supplied references and capture the rules that matter: content width,
+column proportions, type roles, spacing, accent placement, component shapes,
+and observed interaction. Label measurements, estimates, and proposals
+separately with their viewport and source. Do not infer responsive behavior or
+timing from a screenshot. Define a check and responsive exception for each
+adopted rule, then compare the rendered artifact at the relevant widths.
+
+Reuse the project's foundation; a reference's aesthetic does not require its
+library. Judge fonts, colors, cards, symmetry, and repeated layouts by brand
+fit and user benefit, not fashion bans. Keep status colors, familiar controls,
+and comparison layouts when they carry meaning. No mandatory photography,
+extra theme, or animation budget. Make identity distinctive through content,
+type, grouping, and precise state treatment while preserving predictability.
 
 ## Signifiers and system feedback
 
