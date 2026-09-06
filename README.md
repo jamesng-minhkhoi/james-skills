@@ -23,10 +23,32 @@ Reusable Codex and Claude skills extracted from project work.
 - [`audit-mobile-store-submission`](skills/audit-mobile-store-submission/SKILL.md)
   — audit App Store and Google Play submission readiness, rejection risks, and
   external release gates.
+- [`seo-aeo-content`](skills/seo-aeo-content/SKILL.md) — audit Petio search
+  performance, improve existing articles, and write new evidence-led content
+  with reusable daily and monthly workflows.
 - [`petio-marketing`](skills/petio-marketing/SKILL.md) — plan, schedule, and
   iteratively improve Petio marketing content using Buffer evidence and
   platform-specific adapters.
+- [`threads-engagement`](skills/threads-engagement/SKILL.md) — research, draft,
+  publish, and measure authentic Threads posts and replies.
+- [`x-engagement`](skills/x-engagement/SKILL.md) — research, draft, execute, and
+  measure authentic X posts, replies, threads, and listening experiments.
 
 Each skill is self-contained and can be copied or linked into a Codex or Claude
 skills directory. Keep project-specific branding, routes, and business rules
 in the source repository rather than hard-coding them into a reusable skill.
+
+## Install
+
+```sh
+./install.sh            # symlink every skill into the agent skill directories
+./install.sh --dry-run  # show what would change first
+```
+
+By default this links into `~/.claude/skills`, `~/.codex/skills`, and
+`~/.agents/skills`; pass directories as arguments to target specific ones.
+Symlinks mean an edit here takes effect everywhere immediately — a copied skill
+silently goes stale, and a stale copy of a renamed skill keeps competing with
+its replacement at skill-selection time. Re-run after adding, renaming, or
+removing a skill; the script replaces outdated entries and prunes links whose
+target no longer exists.
