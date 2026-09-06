@@ -10,7 +10,10 @@
 
 set -euo pipefail
 
-REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# pwd -P resolves symlinks and the filesystem's real casing. Plain pwd would
+# echo back however the caller spelled the path, and on a case-insensitive
+# filesystem that silently produces links the prune step cannot match.
+REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 SRC="$REPO/skills"
 
 DRY_RUN=0
