@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design UIUX"
+  short_description: "Design screens, flows, landing pages, and dashboards as options on a canvas"
+  default_prompt: "Use $design-uiux to show me options for this screen or flow before any code."

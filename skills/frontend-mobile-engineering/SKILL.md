@@ -8,7 +8,7 @@ description: Implement, debug, test, and verify production-ready Expo React Nati
 Ship reliable Expo React Native behavior, not just a screen that looks correct
 in a static preview. This skill owns implementation, data/state boundaries,
 native integration, automated checks, device verification, and engineering
-handoff. Use `design-uiux-mobile` for visual and interaction design; use
+handoff. Use `design-uiux` for visual and interaction design; use
 `audit-uiux-mobile` for independent UI/UX diagnosis; use the store-submission
 skill for App Store or Google Play readiness.
 

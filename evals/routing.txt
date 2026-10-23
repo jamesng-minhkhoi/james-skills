@@ -1,9 +1,12 @@
 # Routing cases: id|expected|prompt
 # expected is the skill or agent that must be named FIRST; separate acceptable
 # alternatives with "/". Add a case whenever a real request routes wrongly.
-web-design|design-uiux-web|Design the settings page for our SaaS app, including the empty and error states.
-dash-design|design-uiux-dashboard-web|Lay out an admin analytics dashboard with filters and drill-downs for order data.
-landing|design-uiux-landing-page-web|Design a landing page for our new launch with a strong hero and pricing section.
+web-design|design-uiux|Design the settings page for our SaaS app, including the empty and error states.
+dash-design|design-uiux|Lay out an admin analytics dashboard with filters and drill-downs for order data.
+landing|design-uiux|Design a landing page for our new launch with a strong hero and pricing section.
+mobile-artifact|design-uiux|improve the design of the memories grid view in our Expo app. it looks like AI slop. show me via artifact
+mobile-options|design-uiux|propose uiux options for the job request screen and i will choose
+small-fix|design-uiux|the settings screen border radius isn't consistent, show me the fix via artifact first
 web-build|frontend-web-engineering|The checkout form in our Next.js app double-submits on slow networks, fix it.
 web-fix-findings|frontend-web-engineering|Fix the issues the audit found on our settings page.
 mobile-build|frontend-mobile-engineering|Add push notification permission handling to our Expo app.

@@ -7,7 +7,7 @@ boundaries between them. Pick the smallest skill that covers the request.
 
 | Phase | Web | Mobile |
 |---|---|---|
-| Design (specs, flows, handoff; no product code) | `design-uiux-web`, `design-uiux-dashboard-web`, `design-uiux-landing-page-web` | `design-uiux-mobile` |
+| Design (specs, flows, handoff; no product code) | `design-uiux` | `design-uiux` |
 | Build (code, tests, runtime proof; no design decisions) | `frontend-web-engineering` | `frontend-mobile-engineering` |
 | Audit (evidence and findings; no fixes unless asked) | `audit-uiux-web` | `audit-uiux-mobile`, `audit-mobile-store-submission` |
 

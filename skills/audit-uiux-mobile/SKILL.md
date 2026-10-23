@@ -232,7 +232,7 @@ method. Use tags such as **FLOW**, **CONTENT**, **STRUCTURE**,
 **ACCESS**, **MOTION**, or **TRUST**. Do not claim a fix from source
 inspection alone.
 
-For remediation, route design findings to `design-uiux-mobile` and Expo
+For remediation, route design findings to `design-uiux` and Expo
 implementation findings to `frontend-mobile-engineering`. This audit names the
 problem and the proof needed; it does not replace implementation or device
 verification.

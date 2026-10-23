@@ -17,7 +17,7 @@ Expected audit behavior:
   proof level, impact, confidence, verification, and P0–P3 priority;
 - require a visible/accessibility alternative to the gesture and mark
   unobserved native/runtime behavior Unknown;
-- assign design issues to `design-uiux-mobile` and Expo implementation issues
+- assign design issues to `design-uiux` and Expo implementation issues
   to `frontend-mobile-engineering`.
 
 ## Case 2: Screenshot-only release request

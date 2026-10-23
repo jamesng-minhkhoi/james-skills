@@ -4,16 +4,11 @@ Reusable Codex and Claude skills extracted from project work.
 
 ## Skills
 
-- [`design-uiux-mobile`](skills/design-uiux-mobile/SKILL.md) — design polished native
-  mobile UI/UX and prepare an implementation handoff.
+- [`design-uiux`](skills/design-uiux/SKILL.md) — design mobile screens, web
+  apps, dashboards, and landing pages as options on the Design canvas, then
+  plan the build.
 - [`frontend-mobile-engineering`](skills/frontend-mobile-engineering/SKILL.md) —
   implement and verify Expo React Native mobile behavior.
-- [`design-uiux-web`](skills/design-uiux-web/SKILL.md) — design responsive product
-  web UI/UX and prepare an implementation handoff.
-- [`design-uiux-dashboard-web`](skills/design-uiux-dashboard-web/SKILL.md) — design
-  data-driven dashboard UI/UX and decision surfaces.
-- [`design-uiux-landing-page-web`](skills/design-uiux-landing-page-web/SKILL.md) — design
-  conversion-aware landing-page UI/UX and responsive composition.
 - [`audit-uiux-mobile`](skills/audit-uiux-mobile/SKILL.md) — audit mobile
   journeys with evidence-backed visual and accessibility QA.
 - [`audit-uiux-web`](skills/audit-uiux-web/SKILL.md) — audit responsive web

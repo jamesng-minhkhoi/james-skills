@@ -211,9 +211,7 @@ Every finding must include route/component, state and reproduction, evidence and
 proof level, user impact, recommendation, confidence, and verification method.
 Do not claim a fix from source inspection alone.
 
-For remediation, route design findings to the relevant UIUX design skill
-(`design-uiux-web`, `design-uiux-dashboard-web`, or
-`design-uiux-landing-page-web`) and implementation findings to
+For remediation, route design findings to `design-uiux` and implementation findings to
 `frontend-web-engineering`. This audit names the problem and the proof needed;
 it does not replace implementation or browser verification.
 

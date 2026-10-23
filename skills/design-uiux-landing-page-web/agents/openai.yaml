@@ -1,4 +1,0 @@
-interface:
-  display_name: "Design UIUX Landing Page Web"
-  short_description: "Design distinctive landing-page UI/UX"
-  default_prompt: "Use $design-uiux-landing-page-web to design this responsive landing page and prepare a handoff."

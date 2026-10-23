@@ -6,7 +6,7 @@ description: Plan, implement, test, and verify production-ready frontend web app
 # Frontend Web Engineering
 
 Ship reliable web application behavior, not just a visually plausible screen.
-Use this skill for product web features and fixes. Use `design-uiux-web` when the
+Use this skill for product web features and fixes. Use `design-uiux` when the
 main problem is interface design, and `audit-uiux-web` when the main problem is
 review or diagnosis.
 

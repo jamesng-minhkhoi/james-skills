@@ -162,7 +162,7 @@ benefit, progress source, commit/cancel behavior, duration/easing family, and
 reduced-motion fallback. A gesture must have a discoverable alternative for a
 core action and must not conflict silently with scrolling or system gestures.
 Avoid effects that delay a consequential action or make a loading state look
-like success. See the [motion and gesture system](mobile-motion-gesture-system.md)
+like success. See the [motion and gesture system](motion-and-gesture.md)
 for the contract and proof matrix.
 
 Personality can enter through natural language, contextual illustration,

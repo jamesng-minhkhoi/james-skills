@@ -1,4 +1,0 @@
-interface:
-  display_name: "Design UIUX Web"
-  short_description: "Design polished responsive product web UI/UX"
-  default_prompt: "Use $design-uiux-web to design this responsive product web interface and prepare a handoff."
