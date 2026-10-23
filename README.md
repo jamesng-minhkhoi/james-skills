@@ -72,3 +72,38 @@ silently goes stale, and a stale copy of a renamed skill keeps competing with
 its replacement at skill-selection time. Re-run after adding, renaming, or
 removing a skill; the script replaces outdated entries and prunes links whose
 target no longer exists.
+
+## Changing a skill
+
+Change skills from evidence, and keep what loads in every session small.
+
+1. **Start from a failure.** A real request routed wrongly or a skill produced
+   a bad result. Capture it first: a line in [`evals/routing.txt`](evals/routing.txt)
+   for routing, or a case in the skill's own `evals/` file for behavior. No
+   failing case, no new rule.
+2. **Fix by rewriting, not appending.** Edit the section the failure points
+   at so it still reads as one instruction. Detail a step needs only some of
+   the time goes in `references/`, linked from the step that needs it.
+3. **Check.**
+   ```sh
+   scripts/lint-skills.sh      # structure, links, and size budgets
+   scripts/eval-routing.sh     # routing cases (headless Claude; costs tokens)
+   ```
+4. **Commit with the case name**, e.g. `fix: x-engagement fired for Petio posts
+   (routing case petio-threads)`, so the log records why each rule exists.
+
+Budgets: descriptions ≤ 80 words, `SKILL.md` ≤ 300 lines, `ROUTING.md` ≤ 40
+lines. Skills already over budget are listed in
+[`scripts/lint-baseline.txt`](scripts/lint-baseline.txt) and may shrink but
+not grow; lower the number when you trim.
+
+**Prune every month or two.** Remove a section, run the checks and the skill's
+eval cases; if nothing regresses, leave it removed. Rules written for weaker
+models or one-off incidents become dead weight.
+
+**Keep knowledge in the right place.** How to do the work → skill. Facts about
+a product (voice, features, routes) → that product's repo. What worked lately
+(post performance, reply patterns) → a dated learning ledger in the product
+repo, promoted into a skill's references only once it holds across cycles.
+
+Add an agent or split a skill the same way: when eval cases show the need.

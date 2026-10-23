@@ -1,0 +1,17 @@
+# Routing cases: id|expected|prompt
+# expected is the skill or agent that must be named FIRST; separate acceptable
+# alternatives with "/". Add a case whenever a real request routes wrongly.
+web-design|design-uiux-web|Design the settings page for our SaaS app, including the empty and error states.
+dash-design|design-uiux-dashboard-web|Lay out an admin analytics dashboard with filters and drill-downs for order data.
+landing|design-uiux-landing-page-web|Design a landing page for our new launch with a strong hero and pricing section.
+web-build|frontend-web-engineering|The checkout form in our Next.js app double-submits on slow networks, fix it.
+web-fix-findings|frontend-web-engineering|Fix the issues the audit found on our settings page.
+mobile-build|frontend-mobile-engineering|Add push notification permission handling to our Expo app.
+web-audit|auditor/audit-uiux-web|I just finished building the onboarding flow at localhost:3000, can you review it before release?
+mobile-audit|auditor/audit-uiux-mobile|Audit the UX of our iOS app's sign-up flow, it feels AI-generated.
+store|audit-mobile-store-submission/auditor|Apple rejected our app under guideline 5.1.1, help me get it approved.
+petio-threads|petio-marketing|Draft three Threads posts for Petio this week.
+petio-plan|petio-marketing|Plan next week's Petio content calendar across Buffer channels.
+petio-seo|seo-aeo-content|Why is petiogo.com blog traffic dropping in Search Console?
+generic-x|x-engagement|Write an X reply to an indie dev asking how I grew my side project.
+generic-threads|threads-engagement|Write a Threads post about shipping my side project's first paid feature.
