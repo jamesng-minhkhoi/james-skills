@@ -43,7 +43,8 @@ For visual design or redesign, state the audience, intended character, and
 whether to preserve or overhaul the existing visual language. Use
 [contextual visual direction](references/web-ui-principles.md#contextual-visual-direction)
 to translate supplied references into concrete rules without importing
-marketing-page styling into task-oriented UI.
+marketing-page styling into task-oriented UI. To find references, use
+[the shared research method](../design-uiux-landing-page-web/references/design-direction-and-reference.md#gather-references-with-a-question).
 
 Inspect the current route, closest shipped surface, design tokens, primitives,
 content source, analytics, permissions, and provider contracts. Separate

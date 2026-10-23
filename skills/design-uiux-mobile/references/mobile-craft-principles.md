@@ -132,6 +132,27 @@ can explain continuity.
 - Treat platform conventions as part of the system: safe areas, keyboard,
   large text, focus, haptics, back behavior, and native sheet semantics.
 
+Platform fidelity is what separates a native app from a web page in a
+wrapper (adapted from Appllama's native fidelity laws, MIT). Specify:
+
+- the platform's own controls — switch, segmented control, slider, date
+  picker, context menu, action sheet — unless the design genuinely diverges;
+  a rebuilt control that moves or sounds slightly differently reads as fake;
+- the platform symbol set (SF Symbols on iOS, Material Symbols on Android)
+  rather than a third icon family;
+- the platform type ramp, with one display size per screen and tabular
+  numerals for anything that counts, times, or prices;
+- continuous (squircle) corners on iOS rounded rectangles;
+- numbers formatted like a product (1.4M, 38k, $4.99) and localized dates;
+- haptics as punctuation: a selection tick, a snap, a success or error
+  outcome — one per action, alongside visible feedback, never on scroll.
+
+Write consistency down as rules so every screen can be checked against them:
+one accent per role across the app, one neutral temperature (warm or cool),
+a corner-radius scale stated by role ("actions pill, cards 16, inputs 8"),
+one label per intent ("Get started" everywhere, not also "Start now"), and
+emphasis within the same typeface rather than an injected second family.
+
 ## Motion and personality
 
 Motion is optional and should clarify cause, continuity, hierarchy, progress,
@@ -149,6 +170,16 @@ meaningful empty states, and small moments of delight. Keep the tone playful
 only where it supports the product; never use delight to soften a failure,
 hide risk, or compete with a health, financial, security, or destructive
 decision.
+
+When the design calls for illustration, define the style system once before
+any asset exists: one style family, a palette of three to five token colors
+including the surface it sits on, one lighting and texture description, and
+the subject grammar (mascot, objects, abstract shapes, people). Every asset
+is that system plus a subject, so a dozen pieces read as one commission.
+Plan theme twins or theme-neutral surfaces for dark mode, keep empty-state
+art quiet, and leave the headline's space empty in onboarding art. Reject an
+asset that drifts in style, shows halos at its edges, bakes in text, or puts
+its focal point under a control.
 
 ## Trust, interruption, and recovery
 

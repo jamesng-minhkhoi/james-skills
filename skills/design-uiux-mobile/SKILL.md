@@ -14,7 +14,7 @@ permissions, analytics, or native configuration. Use
 [audit-uiux-mobile](../audit-uiux-mobile/SKILL.md) for an independent audit
 after the design or implementation exists; use the repository's mobile
 engineering workflow for code.
-[the mobile UIUX process](references/mobile-craft-process.md) for any screen
+Load [the mobile UIUX process](references/mobile-craft-process.md) for any screen
 that needs more than a small local edit. Load
 [mobile UIUX principles](references/mobile-craft-principles.md) when making
 hierarchy, disclosure, content, motion, or visual-language decisions. Load
@@ -43,7 +43,8 @@ the user's path, information hierarchy, or state coverage is unclear.
 - Inspect the closest shipped mobile surface, product/design docs, analytics or
   issue evidence when available, tokens, primitives, route composition, and
   visual references before inventing UI. Record what is evidence and what is a
-  design hypothesis.
+  design hypothesis. When the screen must hold up against shipped apps, gather
+  references with [the shared research method](../design-uiux-landing-page-web/references/design-direction-and-reference.md#gather-references-with-a-question).
 - Identify the primary action, secondary actions, irreversible actions, and
   what the user must understand before committing.
 - Mark the scope boundary. For UI/UX-only work, preserve queries, schemas,
@@ -201,6 +202,9 @@ directions with trade-offs before handoff and honor the selected direction.
 Every handoff must include:
 
 - the user intent, entry/exit routes, and flow/state coverage;
+- a navigation map: what each screen is (push, replace, modal, sheet, overlay,
+  tab root), what back does from it on iOS and Android, and which steps are
+  one-way doors (see the pattern matrix);
 - realistic content fixtures, longest strings, nulls, and localization assumptions;
 - component states, trigger/result/recovery behavior, and accessible alternatives;
 - viewport/device, input, safe-area, keyboard, and reduced-motion checkpoints;
@@ -222,7 +226,9 @@ Follow:
   completion, cancellation, conflict, reduced-motion, interruption, and
   runtime-performance checkpoints. Record slow drags and quick flicks where
   relevant; screenshots alone cannot prove gesture quality.
-- Compare against the approved reference or explain why none exists.
+- Compare side by side against the approved or strongest reference, or explain
+  why none exists. Stop when it reads at least as good; otherwise name the gap
+  and iterate.
 - Report the design artifact, flow/states, content fixture, viewport/device,
   interaction checkpoints, decisions, open questions, and implementation gates
   intentionally left to engineering. Do not call product behavior complete

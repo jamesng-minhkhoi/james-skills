@@ -30,6 +30,20 @@ answer where practical.
 8. **AI-generated card soup** — A visually busy mobile home screen. Check
    subtraction, focal point, primary action, progressive disclosure, and whether
    personality is earned rather than added as decoration.
+9. **Sign-in, onboarding, and paywall flow** — A first-run flow ending in a
+   purchase. Check the navigation map: what each step is (push, replace,
+   modal, sheet), what back does on iOS and Android, that no back path
+   re-enters sign-in or a paid paywall, and that a paywall opened from a
+   feature dismisses back onto it, unlocked.
+10. **Reference-led redesign** — "Make our workout summary screen as good as
+   the best fitness apps." Check that research starts from a named question,
+   compares several products before one, records durable notes, keeps three
+   to eight picks with reasons, and defines done as a side-by-side that reads
+   at least as good.
+11. **Multi-screen generated flow** — Five screens produced in separate
+   passes. Check that the consistency count runs and catches a second accent
+   hue, an off-scale radius, and two labels for one intent, and that
+   high-frequency moments get no custom motion.
 
 ## Scoring
 
@@ -57,6 +71,7 @@ Accept the candidate only when:
 - it improves the swipe, card-stack, route, and sheet cases;
 - it does not regress the static settings or offline-submission cases;
 - it explicitly chooses no motion when motion has no job;
+- its handoff includes a navigation map with one-way doors where they exist;
 - it defines progress, threshold, cancellation, conflict, fallback, and
   reduced-motion behavior for applicable gestures;
 - it produces more actionable guidance, not merely a longer response.

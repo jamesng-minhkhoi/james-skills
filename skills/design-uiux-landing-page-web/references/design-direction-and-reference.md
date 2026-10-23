@@ -44,6 +44,34 @@ Existing authorization is sufficient for changes within the requested scope;
 surface additional dependencies when they would expand it. Prioritize by the
 observed problem: a buried CTA can need recomposition before type polish.
 
+## Gather references with a question
+
+The design skills share this method; the measurement half follows below.
+Adapted from Appllama's research playbooks (MIT).
+
+- **Question first.** Each pass answers a named question from the task: how
+  long is onboarding, where does the plan picker sit, what does the empty
+  state ask for. References gathered without a question are a mood board.
+- **Sources, in order:** the user's own references or boards (their taste is
+  a requirement), the project's shipped surfaces, then the strongest
+  comparable products — a reference library such as the Appllama MCP when
+  connected, or reachable live products.
+- **Across products before within one.** Study the same surface in three to
+  five strong products. Where they converge, it is a convention: break it
+  knowingly or not at all. Where they diverge, it is a real choice for the
+  brief to settle.
+- **Walk journeys whole and in order** when the question is about a flow; a
+  sampled journey misleads. Note what each step is (route, sheet, modal,
+  overlay) as well as how it looks.
+- **Weight evidence by relevance.** A successful product's checkout is
+  evidence about checkouts; its settings screen may be neglected.
+- **Stop at saturation,** when new references stop changing the spec.
+- **Keep durable notes:** product, surface, source link or ID, date, and the
+  observation. Links and screenshots expire; notes do not.
+
+Then keep the best three to eight, say why each earns its place, and measure
+them.
+
 ## Turn references into a usable specification
 
 Inspect supplied screenshots or reachable reference pages before claiming a
@@ -115,6 +143,10 @@ Compare the rendered artifact with the brief and reference at matching target
 viewports. Review hierarchy, spacing, type, crop, role-based tokens, and
 interaction. For each material mismatch, fix or explain it, then recheck the
 affected state. Do not accept a generic resemblance as a reference match.
+
+The bar is the strongest reference, not the previous version: put the
+rendered work beside it and stop only when it reads at least as good on what
+the brief cares about. Otherwise name the gap and go around again.
 
 Use the critique-and-proof checklist for responsive and interaction coverage.
 Report observed passes, remaining mismatches, and unknowns. Design proof does

@@ -43,6 +43,24 @@ Fix the earliest failed layer:
 | Handoff | Title, description, canonical, indexing, structured data, social preview, consent, event scope |
 | Recovery | Retry, validation, provider failure, duplicate submit, interruption, back |
 
+## Consistency check
+
+Run this count across every screen before the visual critique. It is
+mechanical: a failed count is a fix, not a matter of taste. It checks
+consistency, not style, so a role-based choice the system states is a pass.
+Adapted from Appllama's anti-slop pre-flight (MIT).
+
+| Count | Pass |
+| --- | --- |
+| Accent colors | One per role (primary action, active, progress), the same on every screen |
+| Neutral families | One temperature, warm or cool |
+| Corner radii | Every value from a scale stated by role |
+| Icon families | One, at one optical weight per area |
+| Labels per intent | One phrasing for each intent everywhere it appears |
+| Display type sizes | One per screen |
+| Materials (gradient, glow, glass, heavy shadow) | Each has a stated grouping, depth, emphasis, or brand job |
+| Emoji in navigation, buttons, or chrome | None, unless the brand voice calls for it |
+
 ## Fast questions
 
 - Can a new visitor explain the offer after the first viewport?

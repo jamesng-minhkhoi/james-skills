@@ -12,6 +12,19 @@ task, add ambiguity, compete with critical content, or provide no identifiable
 user benefit. A static state change with clear feedback is often better for
 settings, dense data entry, and repetitive operations.
 
+Gate by how often the user meets the moment (adapted from Appllama's motion
+laws, MIT):
+
+| Frequency | Motion |
+| --- | --- |
+| 100+ times a day (tab switch, keyboard, scroll, back) | The platform default and nothing else |
+| Tens of times a day (press, row select) | Near-imperceptible, under 150 ms |
+| Occasional (sheets, modals, toasts) | Standard motion |
+| Rare or first-time (onboarding finish, milestone) | Room for delight |
+
+Passing this gate with no custom motion is a success. Data the user is
+reading never moves for style.
+
 When motion is useful, name its job:
 
 - **Continuity:** preserve the identity or spatial relationship of an object.

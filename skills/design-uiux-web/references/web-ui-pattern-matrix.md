@@ -22,6 +22,10 @@ control to complete the task.
 - Use links for navigation and buttons for actions.
 - Preserve URL state for shareable filters, search, sort, pagination, and tabs
   when the product benefits from deep links or browser history.
+- After a one-way step (sign-in, payment, submitted form, finished
+  onboarding), replace the history entry so back cannot re-enter or resubmit
+  the old state; land the user where the action started when it interrupted
+  a task.
 - Keep browser back, refresh, open-in-new-tab, and direct-entry behavior
   coherent.
 - Provide visible labels or accessible names for icon buttons, tooltips, and

@@ -43,10 +43,37 @@ each card represents a distinct object, decision, or actionable group.
 
 ## Navigation and state decisions
 
-- Use a page/route when the user needs durable context, a shareable/backable
-  destination, or a complex multi-step task.
-- Use a sheet when the task is contextual, reversible, and should return to the
-  current surface with its state intact.
+Navigation is what a screenshot cannot show. Every transition answers: what
+is this destination, must the user be able to come back, and what does back
+(chevron, iOS edge swipe, Android back) do afterwards? Adapted from
+Appllama's navigation laws (MIT).
+
+| The step is | Present it as | Back and dismissal |
+| --- | --- | --- |
+| Deeper into the same context | Push | Pops to the source with its state intact |
+| Moving past a state the world has left (signed in, onboarding done, paid, session finished) | Replace — a one-way door | Must never re-enter the old state; Android back from home exits the app |
+| A self-contained task with steps | Modal with its own stack and Cancel/Done | Cancel asks first only if work would be lost |
+| A short interruption (picker, filters, item options) | Sheet with detents | Drag or tap outside to dismiss; returns to the same place |
+| Immersive content | Full-screen modal | Explicit Close |
+| Floating over a still-visible screen (confirm card, lightbox, coach mark) | Overlay | Dismiss returns focus to the screen beneath |
+| A destructive confirmation | Action sheet or dialog | Cancel is always available |
+| Actions on one item | Native context menu | — |
+| Share, web, photo picking | The system controller | Never a rebuilt route |
+
+- A sheet that grows a second step was a modal all along. If a link could
+  open it, it is a route.
+- One-way doors keep the user's place: sign-in demanded by one action (save,
+  follow, buy) is a modal that completes that action where it was tapped, and
+  a paywall opened from a feature dismisses back onto the feature, unlocked.
+- Block back in exactly two cases: an irreversible request in flight (seconds,
+  with visible progress) and unsaved work in a modal (ask first). Transient
+  in-screen state (selection mode, expanded search) consumes the first back.
+  Anything else that traps back — a funnel, a rating prompt — is a defect.
+- Tabs are peers: no slide between them, each keeps its own stack, re-tapping
+  the active tab returns to its root. Full-attention screens (composer,
+  player, checkout) present above the tabs.
+- Deep links land with a sensible stack beneath; a cold start lands by
+  session state, never flashing sign-in before home.
 - Use a menu for a short list of mutually exclusive or infrequent actions.
 - Use selection mode and a contextual toolbar when actions apply to multiple
   records. Keep the selection count and exit path visible.
@@ -55,4 +82,5 @@ each card represents a distinct object, decision, or actionable group.
 
 For every surface, answer: where did the user come from, what remains visible,
 how do they cancel, what does back do, and where do they land after success or
-failure?
+failure? When studying references, record each step's presentation as well as
+its look; consistent presentation is part of what makes a flow feel native.

@@ -65,3 +65,19 @@ Expected behavior:
 - preserve the light-only scope and provide usable reduced-motion behavior;
 - verify target widths and zoom in the rendered design when available;
 - keep unobserved interaction and production claims explicit.
+
+## Case 6: "As good as the best in the category"
+
+Prompt: “Redesign our pricing page so it holds up against the best SaaS
+pricing pages.”
+
+Expected behavior:
+
+- name the research questions first (plan count, anchor plan, annual toggle,
+  comparison depth, proof placement) instead of collecting inspiration;
+- compare the same surface across three to five strong products and separate
+  convention (where they converge) from choice (where they diverge);
+- keep durable notes and three to eight picks with reasons, then measure them;
+- borrow structure, not another brand's identity, claims, or assets;
+- define done as a side-by-side that reads at least as good, and name any
+  remaining gap rather than stopping at "better than before".
