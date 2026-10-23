@@ -1,6 +1,6 @@
 ---
 name: threads-engagement
-description: Research, draft, publish, measure, and improve authentic Threads posts and replies for any project or account. Use for topic discovery, ranked-feed analysis, natural project-native or indie-builder voice, community engagement, product promotion, launch conversations, listening experiments, performance reviews, and converting repeated feedback into evidence-backed content patterns.
+description: Research, draft, publish, measure, and improve authentic Threads posts and replies for any project or account. Use for topic discovery, ranked-feed analysis, natural project-native or indie-builder voice, community engagement, product promotion, launch conversations, listening experiments, performance reviews, and converting repeated feedback into evidence-backed content patterns. For the Petio app or account, start with petio-marketing, which uses this skill as its Threads adapter.
 ---
 
 # Threads Engagement

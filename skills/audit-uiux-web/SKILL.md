@@ -1,6 +1,6 @@
 ---
 name: audit-uiux-web
-description: Audit responsive web UI/UX with evidence-backed review of task flows, browser behavior, explicitness, progressive disclosure, information architecture, responsive composition, accessibility, visual systems, motion, performance, trust, and functional reality. Use for React, Next.js, Vue, Svelte, static, SaaS, dashboard, settings, form, list, table, detail, and web-app interfaces, especially AI-generated, template-heavy, or polished-but-unproven projects. Do not implement fixes unless requested.
+description: Audit responsive web UI/UX with evidence-backed review of task flows, browser behavior, explicitness, progressive disclosure, information architecture, responsive composition, accessibility, visual systems, motion, performance, trust, and functional reality. Use for React, Next.js, Vue, Svelte, static, SaaS, dashboard, settings, form, list, table, detail, and web-app interfaces, especially AI-generated, template-heavy, or polished-but-unproven projects. Do not implement fixes unless requested. Hand accepted fixes to frontend-web-engineering.
 ---
 
 # Audit UIUX Web

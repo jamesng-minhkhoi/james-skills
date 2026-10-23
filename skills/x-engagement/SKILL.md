@@ -1,6 +1,6 @@
 ---
 name: x-engagement
-description: Research, draft, execute, and measure authentic X posts, replies, quote posts, threads, and listening experiments. Use for founder or product-account engagement, community replies, launch conversations, audience research, and evidence-led social experiments. Protect account voice, proof, health/safety, privacy, and X anti-spam rules; never use engagement automation or publish live without explicit authorization.
+description: Research, draft, execute, and measure authentic X posts, replies, quote posts, threads, and listening experiments. Use for founder or product-account engagement, community replies, launch conversations, audience research, and evidence-led social experiments. Protect account voice, proof, health/safety, privacy, and X anti-spam rules; never use engagement automation or publish live without explicit authorization. For the Petio app or account, start with petio-marketing, which uses this skill as its X adapter.
 ---
 
 # X Engagement

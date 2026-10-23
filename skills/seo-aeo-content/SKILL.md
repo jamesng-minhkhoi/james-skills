@@ -1,6 +1,6 @@
 ---
 name: seo-aeo-content
-description: Audit and improve Petio website SEO and answer-engine visibility. Use when analyzing petiogo.com performance, indexing, structured data, llms.txt, sitemap coverage, blog intent, GA4/Search Console evidence, or when creating and revising English pet-care content in petio-landingpage.
+description: Audit and improve Petio website SEO and answer-engine visibility. Use when analyzing petiogo.com performance, indexing, structured data, llms.txt, sitemap coverage, blog intent, GA4/Search Console evidence, or when creating and revising English pet-care content in petio-landingpage. For Petio social channels or creator outreach, use petio-marketing; for landing-page layout and composition, use design-uiux-landing-page-web.
 ---
 
 # Petio SEO/AEO

@@ -1,6 +1,6 @@
 ---
 name: frontend-web-engineering
-description: Plan, implement, test, and verify production-ready frontend web application changes across routes, components, data fetching, forms, state, authentication boundaries, accessibility, responsive behavior, performance, and browser workflows. Prefer client-first SPA-style React/Next.js architecture with shadcn/ui, Framer Motion, TanStack when needed, and Zustand where appropriate. Use for React, Next.js, Vue, Svelte, and comparable web repositories when building features, fixing bugs, refactoring frontend architecture, or hardening a UI for release. Preserve existing contracts and do not claim completion without proportionate automated and runtime evidence.
+description: Plan, implement, test, and verify production-ready frontend web application changes across routes, components, data fetching, forms, state, authentication boundaries, accessibility, responsive behavior, performance, and browser workflows. Prefer client-first SPA-style React/Next.js architecture with shadcn/ui, Framer Motion, TanStack when needed, and Zustand where appropriate. Use for React, Next.js, Vue, Svelte, and comparable web repositories when building features, fixing bugs, refactoring frontend architecture, or hardening a UI for release. Preserve existing contracts and do not claim completion without proportionate automated and runtime evidence. For an independent UI/UX quality review rather than implementation, use audit-uiux-web.
 ---
 
 # Frontend Web Engineering

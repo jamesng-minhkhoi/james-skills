@@ -1,6 +1,6 @@
 ---
 name: audit-uiux-mobile
-description: Audit native mobile UI/UX on iOS and Android with quick, deep, release, and adversarial AI-generated UI review. Use research-first evidence to evaluate journeys, data-to-structure fit, explicitness, progressive disclosure, functional states, accessibility, localization, native interaction, visual systems, motion, trust, and rendered proof. Use for vibe-coded, template-generated, or suspected AI-slop mobile projects as well as conventional product audits. Do not implement fixes unless requested.
+description: Audit native mobile UI/UX on iOS and Android with quick, deep, release, and adversarial AI-generated UI review. Use research-first evidence to evaluate journeys, data-to-structure fit, explicitness, progressive disclosure, functional states, accessibility, localization, native interaction, visual systems, motion, trust, and rendered proof. Use for vibe-coded, template-generated, or suspected AI-slop mobile projects as well as conventional product audits. Do not implement fixes unless requested. Hand accepted fixes to frontend-mobile-engineering; for App Store or Google Play readiness, use audit-mobile-store-submission.
 ---
 
 # Audit UI/UX Mobile
