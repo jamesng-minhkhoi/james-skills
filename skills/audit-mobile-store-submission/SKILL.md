@@ -1,6 +1,6 @@
 ---
 name: audit-mobile-store-submission
-description: Audit iOS App Store and Google Play submission readiness for native and Expo/React Native apps, including rejection remediation, artifact inspection, portal-state analysis, and App Review/Play review evidence packets. Use before creating or updating a store submission to inspect the production artifact, installability, runtime behavior, reviewer access, metadata, display-name identity, screenshots and recordings, privacy and data disclosures, permission UX, monetization, public URLs, account deletion, platform policy, and current Apple/Google deadlines. Produce evidence-backed blockers and open gates; do not submit or change store dashboards unless explicitly requested.
+description: Audit iOS App Store and Google Play submission readiness for native and Expo apps, including rejection remediation, artifact inspection, portal state, and review evidence. Use before a submission to inspect the production artifact, installability, runtime behavior, reviewer access, metadata, display-name identity, screenshots, privacy disclosures, permissions, monetization, public URLs, account deletion, policy, and current deadlines. Produce evidence-backed blockers and open gates; do not submit or change store dashboards unless asked.
 ---
 
 # Audit Mobile Store Submission
@@ -25,6 +25,8 @@ and the bundled inspection script. For family, health, AI, financial, safety,
 regulated, or protected-content apps, read [claims and regulated content](references/claims-and-regulated-content.md).
 After completing an audit, use [friendly PDF reporting](references/pdf-reporting.md)
 and `scripts/render-audit-pdf.py` when a non-technical deliverable is useful.
+
+Shared vocabulary: [ontology](../_shared/ontology.md). Use its proof ladder, verdicts, and finding IDs.
 
 ## Operating rules
 
@@ -73,8 +75,8 @@ location/contacts/photos/SMS/call-log access, third-party AI, or region-specific
 behavior. These facts determine which checks apply.
 
 Before testing, create the evidence ledger from the release contract reference.
-Do not use a percentage or “mostly complete” label unless the required-item
-denominator is explicit. Every required row must be **Observed**, **Portal
+Do not use a percentage or an unmeasured completeness label unless the
+required-item denominator is explicit. Every required row must be **Observed**, **Portal
 confirmed**, **Provider/legal confirmed**, **Open**, or **Unknown**.
 
 ## 1. Establish the release contract
@@ -171,57 +173,17 @@ steps, credentials, test data, expected results, and fallback instructions.
 
 ### Permission-request integrity
 
-For every sensitive or interruptive system permission, inspect the exact
-pre-permission screen and the native prompt on a physical device:
-
-- explain the feature benefit and what the app will do before requesting;
-- use a neutral CTA such as **Continue** or **Next**, never a custom **Allow**
-  button that tells the user which answer to give;
-- do not draw, imitate, highlight, point at, or otherwise coach the system
-  permission dialog or its Allow/Don’t Allow choices;
-- verify **Maybe later**, denial, limited access, repeated launch, and Settings
-  recovery. Do not re-prompt after a clear denial unless the platform allows a
-  meaningful new context;
-- confirm the user keeps the core product when notifications are denied unless
-  the feature genuinely cannot function, and explain the consequence honestly.
+For every sensitive or interruptive permission, inspect the pre-permission
+screen and the native prompt on a physical device. Benefit first, neutral CTA,
+no coaching of the system dialog, honest denial path. Checklist:
+[permission integrity](references/permission-integrity.md).
 
 ## 4. Build the reviewer evidence packet
 
-Treat App Review Information, Play Console reviewer access, and rejection
-attachments as release artifacts. For Apple, prepare and verify the following
-against the exact build under review:
-
-1. A physical-device screen recording that starts by launching the app and
-   demonstrates the normal core flow, account registration/login/deletion,
-   paid content or subscription flow, UGC reporting/blocking, and every
-   sensitive permission prompt that applies.
-2. Device models and operating systems tested, including the recording device.
-3. App purpose, problem, target audience, and value; distinguish an adult
-   caregiver audience from a child subject or child-directed product.
-4. Setup and access instructions, credentials, MFA/OTP/QR steps, reset path,
-   sample files, test data, and expected results.
-5. External services, tools, platforms, authentication, payments, data
-   providers, analytics, ads, maps, AI, and other dependencies used by core
-   functionality.
-6. Regional differences, country/locale gates, or an explicit confirmation
-   that the reviewed behavior is consistent across regions.
-7. Regulated-industry authorization, content licenses, protected third-party
-   material rights, or other legal documentation when applicable.
-
-Record each attachment’s filename, capture date, device/OS, app version/build,
-and the exact reviewer note that points to it. A simulator screenshot or a
-generic product explanation is not equivalent to a physical-device recording
-of the submitted build.
-
-When a rejection is supplied, create one finding per guideline and preserve
-Apple/Google’s exact requested next step separately from your recommendation.
-Track whether the fix is source-only, present in a new artifact, observed on a
-device, attached to the portal, or still unverified.
-
-For each attachment, maintain an evidence-ledger row with filename, SHA-256
-when available, build/version, device/OS, capture date, portal field, and
-verification status. A recording attached to a message is not proof until its
-artifact and capture environment are identified.
+Treat reviewer access and rejection attachments as release artifacts. Use
+[the reviewer evidence packet](references/reviewer-evidence-packet.md) for the
+recording, device matrix, access steps, external services, and legal material,
+and record each attachment's hash, build, device, and verification status.
 
 ## 5. Audit listing and public trust surfaces
 
@@ -250,72 +212,18 @@ proof that the store promise is true.
 
 ## 6. Audit privacy, data, permissions, and SDKs
 
-Build a data map from code, native manifests, SDK documentation, network
-behavior, privacy policy, and store forms. Reconcile:
-
-- data collected, shared, linked to identity, used for tracking, retained, and
-  deleted;
-- first-party and third-party SDK behavior, including analytics, ads, crash
-  reporting, auth, payments, maps, social login, and third-party AI;
-- permission rationale, timing, minimum scope, denied path, and whether a core
-  feature works without unnecessary permission;
-- Apple App Privacy details, privacy manifest and required-reason APIs, ATT,
-  account deletion, Sign in with Apple, export compliance, and privacy policy;
-- Google Play Data Safety, data deletion questions, privacy policy, ads,
-  restricted permissions, target audience/content, and sign-in details.
-
-For family, baby, education, health, or development products, distinguish the
-person using the app from the person whose data is recorded. Audit age-rating,
-target-audience, child-safety, health/medical, and data-retention implications
-without inferring a legal classification from the product name alone.
-
-For every material store claim, create a claim-to-proof row: exact wording,
-screen or route, runtime/provider evidence, screenshot or recording, region,
-audience, rights/authorization, and reviewer-facing explanation. Use the claims
-reference for health, child/family, AI, financial, safety, UGC, and protected
-third-party content.
-
-Flag any declaration that is broader, narrower, older, or less specific than
-the actual binary and SDK behavior. A “no data collected” answer requires
-evidence, not intuition.
+Build a data map from code, manifests, SDK docs, network behavior, the privacy
+policy, and store forms, then reconcile collected/shared/retained/deleted data,
+SDK behavior, permission rationale and denial paths, Apple App Privacy and
+required-reason APIs, and Google Play Data Safety. Use [the privacy and data map](references/privacy-and-data-map.md)
+for the reconciliation checklist and the claim-to-proof row.
 
 ## 7. Apply platform gates
 
-Use the current official policies and the platform watch reference. At minimum,
-check:
-
-### Apple
-
-- App Completeness: crashes, blank/placeholder content, broken links, missing
-  review information, unavailable backend, incomplete IAP, and unreproducible
-  login or purchase flows;
-- accurate metadata and age rating; no hidden/dormant functionality or mismatch
-  between listing and binary, including marketplace name versus installed
-  display name under Guideline 2.3.8;
-- minimum functionality, web wrapper/content aggregator, copycat, spam,
-  repackaged template, or saturated-category risk;
-- privacy, account deletion, permissions, tracking, third-party AI disclosure,
-  privacy manifest, Sign in with Apple, and export compliance;
-- in-app purchase rules, reader/physical-goods distinctions, subscriptions,
-  restore/cancel flows, and review visibility;
-- current SDK, launch screen, accessibility metadata, supported platforms,
-  device behavior, and any regional legal or content requirements.
-
-### Google Play
-
-- stable install, launch, responsiveness, no blank pages, broken controls,
-  ANRs, crashes, and meaningful functionality/content;
-- accurate store listing, screenshots, ads declaration, content rating,
-  target audience, privacy policy, and reviewer access;
-- Data Safety and account deletion accuracy, including SDKs and web deletion
-  path;
-- high-risk/sensitive permissions, minimum-scope alternatives, photo/video,
-  contacts, location, SMS/call-log, foreground service, and full-screen intent
-  declarations when applicable;
-- target API, 16 KB page-size compatibility, device/form-factor support,
-  Play Billing or permitted regional alternatives, and test-track requirements;
-- developer identity, package registration, account status, repeated-rejection
-  risk, and production-access requirements.
+Use the current official policies, [the platform gates](references/platform-gates.md)
+for the stable Apple and Google checklist, and [the current platform watch](references/current-platform-watch.md)
+for deadlines and new requirements. When they disagree, the current official
+policy wins and the conflict is reported.
 
 ## 8. Classify findings and gates
 
@@ -344,8 +252,9 @@ For every finding record:
 - exact route, file, artifact, portal field, URL, device, or screenshot;
 - observed behavior and reproducible steps;
 - user/reviewer/store impact;
-- evidence level: **source**, **build**, **runtime**, **portal**, **provider**,
-  **public URL**, **legal owner**, or **unknown**;
+- proof rung: the highest of **declared**, **rendered**, **interactive**,
+  **connected**, **failure-tested**, **device**, **production**, plus the domain
+  source (**portal**, **provider**, **public URL**, **legal owner**);
 - recommendation, owner/input required, confidence, and verification method.
 
 ## 9. Report
@@ -354,8 +263,8 @@ Return:
 
 1. **Context and release manifest** — target, platform, version/build, artifact,
    track, audience, regions, and scope.
-2. **Verdict** — Ready, Ready with conditions, Not ready, or Unknown due to
-   missing external evidence. Give Apple and Google separate verdicts.
+2. **Verdict** — `READY`, `READY_WITH_CONDITIONS`, `NOT_READY`, or `UNKNOWN`
+   (missing external evidence). Give Apple and Google separate verdicts.
 3. **Blocker summary** — P0/P1 issues first, with the smallest next action.
 4. **Evidence matrix** — artifact, install, runtime, access, metadata, privacy,
    permissions, payments, public URLs, portal, legal, and evidence-ledger
@@ -374,6 +283,10 @@ Return:
 12. **Stakeholder PDF** — after the Markdown report is complete, render and
    visually inspect a readable PDF for non-technical readers; keep the Markdown
    as the editable source of truth.
+
+Give every finding a stable ID, `F-store-<n>` (for example `F-store-03`), and
+put it in the first cell as `P1 · F-store-03`. The builder closes by ID; a
+re-audit reopens or adds, and never renumbers.
 
 Use this finding shape:
 
