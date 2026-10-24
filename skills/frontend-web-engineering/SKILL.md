@@ -1,6 +1,6 @@
 ---
 name: frontend-web-engineering
-description: Plan, implement, test, and verify production-ready frontend web application changes across routes, components, data fetching, forms, state, authentication boundaries, accessibility, responsive behavior, performance, and browser workflows. Prefer client-first SPA-style React/Next.js architecture with shadcn/ui, Framer Motion, TanStack when needed, and Zustand where appropriate. Use for React, Next.js, Vue, Svelte, and comparable web repositories when building features, fixing bugs, refactoring frontend architecture, or hardening a UI for release. Preserve existing contracts and do not claim completion without proportionate automated and runtime evidence. For an independent UI/UX quality review rather than implementation, use audit-uiux-web.
+description: Build, test, and verify production-ready frontend web changes across routes, components, data fetching, forms, state, auth boundaries, accessibility, responsive behavior, performance, and browser workflows. Prefer client-first React/Next.js with shadcn/ui, Framer Motion, TanStack, and Zustand where they fit. Use for React, Next.js, Vue, Svelte, and comparable repos when building features, fixing bugs, refactoring, or hardening for release. Preserve contracts; do not claim completion without proportionate automated and runtime evidence. For an independent UI/UX review, use audit-uiux-web.
 ---
 
 # Frontend Web Engineering
@@ -26,6 +26,8 @@ For visual builds, reference matching, or redesigns, use the
 [design fidelity checks](references/testing-and-browser-proof.md#design-fidelity-checks)
 to carry the design decisions through implementation and rendered review.
 When changing this skill, use the [frontend engineering regression cases](evals/frontend-web-engineering-regression.md).
+
+Shared vocabulary: [ontology](../_shared/ontology.md). Use its proof ladder, verdicts, and finding IDs.
 
 ## Non-negotiable order
 
@@ -178,29 +180,9 @@ user's input, show pending state, reconcile the result, and provide recovery.
 
 ### Responsiveness and loading conventions
 
-Choose the smallest loading and computation scope that preserves continuity:
-
-| Situation | Required behavior |
-| --- | --- |
-| Initial route with no usable shell or safe content | Route-level skeleton or loading boundary may block the route; match the final geometry. |
-| Existing app shell or client navigation | Keep navigation, header, filters, and stable content mounted; replace only the changing region. |
-| Initial list/table fetch | Use row/card skeletons with final-shape geometry; do not invent a giant page spinner. |
-| Refresh or background revalidation | Keep usable stale content visible and show a local refresh/pending indicator. |
-| Field validation, autocomplete, or filter query | Show pending/error at the field or control; debounce query input and cancel stale requests. |
-| Row/card mutation | Keep the rest of the page interactive; mark the affected row/action pending and reconcile or roll back locally. |
-| Auth, tenant, permission, or route-wide context switch | A route-wide boundary is acceptable when old content must be removed to prevent leakage or an incorrect action. |
-
-Use a short, measured debounce for high-frequency query input (often about
-250–400 ms for search/typeahead), cancel or ignore obsolete requests, and never
-debounce an explicit submit, destructive action, or button press. Throttle or
-`requestAnimationFrame` is usually a better fit for scroll/resize work.
-
-Treat memoization as a measured optimization: profile first; use `memo` for
-expensive repeated components with stable props, `useMemo` for expensive
-derived work, and `useCallback` only when referential stability matters to a
-memoized child or hook dependency. Do not blanket-wrap components or memoize
-cheap values to hide duplicated state, unstable props, or an unvirtualized
-large list. Preserve the same server-state cache and query-key ownership.
+Choose the smallest loading and computation scope that preserves continuity,
+then apply the debounce and memoization rules in
+[loading and memoization](../_shared/loading-and-memoization.md).
 
 ## 6. Validate in layers
 
