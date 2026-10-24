@@ -9,6 +9,8 @@ Use Threads as a conversation and learning surface. Make every engagement
 useful without requiring a profile visit, and improve the workflow from
 repeated evidence rather than copying a single high-performing post.
 
+Shared vocabulary: [ontology](../_shared/ontology.md). Use its proof ladder, verdicts, and finding IDs.
+
 ## Operating modes
 
 Choose one mode before acting:
@@ -197,44 +199,15 @@ principles, not claims about a Threads ranking formula.
 
 ### 4a. AI-tone banned lexicon and punctuation gate
 
-This is a reusable rewrite gate, not a guarantee about any AI detector. Apply
-it to the draft's own words only. Leave quoted parent text, proper nouns, brand
-names, technical terms, identifiers, URLs, and user-requested exact copy
-unchanged.
-
-Use these mechanical rules:
-
-- AI-TONE-01: rewrite generic AI/marketing vocabulary: delve, leverage,
-  utilize, facilitate, seamless, robust, unlock, empower, elevate, game-changer,
-  revolutionary, innovative, transformative, ecosystem, landscape, journey,
-  navigate, foster, tapestry, paradigm, synergy, holistic, actionable,
-  scalable, streamline, frictionless, cutting-edge, at the end of the day,
-  in today's world, it's worth noting, here's the thing, excited to share,
-  a testament to, small but mighty, sharing a small peek, the quiet parts,
-  the little details, or makes everything easier. Use a plain verb or a
-  specific detail instead.
-- AI-TONE-02: ban em dashes (—) and en dashes (–) as sentence punctuation.
-  Use a period, comma, colon, or parentheses. ASCII hyphens (-) are allowed
-  only in legitimate compounds, identifiers, versions, URLs, or code, never
-  as sentence separators.
-- AI-TONE-03: rewrite generic bridges, slogan endings, "not X but Y"
-  templates, empty rhetorical questions, and polished CTAs that could fit any
-  project.
-- AI-TONE-04: rewrite unnecessary three-part lists, mirrored clauses, and
-  repeated parallel phrasing when they exist mainly for rhythm.
-- AI-TONE-05: read the copy aloud once. If it sounds like a landing-page
-  caption, rewrite from the concrete moment, decision, behavior, or artifact.
-- AI-TONE-06: require one concrete anchor: a specific noun, action, time,
-  number, tradeoff, or observed detail. Abstract warmth alone fails.
-
-Mark AI-TONE: PASS only when all hard checks pass, the copy contains a
-concrete anchor, and the voice-note test passes. Otherwise mark
-AI-TONE: FAIL, identify the rule ID and exact offending phrase, and rewrite
-before posting.
+Apply [the AI-tone gate](../_shared/ai-tone.md) to the draft's own words only.
+Mark `AI-TONE: PASS` only when every hard rule passes; otherwise mark
+`AI-TONE: FAIL`, name the rule ID, quote the offending phrase, and rewrite
+before publishing.
 
 ### 5. Run the preflight
 
-Return `ready`, `needs evidence`, `needs rewrite`, or `do not post`.
+Return `PASS`, `BLOCKED` (needs evidence), `FAIL` (needs rewrite), or
+`FAIL — do not post`.
 
 Check that:
 
@@ -306,27 +279,14 @@ negative results and unknowns.
 
 Use these evidence levels:
 
-- **Observed:** directly visible in the Threads surface or analytics.
-- **Attributed:** downstream event tied to a reliable link, event, or explicit
+- **verified:** directly visible in the Threads surface or analytics.
+- **attributed:** downstream event tied to a reliable link, event, or explicit
   user report.
-- **Inferred:** plausible explanation that still needs testing.
-- **Unknown:** not observed or not comparable.
+- **inferred:** plausible explanation that still needs testing.
+- **unverified:** not observed or not comparable.
 
-Do not promote a pattern from one post. Treat a pattern as:
-
-- **insufficient** with fewer than 3 comparable observations;
-- **repeated-signal** with at least 3 observations and at least 2 positive
-  outcomes, while retaining confounders;
-- **promotion-candidate** only after a larger comparable sample, normally 8–12
-  observations, with repeated positive outcomes and no obvious alternative
-  explanation.
-
-Promoting a pattern means adding it to a reviewed, project-agnostic guidance
-section as a hypothesis with sample, dates, conditions, and limitations. Do
-not encode “always,” guaranteed ranking tactics, or one project’s voice as a
-universal rule. Shared-skill edits require an explicit maintenance action and
-review; live engagement may produce a candidate update but must not mutate this
-skill automatically.
+Do not promote a pattern from one post. Thresholds, labels, and promotion
+rules are in [the learning ledger](references/learning-ledger.md#pattern-maturity).
 
 ## Resources
 

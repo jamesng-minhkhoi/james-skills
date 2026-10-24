@@ -89,3 +89,21 @@ pattern into shared skill guidance only with the sample window, platforms,
 conditions, limitations, and a follow-up test. Keep project-specific copy,
 claims, audiences, and brand voice in the project ledger rather than the shared
 skill.
+
+## Pattern maturity
+
+Do not promote a pattern from one post. Treat a pattern as:
+
+- **anecdote** with fewer than 3 comparable observations;
+- **repeated** with at least 3 observations and at least 2 positive outcomes,
+  while retaining confounders;
+- **candidate** only after a larger comparable sample, normally 8–12
+  observations, with repeated positive outcomes and no obvious alternative
+  explanation.
+
+Promoting a pattern means adding it to a reviewed, project-agnostic guidance
+section as a hypothesis with sample, dates, conditions, and limitations. Do
+not encode “always,” guaranteed ranking tactics, or one project’s voice as a
+universal rule. Shared-skill edits require an explicit maintenance action and
+review; live engagement may produce a candidate update but must not mutate this
+skill automatically.
