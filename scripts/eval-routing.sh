@@ -26,7 +26,8 @@ for file in "$REPO"/agents/*.md; do NAMES+=("$(basename "$file" .md)"); done
 
 PROMPT_HEAD="Routing check — do NOT perform the task or call any tools. Given the \
 skills and subagents available to you, reply with ONE line: the skill name(s) \
-and/or subagent you would use first, then ' — ' and a reason under 15 words."
+and/or subagent you would use first, then ' — ' and a reason under 15 words. If \
+no listed skill or subagent fits, reply 'none — ' and a reason under 15 words."
 
 # The first known name to appear in the answer is what it routed to.
 first_named() {
@@ -66,7 +67,16 @@ for id in "${ids[@]}"; do
   expected="$(cat "$WORK/$id.expected")"
   answer="$(tail -1 "$WORK/$id.out")"
   got="$(first_named "$answer")"
-  if [ -n "$got" ] && [[ "/$expected/" == *"/$got/"* ]]; then
+  lower="$(printf '%s' "$answer" | tr '[:upper:]' '[:lower:]')"
+  if [ "$expected" = "none" ]; then
+    if [ "${lower#none}" != "$lower" ]; then
+      echo "pass  $id → none"
+    else
+      echo "FAIL  $id → ${got:-nothing} (expected none)"
+      echo "      $answer"
+      failed=$((failed + 1))
+    fi
+  elif [ -n "$got" ] && [[ "/$expected/" == *"/$got/"* ]]; then
     echo "pass  $id → $got"
   else
     echo "FAIL  $id → ${got:-nothing} (expected $expected)"

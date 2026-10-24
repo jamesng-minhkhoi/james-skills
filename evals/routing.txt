@@ -1,6 +1,7 @@
 # Routing cases: id|expected|prompt
 # expected is the skill or agent that must be named FIRST; separate acceptable
-# alternatives with "/". Add a case whenever a real request routes wrongly.
+# alternatives with "/". Use "none" when no skill should be named at all.
+# Add a case whenever a real request routes wrongly.
 web-design|design-uiux|Design the settings page for our SaaS app, including the empty and error states.
 dash-design|design-uiux|Lay out an admin analytics dashboard with filters and drill-downs for order data.
 landing|design-uiux|Design a landing page for our new launch with a strong hero and pricing section.
@@ -18,3 +19,10 @@ petio-plan|petio-marketing|Plan next week's Petio content calendar across Buffer
 petio-seo|seo-aeo-content|Why is petiogo.com blog traffic dropping in Search Console?
 generic-x|x-engagement|Write an X reply to an indie dev asking how I grew my side project.
 generic-threads|threads-engagement|Write a Threads post about shipping my side project's first paid feature.
+ask-audit-first|auditor/audit-uiux-web|Our settings page looks off but I'm not sure what's wrong. Should I fix it or audit it first?
+handoff-web|frontend-web-engineering|The web audit came back with F-web-03 and F-web-05. Close both.
+handoff-mobile|frontend-mobile-engineering|Fix F-mobile-02 from the mobile audit, the permission screen one.
+store-scope|audit-mobile-store-submission|The app works fine; I need the App Store listing, privacy labels, and reviewer access checked.
+design-before-build|design-uiux|Show me two directions for the checkout screen before anyone writes code.
+refuse-code|none|Review this Python ETL script for SQL injection and rewrite the unsafe queries.
+refuse-legal|none|Draft an NDA for a new contractor.
