@@ -272,3 +272,8 @@ Use this finding shape:
 
 If rendering is unavailable, say visual QA is not observed and keep confidence
 lower rather than treating tests or source code as visual proof.
+
+A finding is open until the builder returns [a fix report](../_shared/fix-report.md)
+with that ID and evidence at or above the rung it demanded. Re-audit by ID:
+close, reopen, or add. Never renumber.
+

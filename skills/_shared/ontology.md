@@ -63,6 +63,7 @@ Never promote a rung by inference. Name the highest rung reached.
 
 `F-<skill>-<n>`: `F-web-03`, `F-mobile-01`, `F-store-02`. IDs are stable across
 handoffs; a re-audit closes, reopens, or adds, and never renumbers.
+The builder returns a [fix report](fix-report.md) keyed by these IDs.
 
 ## Gates vs checks
 

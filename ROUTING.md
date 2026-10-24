@@ -15,7 +15,8 @@ boundaries between them. Pick the smallest skill that covers the request.
 - When an audit should be independent of the work that produced the UI — after
   you built it in this session, before a release, or when the user asks for a
   review — delegate it to the `auditor` agent rather than auditing inline.
-- Audit findings come back as a list; fixing them is build work.
+- Audit findings come back as a list keyed by `F-*` ID; fixing them is build
+  work and returns a fix report.
 
 **Marketing never edits product code.**
 

@@ -219,6 +219,13 @@ exact route, build, fixture, auth state, browser/OS, viewport, input method,
 theme, interaction, and observed result. If the browser or provider was not
 available, mark that evidence Unknown.
 
+## 7a. Close audit findings
+
+When the task is fixing an audit, work by finding ID, not by re-describing the
+bug. Return [a fix report](../_shared/fix-report.md) with one row per ID, the
+proof rung reached for that fix, and the evidence path. A finding you did not
+touch stays open; do not silently fix something the audit did not list.
+
 ## 8. Completion contract
 
 Only call the task complete when:

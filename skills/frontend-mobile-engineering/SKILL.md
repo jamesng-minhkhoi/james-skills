@@ -231,6 +231,13 @@ Before reporting completion:
 Never call a mobile feature fully verified from source inspection, lint,
 typecheck, a passing unit test, Expo Go, or one simulator screenshot alone.
 
+## 7a. Close audit findings
+
+When the task is fixing an audit, work by finding ID, not by re-describing the
+bug. Return [a fix report](../_shared/fix-report.md) with one row per ID, the
+proof rung reached for that fix, and the evidence path. A finding you did not
+touch stays open; do not silently fix something the audit did not list.
+
 ## Completion contract
 
 Report:

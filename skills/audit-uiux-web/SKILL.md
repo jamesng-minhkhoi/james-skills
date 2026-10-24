@@ -251,3 +251,8 @@ Use this finding shape:
 
 Never call the audit complete because lint, typecheck, tests, or one desktop
 screenshot passes. A visual or motion gate not observed remains **Unknown**.
+
+A finding is open until the builder returns [a fix report](../_shared/fix-report.md)
+with that ID and evidence at or above the rung it demanded. Re-audit by ID:
+close, reopen, or add. Never renumber.
+
