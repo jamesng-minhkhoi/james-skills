@@ -64,6 +64,22 @@ for target in "${TARGETS[@]}"; do
     run ln -s "$want" "$link"
   done
 
+  # Shared references (ontology, tone, loading) are not skills, but skills link
+  # to ../_shared, so each target needs the directory linked once.
+  if [ -d "$SRC/_shared" ]; then
+    link="$target/_shared"
+    want="$SRC/_shared"
+    if [ ! -L "$link" ] || [ "$(readlink "$link")" != "$want" ]; then
+      if [ -e "$link" ] || [ -L "$link" ]; then
+        echo "  replace _shared"
+        run rm -rf "$link"
+      else
+        echo "  link    _shared"
+      fi
+      run ln -s "$want" "$link"
+    fi
+  fi
+
   # Drop links that point into this repo but no longer resolve, so a renamed
   # or deleted skill does not linger as a broken entry.
   for entry in "$target"/*; do

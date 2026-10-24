@@ -26,3 +26,9 @@ boundaries between them. Pick the smallest skill that covers the request.
 - `x-engagement` and `threads-engagement` stand alone for non-Petio accounts.
 - Nothing is published, scheduled, or sent without explicit approval in the
   current conversation.
+
+**Vocabulary.** Proof: `declared < rendered < interactive < connected <
+failure-tested < device < production`. Gates: `PASS | FAIL | BLOCKED | NOT_RUN`.
+Deliverables: `READY | READY_WITH_CONDITIONS | NOT_READY | UNKNOWN`. Unobserved
+is `NOT_RUN`/`UNKNOWN`, never pass; an unmarked claim is `unverified`. Full
+ontology: `skills/_shared/ontology.md`.

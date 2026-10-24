@@ -7,6 +7,8 @@ description: Audit and improve Petio website SEO and answer-engine visibility. U
 
 Use this skill for an evidence-led search-content loop: audit, prioritize, implement, verify, and record what changed. It is designed for Petio's Next.js landing page and MDX blog, but the evidence rules generalize to similar content sites.
 
+Shared vocabulary: [ontology](../_shared/ontology.md). Use its proof ladder, verdicts, and finding IDs.
+
 ## Reusable operating modes
 
 Choose the smallest workflow that matches the request:

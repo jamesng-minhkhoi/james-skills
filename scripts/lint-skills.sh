@@ -57,6 +57,13 @@ for file in "$REPO"/skills/*/SKILL.md; do
   check_budget "$skill" desc_words "$(printf '%s' "$desc" | wc -w | tr -d ' ')" "$MAX_DESC_WORDS"
   check_budget "$skill" skill_lines "$(wc -l < "$file" | tr -d ' ')" "$MAX_SKILL_LINES"
 
+  # Every skill shares one vocabulary; a private redefinition is the drift this
+  # library exists to prevent.
+  grep -q '\.\./_shared/ontology\.md' "$file" || fail "$skill: missing link to ../_shared/ontology.md"
+  if grep -q 'mostly complete' "$file"; then
+    fail "$skill: banned phrase 'mostly complete' (use a verdict from the ontology)"
+  fi
+
   # Every relative Markdown link in the skill must resolve.
   for md in "$file" "$dir"/references/*.md; do
     [ -f "$md" ] || continue
@@ -65,6 +72,15 @@ for file in "$REPO"/skills/*/SKILL.md; do
       [ -e "$(dirname "$md")/$link" ] || fail "$skill: broken link $link in ${md#"$REPO"/}"
     done < <(grep -oE '\]\([^)#]+' "$md" | sed 's/^](//')
   done
+done
+
+# Shared references must keep their own links resolving.
+for md in "$REPO"/skills/_shared/*.md; do
+  [ -f "$md" ] || continue
+  while read -r link; do
+    case "$link" in http*|mailto:*) continue ;; esac
+    [ -e "$(dirname "$md")/$link" ] || fail "shared: broken link $link in ${md#"$REPO"/}"
+  done < <(grep -oE '\]\([^)#]+' "$md" | sed 's/^](//')
 done
 
 [ "$PRINT_BASELINE" -eq 1 ] && exit 0

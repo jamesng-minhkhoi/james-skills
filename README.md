@@ -50,6 +50,20 @@ Each skill is self-contained and can be copied or linked into a Codex or Claude
 skills directory. Keep project-specific branding, routes, and business rules
 in the source repository rather than hard-coding them into a reusable skill.
 
+## Shared vocabulary
+
+[`skills/_shared/ontology.md`](skills/_shared/ontology.md) is the one definition
+of proof levels, verdicts, severities, claim status, and finding IDs. Every
+skill links to it; the six-line card in `ROUTING.md` is the part that loads in
+every session. Two other shared references hold mechanics that were duplicated:
+[`ai-tone.md`](skills/_shared/ai-tone.md) and
+[`loading-and-memoization.md`](skills/_shared/loading-and-memoization.md).
+
+`_shared/` is not a skill: it has no `SKILL.md`, so it never competes for
+routing. `install.sh` links it beside the skills so `../_shared` resolves in
+both this repo and the installed targets. `lint-skills.sh` fails a skill that
+does not link the ontology or that uses a retired synonym.
+
 ## Install
 
 ```sh

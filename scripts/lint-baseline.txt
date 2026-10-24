@@ -1,8 +1,4 @@
 # Known budget overages: skill metric value
 # A listed skill may shrink below its value but never grow past it. Lower the
 # value (or delete the line) when you trim; never raise it to make lint pass.
-audit-mobile-store-submission desc_words 85
-audit-mobile-store-submission skill_lines 386
-frontend-web-engineering desc_words 91
-petio-marketing skill_lines 530
-threads-engagement skill_lines 337
+# Currently empty: every skill is inside its budget.

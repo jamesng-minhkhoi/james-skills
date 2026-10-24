@@ -12,6 +12,8 @@ plan the build. This skill never edits product code: builds go to
 `frontend-mobile-engineering` or `frontend-web-engineering`, and an
 independent review goes to the `auditor` agent.
 
+Shared vocabulary: [ontology](../_shared/ontology.md). Use its proof ladder, verdicts, and finding IDs.
+
 ## Defaults a project can override
 
 - **Canvas:** the Artifact tool's **Design** type (run `quickstart` with
