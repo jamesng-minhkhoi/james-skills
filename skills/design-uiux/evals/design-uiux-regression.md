@@ -46,7 +46,20 @@ most; elsewhere score it only when it applies.
 | Fidelity | Final-quality design direction with real content and states, not a wireframe; static design locked before motion (3, 4) |
 | Flow | Navigation map with what each step is and what back does; login only where an action needs it (5) |
 | Proportion | Depth matches the request; no padding, no ceremony on a small fix |
+| Vocabulary | Names the highest proof rung reached and never calls an unobserved state pass |
+
+## Must not have
+
+A candidate fails regardless of rubric score if it contains any of these:
+
+- an HTML page, Figma file, or doc in place of the Design artifact;
+- product code before the direction is approved;
+- one option when options were requested, or a single option dressed up as a
+  choice;
+- invented tokens, components, or type when the repository already has them;
+- a wireframe or placeholder content presented as the final direction;
+- any named slop tell, or a consistency check claimed without naming what was
+  checked.
 
 Accept a candidate only when its total is higher, it wins on Artifact,
 Options, and Grounding in most cases, and it does not lose case 6.
-| Vocabulary | Names the highest proof rung reached and never calls an unobserved state pass |

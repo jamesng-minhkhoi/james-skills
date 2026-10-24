@@ -51,3 +51,14 @@ Expected audit behavior:
   progress, or modal according to consequence.
 - use the shared vocabulary: name the highest proof rung, mark unobserved gates
   `NOT_RUN`/`UNKNOWN`, and give each finding a stable `F-mobile-<n>` ID.
+
+## Must not have
+
+A report fails if it contains any of these:
+
+- a `device` or store claim inferred from a simulator;
+- `PASS` or `READY` for a gate that was not observed;
+- a proof label or verdict outside the shared ontology;
+- a finding without a stable `F-mobile-<n>` ID;
+- an accessibility or interruption claim made without a device or runtime
+  observation.

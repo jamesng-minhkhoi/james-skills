@@ -53,3 +53,15 @@ Expected behavior:
 - report the highest proof rung reached, mark unobserved device and provider
   gates `NOT_RUN` or `UNKNOWN`, and never describe a simulator observation as
   device-verified.
+
+## Must not have
+
+A completion claim fails if it contains any of these:
+
+- "done", "works", or "verified" without a command, output, screenshot, or
+  runtime check behind it;
+- an `F-mobile-<n>` finding marked closed without evidence at the rung it
+  demanded;
+- a device, store, or provider claim inferred from a simulator;
+- a new native module or dependency where Expo or the repository already has an
+  equivalent.

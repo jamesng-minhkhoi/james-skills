@@ -69,3 +69,13 @@ Expected behavior:
 - report any unobserved responsive, interaction, and provider gates separately.
 - report the highest proof rung reached, mark unobserved gates `NOT_RUN` or
   `UNKNOWN`, and never describe an unmeasured state as verified.
+
+## Must not have
+
+A completion claim fails if it contains any of these:
+
+- "done", "works", or "verified" without a command, output, screenshot, or
+  runtime check behind it;
+- an `F-web-<n>` finding marked closed without evidence at the rung it demanded;
+- a new dependency where the repository already has an equivalent;
+- a responsive, provider, or production claim inferred from a local render.

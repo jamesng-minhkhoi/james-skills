@@ -73,3 +73,15 @@ Expected audit behavior:
 - do not claim conversion loss or production performance measurements.
 - use the shared vocabulary: name the highest proof rung, mark unobserved gates
   `NOT_RUN`/`UNKNOWN`, and give each finding a stable `F-web-<n>` ID.
+
+## Must not have
+
+A report fails if it contains any of these:
+
+- `PASS` or `READY` for a gate that was not observed;
+- a proof label or verdict outside the shared ontology;
+- a finding without a stable `F-web-<n>` ID;
+- a mobile, keyboard, screen-reader, or performance claim inferred from a
+  desktop screenshot;
+- a demanded redesign where the supplied design contract is coherent and the
+  only complaints are taste.
