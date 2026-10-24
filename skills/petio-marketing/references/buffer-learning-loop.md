@@ -293,3 +293,43 @@ Treat the following as distinct evidence levels:
 Keep the learning loop focused on Petio's job: useful clarity and qualified
 product discovery. Do not optimize toward panic, medical certainty, or generic
 engagement bait.
+
+## Audit content patterns, not only individual posts
+
+When improving an active channel, build a small pattern matrix for the
+comparable window before choosing the next batch. Classify each post using the
+same fields so that “what worked” is not reduced to a lucky creator or a high
+view count:
+
+- **topic/job:** the owner problem and intended action;
+- **content mode:** day-in-the-life or routine, contextual product demo, owner
+  story/question, direct explainer, checklist, trend/comedy, generic food,
+  mukbang, or other entertainment-led format;
+- **trust vehicle:** known creator, real owner/UGC, expert/source, Petio account,
+  or no identifiable trust source;
+- **product role:** natural tool in the story, demonstrated solution, explicit
+  pitch, or absent;
+- **audience node and channel:** one Petio audience node, native platform, and
+  format;
+- **CTA and intent strength:** none, conversation, profile visit, click, install,
+  activation, or subscription intent.
+
+Compare rates within comparable cohorts, not raw totals across platforms. Label
+each pattern as:
+
+- **attention-poor:** weak reach, views, starts, or completion;
+- **conversation-poor:** attention arrived but replies, shares, saves, or
+  qualified questions were weak;
+- **intent-poor:** attention or engagement was acceptable but verified profile,
+  click, install, activation, or subscription signals were weak;
+- **unknown:** the downstream event is not available or the cohort is too small.
+
+Do not call a post “converting” from views, likes, or comments alone. A pattern
+that attracts attention without qualified intent is useful evidence of an
+entertainment or curiosity mismatch, not a successful growth format.
+
+Treat external observations as hypotheses to test for Petio, not rules to copy.
+For example, contextual day-in-the-life content from a trusted creator may
+outperform a direct product explainer, while generic food or comedy content may
+earn views without product intent. Test the mechanism with Petio’s own audience,
+proof, and safety constraints before promoting or demoting the pattern.

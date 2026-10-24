@@ -10,6 +10,8 @@ Operate Petio marketing as a research → draft → preflight → schedule → m
 mapping grounded in the source repositories; do not let a persuasive template,
 viral post, or Buffer metric override a Petio safety or evidence rule.
 
+Shared vocabulary: [ontology](../_shared/ontology.md). Use its proof ladder, verdicts, and finding IDs.
+
 ## Start every session
 
 1. Resolve the source repositories:
@@ -43,7 +45,6 @@ precedence over every adapter.
 
 | Work | Adapter | Contract |
 | --- | --- | --- |
-| General hooks, clarity, persuasion, or variants | `$copywriting` when installed | Use for options and editing mechanics; re-run Petio proof, claims, voice, and audience gates afterward. No copywriting skill is currently present in this repo, so do not assume one exists. |
 | X posts, replies, research, or measurement | `$x-engagement` | Read its playbook and policy references. Use the founder adapter only for the explicitly authorized `@JamesNMK` lane; keep the Petio product account dormant unless the user reopens it. |
 | Threads posts, replies, or measurement | `$threads-engagement` | Read its current workflow and learning-ledger guidance. If the adapter is unavailable or incomplete, fall back to `petio-content/platforms/threads.md` and `voice/platform-tone.md`. |
 | English blog, SEO, AEO, or landing-page content | `$seo-aeo-content` | Keep search intent, source citations, canonical/indexing checks, and Petio safety gates together. |
@@ -95,163 +96,23 @@ it `unknown`; never backfill it from another platform.
 
 ### 2a. Audit content patterns, not only individual posts
 
-When improving an active channel, build a small pattern matrix for the
-comparable window before choosing the next batch. Classify each post using the
-same fields so that “what worked” is not reduced to a lucky creator or a high
-view count:
+When improving an active channel, classify posts into comparable cohorts before
+choosing the next batch. The fields, labels, and cohort rules are in
+[the Buffer learning loop](references/buffer-learning-loop.md#audit-content-patterns-not-only-individual-posts).
 
-- **topic/job:** the owner problem and intended action;
-- **content mode:** day-in-the-life or routine, contextual product demo, owner
-  story/question, direct explainer, checklist, trend/comedy, generic food,
-  mukbang, or other entertainment-led format;
-- **trust vehicle:** known creator, real owner/UGC, expert/source, Petio account,
-  or no identifiable trust source;
-- **product role:** natural tool in the story, demonstrated solution, explicit
-  pitch, or absent;
-- **audience node and channel:** one Petio audience node, native platform, and
-  format;
-- **CTA and intent strength:** none, conversation, profile visit, click, install,
-  activation, or subscription intent.
+### Trend and virality loop: borrow the moment, keep Petio's job
 
-Compare rates within comparable cohorts, not raw totals across platforms. Label
-each pattern as:
+Treat "viral" as research input, not a quality bar. Score relevance, conversation
+potential, proof fit, freshness, safety, asset readiness, and next step before
+using a moment. Method and scoring: [trend and virality](references/trend-and-virality.md).
 
-- **attention-poor:** weak reach, views, starts, or completion;
-- **conversation-poor:** attention arrived but replies, shares, saves, or
-  qualified questions were weak;
-- **intent-poor:** attention or engagement was acceptable but verified profile,
-  click, install, activation, or subscription signals were weak;
-- **unknown:** the downstream event is not available or the cohort is too small.
+### Channel lanes and distribution
 
-Do not call a post “converting” from views, likes, or comments alone. A pattern
-that attracts attention without qualified intent is useful evidence of an
-entertainment or curiosity mismatch, not a successful growth format.
+X Topic choice, Topic diversity across a batch, and the entertainment-to-traffic
+lane are channel mechanics. Use [channel lanes](references/channel-lanes.md) when
+the brief targets discovery on a personal or low-follower account; the adapter
+skill still owns the drafting workflow.
 
-Treat external observations as hypotheses to test for Petio, not rules to copy.
-For example, contextual day-in-the-life content from a trusted creator may
-outperform a direct product explainer, while generic food or comedy content may
-earn views without product intent. Test the mechanism with Petio’s own audience,
-proof, and safety constraints before promoting or demoting the pattern.
-
-### Trend and virality loop: borrow the moment, keep Petio’s job
-
-“Viral” is a research input, not a quality bar. Before drafting a timely post,
-collect three signals:
-
-- **Live trigger:** a current news item, seasonal moment, cultural conversation,
-  platform-native format, or calendar event, with source and date recorded;
-- **Audience behavior:** a repeated question, comment pattern, remixable format,
-  creator mechanic, or Buffer pattern that explains why people may stop and
-  respond;
-- **Petio angle:** one specific owner job that Petio can support with verified
-  proof, such as keeping a timeline, attaching a food scan to a pet profile, or
-  sharing records with family.
-
-Score each candidate before using it: relevance to a Petio audience (0–3),
-conversation potential (0–3), verified proof fit (0–3), freshness (0–2),
-safety (0–2), asset readiness (0–2), and a credible next step (0–2). Reject a
-candidate with no safe frame, no proof, or no useful owner action even if it is
-receiving attention elsewhere.
-
-Use the trend as the wrapper, not as a reason to make a claim. A calendar event
-can frame a saveable owner prompt; a current recall can frame “save the label and
-lot details” without naming a product unsafe for a particular animal; a popular
-format can carry a real routine or question. Do not force unrelated news into
-Petio, imply that a trend proves Petio demand, or manufacture urgency. Create a
-platform-native version for each channel, and keep the same experiment variable
-visible across the variants.
-
-Record the source URL, publication date, observation date, confidence, trend
-wrapper, chosen Petio job, and why the idea is safe. Recheck fast-moving claims
-before scheduling; mark social-platform observations as hypotheses unless
-Buffer or a primary source confirms them.
-
-### X topic distribution for a low-follower founder lane
-
-For the explicitly reopened `@JamesNMK` lane, treat X Topics as a distribution
-experiment when the composer exposes a Topic field. A small or low-follower
-account cannot rely on an existing audience alone, so choose one native topic
-that matches the intended audience's problem (for example, pet care, pet
-parents, or indie product building) rather than choosing Petio as a brand
-topic or attaching an unrelated trending name.
-
-- Record the exact selected topic, topic source (`manual`, `suggested`, or
-  `trending`), audience node, and relevance rationale beside the post.
-- Use the trending-topic panel as research and discovery, not as permission to
-  hijack a conversation. Reject a topic that does not give the target reader a
-  useful reason to stop or reply.
-- Keep the main post useful without the topic label. A Topic is a distribution
-  aid, not proof that X will recommend the post or that the audience is a fit.
-- Test Topic assigned versus no Topic as one variable at a time. Hold the hook,
-  media role, CTA placement, and posting window as constant where possible.
-- Use qualified replies or profile visits as the primary engagement signal;
-  impressions and irrelevant replies/spam signals are guardrails. Follower
-  growth, likes, and views alone do not establish that the topic worked.
-- If the composer has no Topic control, record the equivalent problem cluster
-  in the learning ledger and prioritize relevant replies; do not compensate by
-  adding unrelated hashtags or repeating the link.
-
-### Topic diversity gate for scheduled batches
-
-Do not use one native Topic as a substitute for audience research. For a batch
-of six or more discovery-oriented posts on X or Threads, use at least four
-relevant Topics when the platform exposes that many choices, and keep any one
-Topic to no more than two posts. Assign the Topic from the post's owner job and
-audience node, not from whichever label was used most recently. A narrower mix
-is allowed only when the platform exposes fewer relevant Topics; record the
-limitation and test the next available topic rather than inventing a trend.
-
-For Threads, current relevant choices may include `PetHealth`, `Pets`,
-`MultiPet`, `PetFood`, and `PetCare`. These are examples from the authenticated
-Buffer workspace, not a permanent platform taxonomy. Re-open the Topic picker
-before each batch because the available and trending choices can change. Meta
-has reported that posts with tagged Topics generally receive more views, but
-that is directional platform evidence, not proof of recommendation or
-conversion: <https://about.fb.com/news/2025/03/new-threads-features-more-personalized-experience-you-control/>.
-
-After scheduling, verify the exact Topic on every queue card or by reopening
-the composer. If one Topic appears on more than two posts in a six-post batch,
-return `needs rewrite` and rebalance before calling the batch ready.
-
-### Entertainment-to-traffic lane for personal accounts
-
-When the brief explicitly targets the personal `@JamesNMK` or `@jamesk.zip` lane,
-allow a measured entertainment cell. Use entertainment to earn attention
-and a relevant owner bridge to earn traffic; do not treat virality as proof of
-Petio demand.
-
-- Start with owned, licensed, or permissioned funny pet media or a relatable
-  owner moment. Record the source and rights status; never pull a viral image or
-  video without permission.
-- Keep Petio out of the opening frame and opening line. For a carousel, add a
-  subtle Petio end card in the final frame only when it follows the joke or
-  owner problem. For video, use a brief final frame/end card and do not make it
-  a bait-and-switch. The end card may mention Petio, but every capability claim
-  must be verified.
-- For an `entertainment-to-traffic` cell, put the explicit download CTA in the
-  first comment or self-reply when the channel supports it. Explain the bridge
-  to the same owner job and use the verified `petiogo.com` destination. If the
-  channel cannot place a comment, use the documented body-CTA fallback and
-  record the limitation.
-- Do not attach a Petio CTA to an unrelated meme. Mark it
-  `entertainment-awareness` and omit the funnel when no honest Petio bridge
-  exists. The main post must still stand alone if the reply is not seen.
-- Label each cell `entertainment-awareness`, `entertainment-to-traffic`, or
-  `product-proof`. Record the first-frame role, final-frame Petio mention, CTA
-  location, asset rights/source, audience node, topic or thread target, and
-  experiment cell.
-- Start with entertainment in roughly 20–30% of personal-account originals as
-  a test allocation. Change that allocation only after comparable stable
-  results; it is not a virality formula.
-- For traffic cells, choose one primary metric: qualified profile visits or
-  link clicks. Use views/impressions as the attention guardrail and qualified
-  replies plus irrelevant-reply/spam rate as conversation/trust guardrails.
-  For awareness cells, attention is the primary metric, but do not call reach a
-  growth win without target-audience signals. Treat installs as `unknown`
-  unless a downstream attribution path exists.
-- Use a directly relevant X Topic or a specific high-fit conversation when
-  available, but never hijack an unrelated trend. In a thread, give each post
-  one job: joke or observation, useful bridge, then CTA.
 ### 3. Choose one experiment
 
 Choose one variable to change: hook, angle, format, proof asset, CTA placement,
@@ -311,71 +172,12 @@ conversation where it is not the natural next step.
 
 ### Visual and CTA contract
 
-Every acquisition-oriented post needs both a visual reason to stop and a
-measurable next step. The media should carry the same human situation as the
-copy, not decorate a product pitch:
-
-1. Choose one primary visual: a real pet/owner moment, or a clearly relevant
-   image from Buffer's visible integration picker (use `Select from Unsplash` or
-   `More integration options`) when one is available. The image must make literal
-   sense with the scene; never accept a merely attractive or generic result. Use
-   a local asset only when it is owned, licensed, or the integration cannot
-   provide a fit.
-2. For a non-direct product promotion, append one verified Petio screenshot as
-   the final media item. The primary image earns attention; the final screenshot
-   supplies product proof. A direct Petio promotion may lead with app screens,
-   but still needs a deliberate media order and verified capability.
-3. Add alt text or a short media description, record the source/license for both
-   media roles, and check that each image remains legible in the platform
-   preview. A non-direct acquisition post with fewer than two relevant media
-   items is `needs rewrite`.
-4. Keep a media matrix and reuse ledger so the same screenshot is not blindly
-   repeated across every post. On one channel, apply a seven-day minimum
-   cooldown for the exact asset; prefer a 28-day cooldown before reusing the
-   same screenshot across the wider campaign. Never use the same exact asset in
-   both daily slots. A shorter reuse is allowed only for a materially changed
-   screen or a proof-critical follow-up, and the reason must be recorded.
-5. Prefer a fresh primary visual for each slot: owner/pet moment, licensed
-   image, UGC with permission, or a new visualized checklist. The Petio screen
-   is supporting proof, not the default hero image. Freshness is a hypothesis to
-   test, not a promise of higher reach.
-
-For any post whose job includes product discovery, installs, or app-store
-clicks, treat the primary visual, Petio proof visual, and explicit download CTA
-as required deliverables. If one is missing, return `needs rewrite` rather than
-calling the post ready. For a conversation-only post, mark that objective
-explicitly in the brief; otherwise use the acquisition default.
-
-Put the download CTA in the follow-up comment or self-reply when the authenticated
-Buffer/channel capability supports it. Keep the main post useful and free of a
-store link. If Buffer does not expose a comment control, use the platform's
-documented follow-up thread-post fallback and record `cta_location:
-thread-fallback`; never report that as a comment. On LinkedIn, inspect Buffer's
-First Comment control and use the same fallback rule if it is unavailable or
-upgrade-locked. Use only the verified Petio destination from the source map and
-never claim an install or unsupported store availability. For an iOS acquisition
-CTA, the follow-up must carry the verified App Store URL and an app screenshot;
-the landing-page URL alone does not satisfy the conversion deliverable.
-
-The CTA must say what to do and why it follows from the post, for example:
-“If keeping that context in one place would help, download Petio for iPhone:
-[verified App Store link].” Keep the useful answer before the CTA, avoid fake
-urgency, and measure clicks or app-store actions separately from replies and
-likes.
-
-Before approving social copy, ask:
-
-- Would this sound natural if spoken by one thoughtful pet owner to another?
-- Is there a human situation, concrete observation, or visible action before the
-  product explanation?
-- Does Petio appear as evidence or a tool rather than the subject of a sales
-  paragraph?
-- Would the post still provide value if the reader never installed the app?
-- Does the product mention belong in this channel and this conversation?
-
-If the answer to the first three is no, rewrite the opening and reduce the
-product explanation before continuing. This rule does not replace the proof or
-health-safety gates; natural-sounding copy still needs verified claims.
+Every acquisition-oriented post needs a visual reason to stop and a measurable
+next step: one relevant primary visual, one verified Petio proof visual as the
+final item, alt text, a rights/source record, and an explicit CTA with a verified
+destination. A non-direct acquisition post with fewer than two relevant media
+items, or without a verified CTA, is `needs rewrite`. Cooldowns, media matrix,
+and per-channel fallbacks: [visual and CTA](references/visual-and-cta.md).
 
 ### 4. Draft platform-native content
 
@@ -404,7 +206,8 @@ type, CTA, and media direction beside each draft.
 
 ### 5. Run the Petio preflight
 
-Return one of `ready`, `needs evidence`, `needs rewrite`, or `do not post`.
+Return `PASS`, `BLOCKED` (needs evidence), `FAIL` (needs rewrite), or
+`FAIL — do not post`.
 
 Block the draft if it:
 
@@ -463,8 +266,7 @@ After scheduling, record the execution in the Petio content repository:
   source, and experiment cell;
 - queue or sent status and verification evidence;
 - the metric read window and the next review date;
-- observation maturity: `early`, `directional`, `stable`, or
-  `promotable pattern`;
+- observation maturity: `anecdote`, `repeated`, `candidate`, or `promoted`;
 - what changed, what remains unknown, and the next test.
 
 When the user asks to learn or improve, append a dated learning note or update
@@ -475,56 +277,22 @@ testing; it cannot prove medical efficacy, product safety, or user outcomes.
 
 ## Output contract
 
-For a research or performance request, return:
+Return the evidence window and source state, the account/channel and audience
+diagnosis, and the selected hypothesis with its primary metric, guardrails,
+confidence, and unknowns.
 
-1. evidence window and source state;
-2. channel/account and audience diagnosis;
-3. pattern matrix: topics, content modes, trust vehicles, product roles, and
-   cohort sizes;
-4. trend signals and the selected wrapper, with source/date/confidence and
-   safety/proof fit;
-5. attention, conversation, and verified intent results, including patterns
-   that are intent-poor despite high views;
-6. primary metric, guardrails, confidence, and unknowns;
-7. one selected hypothesis and why it is testable;
-8. what to keep, change, stop, and measure next.
+For a drafting request, return each platform version with: ready-state; audience
+and job; proof used; claims/safety ruling; the native-content test (human
+situation, product's small role, why the mention belongs); hook plus two
+alternatives; trend wrapper with source/date/confidence; media direction, asset
+source/alt text, cooldown state, and CTA destination/location; AI-TONE result;
+and the experiment cell.
 
-For a drafting request, return each platform version with:
+For scheduling, add the exact Buffer channel, timezone, scheduled time,
+verification state, and capacity limits. For UGC outreach, add the evidence
+window, candidate counts by status, personalization evidence, offer terms with
+unconfirmed items marked, reply classification, dedup evidence, experiment cell,
+and delivery-to-revenue metrics.
 
-- ready-state;
-- audience and job;
-- proof used;
-- claims/safety ruling;
-- native-content test: the human situation or observation, the product's small
-  role, and why the mention belongs in that channel;
-- hook selected plus two alternatives;
-- trend wrapper and source/date/confidence;
-- media direction, asset source/alt text, asset ID, last-used date, cooldown
-  state, CTA destination/location, and comment or thread capability state;
-- AI-TONE result, banned-pattern scan, remove-the-brand test, and selected real-user mechanic;
-- the metric or experiment cell it belongs to.
-
-For a scheduling request, also return the exact Buffer channel, timezone,
-scheduled date/time, verification state, and any capacity or account limits.
-
-For a daily planning request, also return the two-slot matrix for every
-channel, the content-scorecard result for each item, the media pair, the exact
-CTA location, and the experiment variable held constant across the batch.
-
-For a creator or UGC outreach request, also return:
-
-- the evidence window and creator-source URLs used for selection;
-- candidate counts by status and outreach cohort, including owner-affiliate,
-  professional-trial, paid-parked, Android-waitlist, and unknown-fit;
-- each selected creator's personalization evidence and verified greeting;
-- offer terms and links, every unconfirmed term clearly marked, and brief
-  readiness as `brief-ready` or `blocked`;
-- the reply classification, next action, follow-up date, and stop reason;
-- deduplication evidence and contacted or duplicate-excluded counts;
-- a 10 to 15 creator experiment cell, its single changed variable, observation
-  maturity, and the next-send gate;
-- delivery, reply, brief, install, activation, referral, and revenue metrics,
-  with attention kept separate from conversion.
-
-Never report an email as sent from a draft or open composer. Sending requires
-current-task authorization, actual confirmation, and Sent-folder reconciliation.
+Never report an email as sent from a draft or an open composer. Sending requires
+current-task authorization, confirmation, and Sent-folder reconciliation.
