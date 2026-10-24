@@ -58,6 +58,8 @@ skill links to it; the six-line card in `ROUTING.md` is the part that loads in
 every session. Two other shared references hold mechanics that were duplicated:
 [`ai-tone.md`](skills/_shared/ai-tone.md) and
 [`loading-and-memoization.md`](skills/_shared/loading-and-memoization.md).
+[`fix-report.md`](skills/_shared/fix-report.md) is the audit-to-fix handoff,
+keyed by finding ID.
 
 `_shared/` is not a skill: it has no `SKILL.md`, so it never competes for
 routing. `install.sh` links it beside the skills so `../_shared` resolves in
@@ -102,7 +104,8 @@ Change skills from evidence, and keep what loads in every session small.
    (routing case petio-threads)`, so the log records why each rule exists.
 
 Budgets: descriptions ≤ 80 words, `SKILL.md` ≤ 300 lines, `ROUTING.md` ≤ 40
-lines. Skills already over budget are listed in
+lines, and at least one behavior case in every skill's `evals/` directory.
+Skills already over budget are listed in
 [`scripts/lint-baseline.txt`](scripts/lint-baseline.txt) and may shrink but
 not grow; lower the number when you trim.
 

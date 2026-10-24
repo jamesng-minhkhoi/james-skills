@@ -64,6 +64,9 @@ for file in "$REPO"/skills/*/SKILL.md; do
     fail "$skill: banned phrase 'mostly complete' (use a verdict from the ontology)"
   fi
 
+  # A rule without a case is a rule nobody can test.
+  compgen -G "$dir/evals/*.md" > /dev/null || fail "$skill: no behavior case in evals/"
+
   # Every relative Markdown link in the skill must resolve.
   for md in "$file" "$dir"/references/*.md; do
     [ -f "$md" ] || continue
