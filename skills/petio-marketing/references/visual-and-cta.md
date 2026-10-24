@@ -17,7 +17,7 @@ copy, not decorate a product pitch:
 3. Add alt text or a short media description, record the source/license for both
    media roles, and check that each image remains legible in the platform
    preview. A non-direct acquisition post with fewer than two relevant media
-   items is `needs rewrite`.
+   items is `FAIL`.
 4. Keep a media matrix and reuse ledger so the same screenshot is not blindly
    repeated across every post. On one channel, apply a seven-day minimum
    cooldown for the exact asset; prefer a 28-day cooldown before reusing the
@@ -31,7 +31,7 @@ copy, not decorate a product pitch:
 
 For any post whose job includes product discovery, installs, or app-store
 clicks, treat the primary visual, Petio proof visual, and explicit download CTA
-as required deliverables. If one is missing, return `needs rewrite` rather than
+as required deliverables. If one is missing, return `FAIL` rather than
 calling the post ready. For a conversation-only post, mark that objective
 explicitly in the brief; otherwise use the acquisition default.
 

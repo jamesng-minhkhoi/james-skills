@@ -176,7 +176,7 @@ Every acquisition-oriented post needs a visual reason to stop and a measurable
 next step: one relevant primary visual, one verified Petio proof visual as the
 final item, alt text, a rights/source record, and an explicit CTA with a verified
 destination. A non-direct acquisition post with fewer than two relevant media
-items, or without a verified CTA, is `needs rewrite`. Cooldowns, media matrix,
+items, or without a verified CTA, is `FAIL`. Cooldowns, media matrix,
 and per-channel fallbacks: [visual and CTA](references/visual-and-cta.md).
 
 ### 4. Draft platform-native content
@@ -266,7 +266,8 @@ After scheduling, record the execution in the Petio content repository:
   source, and experiment cell;
 - queue or sent status and verification evidence;
 - the metric read window and the next review date;
-- observation maturity: `anecdote`, `repeated`, `candidate`, or `promoted`;
+- post age: `early`, `directional`, or `stable`;
+- pattern maturity: `anecdote`, `repeated`, `candidate`, or `promoted`;
 - what changed, what remains unknown, and the next test.
 
 When the user asks to learn or improve, append a dated learning note or update

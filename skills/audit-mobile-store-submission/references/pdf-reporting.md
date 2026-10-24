@@ -12,7 +12,7 @@ python3 scripts/render-audit-pdf.py \
   output/pdf/app-store-audit.pdf \
   --app-name "Example App" \
   --platform "Apple App Store + Google Play" \
-  --verdict "Not ready" \
+  --verdict "NOT_READY" \
   --checked-at "2026-08-23"
 ```
 

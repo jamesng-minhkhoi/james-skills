@@ -28,7 +28,7 @@ readiness. Create one ledger for the exact release under review.
 - **Portal:** the exact store state or field was directly observed.
 - **Public URL:** the named URL loaded and matched on the checked date.
 - **Provider/legal:** the responsible provider or rights owner confirmed it.
-- **Unknown:** evidence is missing, contradictory, stale, or not reproducible.
+- **`UNKNOWN`:** evidence is missing, contradictory, stale, or not reproducible.
 
 ## Conflict rules
 
@@ -42,17 +42,16 @@ readiness. Create one ledger for the exact release under review.
 
 ## Verdict gates
 
-- **Ready:** no P0/P1 findings, no unresolved official rejection, every required
+- **`READY`:** no P0/P1 findings, no unresolved official rejection, every required
   item for the selected mode has its applicable evidence level observed
   (including Runtime, Access, Public URL, Portal, or Provider/legal), and the
   artifact/listing/portal identity agrees.
-- **Ready with conditions:** no blocker remains, and named P2 items have owners,
+- **`READY_WITH_CONDITIONS`:** no blocker remains, and named P2 items have owners,
   due dates, and no effect on the selected submission scope.
-- **Not ready:** any P0/P1, unresolved rejection, required evidence missing in
+- **`NOT_READY`:** any P0/P1, unresolved rejection, required evidence missing in
   Review/Release, inaccessible reviewer path, or identity/policy mismatch.
-- **Unknown:** use only when the audit mode or platform scope does not require
-  the missing evidence yet. In Release mode, missing required evidence is Not
-  ready, with Unknown recorded as the reason.
+- **`UNKNOWN`:** use only when the audit mode or platform scope does not require
+  the missing evidence yet. In Release mode, missing required evidence is `NOT_READY`, with Unknown recorded as the reason.
 
 ## Finding row
 

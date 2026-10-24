@@ -59,15 +59,15 @@ each observed item.
 
 ## Verdict rules
 
-- **Ready:** no P0/P1 blockers and all required evidence for the selected mode
+- **`READY`:** no P0/P1 blockers and all required evidence for the selected mode
   and platform is observed at its applicable evidence level; there is no
   unresolved official rejection and artifact/listing/portal identity agrees.
-- **Ready with conditions:** no P0/P1 blocker, but named P2/open gates have
+- **`READY_WITH_CONDITIONS`:** no P0/P1 blocker, but named P2/open gates have
   owners, due dates, and do not invalidate the intended submission.
-- **Not ready:** any P0/P1 blocker, contradictory privacy/metadata, broken core
+- **`NOT_READY`:** any P0/P1 blocker, contradictory privacy/metadata, broken core
   journey, inaccessible reviewer path, unresolved official rejection, identity
   mismatch, or missing required platform gate/evidence.
-- **Unknown:** use only when the selected mode does not yet require the missing
+- **`UNKNOWN`:** use only when the selected mode does not yet require the missing
   portal, provider, native, legal, or production evidence. In Review or Release,
-  record Unknown as the reason for a Not ready gate when the evidence is
+  record `UNKNOWN` as the reason for a `NOT_READY` gate when the evidence is
   required but unobserved.

@@ -188,12 +188,16 @@ def parse_markdown(text: str) -> list[Block]:
 
 
 def detect_verdict(text: str) -> tuple[str, str]:
-    match = re.search(r"\b(Ready with conditions|Not ready|Ready|Unknown)\b", text, re.I)
+    match = re.search(
+        r"\b(READY_WITH_CONDITIONS|NOT_READY|READY|UNKNOWN|Ready with conditions|Not ready|Ready|Unknown)\b",
+        text,
+        re.I,
+    )
     if not match:
         return "Audit complete", "neutral"
     value = match.group(1)
-    lower = value.lower()
-    tone = "green" if lower == "ready" else "amber" if "conditions" in lower or lower == "unknown" else "red"
+    key = value.lower().replace(" ", "_")
+    tone = "green" if key == "ready" else "amber" if key in {"ready_with_conditions", "unknown"} else "red"
     return value, tone
 
 
@@ -320,7 +324,7 @@ def main() -> int:
     parser.add_argument("--title", default="Mobile Store Submission Audit")
     parser.add_argument("--app-name", default="")
     parser.add_argument("--platform", default="")
-    parser.add_argument("--verdict", default="", help="Ready, Ready with conditions, Not ready, or Unknown")
+    parser.add_argument("--verdict", default="", help="READY, READY_WITH_CONDITIONS, NOT_READY, or UNKNOWN")
     parser.add_argument("--checked-at", default="")
     parser.add_argument("--page-size", choices=("a4", "letter"), default="a4")
     args = parser.parse_args()

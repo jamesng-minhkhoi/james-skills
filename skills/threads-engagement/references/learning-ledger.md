@@ -71,26 +71,11 @@ Allowed `assessment` values are `positive`, `neutral`, `negative`, and
 reply with an older original post, or paid distribution with organic results,
 without labeling the comparison as confounded.
 
-## Pattern promotion
+## Pattern maturity
 
 Use `pattern_key` to describe a testable combination of topic, audience job,
 content shape, proof, participation prompt, CTA placement, or target surface.
 Keep it short and stable; do not use a project name in the key.
-
-The analyzer reports:
-
-- `insufficient`: fewer than 3 comparable action outcomes;
-- `repeated-signal`: at least 3 observations and 2 positive assessments;
-- `promotion-candidate`: at least 8 observations and 5 positive assessments,
-  subject to human review of confounders and sample comparability.
-
-These labels are descriptive gates, not causal proof. A maintainer may promote a
-pattern into shared skill guidance only with the sample window, platforms,
-conditions, limitations, and a follow-up test. Keep project-specific copy,
-claims, audiences, and brand voice in the project ledger rather than the shared
-skill.
-
-## Pattern maturity
 
 Do not promote a pattern from one post. Treat a pattern as:
 
@@ -101,9 +86,10 @@ Do not promote a pattern from one post. Treat a pattern as:
   observations, with repeated positive outcomes and no obvious alternative
   explanation.
 
-Promoting a pattern means adding it to a reviewed, project-agnostic guidance
-section as a hypothesis with sample, dates, conditions, and limitations. Do
-not encode “always,” guaranteed ranking tactics, or one project’s voice as a
-universal rule. Shared-skill edits require an explicit maintenance action and
-review; live engagement may produce a candidate update but must not mutate this
-skill automatically.
+These labels are descriptive gates, not causal proof. A maintainer may promote a
+pattern into shared skill guidance only with the sample window, platforms,
+conditions, limitations, and a follow-up test. Keep project-specific copy,
+claims, audiences, and brand voice in the project ledger rather than the shared
+skill. Shared-skill edits require an explicit maintenance action and review;
+live engagement may produce a candidate update but must not mutate this skill
+automatically.

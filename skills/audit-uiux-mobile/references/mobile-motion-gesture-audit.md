@@ -40,17 +40,17 @@ For each important motion or gesture, record what is known:
 
 | Field | Audit question | Evidence status |
 | --- | --- | --- |
-| Trigger | What tap, swipe, drag, navigation, or system event starts it? | Observed / source-declared / unknown |
-| Subject | What moves, what remains fixed, and what preserves identity? | Observed / inferred / unknown |
+| Trigger | What tap, swipe, drag, navigation, or system event starts it? | verified / declared / unverified |
+| Subject | What moves, what remains fixed, and what preserves identity? | verified / inferred / unverified |
 | Purpose | What user benefit does the motion provide? | Strong / concern / unknown |
-| Progress | Is progress time-based, state-based, scroll-linked, or controlled by the finger? | Observed / source-declared / unknown |
-| Commit rule | What distance, velocity, release, or explicit action commits it? | Observed / unknown |
-| Cancel rule | Can the user reverse or cancel before a consequential action? | Observed / unknown |
-| Completion | What durable result, feedback, and focus follow completion? | Observed / unknown |
-| Recovery | Is there undo, rollback, retry, or another safe path? | Observed / unknown |
-| Ownership | Does it conflict with scrolling, sheets, sliders, or system back? | Observed / unknown |
-| Alternative | Can the same core action be completed without the gesture? | Observed / unknown |
-| Accessibility | Does reduced motion preserve meaning? Can assistive technology perform it? | Observed / unknown |
+| Progress | Is progress time-based, state-based, scroll-linked, or controlled by the finger? | verified / declared / unverified |
+| Commit rule | What distance, velocity, release, or explicit action commits it? | verified / unverified |
+| Cancel rule | Can the user reverse or cancel before a consequential action? | verified / unverified |
+| Completion | What durable result, feedback, and focus follow completion? | verified / unverified |
+| Recovery | Is there undo, rollback, retry, or another safe path? | verified / unverified |
+| Ownership | Does it conflict with scrolling, sheets, sliders, or system back? | verified / unverified |
+| Alternative | Can the same core action be completed without the gesture? | verified / unverified |
+| Accessibility | Does reduced motion preserve meaning? Can assistive technology perform it? | verified / unverified |
 | Runtime | Was it tested on a named device/build, or only in a design/mock? | Proof level |
 
 Never fill an unknown from a screenshot, design file, or source declaration.

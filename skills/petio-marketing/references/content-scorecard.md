@@ -56,9 +56,9 @@ For entertainment cells, run the separate bridge gate:
 - viral reach without profile visits, clicks, or target-audience signals is
   recorded as attention, not as conversion or product-market evidence.
 
-- **13–16:** `ready` if the platform and evidence checks pass.
-- **9–12:** `needs rewrite`; improve the lowest-scoring two criteria.
-- **0–8:** `do not post`; replace the hook and content mode.
+- **13–16:** `PASS` if the platform and evidence checks pass.
+- **9–12:** `FAIL` (needs rewrite); improve the lowest-scoring two criteria.
+- **0–8:** `FAIL — do not post`; replace the hook and content mode.
 
 For a post whose job includes product discovery, installs, or app-store clicks,
 the visual and CTA rows cannot score 0. The default package is:
@@ -107,7 +107,7 @@ do not repeat the previous label for convenience or use an unrelated trending
 Topic for reach. If the platform exposes fewer than four relevant choices,
 record `topic_mix: constrained`, name the available choices, and keep the
 distribution as even as the platform allows. A batch that fails this gate is
-`needs rewrite` even when every individual post has a non-blank Topic.
+`FAIL` even when every individual post has a non-blank Topic.
 
 ## Post-publication maturity
 
@@ -117,10 +117,10 @@ Record the observation age with every Buffer readout:
 - `directional`: 24–72 hours; use for triage only;
 - `stable`: at least 72 hours, or the platform has stopped materially updating
   the visible metrics;
-- `promotable pattern`: at least three comparable stable posts, with repeated
+- `promoted`: at least three comparable stable posts, with repeated
   positive results and no obvious timing, creator, topic, or distribution
   confounder.
 
 Use platform-normalized rates within the same channel. Keep raw counts for
-context, and label app installs or activation as `unknown` unless a reliable
+context, and label app installs or activation as `unverified` unless a reliable
 downstream event is connected to the post.

@@ -47,7 +47,7 @@ conversion: <https://about.fb.com/news/2025/03/new-threads-features-more-persona
 
 After scheduling, verify the exact Topic on every queue card or by reopening
 the composer. If one Topic appears on more than two posts in a six-post batch,
-return `needs rewrite` and rebalance before calling the batch ready.
+return `FAIL` and rebalance before calling the batch ready.
 
 ## Entertainment-to-traffic lane for personal accounts
 

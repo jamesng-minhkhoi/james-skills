@@ -96,10 +96,10 @@ def validate_records(records: list[dict[str, Any]]) -> list[str]:
 
 def pattern_status(count: int, positive: int) -> str:
     if count >= 8 and positive >= 5:
-        return "promotion-candidate"
+        return "candidate"
     if count >= 3 and positive >= 2:
-        return "repeated-signal"
-    return "insufficient"
+        return "repeated"
+    return "anecdote"
 
 
 def report(records: list[dict[str, Any]]) -> str:

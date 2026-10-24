@@ -18,7 +18,7 @@ next verification action.
 | Press/focus | Is the interaction acknowledged immediately? | Device or interactive local observation |
 | Mutation pending | Is only the affected control/row disabled or busy? Is duplicate submit prevented? | Interaction trace and source/state evidence |
 | Success | Does the user know what changed and what to do next? Is a toast/banner/inline status appropriate? | Runtime success after a real action |
-| Recoverable error | Is the affected object/field named and is retry/recovery local and actionable? | Forced failure or data-connected observation |
+| Recoverable error | Is the affected object/field named and is retry/recovery local and actionable? | Forced failure (`failure-tested`) or connected observation |
 | Offline/stale | Is freshness/status honest and is retry/queue behavior explicit? | Network interruption/resume observation |
 | Permission denied | Does the user get a useful explanation and retry/settings path without a dead button? | First-request and previously-denied device pass |
 | Cancellation/back | Can users cancel safely and keep or discard work intentionally? | Back, cancel, destructive-action trace |

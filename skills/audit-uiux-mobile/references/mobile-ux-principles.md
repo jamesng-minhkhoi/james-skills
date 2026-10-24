@@ -160,8 +160,8 @@ the transition, where feedback appears, whether the same object preserves its
 identity, and whether users can cancel, retry, undo, or continue.
 
 An attractive loading, success, or error screen does not prove the product can
-reach it. Distinguish source-declared, manually forced, and naturally observed
-states.
+reach it. Distinguish `declared`, `interactive`, and `rendered` or `device`
+observations.
 
 ## 7. Principle conflicts
 
