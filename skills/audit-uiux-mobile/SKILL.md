@@ -24,6 +24,8 @@ audit](references/mobile-motion-gesture-audit.md).
 For every Deep, Release, or Forensic audit, also use [the mobile feedback audit](references/mobile-feedback-audit.md).
 When changing this audit skill, use the [mobile audit regression cases](evals/ai-uiux-mobile-audit-regression.md).
 
+Shared vocabulary: [ontology](../_shared/ontology.md). Use its proof ladder, verdicts, and finding IDs.
+
 ## 0. Select an audit mode
 
 Choose the smallest mode that matches the request. If no mode is specified,
@@ -71,10 +73,10 @@ Separate what is proven from what is assumed:
 - Production schema, provider, native device, store, and dashboard status need
   their own evidence.
 
-Label the highest proof level actually reached: **source-declared**,
-**rendered-static**, **interactive-local**, **data-connected**,
-**failure-observed**, **device-observed**, or **production-observed**. Never
-promote one level into another by inference.
+Label the highest rung actually reached on the shared ladder: **declared**,
+**rendered**, **interactive**, **connected**, **failure-tested**, **device**,
+**production**. `device` is the mobile-specific rung and cannot be inferred from
+a simulator. Never promote one rung into another by inference.
 
 ## 2. Walk the journey
 
@@ -257,6 +259,10 @@ Return:
 9. **Checks and observations** — exact commands, runtime states, devices, and
    screenshots actually observed.
 10. **Open gates** — native-device, provider, production, store, or review work.
+
+Give every finding a stable ID, `F-mobile-<n>` (for example `F-mobile-03`), and
+put it in the first cell as `P1 · F-mobile-03`. The builder closes by ID; a
+re-audit reopens or adds, and never renumbers.
 
 Use this finding shape:
 

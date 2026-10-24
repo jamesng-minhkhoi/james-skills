@@ -49,3 +49,5 @@ Expected audit behavior:
   slow-load/failure/recovery checkpoint before promoting source claims;
 - recommend the least interruptive appropriate surface: inline, toast, banner,
   progress, or modal according to consequence.
+- use the shared vocabulary: name the highest proof rung, mark unobserved gates
+  `NOT_RUN`/`UNKNOWN`, and give each finding a stable `F-mobile-<n>` ID.

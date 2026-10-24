@@ -49,3 +49,4 @@ most; elsewhere score it only when it applies.
 
 Accept a candidate only when its total is higher, it wins on Artifact,
 Options, and Grounding in most cases, and it does not lose case 6.
+| Vocabulary | Names the highest proof rung reached and never calls an unobserved state pass |

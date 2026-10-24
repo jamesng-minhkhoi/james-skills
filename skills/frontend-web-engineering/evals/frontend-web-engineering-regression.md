@@ -67,3 +67,5 @@ Expected behavior:
   form and relevant existing tracking checks without claiming live provider
   results from a local fixture;
 - report any unobserved responsive, interaction, and provider gates separately.
+- report the highest proof rung reached, mark unobserved gates `NOT_RUN` or
+  `UNKNOWN`, and never describe an unmeasured state as verified.

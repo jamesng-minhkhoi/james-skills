@@ -22,6 +22,8 @@ When changing this audit skill, use the [web audit regression cases](evals/ai-ui
 
 Do not edit product code unless the user explicitly asks for implementation.
 
+Shared vocabulary: [ontology](../_shared/ontology.md). Use its proof ladder, verdicts, and finding IDs.
+
 ## 0. Select the audit mode
 
 Choose the smallest mode that matches the request. If no mode is specified, use
@@ -69,10 +71,10 @@ Separate evidence from assumption:
 - provider, production, analytics, and browser compatibility claims need their
   own evidence.
 
-Label the highest proof level actually reached: **source-declared**,
-**rendered-static**, **interactive-local**, **data-connected**,
-**failure-observed**, or **production-observed**. Never promote one level into
-another by inference.
+Label the highest rung actually reached on the shared ladder: **declared**,
+**rendered**, **interactive**, **connected**, **failure-tested**, **device**,
+**production**. A web audit normally stops at `connected` or `failure-tested`.
+Never promote one rung into another by inference.
 
 ## 2. Map and walk the browser journey
 
@@ -236,6 +238,10 @@ Return:
    screenshots/recordings, and tests actually observed.
 10. **Open gates** — provider, production, analytics, browser, performance, or
     accessibility work not observed.
+
+Give every finding a stable ID, `F-web-<n>` (for example `F-web-03`), and put it
+in the first cell as `P1 · F-web-03`. The builder closes by ID; a re-audit
+reopens or adds, and never renumbers.
 
 Use this finding shape:
 

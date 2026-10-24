@@ -50,3 +50,6 @@ Expected behavior:
   transition where old content must be removed;
 - profile render cost and list behavior before adding `memo`, `useMemo`, or
   `useCallback`, and preserve server-cache versus client-workflow ownership.
+- report the highest proof rung reached, mark unobserved device and provider
+  gates `NOT_RUN` or `UNKNOWN`, and never describe a simulator observation as
+  device-verified.

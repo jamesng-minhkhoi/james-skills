@@ -71,3 +71,5 @@ Expected audit behavior:
 - require honest visible treatment of illustrative content and a reachable
   CTA, then specify checks for the corrected content and affected viewport;
 - do not claim conversion loss or production performance measurements.
+- use the shared vocabulary: name the highest proof rung, mark unobserved gates
+  `NOT_RUN`/`UNKNOWN`, and give each finding a stable `F-web-<n>` ID.
