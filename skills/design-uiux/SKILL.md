@@ -7,9 +7,9 @@ description: Design app screens, flows, landing pages, and dashboards that hold 
 
 Design is a loop with James, not a document. Read what the product already
 is, find out how the best products solve the same job, show distinct options
-on a canvas, let James pick, refine the pick to final quality, and only then
-plan the build. This skill never edits product code: builds go to
-`frontend-mobile-engineering` or `frontend-web-engineering`, and an
+on a canvas, let James pick, refine the pick to final quality, then plan the
+build and the rules it must keep. This skill never edits product code: builds
+go to `frontend-mobile-engineering` or `frontend-web-engineering`, and an
 independent review goes to the `auditor` agent.
 
 Shared vocabulary: [ontology](../_shared/ontology.md). Use its proof ladder, verdicts, and finding IDs.
@@ -43,7 +43,8 @@ option is built from these parts. Rebuild real components faithfully: same
 mask, path, radius, and spacing. Never approximate one, and never invent a
 new component, color, or radius to make a mockup work. If something new is
 truly needed, mark it as new and say why. An option that reverses a
-documented decision must name the decision and argue for the change.
+documented decision must name the decision and argue for the change. Where
+the docs keep a rule table, cite its IDs.
 
 State in two or three lines: the user and their job, what success looks
 like, and whether this request preserves the visual language or overhauls it.
@@ -56,7 +57,9 @@ like, and whether this request preserves the visual language or overhauls it.
   structure: if the real cause is structural, say so in one line and leave
   it for James to schedule. Show current and fixed side by side on the
   canvas. One proposal, no options, no research. Then wait.
-- **Screen or flow redesign:** the full loop.
+- **Screen or flow redesign:** run the [twelve gates](references/critique-and-proof.md)
+  first. The table is the brief: every gate answered, evidence beside every
+  verdict, `NOT_RUN` where nothing was rendered. Then the full loop.
 - **New or creative feature** (gamification, onboarding, a signature moment):
   the full loop with research weighted heavily.
 - **Motion:** only after the static design is locked. Then use
@@ -98,13 +101,22 @@ showing, run [slop and consistency](references/slop-and-consistency.md),
 then compare side by side with the strongest reference. Stop when it is at
 least as good. Otherwise, name the gap and iterate.
 
+Re-run the same twelve-gate table on the pick. A verdict that regressed is a
+new finding, even if the screen looks better.
+
+Check the pick against every established rule it touches. A rule the pick
+breaks is a finding with its ID, not a taste note; either fix it or name the
+decision being reversed.
+
 ### 6. Lock, then plan the build
 
 When James approves, write a short implementation plan: the screens and
 states, the components to reuse (by file path) and the few to add, the
 tokens, the navigation and back behavior, the motion spec if any, and the
-open questions. Hand it to the engineering skill. Do not edit product code
-from this skill.
+open questions. Add the handoff rules from
+[critique and proof](references/critique-and-proof.md): each rule the work
+relies on, with its ID and how the build checks it. Hand it to the
+engineering skill. Do not edit product code from this skill.
 
 ## Surface guidance
 
@@ -117,7 +129,7 @@ Load only what the request needs.
 | Dashboard or admin | [dashboard data](references/dashboard-data.md), [dashboard interaction](references/dashboard-interaction.md) |
 | Landing page | [landing message](references/landing-message.md), [landing visual](references/landing-visual.md) |
 | Transitions, gestures, micro-interactions | [motion and gesture](references/motion-and-gesture.md) |
-| Any review before showing or handing off | [critique and proof](references/critique-and-proof.md) |
+| Redesign diagnosis, or any review before showing or handing off | [critique and proof](references/critique-and-proof.md) (the twelve gates) |
 
 ## Rules that hold everywhere
 
@@ -140,8 +152,14 @@ Load only what the request needs.
   platform default or nothing. Delight is for rare moments.
 - **Never fabricate.** No invented metrics, testimonials, reviews, or claims.
   Use the product's real content, or mark a placeholder as one.
+- **Every correction becomes a rule.** Write it into the project's rule
+  table with its reason. Rewrite the rule it changes; never append a
+  contradiction or a log line.
 
 ## Changing this skill
+
+Change from a failure, not a preference. A repeated correction belongs in the
+project's design doc first; only what holds across projects belongs here.
 
 Run the cases in [the regression set](evals/design-uiux-regression.md)
 against the previous version before keeping a change. Older targeted cases:
