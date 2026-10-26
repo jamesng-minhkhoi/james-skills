@@ -2,3 +2,21 @@
 # A listed skill may shrink below its value but never grow past it. Lower the
 # value (or delete the line) when you trim; never raise it to make lint pass.
 # Currently empty: every skill is inside its budget.
+# offensive-* (adapted from Claude-Red, MIT); source depth preserved on import.
+offensive-business-logic skill_lines 404
+offensive-deserialization skill_lines 606
+offensive-file-upload skill_lines 823
+offensive-graphql desc_words 81
+offensive-graphql skill_lines 573
+offensive-idor skill_lines 609
+offensive-open-redirect skill_lines 488
+offensive-parameter-pollution skill_lines 596
+offensive-race-condition skill_lines 882
+offensive-rce skill_lines 1070
+offensive-request-smuggling skill_lines 774
+offensive-sqli skill_lines 376
+offensive-ssrf skill_lines 831
+offensive-ssti skill_lines 625
+offensive-waf-bypass skill_lines 821
+offensive-xss skill_lines 785
+offensive-xxe skill_lines 997
