@@ -67,13 +67,15 @@ for file in "$REPO"/skills/*/SKILL.md; do
   # A rule without a case is a rule nobody can test.
   compgen -G "$dir/evals/*.md" > /dev/null || fail "$skill: no behavior case in evals/"
 
-  # Every relative Markdown link in the skill must resolve.
+  # Every relative Markdown link in the skill must resolve. Fence the
+  # extraction off from code blocks, where `]( ` is shell, not a link.
+  extract_links() { awk '/^[ \t]*```/{f=!f; next} !f' "$1" | grep -oE '\]\([^)#]+' | sed 's/^](//'; }
   for md in "$file" "$dir"/references/*.md; do
     [ -f "$md" ] || continue
     while read -r link; do
       case "$link" in http*|mailto:*) continue ;; esac
       [ -e "$(dirname "$md")/$link" ] || fail "$skill: broken link $link in ${md#"$REPO"/}"
-    done < <(grep -oE '\]\([^)#]+' "$md" | sed 's/^](//')
+    done < <(extract_links "$md")
   done
 done
 
@@ -83,7 +85,7 @@ for md in "$REPO"/skills/_shared/*.md; do
   while read -r link; do
     case "$link" in http*|mailto:*) continue ;; esac
     [ -e "$(dirname "$md")/$link" ] || fail "shared: broken link $link in ${md#"$REPO"/}"
-  done < <(grep -oE '\]\([^)#]+' "$md" | sed 's/^](//')
+  done < <(awk '/^[ \t]*```/{f=!f; next} !f' "$md" | grep -oE '\]\([^)#]+' | sed 's/^](//')
 done
 
 [ "$PRINT_BASELINE" -eq 1 ] && exit 0
