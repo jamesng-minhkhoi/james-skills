@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-# Link every skill in this repo into the agent skill directories, link the
-# subagents into ~/.claude/agents, and add ROUTING.md to the global
+# Link every skill in this repo into the agent skill directories, install the
+# subagents in each harness's dialect, and add ROUTING.md to the global
 # instruction files.
 #
-# Skills and agents are symlinked, not copied, so editing the repo updates
-# every runtime immediately. Re-run after adding, renaming, or removing one.
+# Skills and Claude agents are symlinked, not copied. OpenCode, Codex, and
+# Gemini agents are generated conversions (marked, pruned when stale). Re-run
+# after adding, renaming, or removing one.
 #
 #   ./install.sh                 install into the default targets
 #   ./install.sh --dry-run       show what would change
@@ -91,31 +92,124 @@ for target in "${TARGETS[@]}"; do
 done
 
 # Subagents and routing are global setup, so only the default run touches them.
+MARK="# managed by james-skills install.sh — edit agents/<name>.md in the repo"
+
+# One frontmatter field value from an agent file.
+field() { awk -v f="$1:" 'index($0, f)==1 {sub(/^[^:]*: */, ""); print; exit}' "$2"; }
+
+# Write stdin to a target only when it differs (dry-run aware).
+gen() {
+  local want
+  want="$(mktemp)"
+  cat > "$want"
+  if [ -f "$1" ] && cmp -s "$1" "$want"; then rm -f "$want"; return; fi
+  if [ -e "$1" ]; then echo "  replace $(basename "$1")"; else echo "  gen     $(basename "$1")"; fi
+  if [ "$DRY_RUN" -eq 0 ]; then mkdir -p "$(dirname "$1")" && mv "$want" "$1"; else rm -f "$want"; fi
+}
+
 if [ "$GLOBAL" -eq 1 ]; then
-  target="$HOME/.claude/agents"
-  echo "==> $target"
-  [ -d "$target" ] || run mkdir -p "$target"
+  # agents/*.md is the source of truth, in the Claude Code dialect. Claude
+  # links it directly; OpenCode, Codex, and Gemini accept different formats,
+  # so they get generated conversions with the tool bans translated.
   AGENT_COUNT=0
   for file in "$AGENTS_SRC"/*.md; do
     [ -f "$file" ] || continue
     AGENT_COUNT=$((AGENT_COUNT + 1))
-    link="$target/$(basename "$file")"
-    if [ -L "$link" ] && [ "$(readlink "$link")" = "$file" ]; then
-      continue
+    name="$(basename "$file" .md)"
+    desc="$(field description "$file" | sed 's/\\/\\\\/g; s/"/\\"/g')"
+    denied="$(field disallowedTools "$file")"
+
+    # Claude Code: link as-is.
+    link="$HOME/.claude/agents/$name.md"
+    if [ ! -L "$link" ] || [ "$(readlink "$link")" != "$file" ]; then
+      if [ -e "$link" ] || [ -L "$link" ]; then
+        echo "  replace $name.md"
+        run rm -f "$link"
+      else
+        echo "  link    $name.md"
+      fi
+      run ln -s "$file" "$link"
     fi
-    if [ -e "$link" ] || [ -L "$link" ]; then
-      echo "  replace $(basename "$file")"
-      run rm -f "$link"
-    else
-      echo "  link    $(basename "$file")"
+
+    body="$(awk 'n==2{print} /^---$/{n++; next}' "$file")"
+    preloads="$(awk '/^skills:$/{f=1; next} f && /^  - /{printf "%s ", $2} f && /^---$/{f=0}' "$file")"
+    if [ -n "$preloads" ]; then
+      body="Follow these skills when the target matches (installed globally): $preloads
+$body"
     fi
-    run ln -s "$file" "$link"
-  done
-  for entry in "$target"/*; do
-    [ -L "$entry" ] || continue
-    case "$(readlink "$entry")" in
-      "$AGENTS_SRC"/*) [ -e "$entry" ] || { echo "  prune   $(basename "$entry") (broken)"; run rm "$entry"; } ;;
+
+    # OpenCode: markdown agent; tool bans become permission denials.
+    oc_permit="  edit: deny"
+    case "$denied" in *Bash*) oc_permit="$oc_permit
+  bash: deny" ;; esac
+    case "$denied" in *WebFetch*) oc_permit="$oc_permit
+  webfetch: deny" ;; esac
+    case "$denied" in *WebSearch*) oc_permit="$oc_permit
+  websearch: deny" ;; esac
+    gen "$HOME/.config/opencode/agents/$name.md" <<EOF
+---
+$MARK
+description: '$(field description "$file" | sed "s/'/''/g")'
+mode: subagent
+permission:
+$oc_permit
+---
+$body
+EOF
+
+    # Codex: TOML agent; tool bans become a read-only sandbox.
+    case "$body" in *"'''"*)
+      echo "  skip    $name.toml (body would break the TOML literal)" >&2
+      continue ;;
     esac
+    gen "$HOME/.codex/agents/$name.toml" <<EOF
+$MARK
+name = "$name"
+description = "$desc"
+sandbox_mode = "read-only"
+developer_instructions = '''
+$body
+'''
+EOF
+
+    # Gemini CLI: an allowlist that leaves out every tool that writes files.
+    gemini_tools="  - read_file
+  - glob
+  - grep_search
+  - list_directory
+  - run_shell_command"
+    case "$denied" in *WebFetch*) ;; *) gemini_tools="$gemini_tools
+  - web_fetch" ;; esac
+    case "$denied" in *WebSearch*) ;; *) gemini_tools="$gemini_tools
+  - google_web_search" ;; esac
+    gen "$HOME/.gemini/agents/$name.md" <<EOF
+---
+$MARK
+name: $name
+description: '$(field description "$file" | sed "s/'/''/g")'
+model: inherit
+tools:
+$gemini_tools
+---
+$body
+EOF
+  done
+
+  # Prune conversions whose source file no longer exists, and dangling
+  # Claude links.
+  for dir in "$HOME/.claude/agents" "$HOME/.config/opencode/agents" "$HOME/.codex/agents" "$HOME/.gemini/agents"; do
+    [ -d "$dir" ] || continue
+    for entry in "$dir"/*; do
+      [ -e "$entry" ] || [ -L "$entry" ] || continue
+      base="$(basename "$entry")"
+      if [ -L "$entry" ]; then
+        case "$(readlink "$entry")" in
+          "$AGENTS_SRC"/*) [ -e "$entry" ] || { echo "  prune   $base (broken)"; run rm "$entry"; } ;;
+        esac
+      elif grep -q "^$MARK$" "$entry" 2>/dev/null; then
+        [ -f "$AGENTS_SRC/${base%%.*}.md" ] || { echo "  prune   $dir/$base (stale)"; run rm -f "$entry"; }
+      fi
+    done
   done
 
   # Replace the marked block in an instruction file, keeping everything else.
@@ -145,8 +239,10 @@ if [ "$GLOBAL" -eq 1 ]; then
   }
   write_block "$HOME/.claude/CLAUDE.md" "@$ROUTING"
   write_block "$HOME/.codex/AGENTS.md" "$(cat "$ROUTING")"
+  write_block "$HOME/.config/opencode/AGENTS.md" "$(cat "$ROUTING")"
+  write_block "$HOME/.gemini/GEMINI.md" "$(cat "$ROUTING")"
 fi
 
 echo
 echo "Linked ${#SKILLS[@]} skills."
-[ "$GLOBAL" -eq 1 ] && echo "Linked $AGENT_COUNT agents and installed the routing guide."
+[ "$GLOBAL" -eq 1 ] && echo "Installed $AGENT_COUNT agents (Claude links; OpenCode, Codex, Gemini conversions) and the routing guide."
