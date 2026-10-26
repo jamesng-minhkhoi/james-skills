@@ -1,6 +1,6 @@
 ---
 name: x-engagement
-description: Research, draft, execute, and measure authentic X posts, replies, quote posts, threads, and listening experiments. Use for founder or product-account engagement, community replies, launch conversations, audience research, and evidence-led social experiments. Protect account voice, proof, health/safety, privacy, and X anti-spam rules; never use engagement automation or publish live without explicit authorization. For the Petio app or account, start with petio-marketing, which uses this skill as its X adapter.
+description: Research, draft, execute, and measure authentic X posts, replies, quote posts, threads, and listening experiments. Use for founder or product-account engagement, community replies, launch conversations, audience research, and evidence-led social experiments. Protect account voice, proof, health/safety, privacy, and X anti-spam rules; never use engagement automation or publish live without explicit authorization.
 ---
 
 # X Engagement
@@ -68,12 +68,9 @@ Before drafting, record:
 - available proof, media, links, and constraints;
 - whether the request is draft, queue, live execution, or listening.
 
-If the workspace contains project guidance, read it before writing. For the
-Petio workspace, look for `index.md`, `CLAUDE.md`, `platforms/x.md`,
-`plans/2026-08-22-alex-style-adaptation.md`, `proof/proof-ledger.md`, and
-`voice/claims-and-safety.md`. The `@JamesNMK` founder adapter is mandatory for
-X posts and replies; the Petio product account remains dormant unless the user
-explicitly reopens it. If more than one creator reference is available, choose
+If the workspace contains project guidance (such as `index.md`, `CLAUDE.md`,
+`proof/proof-ledger.md`, or `voice/claims-and-safety.md`), read it before
+writing. If more than one creator reference is available, choose
 one dominant adapter for the draft and record it. Do not blend recognizable
 creator voices into a generic imitation.
 
@@ -115,10 +112,6 @@ detail, visible work, and a clear point of view. Keep the language natural,
 specific, and easy to respond to. Match the emotional temperature of the
 parent post. For replies, put the useful answer before any account mention or
 link.
-
-For Petio work, also load [Natural Petio Copy](../petio-marketing/references/natural-copy.md)
-and apply its source-backed scene, participation, AI-smell, and remove-the-brand
-gates. Use it as a rewrite aid, never as a phrase bank.
 
 Use a CTA only when it is the natural next step. Prefer a contextual
 self-reply or an answer to a direct request over attaching the same link to
