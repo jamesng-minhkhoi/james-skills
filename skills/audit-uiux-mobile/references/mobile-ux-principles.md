@@ -271,8 +271,13 @@ Flag these explicitly when observed:
 - gesture-only functionality, auto-dismissed feedback, or time pressure;
 - validation that interrupts typing instead of helping users succeed;
 - generic cards, icon soup, or decorative motion that competes with content;
-- desktop layouts compressed onto a phone instead of redesigned for reach and
-  focus;
+- full-width form buttons (`w-full border justify-between`) placed at the
+  very top of a mobile screen as pseudo-filters, pushing content down instead
+  of using native bar button items or compact header pills;
+- stacked control sandwiches: stacking multiple consecutive tiers of segmented
+  controls, tab bars, and filter rows before presenting any primary content;
+- desktop layouts compressed onto a phone instead of redesigned for reach, focus,
+  and native Inset Grouped presentation;
 - empty, loading, offline, or error states treated as afterthoughts;
 - static success feedback disconnected from a real action or data change;
 - fabricated metrics, placeholder records, vague generic copy, or impossible

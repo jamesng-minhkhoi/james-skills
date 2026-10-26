@@ -52,6 +52,18 @@ Web users scan. Check heading order, information scent, alignment, whitespace,
 content density, primary-action prominence, and predictable grouping. Do not
 use the F-pattern as a layout target; use strong cues and task order.
 
+### Chrome budget and macro-layout hierarchy (Mandatory Level 1 Gate)
+- **Single-row desktop command bar:** All primary screen-level navigation (tabs,
+  segment switchers) and global parameters (date range, period, filter, export)
+  MUST share a single horizontal baseline (`height <= 64px`). Stacking them into
+  two or three vertical rows wastes above-the-fold space and leaves vast empty gaps.
+- **Contextual scoping (Gestalt Law of Proximity):** Controls that alter the
+  methodology or calculation of a specific section (e.g. Accrual vs Cash, Gross
+  vs Net) MUST live inside that section's header, NEVER floating globally above
+  unrelated summary metrics.
+- **Time-to-first-figure:** On both desktop and mobile, primary operational or
+  financial figures must be visible above the fold without requiring initial scrolling.
+
 Choose list, table, grouped list, detail, editor, split view, tabs, dialog,
 sheet, pagination, load more, or infinite scroll from the user's need for
 comparison, position, sharing, control, and completion. Do not force every
