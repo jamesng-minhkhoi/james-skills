@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Video"
+  short_description: "Create 1080p 60fps product launch, UI walkthrough, and social videos in 16:9 and 9:16"
+  default_prompt: "Use $product-video to storyboard, render, and verify a product or social video."

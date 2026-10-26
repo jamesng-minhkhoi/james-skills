@@ -1,0 +1,4 @@
+interface:
+  display_name: "CV Engineering & Career Command Center"
+  short_description: "5-phase XYZ CV pipeline, 2-page PDF export, A-G job evaluation, outreach, and offer prep."
+  default_prompt: "Use $cv-and-career-ops to tailor my CV, evaluate a job description (Blocks A-G), draft outreach or a cover letter, or review an offer."

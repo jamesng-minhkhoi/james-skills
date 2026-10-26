@@ -1,0 +1,4 @@
+interface:
+  display_name: "SEO, AEO & GEO Discovery Engine"
+  short_description: "SEO, Answer Engine (AEO), llms.txt (GEO), JSON-LD, 12-section READMEs, and launch pages."
+  default_prompt: "Use $seo-aeo-geo to audit or scaffold SEO, AEO (JSON-LD FAQ, Perplexity/ChatGPT citations), GEO (llms.txt), or a high-converting README and launch page."

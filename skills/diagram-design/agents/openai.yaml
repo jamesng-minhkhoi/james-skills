@@ -1,0 +1,4 @@
+interface:
+  display_name: "Editorial Diagram & Chart Design"
+  short_description: "27 editorial HTML/SVG diagram & chart types, draw.io/Mermaid redrawing, and PNG/SVG export."
+  default_prompt: "Use $diagram-design to create or redraw a publication-grade architecture diagram, sequence flow, or chart."

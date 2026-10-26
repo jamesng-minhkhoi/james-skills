@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code2Flow — User-Flow Mapper & UX Gap Auditor"
+  short_description: "AST route-to-flow mapper, Mermaid diagrams, PRD story drift validator, and 11-heuristic UX auditor."
+  default_prompt: "Use $code2flow to scan this repository's routes and navigation, generate a user-flow diagram, check PRD drift, and report UX gaps."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender 3D Studio & CAD Production Engine"
+  short_description: "Headless Blender bpy/bmesh modeling, image-to-3D, Three.js props, and 3D-print production gates."
+  default_prompt: "Use $blender-3d-studio to model, reconstruct from reference images, render a studio turntable, or run the 3D-print production gate."
