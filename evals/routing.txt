@@ -38,3 +38,12 @@ success-metrics|product-discovery|Define the metrics and instrumentation plan fo
 feature-readout|product-discovery|Our feature shipped last month; did it meet the metrics we promised? Recommend iterate, persevere, or kill.
 refuse-code|none|Review this Python ETL script for SQL injection and rewrite the unsafe queries.
 refuse-legal|none|Draft an NDA for a new contractor.
+# Authorized offensive testing (adapted from Claude-Red).
+sqli-test|offensive-sqli|Test the /login endpoint of our staging app for SQL injection; we own the environment.
+idor-test|offensive-idor|Audit our orders API for IDOR using our two test accounts.
+ssrf-probe|offensive-ssrf|Our link-preview feature fetches user URLs server-side; check it for SSRF on our staging deployment.
+smuggle-check|offensive-request-smuggling|Probe the CDN/Nginx staging replica pair for CL.TE request smuggling.
+logic-abuse|offensive-business-logic|Probe our refund workflow for discount and refund abuse paths, staging only.
+graphql-audit|offensive-graphql|Audit our introspection-disabled GraphQL API for batching, depth, and authz abuse on staging.
+# Library ops: review of a changed instruction file before it commits.
+skill-review|skill-reviewer|I rewrote the audit-criteria section of audit-uiux-web's SKILL.md in my skills library. Check the rewrite before I commit it.

@@ -48,6 +48,12 @@ Reusable Codex and Claude skills extracted from project work.
   PDF export) and run an AI career command center (A–G job evaluation, ghost-job
   detection, cover letters, LinkedIn outreach, STAR+R interview prep, and
   offer-contract reading).
+- 16 `offensive-*` skills — SQLi, XSS, SSRF, SSTI, XXE, IDOR, file upload, RCE,
+  deserialization, race conditions, request smuggling, open redirect, parameter
+  pollution, GraphQL, WAF bypass, and business logic — adapted from
+  [Claude-Red](https://github.com/SnailSploit/Claude-Red) (MIT; see
+  [`NOTICE.md`](NOTICE.md)). Authorized targets only: each file's footer and
+  `ROUTING.md` gate the scope before the first probe.
 
 ## Agents and routing
 
@@ -56,12 +62,20 @@ Reusable Codex and Claude skills extracted from project work.
 their own from their descriptions; the routing guide covers the seams between
 them.
 
-[`agents/`](agents) holds Claude Code subagents, added only where a separate
-context pays for itself:
+[`agents/`](agents) holds subagents, added only where a separate context pays
+for itself. `agents/*.md` is written once, in the Claude Code dialect;
+`install.sh` links it into `~/.claude/agents` directly and generates converted
+configs for OpenCode (permission denials), Codex (read-only TOML sandbox), and
+Gemini (a tools allowlist that omits write tools):
 
 - [`auditor`](agents/auditor.md) — independent, edit-free UI/UX and
   store-readiness audits with the three audit skills preloaded. It exists
   because a review is worth more when it is not done by whoever built the UI.
+- [`skill-reviewer`](agents/skill-reviewer.md) — a zero-context pre-ship read of
+  a changed skill, its references, `ROUTING.md`, or an agent definition. It
+  holds only the handed files, so it fails exactly where the author — who
+  already knows what they meant — passes, and every finding must be convertible
+  into an eval case.
 
 Add another agent when real work shows the need (for example, marketing runs
 that flood the main session), not for symmetry.
@@ -93,11 +107,18 @@ does not link the ontology or that uses a retired synonym.
 ./install.sh --dry-run  # show what would change first
 ```
 
-By default this links skills into `~/.claude/skills`, `~/.codex/skills`, and
-`~/.agents/skills`, links agents into `~/.claude/agents`, and adds a marked
-routing block to `~/.claude/CLAUDE.md` (a live `@import`) and
-`~/.codex/AGENTS.md` (a copy, refreshed on each run). Pass directories as
-arguments to link skills into specific targets only.
+By default this links skills into `~/.claude/skills`, `~/.codex/skills`,
+`~/.agents/skills`, and `~/.gemini/skills` — those four cover Claude, Codex,
+OpenCode (which also reads the Claude and `.agents` paths), and Gemini.
+Subagents are installed per harness: linked into `~/.claude/agents`, generated
+into `~/.config/opencode/agents`, `~/.codex/agents`, and `~/.gemini/agents`
+with each harness's frontmatter and the agent's tool bans translated. It also
+writes a marked routing block into `~/.claude/CLAUDE.md` (a live `@import`) and
+copies it into `~/.codex/AGENTS.md`, `~/.config/opencode/AGENTS.md`, and
+`~/.gemini/GEMINI.md` (all copies, refreshed on each run). Pass directories as
+arguments to link skills into specific targets only. Generated agent files
+carry a managed marker so re-running after a rename or removal prunes stale
+copies; edits always go to the repo file, never the generated one.
 Symlinks mean an edit here takes effect everywhere immediately — a copied skill
 silently goes stale, and a stale copy of a renamed skill keeps competing with
 its replacement at skill-selection time. Re-run after adding, renaming, or
@@ -120,6 +141,9 @@ Change skills from evidence, and keep what loads in every session small.
    scripts/lint-skills.sh      # structure, links, and size budgets
    scripts/eval-routing.sh     # routing cases (headless Claude; costs tokens)
    ```
+   For a behavioral rewrite, first hand the changed files to the
+   `skill-reviewer` agent: a zero-context read whose findings are eval-case
+   candidates. What a cold reader cannot follow does not ship.
 4. **Commit with the case name**, e.g. `fix: x-engagement fired for Petio posts
    (routing case petio-threads)`, so the log records why each rule exists.
 
