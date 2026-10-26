@@ -31,7 +31,7 @@ for arg in "$@"; do
 done
 GLOBAL=0
 if [ ${#TARGETS[@]} -eq 0 ]; then
-  TARGETS=("$HOME/.claude/skills" "$HOME/.codex/skills" "$HOME/.agents/skills")
+  TARGETS=("$HOME/.claude/skills" "$HOME/.codex/skills" "$HOME/.agents/skills" "$HOME/.gemini/skills")
   GLOBAL=1
 fi
 
