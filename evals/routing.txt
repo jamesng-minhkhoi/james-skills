@@ -45,5 +45,10 @@ ssrf-probe|offensive-ssrf|Our link-preview feature fetches user URLs server-side
 smuggle-check|offensive-request-smuggling|Probe the CDN/Nginx staging replica pair for CL.TE request smuggling.
 logic-abuse|offensive-business-logic|Probe our refund workflow for discount and refund abuse paths, staging only.
 graphql-audit|offensive-graphql|Audit our introspection-disabled GraphQL API for batching, depth, and authz abuse on staging.
+# Verified research (methodology by design-os-knowledge-builder, engine used per its PolyForm Shield license).
+kb-build|knowledge-builder|Build an ontology-first knowledge pack on webhook retry semantics: freeze vendor docs, promote claims, cite them, run the stopping gate.
+kb-check|knowledge-builder|Run verify --claims and pack check on my knowledge pack and list claims no document cites.
+# Boundary: ephemeral one-off research does not need the pack schema.
+research-quick|none|Summarize the pile of research links in this chat into an ephemeral digest for a one-off answer.
 # Library ops: review of a changed instruction file before it commits.
 skill-review|skill-reviewer|I rewrote the audit-criteria section of audit-uiux-web's SKILL.md in my skills library. Check the rewrite before I commit it.

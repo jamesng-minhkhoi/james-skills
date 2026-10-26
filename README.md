@@ -43,6 +43,13 @@ Reusable Codex and Claude skills extracted from project work.
   verify, and render 3D assets, mechanical CAD parts, 3D-printable STL/GLB
   solids, and procedural Three.js models using headless Blender (`bpy`) and
   deterministic `AGENT_OK` production gates.
+- [`knowledge-builder`](skills/knowledge-builder/SKILL.md) — compile research
+  into verified knowledge packs: sources frozen with sha256, claims promoted
+  only when their verbatim quote verifies against the frozen capture, documents
+  citing claims, and a ledger-backed epistemic stopping gate. Drives the
+  [design-os-knowledge-builder](https://github.com/jangtrinh/design-os-knowledge-builder)
+  CLI (PolyForm Shield 1.0.0 — used per its license, not copied); the skill text
+  here is original.
 - [`cv-and-career-ops`](skills/cv-and-career-ops/SKILL.md) — engineer FAANG-grade
   CVs (Google XYZ formula, monochrome HTML/LaTeX templates, 2-page Playwright
   PDF export) and run an AI career command center (A–G job evaluation, ghost-job

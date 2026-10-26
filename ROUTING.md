@@ -24,8 +24,8 @@ before what it looks like.**
 - `offensive-*` web attack skills (SQLi, XSS, SSRF, SSTI, XXE, IDOR, upload, RCE, deserialization, races, smuggling, redirects, pollution, GraphQL, WAF, logic) fire only for targets the user is authorized to test; confirm the scope before the first probe. Reviewing/fixing one's own code is build work, not offensive testing.
 
 - Social engagement routes to `x-engagement` (X) or `threads-engagement` (Threads).
-- Product promo videos, UI walkthroughs, 9:16 social reels, and reference-video
-  recreations route to `product-video`.
+- Product promo videos, UI walkthroughs, social reels, and reference-video recreations route to `product-video`.
+- Research that must survive trust review — frozen sources with sha256, verbatim-quoted claims, ledger-backed stopping — routes to `knowledge-builder`.
 - Editorial HTML/SVG/PNG architecture diagrams, sequence charts, data charts, and `.drawio`/Mermaid redraws route to `diagram-design`.
 - SEO, AEO (Perplexity/ChatGPT Search citations, `Schema.org` JSON-LD), GEO (`llms.txt`), 12-section READMEs, and launch pages route to `seo-aeo-geo`.
 - 3D modeling, CAD/3D-printable STL solids, image-to-3D reconstruction, procedural Three.js props, and Blender turntables route to `blender-3d-studio`.
