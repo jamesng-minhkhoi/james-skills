@@ -85,6 +85,10 @@ shown. A mocked success path does not prove a write occurred.
   cards without search, filter, sort, selection, or detail access.
 - Navigation contains duplicate destinations, orphan routes, inconsistent
   back behavior, or unrelated actions at equal visual weight.
+- Stacked control sandwiches: 2 or 3 consecutive rows of segmented controls,
+  tab bars, and filter strips stacked at the top of a screen before any data.
+- Full-width outlined form buttons used as top-screen filter triggers,
+  consuming 60px+ of viewport space and inverting native bar hierarchy.
 
 ### Native and accessible
 

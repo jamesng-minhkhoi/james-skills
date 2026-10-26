@@ -58,9 +58,17 @@ evidence. "Looks good", "seems clean", and "modern" are not verdicts.
    for comparison, sheet for a focused edit. No box inside a box for one
    item; no scroller inside a sheet's scroller; no table squeezed narrow. An
    empty field is an ordinary row, not a lone tile.
+   **Chrome budget:** desktop navigation and global parameters (date range,
+   export) must share **1 single horizontal row** (height <= 64px), never
+   splintering into 2 or 3 stacked control rows. Mobile must never stack multiple
+   consecutive tab/segmented rows or place full-width outline pseudo-buttons at
+   the top. Methodology or section-specific toggles must live inside their
+   section header, never as orphaned global chrome.
 7. **Hierarchy.** One focal point per screen; one scan order. Rows in a group
    do not all lead with the same glyph unless the glyph is what is being
    scanned. Whitespace groups before borders or shadows.
+   **Time-to-first-figure:** primary business metrics or status must be visible
+   above the fold on entry without initial scrolling.
 8. **Words.** Labels are at most four words in English and five in the
    product's other language; verb + object; no sentence labels; one fixed
    term per concept; no caption that repeats the title. Real labels, data,
