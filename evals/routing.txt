@@ -14,9 +14,6 @@ mobile-build|frontend-mobile-engineering|Add push notification permission handli
 web-audit|auditor/audit-uiux-web|I just finished building the onboarding flow at localhost:3000, can you review it before release?
 mobile-audit|auditor/audit-uiux-mobile|Audit the UX of our iOS app's sign-up flow, it feels AI-generated.
 store|audit-mobile-store-submission/auditor|Apple rejected our app under guideline 5.1.1, help me get it approved.
-petio-threads|petio-marketing|Draft three Threads posts for Petio this week.
-petio-plan|petio-marketing|Plan next week's Petio content calendar across Buffer channels.
-petio-seo|seo-aeo-content|Why is petiogo.com blog traffic dropping in Search Console?
 generic-x|x-engagement|Write an X reply to an indie dev asking how I grew my side project.
 generic-threads|threads-engagement|Write a Threads post about shipping my side project's first paid feature.
 ask-audit-first|auditor/audit-uiux-web|Our settings page looks off but I'm not sure what's wrong. Should I fix it or audit it first?
@@ -24,5 +21,20 @@ handoff-web|frontend-web-engineering|The web audit came back with F-web-03 and F
 handoff-mobile|frontend-mobile-engineering|Fix F-mobile-02 from the mobile audit, the permission screen one.
 store-scope|audit-mobile-store-submission|The app works fine; I need the App Store listing, privacy labels, and reviewer access checked.
 design-before-build|design-uiux|Show me two directions for the checkout screen before anyone writes code.
+promo-video|product-video|Create a 30-second 1080p 60fps launch promo video and 9:16 Reel for our new feature.
+recreate-video|product-video|Recreate the camera and cursor motion from this reference promo MP4 for our product walkthrough.
+arch-diagram|diagram-design|Draw an editorial system architecture diagram for our Next.js + FastAPI + Postgres stack and export PNG.
+redraw-mermaid|diagram-design|Redraw this messy Mermaid sequence diagram into a clean publication figure for our docs and X post.
+seo-llms-txt|seo-aeo-geo|Audit our site and repo for SEO, Perplexity/ChatGPT AEO citations, Schema.org JSON-LD, and generate llms.txt.
+readme-upgrade|seo-aeo-geo|Upgrade our repository README into a high-converting 12-section AI-ready README and verify the 10 gates.
+code-to-flow|code2flow|Scan our Next.js repository routes, generate a Mermaid user-flow diagram, and check for orphan or dead-end screens against our PRD.
+blender-3d|blender-3d-studio|Reconstruct this hardware product from reference photos in headless Blender and run the 3D-print STL production gate.
+cv-tailor|cv-and-career-ops|Tailor my CV bullets using the Google XYZ formula and export a 2-page PDF for this Staff Engineer role.
+job-eval|cv-and-career-ops|Evaluate this job posting with the A-G rubric, check for ghost-job red flags, and draft a LinkedIn message to the hiring manager.
+# Product decisions: what to build, specs, priority, metrics.
+write-prd|product-discovery|Write a PRD for offline sync in our Expo app, with acceptance criteria and success metrics.
+prioritize|product-discovery|We have six competing feature requests for our SaaS. Help me decide what to build next quarter and why.
+success-metrics|product-discovery|Define the metrics and instrumentation plan for our new onboarding feature.
+feature-readout|product-discovery|Our feature shipped last month; did it meet the metrics we promised? Recommend iterate, persevere, or kill.
 refuse-code|none|Review this Python ETL script for SQL injection and rewrite the unsafe queries.
 refuse-legal|none|Draft an NDA for a new contractor.

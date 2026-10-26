@@ -4,6 +4,10 @@ Reusable Codex and Claude skills extracted from project work.
 
 ## Skills
 
+- [`product-discovery`](skills/product-discovery/SKILL.md) — frame product
+  opportunities from evidence, write buildable PRDs and job stories with
+  acceptance criteria and success metrics, prioritize backlogs, and run
+  post-launch readouts.
 - [`design-uiux`](skills/design-uiux/SKILL.md) — design mobile screens, web
   apps, dashboards, and landing pages as options on the Design canvas, then
   plan the build.
@@ -18,21 +22,37 @@ Reusable Codex and Claude skills extracted from project work.
 - [`audit-mobile-store-submission`](skills/audit-mobile-store-submission/SKILL.md)
   — audit App Store and Google Play submission readiness, rejection risks, and
   external release gates.
-- [`seo-aeo-content`](skills/seo-aeo-content/SKILL.md) — audit Petio search
-  performance, improve existing articles, and write new evidence-led content
-  with reusable daily and monthly workflows.
-- [`petio-marketing`](skills/petio-marketing/SKILL.md) — plan, schedule, and
-  iteratively improve Petio marketing content using Buffer evidence and
-  platform-specific adapters.
 - [`threads-engagement`](skills/threads-engagement/SKILL.md) — research, draft,
   publish, and measure authentic Threads posts and replies.
 - [`x-engagement`](skills/x-engagement/SKILL.md) — research, draft, execute, and
   measure authentic X posts, replies, threads, and listening experiments.
+- [`product-video`](skills/product-video/SKILL.md) — storyboard, choreograph,
+  render, and verify deterministic 1080p 60fps product launch videos, UI
+  walkthroughs, and 16:9 + 9:16 social reels.
+- [`diagram-design`](skills/diagram-design/SKILL.md) — generate editorial
+  HTML/SVG diagrams and data charts across 27 visual types, or redraw `.drawio`
+  and Mermaid `.mmd` diagrams with PNG/SVG export and brand onboarding.
+- [`seo-aeo-geo`](skills/seo-aeo-geo/SKILL.md) — audit, scaffold, and optimize
+  web apps, landing pages, docs sites, and GitHub repositories for SEO, Answer
+  Engines (AEO / JSON-LD), and Generative Engines (GEO / `llms.txt` / 12-section
+  READMEs).
+- [`code2flow`](skills/code2flow/SKILL.md) — map frontend and mobile codebases
+  into visual user-flow graphs, live screenshot canvases, PRD story manifests,
+  and 11-heuristic UX gap reports.
+- [`blender-3d-studio`](skills/blender-3d-studio/SKILL.md) — build, reconstruct,
+  verify, and render 3D assets, mechanical CAD parts, 3D-printable STL/GLB
+  solids, and procedural Three.js models using headless Blender (`bpy`) and
+  deterministic `AGENT_OK` production gates.
+- [`cv-and-career-ops`](skills/cv-and-career-ops/SKILL.md) — engineer FAANG-grade
+  CVs (Google XYZ formula, monochrome HTML/LaTeX templates, 2-page Playwright
+  PDF export) and run an AI career command center (A–G job evaluation, ghost-job
+  detection, cover letters, LinkedIn outreach, STAR+R interview prep, and
+  offer-contract reading).
 
 ## Agents and routing
 
 [`ROUTING.md`](ROUTING.md) says which skill handles what and in what order
-(design → build → audit; marketing never edits code). Skills still load on
+(decide → design → build → audit; marketing never edits code). Skills still load on
 their own from their descriptions; the routing guide covers the seams between
 them.
 
