@@ -1,6 +1,6 @@
 ---
 name: audit-uiux-web
-description: Audit responsive web UI/UX with evidence-backed review of task flows, browser behavior, explicitness, progressive disclosure, information architecture, responsive composition, accessibility, visual systems, motion, performance, trust, and functional reality. Use for React, Next.js, Vue, Svelte, static, SaaS, dashboard, settings, form, list, table, detail, and web-app interfaces, especially AI-generated, template-heavy, or polished-but-unproven projects. Do not implement fixes unless requested. Hand accepted fixes to frontend-web-engineering.
+description: Audit responsive web UI/UX with evidence-backed review of task flows, browser behavior, explicitness, progressive disclosure, information architecture, option-set coverage, native phone composition, accessibility, visual systems, motion, performance, trust, and functional reality. Use for React, Next.js, Vue, Svelte, static, SaaS, dashboard, settings, form, list, table, detail, and web-app interfaces, especially AI-generated, template-heavy, or polished-but-unproven projects. Do not implement fixes unless requested. Hand accepted fixes to frontend-web-engineering.
 ---
 
 # Audit UIUX Web
@@ -21,6 +21,11 @@ For landing pages, portfolios, redesigns, or a supplied visual reference, load
 When changing this audit skill, use the [web audit regression cases](evals/ai-uiux-web-audit-regression.md).
 
 Do not edit product code unless the user explicitly asks for implementation.
+
+Two gates are easy to miss because everything around them looks clean: the
+phone composition must be judged against native platform patterns (§4.1), and
+every selectable option set must be compared to the domain's natural options
+(§4.2). Both are required in Deep and Release audits.
 
 Shared vocabulary: [ontology](../_shared/ontology.md). Use its proof ladder, verdicts, and finding IDs.
 
@@ -43,6 +48,20 @@ review.
   suspiciously generic, or polished-but-nonfunctional UI. Inventory generic
   patterns, dead controls, fabricated data, state gaps, visual drift, and
   browser reality before rating polish.
+
+### 0.1 Select audit directionality
+
+Do not default blindly to only top-down or only bottom-up. Choose the direction based on the task trigger:
+
+| Trigger / Task Scope | Primary Direction | Execution Order | Why |
+|---|---|---|---|
+| **Screen Redesign / New Screen / Structural Critique** | **Top-Down** | 1. Macro-Layout & Chrome Budget<br>2. IA & Hierarchy<br>3. Component & State Reality | Prevents the "AI slop polishing trap" where fragmented 3-row headers or stacked control sandwiches pass because individual buttons look polished. |
+| **User Layout Smell / "Feels Clunky" / Cognitive Friction** | **Top-Down** | 1. Viewport Chrome & Gestalt Proximity<br>2. Density & Focal Point<br>3. Component Details | User friction is almost always macro (wasted space, dead rows, misplaced toggles). Auditing tokens first wastes time polishing controls that should be deleted or merged. |
+| **Component Library / Design System Migration** | **Bottom-Up** | 1. Atomic Primitives & Tokens (tap target, contrast, radius)<br>2. State Matrix (hover, active, focus-ring)<br>3. Screen Composition Spot-Checks | Changes to `<Button>`, `<Select>`, or spacing tokens affect dozens of screens; atomic correctness must be verified first. |
+| **Automated Pre-Commit / Regression Guards** | **Bottom-Up** | 1. AST / Code Checks (`no-inline-dropdowns`, 16px font)<br>2. Unit & Integration Tests<br>3. Snapshot Regressions | Fast, deterministic invariant checks run locally on every commit without full screen walkthroughs. |
+| **Accessibility (WCAG 2.2 AA) Audit** | **Bottom-Up** | 1. Contrast Ratios & Target Geometry<br>2. Semantic Tags & ARIA Roles<br>3. Keyboard & Focus Order | A11y failures are fundamentally atomic (4.5:1 contrast, 44px bounds, label associations) before they become flow issues. |
+| **Isolated Bug Fix / Edge Case** | **Bottom-Up** | 1. Local State, Form Validation, or Error Rollback<br>2. Immediate Container Boundary<br>3. Screen Context | Surgical fix for an edge case (e.g. NaN currency format, optimistic rollback desync) without destabilizing page structure. |
+| **Comprehensive Feature Review (Deep / Release)** | **Sandwich (Bidirectional)** | 1. Top-Down: Macro Chrome Budget & Journey<br>2. Bottom-Up: Token, State, & A11y Verification<br>3. Convergence: Reconcile macro fit with edge cases | Guarantees both structural clarity (no chrome waste) and runtime robustness (no unhandled states). |
 
 ## 1. Establish context and evidence
 
@@ -116,12 +135,24 @@ Use the principles reference and rate each relevant area **Strong**, **Concern**
 - **Structure and data:** Does the task use the right list, table, grouped list,
   detail, editor, split view, dialog, sheet, or inline reveal? Do real and long
   values fit? Are empty, no-results, dense, and error states useful?
+- **Option-set coverage:** Enumerate every user-selectable option set — time
+  ranges, filters, sorts, page sizes, quantities, limits — and derive the
+  domain's natural options from the user's job before judging. A set that
+  misses natural options, has arbitrary endpoints, or exists only because the
+  data model made it easy is a finding, not a default to accept. When an
+  explicit design contract names the options, report the comparison as
+  contract-conforming; a missing-natural-options finding applies only when
+  the contract is silent or the offered set violates the contract.
 - **Interaction completeness:** Are hover, focus-visible, pressed, selected,
   disabled, pending, success, error, tooltip, menu, dialog, form validation,
   and keyboard paths coherent?
 - **Responsive composition:** Does the interface re-compose rather than merely
   shrink across narrow mobile, large mobile, tablet/intermediate, desktop, and
   zoom/large-text conditions?
+- **Phone-native composition:** When the interface renders a phone viewport,
+  is that composition judged against native platform conventions (iOS/Android
+  patterns for navigation, grouped lists, segmented controls, sheets, safe
+  areas, touch behavior) rather than only against the desktop page restacked?
 - **Accessibility:** Are landmarks, headings, labels, names, roles, states,
   focus order, focus return, contrast, zoom, keyboard access, reduced motion,
   and non-color meaning adequate?
@@ -155,6 +186,8 @@ Use the mode-appropriate matrix:
 | 200% zoom or large text | If text-heavy | Required when relevant | Required |
 | Keyboard traversal and focus return | If interactive | Required | Required |
 | Touch and no-hover equivalent | If mobile-supported | Required when relevant | Required |
+| Phone composition vs native platform patterns | If phone-supported | Required | Required |
+| Selectable option sets vs domain-natural options | Risk-based | Required | Required |
 | Loading, empty, dense, error, success | Risk-based | Required for core flow | Required |
 | Direct URL, refresh, back/forward | Risk-based | Required for core routes | Required |
 | Slow/failed/offline/interrupted | Risk-based | Required when supported | Required when relevant |
@@ -169,6 +202,41 @@ viewport, DPR if relevant, fixture, theme, input method, and build.
 If rendering or interaction is unavailable, mark visual/runtime findings
 **Unknown** and lower confidence. Do not turn source inspection into visual
 proof.
+
+### 4.1 Phone composition must be judged against native patterns
+
+A phone viewport is not a smaller web page. When the surface renders a phone
+composition, load the `mobile-native` skill and any native-pattern
+documentation the repository carries (for example `docs/uiux.md`) before
+rating this area, then compare the composition against native platform
+conventions: navigation and large-title treatment, inset grouped lists with
+small section headers, segmented controls at intrinsic width, sheets, safe
+areas, sticky regions, chevron affordances, 44-point targets, and scroll
+behavior. A phone composition that re-stacks desktop content into full-width
+bordered cards with floating full-width control tracks is a finding even when
+every element re-composes "correctly". This is a coverage requirement in Deep
+and Release, not a taste call. When a supplied design contract explicitly
+specifies the phone composition, classify deviations from the native-pattern
+comparison as design-contract deviations with consequences (or report them
+contract-conforming) — never as an unconditioned native-pattern finding. If
+the `mobile-native` skill and repository documentation are both unavailable,
+proceed from native platform conventions alone and mark the gate `NOT_RUN`
+with the platform-convention comparison still performed; do not silently skip
+the gate or pass it without comparison.
+
+### 4.2 Selectable option sets must be compared to the domain
+
+Enumerate every user-selectable option set — time ranges, filters, sorts,
+page sizes, limits — as a required Deep/Release row. Derive the domain's
+natural options first from the user's job and vocabulary (for a food business
+that is yesterday, this week, this month, last month, month-to-date), then
+compare against what is offered. Missing natural options, arbitrary endpoints
+(a bare 14 days with no 30-day or month view), and options that exist only
+because the data model made them easy are findings with priority by user
+impact, recorded even when everything else passes — unless an explicit design
+contract names the options, in which case report the comparison as
+contract-conforming and find only silence in the contract or a violation of
+it.
 
 ## 5. Run the AI-generated UI forensic pass when relevant
 

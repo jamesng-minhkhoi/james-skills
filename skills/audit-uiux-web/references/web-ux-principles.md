@@ -69,6 +69,20 @@ sheet, pagination, load more, or infinite scroll from the user's need for
 comparison, position, sharing, control, and completion. Do not force every
 surface into cards, KPI tiles, a hero, or a generic dashboard grid.
 
+### Option-set and domain coverage (Mandatory gate)
+
+Enumerate every user-selectable option set — time ranges, filters, sorts, page
+sizes, quantities, limits. Derive the domain's natural options first, from the
+user's job and vocabulary (for a food business: yesterday, this week, this
+month, last month, month-to-date), then compare against what the interface
+offers. Missing natural options, arbitrary endpoints such as a bare 14 days
+with no 30-day or month view, and options that exist only because the data
+model made them easy are findings with priority by user impact — not defaults
+to accept because the surrounding structure is clean. When an explicit design
+contract names the options, report the comparison as contract-conforming; a
+missing-natural-options finding applies only when the contract is silent or
+the offered set violates it.
+
 ## Responsive re-composition
 
 Responsive quality is a change in composition, not a shrunken desktop. Check:
@@ -80,6 +94,22 @@ Responsive quality is a change in composition, not a shrunken desktop. Check:
 - dialogs, sheets, menus, and sticky/fixed regions;
 - keyboard open, touch input, hover absence, and focus visibility;
 - zoom, large text, localization, RTL, and narrow intermediate widths.
+
+### Native platform composition on a phone (Mandatory gate)
+
+Judge the phone composition against the platform the user holds, not against
+the desktop page. Compare it against native platform conventions — navigation
+and large-title treatment, inset grouped lists with small section headers,
+segmented controls at intrinsic width rather than full-bleed tracks, sheets,
+safe areas, sticky regions, chevron affordances, 44-point targets, momentum
+and scroll behavior — and against any native-pattern documentation the
+repository carries (for example `docs/uiux.md`). Re-composition without
+breakage is the floor, not the pass: full-width bordered cards wrapping every
+figure and floating full-width control tracks on a phone are findings, not
+style preferences. When a supplied design contract explicitly specifies the
+phone composition, classify the comparison result as contract-conforming or
+a design-contract deviation with consequences — never as an unconditioned
+native-pattern finding.
 
 ## Accessibility and inclusive interaction
 

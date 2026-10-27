@@ -20,6 +20,11 @@ observable patterns, user impact, proof, and verification.
 - dashboard/KPI tiles appear without a decision or monitoring job;
 - hero-plus-grid layout is repeated for list, detail, form, or settings tasks;
 - tables become unreadable cards on mobile or remain horizontally unusable;
+- a phone composition reads as a generic web card stack: full-width bordered
+  cards wrapping every figure, floating full-width control tracks, navigation
+  or controls that follow web conventions instead of native platform patterns;
+- selectable option sets read as engineering defaults: arbitrary endpoints,
+  missing natural ranges, or options limited to what the data model makes easy;
 - decorative whitespace displaces the primary task while secondary actions share
   equal emphasis.
 

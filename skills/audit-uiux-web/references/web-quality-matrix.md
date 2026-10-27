@@ -12,7 +12,9 @@ screenshot. Mark unobserved cells Unknown.
 | Typical, long, empty, no-results, error data | Risk-based | Required | Required |
 | Narrow mobile, large mobile, tablet, desktop | Target state | Required | Required |
 | Direct URL, refresh, back/forward, new tab | Risk-based | Core routes | All supported routes |
-| Pointer, keyboard, touch, no-hover path | Core control | Required | Required |
+| Touch and no-hover path | Core control | Required | Required |
+| Phone composition vs native platform patterns | If phone-supported | Required | Required |
+| Selectable option sets vs domain-natural options | Risk-based | Required | Required |
 | Focus, modal return, menu escape, validation | Risk-based | Required | Required |
 | Loading, slow, partial, retry, offline | Risk-based | When supported | Required when supported |
 | Browser support, theme, zoom, large text | Target browser | Representative set | Full support set |
@@ -50,6 +52,7 @@ Use project breakpoints plus representative CSS widths. A practical baseline is
 | Check | Narrow | Intermediate | Desktop |
 | --- | --- | --- | --- |
 | Navigation and orientation |  |  |  |
+| Native platform patterns (phone) |  | n/a | n/a |
 | Reading order and primary action |  |  |  |
 | Tables/lists/forms |  |  |  |
 | Long content and localization |  |  |  |
