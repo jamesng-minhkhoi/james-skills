@@ -1,6 +1,6 @@
 ---
 name: break-ui
-description: Try to break a piece of UI by feeding it worst-case data — long names, unbreakable emails, one-letter names, missing fields, huge counts, zero items, long labels, non-Latin text, emoji, extreme numbers — then render it behind a "Demo data / Worst case" toggle and report everything that broke, with the fix for each. Use when the user asks to stress-test, break, or find edge cases in a component or screen, or to "try the worst case". For visual design critique use emil-design-eng; for motion use review-animations.
+description: Break a piece of UI by feeding it worst-case data — long names, unbreakable emails, one-letter names, missing fields, huge counts, zero items, non-Latin text, emoji, extreme numbers — then render it behind a "Demo data / Worst case" toggle and report everything that broke, with the fix for each. Use when the user asks to stress-test, break, or find edge cases in a component or screen. For visual design critique use emil-design-eng; for motion use review-animations.
 ---
 
 # Breaking UI
@@ -173,6 +173,8 @@ Close with where the toggle is (URL or file path), the states it has, and: "Say 
 ## Tone
 
 Matter-of-fact, never smug. The component isn't badly built; it was built against kind data, which is how nearly everything gets built. Name the break, show the value that caused it, give the fix. If nothing breaks for a field, say so. A short report on a sturdy component is a good result.
+
+Shared vocabulary: [ontology](../_shared/ontology.md).
 
 ---
 

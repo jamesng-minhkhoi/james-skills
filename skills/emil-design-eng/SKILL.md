@@ -673,6 +673,8 @@ When reviewing UI code, check for:
 | Same enter/exit transition speed           | Make exit faster than enter (e.g., enter 2s, exit 200ms)         |
 | Elements all appear at once                | Add stagger delay (30-80ms between items)                        |
 
+Shared vocabulary: [ontology](../_shared/ontology.md).
+
 ---
 
 > Imported from Emil Kowalski's [skills](https://github.com/emilkowalski/skills) collection, MIT License. See [NOTICE](../../NOTICE.md).

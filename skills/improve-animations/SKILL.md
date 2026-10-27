@@ -108,6 +108,8 @@ Finish by creating or updating `plans/README.md`: recommended execution order, d
 
 State findings plainly with evidence. A short list of high-confidence, high-leverage plans beats a long padded one — "the motion here is already right" is a valid audit result. Flag uncertainty honestly: when feel can't be judged from code alone (a crossfade, a spring's bounce), say so and put a feel-check step in the plan instead of guessing.
 
+Shared vocabulary: [ontology](../_shared/ontology.md).
+
 ---
 
 > Imported from Emil Kowalski's [skills](https://github.com/emilkowalski/skills) collection, MIT License. See [NOTICE](../../NOTICE.md).

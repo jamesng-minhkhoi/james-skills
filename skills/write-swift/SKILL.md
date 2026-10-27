@@ -395,6 +395,8 @@ You can turn strict checking back off and ship; every fix you made is a genuine 
 | Deciding to optimize               | Instruments on a profiled test  | intuition                                 |
 
 
+Shared vocabulary: [ontology](../_shared/ontology.md).
+
 ---
 
 > Imported from Emil Kowalski's [skills](https://github.com/emilkowalski/skills) collection, MIT License. See [NOTICE](../../NOTICE.md).

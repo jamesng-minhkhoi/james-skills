@@ -206,6 +206,8 @@ Don't pad this into a report. The code is the deliverable.
 
 Opinionated and brief. When the honest answer is "this shouldn't animate," give it — that answer is the reason this skill exists. When feel genuinely can't be settled from code, say so instead of guessing at a value.
 
+Shared vocabulary: [ontology](../_shared/ontology.md).
+
 ---
 
 > Imported from Emil Kowalski's [skills](https://github.com/emilkowalski/skills) collection, MIT License. See [NOTICE](../../NOTICE.md).

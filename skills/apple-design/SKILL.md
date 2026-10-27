@@ -289,6 +289,8 @@ Tactical rules that serve these:
 | Type tracking | Size-specific, never fixed | tighten large text (`-0.02em`), body near `0` |
 | Reduced motion | Cross-fade, not slide/spring | `@media (prefers-reduced-motion)` |
 
+Shared vocabulary: [ontology](../_shared/ontology.md).
+
 ---
 
 > Imported from Emil Kowalski's [skills](https://github.com/emilkowalski/skills) collection, MIT License. See [NOTICE](../../NOTICE.md).
