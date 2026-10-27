@@ -20,6 +20,20 @@ ask-audit-first|auditor/audit-uiux-web|Our settings page looks off but I'm not s
 handoff-web|frontend-web-engineering|The web audit came back with F-web-03 and F-web-05. Close both.
 handoff-mobile|frontend-mobile-engineering|Fix F-mobile-02 from the mobile audit, the permission screen one.
 store-scope|audit-mobile-store-submission|The app works fine; I need the App Store listing, privacy labels, and reviewer access checked.
+# Motion and UI craft: emilkowalski/skills imports.
+animate-build|animate|Make this dropdown feel better — the open and close animation feels off.
+motion-jank|animation-performance|The tab indicator animation stutters while the next page loads in our Next.js app.
+phone-feel|mobile-native|Works in Chrome but the bottom bar sits under the home indicator and taps feel laggy on my iPhone.
+expo-motion|animate-expo|Add a drag-to-dismiss sheet to my Expo app.
+motion-audit|improve-animations|Audit the motion in this app and give me a plan of fixes.
+motion-review|review-animations|review-animations: review the animation diff from my last commit.
+motion-opportunities|find-animation-opportunities|What could be animated here? Make this dashboard feel more alive.
+polish-review|emil-design-eng|Why does this popover feel cheap? Review the component's polish.
+stress-test-ui|break-ui|Try to break this member row with worst-case data.
+motion-term|animation-vocabulary|What's it called when a popover grows out of the button?
+sonner-help|ask-sonner|My Sonner toasts appear behind the modal and ignore Tailwind classes.
+swift-modern|write-swift|Migrate this Swift service to Swift 6 strict concurrency without breaking the actor boundaries.
+apple-principles|apple-design|Review this drag-to-dismiss interaction against Apple's interruptibility and velocity handoff principles.
 design-before-build|design-uiux|Show me two directions for the checkout screen before anyone writes code.
 promo-video|product-video|Create a 30-second 1080p 60fps launch promo video and 9:16 Reel for our new feature.
 recreate-video|product-video|Recreate the camera and cursor motion from this reference promo MP4 for our product walkthrough.
