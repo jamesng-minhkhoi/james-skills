@@ -22,6 +22,13 @@ laws, MIT):
 | Occasional (sheets, modals, toasts) | Standard motion |
 | Rare or first-time (onboarding finish, milestone) | Room for delight |
 
+Landing pages, first runs, and one-off milestones are the legitimate home of
+signature moments. The table judges by how often the user *meets the motion in
+the shipped flow*: a technique born on a marketing page that ends up inside
+daily-use product chrome (a repeated shimmer under list rows, an idle loop
+next to the keyboard) is judged by the row its real frequency falls in, not by
+its marketing origin.
+
 Passing this gate with no custom motion is a success. Data the user is
 reading never moves for style.
 

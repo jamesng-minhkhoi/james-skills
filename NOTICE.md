@@ -121,5 +121,73 @@ that engine's code.
 milestone bounty structures, and distribution-first app ideation patterns
 adapted from Salim (@rsalimx, scrollshow.ai).
 
+## Creative techniques references (`skills/design-uiux/references/creative-catalog.md`, `skills/design-uiux/references/library/`)
+
+The organizing pattern of these references (context-keyed catalog → module
+index → short topic files) is adapted from
+[design-on-the-flank](https://github.com/jamesng-minhkhoi/design-on-the-flank).
+That collection is **not** an MIT-licensed collection: its LICENSE.md reserves
+redistribution or resale of the skill collection itself to its owner, while
+permitting use of the collection (including for commercial projects) without
+redistribution. No text from that collection is redistributed here; its
+structure is credited as inspiration, and adaptation into this library was
+requested by the library owner. If these files ever leave this library,
+obtain the owner's permission for the structure credit to travel with them.
+
+The technique content (GSAP sequencing idioms, Three.js scene, lighting,
+texture and loader guidance, GLSL recipes) is adapted from that collection's
+two MIT upstreams, which the collection itself credits:
+[Framer Labs](https://github.com/fredm00n/framerlabs) and GreenSock's official
+GSAP skills ([greensock/gsap-skills](https://github.com/greensock/gsap-skills)).
+Snippets are rewritten for this library's stack (Next.js + Framer Motion +
+react-three-fiber web; Expo + Reanimated mobile) and each module carries an
+attribution footer. Both upstream licenses apply to the adapted material:
+
+```
+MIT License
+
+Copyright (c) 2024 fredm00n
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+MIT License (gsap-skills)
+
+Copyright (c) 2026 GreenSock
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
 Rest of the library: © James. Offensive testing runs only where the operator is
 authorized — see the footer of each `offensive-*` skill.

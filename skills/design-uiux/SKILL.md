@@ -61,9 +61,14 @@ like, and whether this request preserves the visual language or overhauls it.
   first. The table is the brief: every gate answered, evidence beside every
   verdict, `NOT_RUN` where nothing was rendered. Then the full loop.
 - **New or creative feature** (gamification, onboarding, a signature moment):
-  the full loop with research weighted heavily.
-- **Motion:** only after the static design is locked. Then use
-  [motion and gesture](references/motion-and-gesture.md).
+  the full loop with research weighted heavily. When the idea is a signature
+  moment — animated hero, scroll story, 3D or shader-backed scene — open the
+  [creative catalog](references/creative-catalog.md) after research; its
+  honesty and frequency gates apply before any technique is proposed.
+- **Motion refinements** (transitions, micro-interactions on an existing
+  design): only after the static design is locked. A request that is a
+  signature moment (the creative feature bullet above) owns its motion design
+  at the option stage and is not stalled waiting for a lock.
 
 ### 3. Research with a question
 
@@ -130,6 +135,7 @@ Load only what the request needs.
 | Web app (settings, forms, lists, detail) | [web principles](references/web-principles.md), [web patterns](references/web-patterns.md) |
 | Dashboard or admin | [dashboard data](references/dashboard-data.md), [dashboard interaction](references/dashboard-interaction.md) |
 | Landing page | [landing message](references/landing-message.md), [landing visual](references/landing-visual.md) |
+| Signature moment (animated hero, scroll story, kinetic type, 3D canvas, shader field) | [creative catalog](references/creative-catalog.md), then only the module topics it routes to |
 | Transitions, gestures, micro-interactions | [motion and gesture](references/motion-and-gesture.md) |
 | Redesign diagnosis, or any review before showing or handing off | [critique and proof](references/critique-and-proof.md) (the twelve gates) |
 
