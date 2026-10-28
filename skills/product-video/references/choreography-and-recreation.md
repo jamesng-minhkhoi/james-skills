@@ -1,6 +1,6 @@
 # Choreography, HyperFrames, and Reference Recreation
 
-Distilled from Jang Trịnh's `ui-walkthrough-builder.mjs`, `hyperframes-engine.mjs`, `motion-core.js`, `motion-video-recreation-pipeline.md`, and `audit-cursor-click-hotspots.mjs`.
+Distilled from Jang Trinh's `ui-walkthrough-builder.mjs`, `hyperframes-engine.mjs`, `motion-core.js`, `motion-video-recreation-pipeline.md`, and `audit-cursor-click-hotspots.mjs`.
 
 ## 1. Decoupled Camera & Pointer Kinematics (Gate 8 Invariant)
 

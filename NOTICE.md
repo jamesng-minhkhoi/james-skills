@@ -64,5 +64,62 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
+## Fun isometric stickers skill (`skills/fun-isometric`)
+
+Imported verbatim from [kelvinkn17/skills](https://github.com/kelvinkn17/skills)
+by Kelvin Adithya (`fun-isometric`) — except for the shared-vocabulary line and
+this attribution footer. It ships its own kit, site, and license under the same
+MIT terms as upstream, which apply to those files:
+
+```
+MIT License
+
+Copyright (c) 2026 kelvinkn17
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## DESIGN:OS-derived skills (`skills/diagram-design`, `skills/seo-aeo-geo`, `skills/blender-3d-studio`, `skills/code2flow`, `skills/product-video`)
+
+These five skills adapt the method, scripts, and visual system of Jang Trinh's
+DESIGN:OS engines — `design-os` (diagram and chart capability),
+`design-os-github-page`, `design-os-3d-blender`, `design-os-code2flow`, and
+`design-os-svg-animation` (https://github.com/jangtrinh). The skill text,
+routing, ontology links, and eval cases here are rewritten for this library;
+the bundled scripts and reference material remain under the upstream license.
+
+Required Notice: Copyright (c) 2026 Jang Trinh (https://github.com/jangtrinh)
+
+Licensed under PolyForm Shield 1.0.0:
+<https://polyformproject.org/licenses/shield/1.0.0>
+
+In plain terms: free to use and modify, including for paid client work; you may
+not resell the software or build a competing product from it. Anyone who
+receives these files must also receive this notice and the license URL.
+
+`skills/knowledge-builder` references the separate
+`design-os-knowledge-builder` engine under the same license; it embeds none of
+that engine's code.
+
+`skills/viral-distribution` incorporates slideshow syndication mechanics,
+milestone bounty structures, and distribution-first app ideation patterns
+adapted from Salim (@rsalimx, scrollshow.ai).
+
 Rest of the library: © James. Offensive testing runs only where the operator is
 authorized — see the footer of each `offensive-*` skill.

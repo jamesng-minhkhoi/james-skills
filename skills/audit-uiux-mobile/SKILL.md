@@ -42,6 +42,20 @@ use **Deep** for a new or high-risk journey and **Quick** for a narrow review.
   controls, data provenance, state transitions, and proof levels before rating
   visual polish.
 
+### 0.1 Select audit directionality
+
+Do not default blindly to only top-down or only bottom-up. Choose the direction based on the task trigger:
+
+| Trigger / Task Scope | Primary Direction | Execution Order | Why |
+|---|---|---|---|
+| **Screen Redesign / New Screen / Structural Critique** | **Top-Down** | 1. Viewport Chrome Budget & Fold<br>2. Native Nav Hierarchy & IA<br>3. Component & State Reality | Prevents the "AI slop polishing trap" where 3-tier stacked control sandwiches push content 300px down while individual buttons look nice. |
+| **User Layout Smell / "Feels Un-native" / Cognitive Friction** | **Top-Down** | 1. Native Header & Control Stacking<br>2. Gestalt Proximity & Density<br>3. Component Details | User friction is almost always macro (full-width outline buttons on top, nested segmented bars). Auditing tokens first wastes time polishing controls that should be deleted or merged. |
+| **Component Library / Design System Migration** | **Bottom-Up** | 1. Atomic Primitives & Tokens (44px target, contrast, radius)<br>2. State Matrix (pressed, disabled, safe areas)<br>3. Screen Composition Spot-Checks | Changes to `<Button>`, `<Select>`, or bottom sheets affect dozens of screens; atomic correctness must be verified first. |
+| **Automated Pre-Commit / Regression Guards** | **Bottom-Up** | 1. AST / Code Checks (`no-inline-dropdowns`, 16px font)<br>2. Unit & Integration Tests<br>3. Baseline Invariant Tests | Fast, deterministic invariant checks run locally on every commit without full screen walkthroughs. |
+| **Mobile Accessibility (WCAG / HIG)** | **Bottom-Up** | 1. 44x44pt Target Geometry & Safe-area<br>2. Dynamic Type & Contrast Ratios<br>3. Screen Reader & Accessibility Labels | Mobile a11y failures are fundamentally atomic (thumb targets, text clipping on large font scale) before they become flow issues. |
+| **Isolated Bug Fix / Edge Case** | **Bottom-Up** | 1. Local State, Keyboard Dismissal, Rollback<br>2. Immediate Sheet / Drawer Boundary<br>3. Screen Context | Surgical fix for an edge case (e.g. keyboard covering input, optimistic rollback desync) without destabilizing page structure. |
+| **Comprehensive Feature Review (Deep / Release)** | **Sandwich (Bidirectional)** | 1. Top-Down: Macro Chrome Budget & Journey<br>2. Bottom-Up: Token, State, & A11y Verification<br>3. Convergence: Reconcile macro fit with edge cases | Guarantees both native platform ergonomics (no chrome waste) and runtime robustness (no unhandled states). |
+
 ## 1. Establish context and evidence
 
 Write a short context brief before inspecting details:

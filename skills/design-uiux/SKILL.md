@@ -96,10 +96,11 @@ A wireframe is only acceptable when James asks for one.
 
 Apply James's feedback to the chosen option only. Add the states the flow
 can reach (empty, loading, error, long content, first use versus repeat use)
-and the navigation map when there is more than one screen. Before each
-showing, run [slop and consistency](references/slop-and-consistency.md),
-then compare side by side with the strongest reference. Stop when it is at
-least as good. Otherwise, name the gap and iterate.
+and the navigation map when there is more than one screen. Before each showing
+after the first, run [slop and consistency](references/slop-and-consistency.md)
+and build the [rendered proof](references/rendered-proof.md) sheet at the
+project's real widths; then compare side by side with the strongest reference. Stop when
+it is at least as good. Otherwise, name the gap and iterate.
 
 Re-run the same twelve-gate table on the pick. A verdict that regressed is a
 new finding, even if the screen looks better.
@@ -114,8 +115,9 @@ When James approves, write a short implementation plan: the screens and
 states, the components to reuse (by file path) and the few to add, the
 tokens, the navigation and back behavior, the motion spec if any, and the
 open questions. Add the handoff rules from
-[critique and proof](references/critique-and-proof.md): each rule the work
-relies on, with its ID and how the build checks it. Hand it to the
+[critique and proof](references/critique-and-proof.md), each with its ID and
+how the build checks it, plus the hand-over block from
+[rendered proof](references/rendered-proof.md). Hand it to the
 engineering skill. Do not edit product code from this skill.
 
 ## Surface guidance

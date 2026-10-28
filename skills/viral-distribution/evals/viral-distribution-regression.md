@@ -57,3 +57,18 @@ discipline.
 - Refuse execution in `viral-distribution`.
 - State clearly that text-only social engagement on X belongs to `x-engagement`.
 - Route the request directly to `x-engagement` without writing video campaign briefs.
+
+---
+
+## Case 5: Slideshow Syndication & Milestone Payout Contract Design
+
+**Prompt / Artifact:**
+"We built a mobile habit & routine tracking app. We want to test TikTok photo slideshows using Discord creators instead of paying high upfront video UGC rates. How should we structure the engine, validate demand, and set payouts for 1M views?"
+
+**Expected Behavior:**
+- Route to **Engine C: Slideshow Syndication** (photo carousels).
+- Recommend verifying search momentum via TikTok Search Insights on sub-niche queries (+100% to +190% WoW growth) before launching decks.
+- Present the milestone payout model ($0 under 100k, $100 @ 100k, $350 @ 1M, $500 cap @ 2M).
+- Run or cite `campaign_calculator.py slideshow --views 1000000` showing ~$625 total budget ($0.62 effective CPM including reserves and loyalty bonuses).
+- Require format autopsy requirements (Slide 1 curiosity hook, 6–10 slides of educational checklist/diagnostic value, high save triggers).
+- Stop at Gate 1 for James's approval before recruiting Discord creators or distributing slide decks.

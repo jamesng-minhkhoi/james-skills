@@ -7,7 +7,9 @@ description: Create deterministic 1080p 60fps product launch videos, UI walkthro
 
 Build studio-grade product and social videos as **deterministic code** (`HTML/CSS/SVG/Canvas` driven by a quantized virtual clock `window.seek(t)` / `window.__seekToTime(t)`, rendered frame-by-frame via Headless Chrome + FFmpeg at 1080p 60fps with subframe `tmix` motion blur and `-16 LUFS` sidechain-ducked audio).
 
-Distilled from Jang Trịnh's `design-os-svg-animation` and `design-os` video engines.
+Distilled from Jang Trinh's `design-os-svg-animation` and `design-os` video engines.
+
+When NOT to use: static diagrams (`diagram-design`), in-product motion components (`animate` / `animate-expo`), or multi-account distribution (`viral-distribution`). This skill renders one film; it does not run accounts.
 
 Shared vocabulary: [ontology](../_shared/ontology.md). Use its proof ladder, verdicts, and finding IDs.
 
@@ -107,3 +109,14 @@ Reply with these four items in exact order (`R13`):
 2. **Deliverable & proof paths:** Storyboard, HTML player, beat sheets, `look-sheet.png`, and encoded `16:9` / `9:16` MP4 paths.
 3. **Verified gates & receipts:** Each command run (`validate.mjs`, `look.mjs` L1–L5, `audit-cursor-click-hotspots.mjs`, `ffmpeg -v error`, `ebur128`), its exit code, and the highest proof rung reached (`declared`, `rendered`, `interactive`).
 4. **Open owner gate:** State whether waiting on **Gate 1 (Storyboard & Script Approval)** or **Gate 2 (Listen/Watch & Publish Approval)**.
+
+## Related Skills & Distribution Hand-Off
+
+- **Viral short-form distribution:** For organic campaign strategy, clipping bounties, UGC creator briefs, and creator-program scaling on TikTok, Instagram Reels, and YouTube Shorts, route to `viral-distribution`. It refuses phone farms, account fleets, and duplicate-detection evasion.
+- **Multi-account fleets:** Refuse. Rendering variants to evade duplicate-content detection, or running one film across many accounts, is out of scope; `viral-distribution` owns distribution and refuses fleets as a platform ToS violation.
+
+---
+
+> Adapts the [DESIGN:OS](https://github.com/jangtrinh) engines by Jang Trinh under the PolyForm Shield 1.0.0 license (<https://polyformproject.org/licenses/shield/1.0.0>).
+> Required Notice: Copyright (c) 2026 Jang Trinh (https://github.com/jangtrinh)
+> See [NOTICE](../../NOTICE.md).

@@ -7,6 +7,8 @@ description: Map frontend and mobile codebases (Next.js, Expo Router, React Rout
 
 Statically and dynamically map any frontend or mobile repository into a verified user-flow topology (Mermaid `.mmd`, JSON `graph.json`, or offline HTML screenshot canvas), validate PRD user stories against real code transitions, and audit against 11 structural UX heuristics.
 
+When NOT to use: visual design or taste (`design-uiux`), runtime UI review (`audit-uiux-web` / `audit-uiux-mobile`), or changing the app to satisfy the graph (`frontend-web-engineering` / `frontend-mobile-engineering`). This skill maps structure and reports gaps; it does not edit the target.
+
 Shared vocabulary: [ontology](../_shared/ontology.md). Use its proof ladder, verdicts, and finding IDs.
 
 ---
@@ -79,3 +81,9 @@ When the user wants a live interactive Flow Canvas with real Chrome screenshots,
 - **Never edit target application code just to silence the parser or linter** — report every broken link, orphan screen, or parser counter (`needs-sample`, `login-redirect`, `unresolved-expression`) with `file:line` evidence.
 - **Never leave a background dev server running** after `code2flow run` completes.
 - **Never answer reachability or flow questions from memory** when `.code2flow/graph.json` or `code2flow_audit.py` output is available.
+
+---
+
+> Adapts the [DESIGN:OS](https://github.com/jangtrinh) engines by Jang Trinh under the PolyForm Shield 1.0.0 license (<https://polyformproject.org/licenses/shield/1.0.0>).
+> Required Notice: Copyright (c) 2026 Jang Trinh (https://github.com/jangtrinh)
+> See [NOTICE](../../NOTICE.md).

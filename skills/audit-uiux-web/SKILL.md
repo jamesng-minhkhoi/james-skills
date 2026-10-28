@@ -81,6 +81,19 @@ For Deep or Release, inventory routes, entry points, navigation destinations,
 forms, tables, filters, overlays, dialogs, menus, and important states rather
 than sampling only the prettiest page.
 
+### 1.1 Data scale and control appetite
+
+Two context items decide later gates and are the easiest to silently assume:
+**data scale** (sparse and bounded, or large and growing) and **control
+appetite** (glance-only consumption, or an operator who picks periods, tunes
+filters, and drills in). When neither is stated and a judgment depends on it,
+ask before concluding; if asking is impossible, record the assumption in the
+report itself and lower confidence on the findings that rest on it. An
+option-set or disclosure verdict issued without either is an audit defect.
+The full rule and the gates that depend on the two items are in
+[web-ux-principles.md](references/web-ux-principles.md), "Context: data scale
+and control appetite".
+
 Separate evidence from assumption:
 
 - source proves intended or implemented behavior, not runtime reachability;
@@ -227,16 +240,17 @@ the gate or pass it without comparison.
 ### 4.2 Selectable option sets must be compared to the domain
 
 Enumerate every user-selectable option set — time ranges, filters, sorts,
-page sizes, limits — as a required Deep/Release row. Derive the domain's
-natural options first from the user's job and vocabulary (for a food business
-that is yesterday, this week, this month, last month, month-to-date), then
-compare against what is offered. Missing natural options, arbitrary endpoints
-(a bare 14 days with no 30-day or month view), and options that exist only
-because the data model made them easy are findings with priority by user
-impact, recorded even when everything else passes — unless an explicit design
-contract names the options, in which case report the comparison as
-contract-conforming and find only silence in the contract or a violation of
-it.
+page sizes, limits — as a required Deep/Release row, then compare it to the
+domain's natural options derived from the user's job and vocabulary (for a
+food business: yesterday, this week, this month, last month, month-to-date).
+Record a finding for every set that fails the comparison, unless an explicit
+design contract names the options — then the comparison is
+contract-conforming and only silence in the contract, or a violation of it,
+is a finding. The full rules — including the custom-range requirement on a
+data-heavy, control-seeking surface (§1.1), and the context-unconfirmed rule
+when context was never established — are in
+[web-ux-principles.md](references/web-ux-principles.md), "Option-set and
+domain coverage".
 
 ## 5. Run the AI-generated UI forensic pass when relevant
 

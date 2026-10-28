@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # Link every skill in this repo into the agent skill directories, install the
-# subagents in each harness's dialect, and add ROUTING.md to the global
-# instruction files.
+# subagents in each harness's dialect, link custom slash commands, and add
+# ROUTING.md to the global instruction files.
 #
-# Skills and Claude agents are symlinked, not copied. OpenCode, Codex, and
-# Gemini agents are generated conversions (marked, pruned when stale). Re-run
-# after adding, renaming, or removing one.
+# Skills, Claude agents, and slash commands are symlinked, not copied. OpenCode,
+# Codex, and Gemini agents are generated conversions (marked, pruned when stale).
+# Re-run after adding, renaming, or removing one.
 #
 #   ./install.sh                 install into the default targets
 #   ./install.sh --dry-run       show what would change
@@ -19,6 +19,7 @@ set -euo pipefail
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 SRC="$REPO/skills"
 AGENTS_SRC="$REPO/agents"
+COMMANDS_SRC="$REPO/commands"
 ROUTING="$REPO/ROUTING.md"
 
 DRY_RUN=0
@@ -212,6 +213,40 @@ EOF
     done
   done
 
+  # Slash commands: linked directly into ~/.claude/commands and ~/.config/opencode/commands
+  COMMAND_COUNT=0
+  if [ -d "$COMMANDS_SRC" ]; then
+    for target_cmds in "$HOME/.claude/commands" "$HOME/.config/opencode/commands"; do
+      [ -d "$target_cmds" ] || run mkdir -p "$target_cmds"
+      for file in "$COMMANDS_SRC"/*.md; do
+        [ -f "$file" ] || continue
+        name="$(basename "$file")"
+        link="$target_cmds/$name"
+        if [ -L "$link" ] && [ "$(readlink "$link")" = "$file" ]; then
+          continue
+        fi
+        if [ -e "$link" ] || [ -L "$link" ]; then
+          echo "  replace $name"
+          run rm -rf "$link"
+        else
+          echo "  link    $name"
+        fi
+        run ln -s "$file" "$link"
+      done
+
+      # Prune broken command links pointing to this repo
+      for entry in "$target_cmds"/*; do
+        [ -L "$entry" ] || continue
+        case "$(readlink "$entry")" in
+          "$COMMANDS_SRC"/*) [ -e "$entry" ] || { echo "  prune   $(basename "$entry") (broken)"; run rm "$entry"; } ;;
+        esac
+      done
+    done
+    for file in "$COMMANDS_SRC"/*.md; do
+      [ -f "$file" ] && COMMAND_COUNT=$((COMMAND_COUNT + 1))
+    done
+  fi
+
   # Replace the marked block in an instruction file, keeping everything else.
   # Claude can @import the live file; Codex cannot, so it gets a copy.
   write_block() {
@@ -245,4 +280,4 @@ fi
 
 echo
 echo "Linked ${#SKILLS[@]} skills."
-[ "$GLOBAL" -eq 1 ] && echo "Installed $AGENT_COUNT agents (Claude links; OpenCode, Codex, Gemini conversions) and the routing guide."
+[ "$GLOBAL" -eq 1 ] && echo "Installed $AGENT_COUNT agents, $COMMAND_COUNT commands (Claude/OpenCode links), and the routing guide."

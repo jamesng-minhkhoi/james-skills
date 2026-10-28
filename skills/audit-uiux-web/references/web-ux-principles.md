@@ -4,6 +4,30 @@ Use these as questions applied to the user's task, not as a checklist detached
 from context. Rate each relevant principle Strong, Concern, Critical, Unknown,
 or Not applicable, with evidence and user impact.
 
+## Context: data scale and control appetite
+
+Two context items decide how several gates below are judged, and they are the
+easiest to silently assume instead of asking:
+
+- **Data scale** — is the underlying data sparse and bounded (a handful of
+  records), or large and growing (hundreds of rows, unbounded history)?
+  Density, caps, pagination, chart readability, and fetch-cost judgments flip
+  on it.
+- **Control appetite** — does the user consume the surface at a glance between
+  tasks, or operate it (pick periods, tune filters, drill into raw data)?
+  Option-set coverage, disclosure depth, and custom-range judgments flip on
+  it.
+
+When neither is stated and a judgment depends on it, ask the user before
+concluding — a dashboard audited as glance-only will "pass" presets-only
+ranges and caps without reveals on a data-heavy surface, exactly because the
+auditor substituted an assumption for a question. If asking is impossible,
+state the assumption in the report itself ("context assumed: data-heavy
+surface, control-seeking user — confirm") and lower confidence on every
+finding that rests on it; an option-set or disclosure comparison made without
+either asking or a recorded assumption is an audit defect, not a judgment
+call.
+
 ## Explicitness and progressive disclosure
 
 Use the visibility spectrum:
@@ -22,6 +46,17 @@ Ask:
 - Does disclosure reduce overload without hiding decision-critical information?
 - Are hover, tooltip, icon-only, or overflow actions available to keyboard,
   touch, zoom, and assistive-technology users?
+
+### Caps must disclose, not dead-end
+
+A layout cap (top 5 of 23) is a design decision, and its overflow line is an
+interface element with a job: reveal the rest. When the rows are already
+client-side, prefer an in-place reveal — "Xem thêm 18" with `aria-expanded`
+and a matching collapse — because navigating to another screen just to *read*
+the remaining rows is a detour, not a disclosure. Reserve link-away for the
+case where the destination adds manipulation the list cannot do (filter,
+sort, edit). A cap line that is a plain sentence ("…and 18 more") with no
+control is a dead end: a fact stated without its action.
 
 ## Usability heuristics applied to web tasks
 
@@ -82,6 +117,14 @@ to accept because the surrounding structure is clean. When an explicit design
 contract names the options, report the comparison as contract-conforming; a
 missing-natural-options finding applies only when the contract is silent or
 the offered set violates it.
+
+Option-set verdicts are conditional on the established context (§1.1 of
+SKILL.md). A data-heavy surface serving a control-seeking user needs an escape
+hatch beyond presets — a custom range, an arbitrary span — while a glance-only
+surface is legitimately served by a small named preset set. When the context
+was neither asked nor recorded, mark the comparison **context-unconfirmed**
+and state which assumed context would flip the verdict; do not pass or fail
+the set on a silent assumption.
 
 ## Responsive re-composition
 

@@ -24,3 +24,4 @@ offensive-xxe skill_lines 997
 emil-design-eng skill_lines 680
 mobile-native skill_lines 317
 write-swift skill_lines 402
+audit-uiux-web skill_lines 340

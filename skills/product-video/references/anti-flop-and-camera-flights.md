@@ -1,6 +1,6 @@
 # Visual Craft, Anti-Flop Gates, and AI Camera Flights
 
-Distilled from Jang Trịnh's `skills/product-designer/SKILL.md`, `scripts/anti-flop-gate.py`, `skills/es-tutorial-video/look.md`, `knowledge/scroll-cinema-direction.md`, and `knowledge/gflow-hand.md`.
+Distilled from Jang Trinh's `skills/product-designer/SKILL.md`, `scripts/anti-flop-gate.py`, `skills/es-tutorial-video/look.md`, `knowledge/scroll-cinema-direction.md`, and `knowledge/gflow-hand.md`.
 
 ## 1. The 6 Visual Craft Hardrules for Video Scenes
 

@@ -1,6 +1,6 @@
 ---
 name: offensive-graphql
-description: "Offensive methodology for GraphQL APIs in penetration tests and bug bounties. Covers the full attack lifecycle: endpoint discovery, introspection abuse and blind schema reconstruction, auth bypass via Relay node IDs and nested traversal, injection through variables and directives, batching for brute force and OTP bypass, depth-bomb and alias-amplification DoS, subscription hijacking, verbose-error and field-suggestion oracles, and multipart upload abuse. Includes InQL, graphql-cop, CrackQL, BatchQL, and clairvoyance. Trigger on: GraphQL, introspection, batching attack, query depth, field suggestion, subscription abuse, schema enumeration, __schema."
+description: "Offensive GraphQL methodology for authorized penetration tests: endpoint discovery, introspection and blind schema reconstruction, Relay node-ID auth bypass, variable and directive injection, batching, depth and alias DoS, subscription hijacking, field-suggestion oracles, and multipart upload abuse. Tools: InQL, graphql-cop, CrackQL, BatchQL, clairvoyance. Use only on targets you are authorized to test; reviewing your own code is build work (`frontend-web-engineering`), not offensive testing."
 ---
 
 # Offensive GraphQL

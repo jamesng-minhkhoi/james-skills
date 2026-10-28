@@ -7,6 +7,8 @@ description: Generate editorial HTML/SVG diagrams, technical architecture figure
 
 Generate clean, self-contained HTML + inline SVG diagrams and data charts with warm-paper editorial craft, strict 4px grid discipline, orthogonal `r=8` connectors, and deterministic geometry/accessibility verification.
 
+When NOT to use: interactive or live charts that must respond to filters or streaming data (`design-uiux` dashboard work), deciding whether a figure should be a chart at all (`design-uiux` layout work), 3D assets (`blender-3d-studio`), or motion video (`product-video`). A static figure is the deliverable here.
+
 Shared vocabulary: [ontology](../_shared/ontology.md). Use its proof ladder, verdicts, and finding IDs.
 
 ---
@@ -121,3 +123,9 @@ Never blindly copy coordinates from draw.io or Mermaid. Extract structure first,
    python3 skills/diagram-design/scripts/verify-motion.py path/to/diagram.html
    ```
 5. **Optional PNG / SVG Export:** When the user asks for `.png` or `.svg` files, follow [export.md](references/export.md).
+
+---
+
+> Adapts the [DESIGN:OS](https://github.com/jangtrinh) engines by Jang Trinh under the PolyForm Shield 1.0.0 license (<https://polyformproject.org/licenses/shield/1.0.0>).
+> Required Notice: Copyright (c) 2026 Jang Trinh (https://github.com/jangtrinh)
+> See [NOTICE](../../NOTICE.md).

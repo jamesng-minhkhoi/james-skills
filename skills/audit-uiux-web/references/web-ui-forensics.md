@@ -28,6 +28,28 @@ observable patterns, user impact, proof, and verification.
 - decorative whitespace displaces the primary task while secondary actions share
   equal emphasis.
 
+### Borders and dividers without separation jobs
+
+A divider or border is evidence of separation; drawing one where nothing is
+separated is a generated-pattern tell. Check:
+
+- **Edge borders on divided lists** — inside a container that already has its
+  own border, the first row draws a top border or the last row draws a bottom
+  border, producing a double line at the container's edge (the classic
+  `border` + row-`border-t` misuse, or a `divide-*` applied to include the
+  edges). Rows in a bordered container separate *from each other*, not from
+  the container.
+- **Divider adjacent to the container's own border** — a hairline running
+  parallel to and a few pixels from the card border, separating content from
+  padding.
+- **Divider under nothing** — a hairline above a lone block (single row,
+  single figure) with no sibling above it to separate from.
+- **Wrapping cards around plain content** — one figure, one trend, or one
+  stat row sealed inside its own bordered card when the surrounding grammar
+  leaves stat blocks open and reserves cards for grouped lists. Packaging
+  added by pattern, not by need; on a phone this doubles as the generic-web
+  card-stack tell above.
+
 ### Interaction theater
 
 - hover-only actions, unlabeled icon buttons, fake dropdowns, or static tabs;

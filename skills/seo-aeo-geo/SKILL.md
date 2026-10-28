@@ -7,6 +7,8 @@ description: Audit, scaffold, and optimize websites, SaaS landing pages, docs si
 
 Optimize any web product, SaaS landing page, documentation site, or GitHub repository for human conversion and 100% machine-readability across Google SEO, Answer Engines (Perplexity, ChatGPT Search, Google AI Overviews), and AI Coding Agents (`llms.txt`).
 
+When NOT to use: organic short-form video distribution (`viral-distribution`), text social (`x-engagement` / `threads-engagement`), product positioning and specs (`product-discovery`), or interface design (`design-uiux`). This skill owns discoverability and machine readability, not the offer.
+
 Shared vocabulary: [ontology](../_shared/ontology.md). Use its proof ladder, verdicts, and finding IDs.
 
 ---
@@ -105,3 +107,9 @@ python3 skills/seo-aeo-geo/scripts/verify-repo-delivery.py /path/to/repo
 - [ ] Every non-badge image has a descriptive `alt` attribute of at least 25 characters (`G5_SEMANTIC_IMG_ALT`).
 - [ ] Comparison table (`Why this exists`) and honest boundaries (`It's working if...` / `When not to use`) are present.
 - [ ] `seo-aeo-geo-harness.py` (and `verify-repo-delivery.py` when delivering an AI-ready repo) passes with exit code `0`.
+
+---
+
+> Adapts the [DESIGN:OS](https://github.com/jangtrinh) engines by Jang Trinh under the PolyForm Shield 1.0.0 license (<https://polyformproject.org/licenses/shield/1.0.0>).
+> Required Notice: Copyright (c) 2026 Jang Trinh (https://github.com/jangtrinh)
+> See [NOTICE](../../NOTICE.md).

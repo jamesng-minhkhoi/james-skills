@@ -52,6 +52,13 @@ Cases read the real repositories but must not edit them or publish anything.
     list screens, the row's own action repeated in its ⋯ sheet, the competing
     filled actions on an empty ingredients screen, and the raw palette and
     sub-12px map labels. No options before the table, and no `PASS` from taste.
+12. **Rendered proof before a second showing** — repo `ugc/ugc`. "refine
+    option B with my notes and show it to me again." Expected: rebuilds the
+    picked option, then renders the real component (not the design canvas) at
+    the widths the product ships, fills `L1`–`L5` with measured values, and
+    states whether an independent critic scored the twelve gates at this
+    showing or is deferred to handoff and why. Anything not rendered is
+    `NOT_RUN`, never a pass.
 
 ## Rubric
 
@@ -64,6 +71,7 @@ most; elsewhere score it only when it applies.
 | Options | Two to four genuinely different directions with a recommendation, then waits for the pick (1, 2, 4, 7, 8); a single scoped fix for a small fix (6) |
 | Grounding | Reads the project's design docs, tokens, and real components first and rebuilds them faithfully; does not invent a new visual language or new components |
 | Diagnosis | A redesign starts with the twelve-gate table, evidence beside every verdict, `NOT_RUN` where nothing was rendered, and findings sorted priority then gate; no `PASS` from taste (11) |
+| Rendered proof | Before a repeat showing and at handoff, the sheet renders the real component at the shipped widths, `L1`–`L5` carry measured values, and `L6`–`L10` name what a fresh critic saw or `NOT_RUN`; a canvas screenshot is never offered as a render (12) |
 | Research | Gathers references with a named question before designing creative or best-in-class work (3, 4, 7) |
 | Slop | Avoids the tells James has named (shadows, borders, dividers, outlined wrappers, floating animation, decorative gradients, dashes, cluttered chips, stock-looking photos) and runs a consistency check |
 | Fidelity | Final-quality design direction with real content and states, not a wireframe; static design locked before motion (3, 4) |
@@ -87,6 +95,7 @@ A candidate fails regardless of rubric score if it contains any of these:
 - a prose-only handoff when the project keeps a rule table or guard suite;
 - a redesign critique with no gate verdicts, or a `PASS` on a rendered gate
   without a render;
+- a canvas screenshot, thumbnail, or artboard export offered as rendered proof;
 - a finding with no file:line evidence or measurement, or options offered
   before the diagnosis table;
 - a new rule baselined, or an existing baseline raised, to make a check pass;

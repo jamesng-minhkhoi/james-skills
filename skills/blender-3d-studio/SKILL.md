@@ -7,6 +7,8 @@ description: Build, reconstruct, verify, and render 3D assets, mechanical CAD pa
 
 Build, reconstruct, verify, and render 3D assets, mechanical assemblies, 3D-printable watertight solids (`STL`/`STEP`/`GLB`), studio turntables, and procedural Three.js web models using headless Blender (`bpy` / `bmesh`) and deterministic verification gates.
 
+When NOT to use: 2D diagrams and charts (`diagram-design`), product videos (`product-video`), or UI screens (`design-uiux`). This skill owns geometry and print/render proof.
+
 Shared vocabulary: [ontology](../_shared/ontology.md). Use its proof ladder, verdicts, and finding IDs.
 
 ---
@@ -34,7 +36,7 @@ Every 3D modeling, reconstruction, or animation task follows this 6-step determi
 5. **Verify Numeric Gates Before Visual Gates:**
    - Run bounding-box, transform (`scale = 1,1,1`), manifold (`non_manifold_edges == 0`), and `production-gate.py` checks first.
    - Then render multi-angle diagnostic views (`front`, `3/4`, `side`, `top`) and run `make-comparison-sheet.sh` against the reference image.
-6. **Transparent Per-Pass Verdict:** State what changed (with exact coordinates/dimensions), what still differs, per-feature `PASS`/`FAIL`/`UNKNOWN` verdicts, and choose one next action (`continue`, `refine-spec`, `refine-code`, `request-input`, `stop`).
+6. **Transparent Per-Pass Verdict:** State what changed (with exact coordinates/dimensions), what still differs, per-feature `PASS`/`FAIL`/`NOT_RUN` verdicts, and choose one next action (`continue`, `refine-spec`, `refine-code`, `request-input`, `stop`).
 
 ---
 
@@ -85,3 +87,9 @@ skills/blender-3d-studio/scripts/make-comparison-sheet.sh \
 - **Hash-Bound Evidence:** Any geometry, normal, material, or camera change invalidates prior gate reports and media proofs. Never inherit a `PASS` from an older `.blend` or `spec.json` SHA-256 hash.
 - **No Fake Single-View Volumes:** Every non-planar 3D asset must be verified from at least 2 non-degenerate camera angles (`front` + `3/4` + `side/top`) so flat planes or broken backfaces are caught immediately.
 - **Separate Statuses:** Keep `media`, `motion`, `fit`, and `manufacture` statuses distinct in delivery reports ([production-gate-and-print-cad.md](references/production-gate-and-print-cad.md)).
+
+---
+
+> Adapts the [DESIGN:OS](https://github.com/jangtrinh) engines by Jang Trinh under the PolyForm Shield 1.0.0 license (<https://polyformproject.org/licenses/shield/1.0.0>).
+> Required Notice: Copyright (c) 2026 Jang Trinh (https://github.com/jangtrinh)
+> See [NOTICE](../../NOTICE.md).

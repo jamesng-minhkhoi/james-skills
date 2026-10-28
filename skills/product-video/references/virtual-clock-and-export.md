@@ -1,6 +1,6 @@
 # Virtual Clock, 60fps Export, and Multi-Aspect Safe Zones
 
-Distilled from Jang Trịnh's `design-os-svg-animation` virtual-clock architecture (`virtual-clock.mjs`, `viewport.mjs`, `render-tutorial.mjs`, `export-60fps-video.mjs`, and `mix-voiceover.mjs`).
+Distilled from Jang Trinh's `design-os-svg-animation` virtual-clock architecture (`virtual-clock.mjs`, `viewport.mjs`, `render-tutorial.mjs`, `export-60fps-video.mjs`, and `mix-voiceover.mjs`).
 
 ## 1. Why a Virtual Quantized Clock
 

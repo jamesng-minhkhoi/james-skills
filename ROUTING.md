@@ -15,7 +15,7 @@ before what it looks like.**
 - Skip design when the request is a bug fix or the design already exists.
 - Route-graph extraction, Mermaid user flows, PRD-vs-code drift checks, and 11-heuristic structural UX gap scans route to `code2flow`.
 - Problem briefs, specs, PRD writing, prioritization, and post-launch metric readouts route to `product-discovery`; it produces no screens or code.
-- UI built/changed in this session, pre-release, or user-requested reviews audit via the `auditor` agent; changed skills, agents, or `ROUTING.md` get a zero-context pre-ship review from `skill-reviewer` before commit.
+- UI built/changed in this session, pre-release, or user-requested reviews audit via the `auditor` agent; interface copy routes to `content-design`; a new or restructured skill routes to `skill-authoring`, and a finished change is reviewed by `skill-reviewer` before commit.
 - Audit findings come back as a list keyed by `F-*` ID; fixing them is build work and returns a fix report.
 
 **Motion and UI craft** (emilkowalski/skills imports, MIT — see NOTICE; they
@@ -27,8 +27,8 @@ keep upstream vocabularies, map HIGH/MEDIUM/LOW → ontology P1/P2/P3 at handoff
 **Security and growth.**
 
 - `offensive-*` web attack skills (SQLi, XSS, SSRF, SSTI, XXE, IDOR, upload, RCE, deserialization, races, smuggling, redirects, pollution, GraphQL, WAF, logic) fire only for targets the user is authorized to test; confirm the scope before the first probe. Reviewing/fixing one's own code is build work, not offensive testing.
-- Social engagement routes to `x-engagement` (X) or `threads-engagement` (Threads); organic short-form video distribution routes to `viral-distribution` (phone farms and detection evasion refused as ToS violations).
-- Product promo videos, UI walkthroughs, social reels, and reference-video recreations route to `product-video`.
+- Social engagement routes to `x-engagement` (X) or `threads-engagement` (Threads); multi-slide visual photo carousels route to `social-carousel`; campaign syndication routes to `viral-distribution` (phone farms, bots, and AI-avatar slop refused).
+- Product promo videos, UI walkthroughs, social reels, and reference-video recreations route to `product-video`; playful animated icon stickers (isometric, Lottie-style) route to `fun-isometric`.
 - Research that must survive trust review routes to `knowledge-builder`; editorial diagrams and `.drawio`/Mermaid redraws route to `diagram-design`; SEO/AEO/GEO, `llms.txt`, 12-section READMEs, and launch pages route to `seo-aeo-geo`; 3D modeling, CAD, and Blender turntables route to `blender-3d-studio`; CV/resume tailoring, job evaluation, and offer walks route to `cv-and-career-ops`.
 - Nothing is published, scheduled, or sent without explicit approval in the
   current conversation.

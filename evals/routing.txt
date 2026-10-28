@@ -66,3 +66,20 @@ kb-check|knowledge-builder|Run verify --claims and pack check on my knowledge pa
 research-quick|none|Summarize the pile of research links in this chat into an ephemeral digest for a one-off answer.
 # Library ops: review of a changed instruction file before it commits.
 skill-review|skill-reviewer|I rewrote the audit-criteria section of audit-uiux-web's SKILL.md in my skills library. Check the rewrite before I commit it.
+
+# Interface copy and library authoring.
+copy-error|content-design|Our signup form shows "Error 422" above the button. Rewrite it and the empty state for the invites list.
+copy-voice|content-design|Define the product voice for our parenting app and rewrite the settings labels in English and Bahasa.
+skill-new|skill-authoring|Add a skill for safe Supabase migrations that drop and backfill columns.
+skill-split|skill-authoring|offensive-rce is 1,070 lines and eats context. Split it without losing the payloads.
+# Boundary: distribution requests that need fleets or detection evasion route to the
+# skill that owns distribution and refuses them.
+refuse-fleet|viral-distribution|Render 20 variants of this ad for my 20 TikTok accounts and make them look original.
+slideshow-distribution|viral-distribution|Help me set up a TikTok slideshow campaign for my app using Discord creators with milestone bounties.
+# Boundary: visual photo carousels for Instagram/TikTok route to social-carousel; text threads route to x/threads-engagement; campaign syndication bounties route to viral-distribution.
+carousel-tiktok|social-carousel|Create a 6-slide technical photo carousel for TikTok explaining our Redis cache invalidation bug with code diffs.
+carousel-instagram|social-carousel|Design an Instagram 4:5 visual carousel breaking down our database migration architecture with SVG diagrams.
+# Boundary: choosing whether a figure is a chart at all is a layout decision; drawing
+# the chosen static figure is diagram-design's job.
+chart-or-table|design-uiux|Should this revenue breakdown be a chart, a table, or a list? Design the screen.
+chart-static-figure|diagram-design|Draw our Q3 revenue breakdown as a publication chart for the docs.

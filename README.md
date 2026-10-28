@@ -11,6 +11,12 @@ Reusable Codex and Claude skills extracted from project work.
 - [`design-uiux`](skills/design-uiux/SKILL.md) — design mobile screens, web
   apps, dashboards, and landing pages as options on the Design canvas, then
   plan the build.
+- [`content-design`](skills/content-design/SKILL.md) — write and review
+  interface copy: voice and tone, errors, empty and loading states,
+  destructive confirmations, i18n, and honest claims.
+- [`skill-authoring`](skills/skill-authoring/SKILL.md) — write, rewrite, split,
+  or prune a skill in this library from a real failure, with eval cases and a
+  cold pre-ship review.
 - [`frontend-mobile-engineering`](skills/frontend-mobile-engineering/SKILL.md) —
   implement and verify Expo React Native mobile behavior.
 - [`audit-uiux-mobile`](skills/audit-uiux-mobile/SKILL.md) — audit mobile
@@ -29,6 +35,14 @@ Reusable Codex and Claude skills extracted from project work.
 - [`product-video`](skills/product-video/SKILL.md) — storyboard, choreograph,
   render, and verify deterministic 1080p 60fps product launch videos, UI
   walkthroughs, and 16:9 + 9:16 social reels.
+- [`viral-distribution`](skills/viral-distribution/SKILL.md) — plan and operate
+  organic short-form video distribution across TikTok, Instagram Reels, and
+  YouTube Shorts using clipping campaigns and UGC/AI-UGC creator programs,
+  with CPM economic modeling and bot-scrubbing before payouts. Refuses phone
+  farms, account fleets, and detection evasion as platform ToS violations.
+- [`fun-isometric`](skills/fun-isometric/SKILL.md) — draw fun, sharp isometric
+  stickers and animate them on After Effects grade keyframe presets, play them
+  live on canvas in any web app, and export looping alpha video with a poster.
 - [`diagram-design`](skills/diagram-design/SKILL.md) — generate editorial
   HTML/SVG diagrams and data charts across 27 visual types, or redraw `.drawio`
   and Mermaid `.mmd` diagrams with PNG/SVG export and brand onboarding.
@@ -87,6 +101,18 @@ Gemini (a tools allowlist that omits write tools):
 Add another agent when real work shows the need (for example, marketing runs
 that flood the main session), not for symmetry.
 
+## Commands
+
+[`commands/`](commands) holds user-invocable slash commands linked into `~/.claude/commands` and `~/.config/opencode/commands`. They use domain prefixes (`/ux-*`, `/ui-*`, `/skill-*`) to stay distinct from local workspace commands:
+
+- `/ux-audit [target]` — independent UI/UX and store submission audit via `auditor` without code changes.
+- `/ux-flow [path]` — map user flows and run the 11-heuristic UX gap scan via `code2flow`.
+- `/ui-polish [file]` — micro-interaction and UI craft review with `emil-design-eng`.
+- `/ui-break [component]` — stress-test a component against worst-case data with `break-ui`.
+- `/ui-motion [file]` — critique animation curves, timing, and frame budget with `review-animations`.
+- `/skill-review [file]` — zero-context pre-ship check on changed skills via `skill-reviewer`.
+- `/skill-lint` — execute `scripts/lint-skills.sh` to check size budgets, links, and ontology adherence.
+
 Each skill is self-contained and can be copied or linked into a Codex or Claude
 skills directory. Keep project-specific branding, routes, and business rules
 in the source repository rather than hard-coding them into a reusable skill.
@@ -100,7 +126,8 @@ every session. Two other shared references hold mechanics that were duplicated:
 [`ai-tone.md`](skills/_shared/ai-tone.md) and
 [`loading-and-memoization.md`](skills/_shared/loading-and-memoization.md).
 [`fix-report.md`](skills/_shared/fix-report.md) is the audit-to-fix handoff,
-keyed by finding ID.
+keyed by finding ID. The writing standard for the library itself is
+[`authoring.md`](skills/_shared/authoring.md); `skill-authoring` applies it.
 
 `_shared/` is not a skill: it has no `SKILL.md`, so it never competes for
 routing. `install.sh` links it beside the skills so `../_shared` resolves in
