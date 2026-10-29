@@ -81,6 +81,13 @@ slideshow-distribution|viral-distribution|Help me set up a TikTok slideshow camp
 # Boundary: visual photo carousels for Instagram/TikTok route to social-carousel; text threads route to x/threads-engagement; campaign syndication bounties route to viral-distribution.
 carousel-tiktok|social-carousel|Create a 6-slide technical photo carousel for TikTok explaining our Redis cache invalidation bug with code diffs.
 carousel-instagram|social-carousel|Design an Instagram 4:5 visual carousel breaking down our database migration architecture with SVG diagrams.
+# Boundary: social copy for platforms without a dedicated account skill routes to
+# social-copy, which owns the deterministic anti-slop lint. X and Threads account
+# posts stay with x/threads-engagement; generic-x and generic-threads above are
+# the negative cases.
+linkedin-post|social-copy|Write a LinkedIn post about the migration tool I shipped this week; numbers are in my notes.
+ig-caption|social-copy|Write an Instagram caption for a photo of my build-log notebook with the fix timeline.
+tiktok-caption|social-copy|Draft a TikTok caption for a 20s clip showing our bug fix diff on screen.
 # Boundary: choosing whether a figure is a chart at all is a layout decision; drawing
 # the chosen static figure is diagram-design's job.
 chart-or-table|design-uiux|Should this revenue breakdown be a chart, a table, or a list? Design the screen.

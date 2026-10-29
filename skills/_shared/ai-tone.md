@@ -38,3 +38,9 @@ Mark `AI-TONE: PASS` only when there are no hard-trigger violations, the
 concrete-anchor check passes, and the voice-note test passes. Otherwise mark
 `AI-TONE: FAIL`, name the rule ID, quote the offending phrase, and rewrite
 before publishing.
+
+A deterministic implementation of AI-TONE-01/02/03 (plus platform format
+rules) lives in [social-copy/scripts/lint_post.py](../social-copy/scripts/lint_post.py);
+run it when a manifest or plain draft is on disk. The script is the
+enforcement copy, kept with the skill that owns it; its verdicts are a
+subset of this gate, never a replacement.
