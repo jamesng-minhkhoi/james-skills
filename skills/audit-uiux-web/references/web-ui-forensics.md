@@ -14,6 +14,21 @@ observable patterns, user impact, proof, and verification.
 - gradients, blur, shadows, illustrations, or icon treatments add no meaning;
 - brand color is used for every status, link, badge, icon, and surface.
 
+### Flat or decorative surfaces
+
+- a large surface is a plain fill with no texture, depth, or grouping cue, and
+  the page reads empty in the first viewport (flatness);
+- a background texture (grain, dots, grid, halftone, blur, paper, pixels) is
+  present but has no stated job, or two textures compete on one surface;
+- a background texture sits behind text with contrast that fails 4.5:1 at its
+  worst pixel, or a texture is animated where it appears on every screen;
+- a texture makes a screen heavy (a large SVG filter, blur, or canvas) with no
+  measured cost, so the cost stays `unverified`.
+
+Judge each against [background textures](../../design-uiux/references/background-textures.md)
+gates. Report the finding with the surface, the measured worst-pixel contrast,
+and the observed render, not a guess from a screenshot.
+
 ### Structural drift
 
 - every section becomes a rounded elevated card;
