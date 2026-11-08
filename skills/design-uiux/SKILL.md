@@ -101,11 +101,39 @@ A wireframe is only acceptable when James asks for one.
 
 Apply James's feedback to the chosen option only. Add the states the flow
 can reach (empty, loading, error, long content, first use versus repeat use)
-and the navigation map when there is more than one screen. Before each showing
-after the first, run [slop and consistency](references/slop-and-consistency.md)
-and build the [rendered proof](references/rendered-proof.md) sheet at the
-project's real widths; then compare side by side with the strongest reference. Stop when
-it is at least as good. Otherwise, name the gap and iterate.
+and the navigation map when there is more than one screen.
+
+Before drawing, list the status states the current screen shows (still
+processing, failed, unsupported, offline) and put each on a board with its
+shipped string. A round focused on interaction or gestures still carries
+them, because a round that leaves them out reads as approval to drop them.
+
+Before drawing, also list every destination (details, delete, share, close)
+with each trigger that reaches it. Keep one standing on-screen control per
+destination and at most one custom gesture. These do not count against the
+limit: system gestures (edge back), the same motion gated at a second
+boundary, a press-and-hold menu (a shortcut that mirrors items reachable
+elsewhere), and a grabber on the control itself (the drag affordance of that
+one control, not a second control). A destructive action
+has exactly one visible home, meaning a place reachable without a gesture,
+menu items included. Merging parts of two options is where this breaks most,
+because each option brings its own way in.
+
+Before each showing, run [slop and consistency](references/slop-and-consistency.md);
+from the second showing on, also build the
+[rendered proof](references/rendered-proof.md) sheet at the project's real
+widths. Then compare side by side with the strongest reference. Stop when it
+is at least as good. Otherwise, name the gap and iterate.
+
+A round is the boards shown since James's last reply. When he rejects it,
+remove its boards in the next publish, keeping only references he named; when
+he picks one, keep it and remove the others once he moves on (older versions
+stay recoverable from the artifact's history). The Design artifact's own note
+to skip verification covers publishing only: a canvas board is a drawing, so
+its proof stays `declared`. Before the second showing run the real component
+per [rendered proof](references/rendered-proof.md), or record the `rendered`
+rung as not reached and its gates `NOT_RUN`. Overlaps and uneven padding
+show up only when rendered.
 
 Re-run the same twelve-gate table on the pick. A verdict that regressed is a
 new finding, even if the screen looks better.
@@ -152,8 +180,25 @@ Load only what the request needs.
   when it answers a named question. Do not force everything into cards.
 - **One focal point and one primary action per screen.** Group with
   whitespace and surface tone before borders or shadows.
-- **Explicit beats clever.** Core actions are visible and labelled, never
-  hover-only, gesture-only, or behind an unlabelled icon.
+- **Gesture-first, with a visible and an assistive path.** On mobile, enter
+  values and act on rows by drag, swipe, or scrub, because thumbs prefer them
+  to tap-steppers and segmented tabs in a sheet. Each gesture also has a
+  visible control (menu, detail, or labelled icon) and an assistive path
+  (adjustable value or accessibility actions). A documented project control
+  wins over this rule (see "Project truth" above); otherwise this rule is the
+  stated reason for departing from platform controls, and the custom control
+  (ruler, ring, wheel) is marked new per step 1. Patterns:
+  [touch-first input](references/mobile-patterns.md#touch-first-input-and-actions).
+  A screen that gets any custom gesture gets a
+  [gesture map](references/mobile-patterns.md#gesture-map-before-gesture-boards)
+  before its boards, because a gesture whose motion the content already uses
+  (swipe up on a list that scrolls) never fires or hijacks the content.
+- **Say whose it is.** Subject, glance-sheet, and delete placement rules:
+  [mobile patterns](references/mobile-patterns.md#glance-sheet-dedicated-screen).
+- **Pictures carry the meaning; text is the last resort.** A hero is an
+  illustration or a data picture, not a title, a grey subtitle, and a number
+  saying the same thing. Details:
+  [slop and consistency](references/slop-and-consistency.md).
 - **Native fidelity on mobile.** Use platform controls, the platform symbol
   set, sheets with detents, large titles where the app uses them, and system
   back. Breaking a platform convention is a choice you must justify.

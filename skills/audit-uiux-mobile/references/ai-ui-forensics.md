@@ -62,6 +62,9 @@ shown. A mocked success path does not prove a write occurred.
   are presented as product truth.
 - Every route repeats the same hero, card grid, icon-title-description block, or
   oversized empty space regardless of task.
+- A generic AI sparkle (✦) marks assistant output in a product that has its own
+  assistant character, which already has a still form elsewhere in the app
+  (CONTENT).
 
 ### Functional
 
@@ -74,6 +77,9 @@ shown. A mocked success path does not prove a write occurred.
 - Only the happy path exists; back, cancel, retry, offline, validation,
   interruption, and duplicate submission are missing.
 - Optimistic updates have no rollback, retry, conflict, or stale-data behavior.
+- A redesign or design board drops a status the current screen shows (still
+  processing, failed, unsupported). List the current screen's status states
+  first, then find each one in the new design (STATE).
 
 ### Structural
 
@@ -89,6 +95,12 @@ shown. A mocked success path does not prove a write occurred.
   tab bars, and filter strips stacked at the top of a screen before any data.
 - Full-width outlined form buttons used as top-screen filter triggers,
   consuming 60px+ of viewport space and inverting native bar hierarchy.
+- One destination is opened by two or more standing on-screen controls (an
+  avatar, a Details button, and a summary line all opening the same sheet), or
+  a destructive action has two visible homes. A visible home is a place
+  reachable without a gesture, menu items included; a swipe is not one. This
+  is the usual result of merging two options without reconciling their entry
+  points (STRUCTURE).
 
 ### Native and accessible
 
@@ -100,6 +112,19 @@ shown. A mocked success path does not prove a write occurred.
   without an equivalent alternative.
 - Large text, screen-reader names/states, reduced motion, localization, and
   narrow devices expose missing hierarchy or clipped content.
+- A sheet is the only place to manage a list of records, with no dedicated
+  screen or expand control (FLOW).
+- A screen or sheet showing one entity's data, in an app that holds several,
+  never shows which entity (CONTENT).
+- Touch-first checks, reported only when the project's design docs set a
+  touch-first stance or the request asks for one; otherwise P3, and never a
+  defect when the docs endorse the native control:
+  - values entered with tap-steppers, typed digits, or segmented tabs inside a
+    sheet where a drag, ruler, wheel, or swipeable strip fits (NATIVE);
+  - a destructive action as a standing button beside the primary one instead
+    of an overflow menu, swipe, or confirm step (STRUCTURE);
+  - a drag or swipe control with no visible control and no assistive path
+    (ACCESS).
 
 ### System and visual semantics
 
@@ -109,6 +134,12 @@ shown. A mocked success path does not prove a write occurred.
   affordance, depth, state, or brand purpose.
 - Component variants proliferate with arbitrary radius, spacing, color, icon,
   or motion values.
+- A divider sits above the first row or below the last row of a list.
+- A badge, avatar, or sticker covers data or a display, or text inside an
+  illustrated object has unequal padding. Source or a design board alone gives
+  `UNKNOWN`; only a render observes it.
+- A hero repeats the screen's own name as a title, a grey subtitle, and a
+  number, where one picture and one label would carry it (CONTENT).
 - Dark mode is a color inversion that loses contrast, elevation, or semantic
   status meaning.
 - Motion decorates replacement screens instead of explaining cause,
@@ -116,7 +147,14 @@ shown. A mocked success path does not prove a write occurred.
 - Swipe or drag behavior has no visible progress, understandable commitment,
   cancellation, recovery, or accessible alternative.
 - A custom gesture silently competes with scrolling, a sheet, a slider, or the
-  system-edge back gesture.
+  system-edge back gesture. A common source: a gesture borrowed from a
+  reference whose content does not scroll (Photos swipes up for info on a
+  photo) applied to content that does (a multi-page document), so the gesture
+  never fires or hijacks reading. Recommend moving it to a handle, gating it
+  at a boundary (top, end, normal zoom), or dropping it.
+- A label for an existing action or status differs from the shipped string
+  (the locale file, or the source where it renders) with no note saying the
+  rename is deliberate (CONTENT).
 - Reduced motion removes status, focus, cause, or result feedback instead of
   only reducing travel and decorative effects.
 - A polished animation implies success while the underlying data change is

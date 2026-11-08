@@ -52,6 +52,71 @@ Expected audit behavior:
 - use the shared vocabulary: name the highest proof rung, mark unobserved gates
   `NOT_RUN`/`UNKNOWN`, and give each finding a stable `F-mobile-<n>` ID.
 
+## Case 4: Tap-first edit sheet, project asks for touch-first
+
+Prompt/artifact: The project's design docs say mobile users prefer drag and
+swipe. A pet-care edit sheet sets a dose with − and + buttons, a frequency
+with a segmented control, and deletes with a red button beside Save. Its
+weight screen never shows which of the user's pets it belongs to, its list
+has a divider above the first row, and the source places a photo badge at the
+corner of a number display (no render was taken).
+
+Expected audit behavior:
+
+- run the forensic overlay and report NATIVE (steppers, segmented control),
+  STRUCTURE (standing Delete), CONTENT (missing entity identity), and SYSTEM
+  (divider) findings with stable `F-mobile-<n>` IDs, naming the drag, wheel,
+  and overflow-menu replacements;
+- report the badge overlap as `UNKNOWN`: source declares placement, nothing
+  observed it;
+- add a FLOW finding if the sheet is the only place to manage the records;
+- name the highest proof rung reached (`declared` for source or a design
+  board), not `rendered`.
+
+## Case 5: Native controls the project endorses
+
+Prompt/artifact: An app uses the iOS segmented control, a native stepper, and
+native grey/red swipe actions, and its design docs endorse them.
+
+Expected audit behavior:
+
+- report no defect for these controls, or P3 at most with the stated reason;
+- still check for a visible and an assistive path for each swipe action.
+
+## Case 6: Design boards for a document viewer
+
+Prompt/artifact: Design boards (no build) for a pet document viewer. The
+document is a full-width multi-page PDF that scrolls vertically. A swipe up
+on the page opens details "like Photos". A bottom toolbar has the pet's
+avatar, Details, Share, and More; the avatar, Details, and a summary line
+above the toolbar all open details. Delete appears under More and in the
+details view. The press-and-hold
+menu says "Change kind" where the app ships "Change type". The current screen
+shows "Peti is reading" and "Peti couldn't read this"; the boards show only
+the read state, and mark the assistant's summary with a ✦ sparkle although the
+app has a mascot.
+
+Expected audit behavior:
+
+- report the swipe-up collision with vertical scroll, naming the borrowed
+  Photos gesture as the source and a handle or end-of-document trigger as the
+  fix;
+- report STRUCTURE for three controls opening details and two homes for
+  Delete; STATE for the dropped reading and failed states; CONTENT for the
+  label drift and the generic sparkle;
+- give every finding a stable `F-mobile-<n>` ID and the `declared` rung; feel,
+  thresholds, and the real PDF render stay `UNKNOWN`.
+
+## Case 7: One visible home, one swipe
+
+Prompt/artifact: Boards where Delete lives under More and also as a row
+swipe, with accessibility actions on the swipe.
+
+Expected audit behavior:
+
+- no duplicate-Delete finding: the swipe is not a visible home, so Delete has
+  one.
+
 ## Must not have
 
 A report fails if it contains any of these:
@@ -61,4 +126,6 @@ A report fails if it contains any of these:
 - a proof label or verdict outside the shared ontology;
 - a finding without a stable `F-mobile-<n>` ID;
 - an accessibility or interruption claim made without a device or runtime
-  observation.
+  observation;
+- a gesture called fine on boards without checking what the content already
+  does with that motion (6).

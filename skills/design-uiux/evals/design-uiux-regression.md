@@ -60,6 +60,83 @@ Cases read the real repositories but must not edit them or publish anything.
     showing or is deferred to handoff and why. Anything not rendered is
     `NOT_RUN`, never a pass.
 
+13. **Touch-first edit sheet (neutral request)** — repo `petio/petio-mobile`.
+    "redesign the medication edit sheet, show me via artifact." Fixture: the
+    current sheet has − and + steppers, a Daily/Weekly/Monthly segmented
+    control, a time chip, and a trash button beside Save. No hints in the
+    prompt. Expected: values entered by drag, scrub, or swipe (any fitting
+    control; a ruler is not prescribed); no segmented value entry in the
+    sheet; Delete outside the Save row; a subject chip with the pet's name and
+    photo in the sheet header; each gesture also has a visible control and an
+    assistive path; new custom controls marked new; dividers between rows
+    only; `rendered` not reached and gates `NOT_RUN` unless rendered.
+14. **Rejected round and canvas hygiene** — repo `petio/petio-mobile`. "none
+    of these work, try again", with a canvas holding boards A, B, C. Expected:
+    the next publish removes A–C (keeping only references named). A variant
+    where James picks B keeps B and removes A and C once he moves on.
+15. **Project control wins** — repo with docs saying "use the iOS segmented
+    control for frequency." Expected: keeps the segmented control, records the
+    project rule as the reason, and does not apply the touch-first default.
+16. **Glance sheet and picture hero** — repo `petio/petio-mobile`. "medications
+    sheet with add and edit, and a weight screen." Expected: a glance sheet
+    with an expand control to a dedicated screen; the weight screen's hero is
+    an illustration or data picture, not a title, grey subtitle, and number
+    stating the same thing.
+17. **Combine two picks, add gestures** — repo `petio/petio-mobile`. After a
+    round showing A (a viewer with a bottom toolbar: pet, Details, Share,
+    More) and B (an info sheet dragged up over the document): "A and B look
+    promising, though i dont want to limit only tap gesture. explore further
+    to make it feel like iOS design and playful. remove unselected options
+    first." The document is a multi-page PDF that scrolls vertically; the
+    current screen shows a reading-status notice ("Peti is reading",
+    "Peti couldn't read this"). Expected: the unpicked boards are removed; a
+    gesture map precedes the gesture boards and names scroll as the owner of
+    a vertical swipe on the page, so details open from a handle or the end of
+    the last page, not a swipe up on the page; pull-to-close is live only at
+    the top at normal zoom; a sideways next-file swipe either states its order
+    for each entry point or is marked an open question; each destination
+    keeps one standing control plus at most one custom gesture, and Delete
+    has one visible home and is absent from press-and-hold; the current
+    screen's status states are listed before the boards and each appears on
+    one with its shipped string. A boundary-gated pull (at the top, past the
+    end) passes; a swipe live mid-page fails.
+18. **Assistant mark** — same repo, which has a mascot (Peti) drawn still on
+    the sign-in screen. A board marks what the assistant read with a ✦
+    sparkle; James once corrected that with "we can use peti mascot (without
+    animation / like in login screen) here". The case prompt is a fresh
+    "redesign the document detail screen, show me via artifact" with no
+    correction given; score that first showing. Expected: the mascot's
+    existing still art from the start, the same in every state, with state
+    carried by a badge or text; no sparkle.
+    Variant: the mascot exists only as an animated rig, so a still form is
+    marked new and asked about, never invented.
+19. **System gestures don't count** — "combine A and B" on a viewer where A
+    closes by button plus pull-down and B adds the edge-swipe back. Expected:
+    says edge back is a system gesture outside the limit, and ends with at
+    most one custom gesture per destination. Variants: a list row with swipe
+    for Edit and Delete plus a press-and-hold menu passes (the menu is a
+    shortcut); a Details button plus a grabber on a separate sheet is two
+    standing controls and is reduced to one.
+20. **Single gesture on scrolling content** — repo `petio/petio-mobile`. "make
+    the vaccine list feel more iOS: swipe up on the list to open the summary."
+    The list scrolls vertically; one gesture is requested. Expected: a
+    gesture map that names scroll as the owner of a vertical swipe; the
+    summary moves to a handle or the end of the list, or the swipe is
+    dropped with the reason.
+21. **Second way in, no merge** — "refine option A, make the summary tappable
+    too", where A already has a Details button opening the same view.
+    Expected: names the second standing control into details and drops one;
+    the slop check still runs before the showing.
+22. **States in a gesture round** — "explore gestures for the document
+    viewer", where the current screen shows reading and failed notices and
+    the request mentions neither. Expected: the status states are listed
+    before the boards and each is drawn with its shipped string.
+23. **Seeded drift** — "refine option B" on a canvas whose note says "Hold
+    menu: same items as More" while the boards differ, and whose menu board
+    says "Change kind" where the locale file has "Change type". Expected: the
+    next showing fixes the note to match the board and uses "Change type", or
+    names the rename as a copy change.
+
 ## Rubric
 
 Score each 0–2. The case number in brackets marks where a criterion matters
@@ -78,6 +155,12 @@ most; elsewhere score it only when it applies.
 | Flow | Navigation map with what each step is and what back does; login only where an action needs it (5) |
 | Proportion | Depth matches the request; no padding, no ceremony on a small fix |
 | Handoff | The handoff carries rule IDs, status, and how each is checked, splitting static from rendered and manual; existing debt is a baseline, not a pass; unprovable behavior is a `NOT_RUN` gate (9) |
+| Touch-first | Values and row actions are drag, swipe, scrub, or press-and-hold, each with a visible alternative; delete lives in a menu or swipe, not beside Save (13) |
+| Subject | Entity-scoped screens and sheets show whose data it is visually (13) |
+| Canvas hygiene | A rejected round is removed in the next publish; notes match their boards and labels match shipped strings (14, 23) |
+| Gesture map | Each custom gesture names what already claims its motion and how it is resolved; no gesture is live mid-scroll in the scroll's direction (17, 20) |
+| Destinations | One standing control per destination, at most one custom gesture, one visible home for delete, merged or not (17, 19, 21) |
+| States carried | The current screen's status states are listed and drawn in every round (17, 22) |
 | Vocabulary | Names the highest proof rung reached and never calls an unobserved state pass |
 
 ## Must not have
@@ -100,7 +183,18 @@ A candidate fails regardless of rubric score if it contains any of these:
   before the diagnosis table;
 - a new rule baselined, or an existing baseline raised, to make a check pass;
 - a second rule minted where the project's doc already states one;
-- a correction recorded only in chat, or appended as a contradiction.
+- a correction recorded only in chat, or appended as a contradiction;
+- tap-steppers or a segmented control for entering a value in a sheet, or a
+  standing Delete button next to Save, unless the project documents them
+  (13, 15);
+- a gesture with no visible control or no assistive path, or a rejected round
+  left on the canvas (13, 14);
+- a swipe on content that scrolls in the same direction, live mid-scroll (not
+  gated to a boundary or a handle) as the trigger for another action (17, 20);
+- two or more standing on-screen controls opening the same destination, or
+  Delete in two visible homes (17, 21);
+- a generic AI sparkle where the product has its own assistant character
+  (18).
 
 Accept a candidate only when its total is higher, it wins on Artifact,
 Options, and Grounding in most cases, and it does not lose case 6.

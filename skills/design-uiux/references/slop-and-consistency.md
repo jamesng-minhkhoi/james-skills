@@ -24,6 +24,11 @@ what job it does there.
 | Rainbow, confetti, stickers, neo-brutalist cards | Playfulness through the product's own shapes, colors, and motion |
 | Stock-looking photography | Real product imagery, or photography art-directed to feel cinematic and specific |
 | Invented components, masks, or shapes approximating real ones | The real component, path, or asset from the codebase |
+| Edge-to-edge flat blocks as swipe actions: mid-grey Edit, muddy red Delete | Separate rounded icon buttons: a brand tint for Edit, one vivid hue for Delete, nothing grey or dull |
+| A big title, a grey subtitle, and a large number all restating the screen | A hero illustration or data picture; one small label; the number lives inside the picture |
+| A static illustration sitting dead straight, as if pasted on | Unless the project's art direction forbids it, one soft tilt (a starting value of 4–8°) shared by the whole set |
+| A clip-art icon on every row because the row looked empty | Rows led by the item's name; one drawn visual only where it carries the item's identity |
+| A generic AI sparkle (✦) marking what the assistant found, in a product that has its own assistant character | The character in the still form the product already uses at rest (its existing art, without animation), small, in the same place in every state; the state rides on a small badge or the text, not a swapped icon. If no still form exists, mark one as new and ask |
 
 Subtraction alone is not the fix. Stripping a design to flat white reads as
 "too basic" and "boring": keep the product's signature (its card surfaces,
@@ -47,6 +52,12 @@ anti-slop pre-flight (MIT).
 | Materials (gradient, glow, glass, heavy shadow) | Each has a stated grouping, depth, emphasis, or brand job |
 | Emoji in navigation, buttons, or chrome | None, unless the brand voice calls for it |
 | Controls | Platform or design-system controls unless the design states why not |
+| Dividers | Between items only: none above the first row, none below the last, none under a heading |
+| Overlaps and padding | A badge, avatar, or sticker never covers data or a display; text inside an illustrated object has equal padding on opposite sides; a sheet's content starts clear of its header (at least 16 pt below the header controls) |
+| Destructive actions | Placed per [mobile patterns](mobile-patterns.md#touch-first-input-and-actions) |
+| Subject | Shown per [mobile patterns](mobile-patterns.md#glance-sheet-dedicated-screen) |
+| Labels for existing actions and statuses | The shipped string, verbatim (the locale file, or the source where it renders); a rename is named as a copy change in the board's note |
+| Canvas notes | Every claim in a note matches its board: the items a menu holds, where an action lives, which gesture opens what. Re-read the notes after the last board edit |
 | Status and data colors (dashboards) | Status colors never reused as chart series; a series keeps its color across charts |
 
 ## The "would an expert ship this" pass

@@ -18,6 +18,68 @@ that gives the user enough context to complete the job.
 Do not choose cards because they are visually convenient. Choose them only when
 each card represents a distinct object, decision, or actionable group.
 
+## Touch-first input and actions
+
+Thumbs drag and swipe more readily than they aim at small taps. Choose the
+gesture first, then name the visible alternative; tap is for commit.
+
+| Job | Prefer | Not | Visible alternative |
+| --- | --- | --- | --- |
+| Set a number (dose, weight, quantity) | Ruler or slider the user drags past a fixed marker | − and + steppers, typed digits | A visible "type a value" field; assistive technology adjusts the value |
+| Set a time of day | Draggable knob on a 24-hour ring, or a sliding time ruler | A time-picker row that opens a second sheet | Tapping the ring or ruler |
+| Set a date near today | Swipeable strip of days | A calendar-popover row | A "More dates" link to the full calendar |
+| Pick one of a few options in a form | Swipeable wheel with the choice centred | Segmented tabs in the middle of a sheet | Tapping a neighbouring option |
+| Act on a list row | Swipe for Edit and Delete, press-and-hold for peek and menu | A button on every row | Row opens a detail with the same actions; Edit mode for assistive tech |
+| Delete anything | Overflow (•••) menu, swipe, or the detail screen | A standing button beside Save | The same menu item, reachable without a gesture |
+
+- Every adjustable control (ruler, ring, wheel, strip) also exposes an
+  assistive path: an adjustable value, or accessibility actions that do what
+  the swipe does. State it in the board's note.
+- Delete may live in the ••• menu (a deliberate tap, away from the primary
+  action), the swipe, or the detail screen. It never lives in a
+  press-and-hold quick menu, which holds only safe actions (Edit, Pause).
+- A segmented control still fits switching views on a screen, such as a chart
+  range; it does not fit entering a value inside a sheet.
+- Show each gesture on the canvas as its own board: the swiped row, the held
+  row with its menu, the scrubbed chart.
+
+### Gesture map before gesture boards
+
+When a screen gets any custom gesture, write this table on the canvas before
+drawing the boards, then put each row in its board's note. Scrolling, zooming,
+and panning content counts: it already owns its motion even though nobody
+designed it as a gesture. Example, a photo carousel with a caption:
+
+| Gesture | Does | Visible control | Already claimed by | Resolution |
+| --- | --- | --- | --- | --- |
+| Swipe left on a photo | Deletes it | Delete in the ••• menu | Paging to the next photo | Dropped; delete stays in the menu |
+| Pull down | Closes | Close button | Scrolling a long caption; sheet dismissal | Live only when the caption is at its top |
+
+"Already claimed by" names what the content or platform already does with
+that motion: scroll, zoom, pan, page, edge back, sheet dismissal. A gesture
+whose motion the content already uses moves to a handle, waits for a boundary
+(top, end, normal zoom), or is dropped. A reference app's gesture transfers
+only if its content behaves the same: Photos swipes up for info because a
+photo does not scroll, so the same swipe on a list or a multi-page document
+never fires. Ownership details:
+[motion and gesture](motion-and-gesture.md#gesture-ownership-and-conflict-rules).
+
+Next and previous between items (a sideways swipe in a viewer) states its
+order for every way the screen opens (the list, search, a link from another
+screen), for an item listed in two places, and for a next item not yet
+loaded. If any of these has no answer, the gesture is an open question on the
+canvas, not a drawn feature.
+
+## Glance sheet, dedicated screen
+
+A sheet that lists records the user manages (medications, visits, weights)
+shows a glance and an expand control that opens a dedicated screen with
+add, edit, and remove. Do not make the sheet the only place to manage them.
+In an app that holds several entities (pets, children, workspaces), every
+entity-scoped screen and sheet carries a subject chip in its header, the
+entity's photo or initial with its name, so the user never has to infer
+whose data it is.
+
 ## Web-to-mobile translation
 
 | Web pattern | Mobile translation | Failure to avoid |
