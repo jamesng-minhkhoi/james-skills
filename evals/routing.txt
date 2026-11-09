@@ -98,3 +98,5 @@ transitions-tokens|transitions-polish|Scan our CSS for ad-hoc transition duratio
 number-user-change|frontend-web-engineering/design-uiux|Animate the cart total in our Next.js app when the quantity changes.
 number-live|transitions-dev/frontend-web-engineering|Our dashboard revenue tile polls every 30 seconds; make the number update look nice without being distracting.
 polish-vs-audit|improve-animations|Audit the motion in this app and give me a plan of fixes; the timing feels off in places.
+store-screenshots|app-store-screenshots|App Store Connect rejected our screenshot upload with "File dimensions are invalid" in the 6.1/6.3 slot - regenerate the set per display size.
+store-screenshots-new|app-store-screenshots|We need to produce the App Store screenshot sets for our first submission; shots should show the real screens.

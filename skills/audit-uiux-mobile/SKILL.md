@@ -179,7 +179,9 @@ Review findings under these headings:
   finger-following progress, commit threshold, cancellation, recovery, gesture
   ownership, visible/accessibility alternatives, reduced motion, interruption,
   and runtime behavior. Use the motion audit reference and keep unobserved
-  checkpoints **Unknown**.
+  checkpoints **Unknown**. For custom (non-platform) motion, also check craft
+  against the [motion craft checklist](../_shared/motion-craft.md) and cite
+  the rule ID in each finding.
 - **Visual semantics:** meaningful color roles, dark-mode composition,
   typography hierarchy, icon optics, border/elevation purpose, and whether
   effects clarify grouping, affordance, depth, or brand.

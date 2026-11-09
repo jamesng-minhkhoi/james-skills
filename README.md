@@ -25,6 +25,11 @@ Reusable Codex and Claude skills extracted from project work.
   journeys with browser, accessibility, visual-system, motion, and proof QA.
 - [`frontend-web-engineering`](skills/frontend-web-engineering/SKILL.md) — build,
   test, and verify production-ready frontend web application changes.
+- [`app-store-screenshots`](skills/app-store-screenshots/SKILL.md) — produce
+  App Store and Play screenshot sets from real app surfaces: one design
+  canvas scaled pixel-exact per display-size slot, full-bleed stock
+  backgrounds, upright device frames, faithful mock screens, and pop-out
+  cards, with guideline gates for dimensions, status bar, and fidelity.
 - [`audit-mobile-store-submission`](skills/audit-mobile-store-submission/SKILL.md)
   — audit App Store and Google Play submission readiness, rejection risks, and
   external release gates.

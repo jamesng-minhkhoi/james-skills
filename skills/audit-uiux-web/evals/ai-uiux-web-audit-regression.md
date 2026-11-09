@@ -256,6 +256,23 @@ Expected audit behavior:
 
 Must not have: the check skipped because the overlay was not triggered.
 
+## Case 17: Motion craft from a recording
+
+Prompt/artifact: A screen recording of a Next.js app where the account menu
+scales from its centre starting at `scale(0)`, closes in 400 ms after a 200 ms
+open, list rows stagger at 120 ms each, and the "Copy" icon hard-swaps to a
+check. Source code is not supplied.
+
+Expected audit behavior:
+
+- load the [motion craft checklist](../../_shared/motion-craft.md) and report
+  M10/M11 (origin and start scale), M15 (exit longer than entrance), M3
+  (stagger too slow), and M18 (icon hard swap), each citing its rule ID;
+- rate them P3 unless the motion delays a frequent task, and keep timing
+  claims at the proof rung the recording supports;
+- mark rules the recording does not show (press scale, drag) `NOT_RUN`, not
+  pass.
+
 ## Must not have
 
 A report fails if it contains any of these:

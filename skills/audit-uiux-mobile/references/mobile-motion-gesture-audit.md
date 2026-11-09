@@ -21,6 +21,13 @@ useful relationship legible:
 If none applies, record a possible decorative-motion concern. Do not call an
 animation a defect only because it is not personally preferred.
 
+Once a motion has a purpose, check its craft against the [motion craft
+checklist](../../_shared/motion-craft.md): press scale (M4), trigger origin
+(M11/M12), stagger (M3/M6), exits shorter than entrances (M15), no tween while
+held (M14), rubber-band past bounds (M19), shared identity (M20). A broken
+rule is a finding only when observed on a recording or device, cites its ID,
+and is usually P3; platform navigation, tabs, and native switches are exempt.
+
 ## Classify what is observed
 
 | Category | Examples | Audit focus |

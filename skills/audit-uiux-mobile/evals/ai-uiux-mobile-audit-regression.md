@@ -134,6 +134,24 @@ Expected audit behavior:
 Must not have: a `device` claim from a simulator recording; a finding for
 missing blur.
 
+## Case 9: Custom motion craft versus platform motion
+
+Prompt/artifact: A device recording of an Expo app: a custom bottom sheet
+eases behind the finger while dragged and stops dead at its top edge, a custom
+favourite toggle's knob slides rigidly, cards jump to the detail screen with
+no shared element, and the native tab bar and system Switch use platform
+motion.
+
+Expected audit behavior:
+
+- load the motion audit reference and the [motion craft
+  checklist](../../_shared/motion-craft.md); report M14 (tween while held),
+  M19 (no rubber band), M5 (rigid knob), and M20 (no shared identity), each
+  citing its rule ID with the recording as evidence;
+- leave the native tab bar and system Switch out of the findings, because
+  platform motion is exempt;
+- keep findings at P3 unless the drag lag blocks the task.
+
 ## Must not have
 
 A report fails if it contains any of these:

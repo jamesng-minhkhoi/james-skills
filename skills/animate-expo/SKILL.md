@@ -228,6 +228,8 @@ For ready-to-build implementations — press feedback, drag-to-dismiss sheet, sw
 
 ## Never Ship
 
+After this table, run the [motion craft checklist](../_shared/motion-craft.md) (M1–M20) on any custom motion that passed the frequency gate; platform navigation, tabs, and switches stay native.
+
 | Never | Instead |
 | --- | --- |
 | `PanResponder` | `Gesture.Pan()` from gesture-handler |

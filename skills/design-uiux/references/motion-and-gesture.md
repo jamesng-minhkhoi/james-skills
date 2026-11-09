@@ -73,7 +73,7 @@ Write a contract for every important motion before design handoff:
 | Cancel rule | How the interaction returns to the original state |
 | Completion | Final state, feedback, and next focus target |
 | Interruption | Behavior on reversal, navigation away, backgrounding, or data change |
-| Timing | Duration and easing family for non-interactive portions |
+| Timing | Duration and easing family for non-interactive portions; cite [motion craft](../../_shared/motion-craft.md) IDs (e.g. M1 entrance ease-out, M15 exit 20% shorter, M14 no tween while held) |
 | Feedback | Visual, haptic, audio, or non-motion alternative; match intensity to consequence |
 | Accessibility | Reduced-motion behavior, focus order, labels, and non-gesture alternative |
 | Performance | Native/UI-thread strategy, clipping/blur constraints, and target device |

@@ -174,7 +174,7 @@ For ready-to-build implementations of the common cases — button press, dropdow
 
 ## Never Ship
 
-Self-check before you finish. Each of these is an automatic block in `review-animations`:
+Self-check before you finish. Each of these is an automatic block in `review-animations`. Then run the [motion craft checklist](../_shared/motion-craft.md) (M1–M20) on whatever passed the frequency gate:
 
 | Never | Instead |
 | --- | --- |

@@ -164,7 +164,7 @@ Load only what the request needs.
 | Dashboard or admin | [dashboard data](references/dashboard-data.md), [dashboard interaction](references/dashboard-interaction.md) |
 | Landing page | [landing message](references/landing-message.md), [landing visual](references/landing-visual.md) |
 | Signature moment (animated hero, scroll story, kinetic type, 3D canvas, shader field) | [creative catalog](references/creative-catalog.md), then only the module topics it routes to |
-| Transitions, gestures, micro-interactions | [motion and gesture](references/motion-and-gesture.md) |
+| Transitions, gestures, micro-interactions | [motion and gesture](references/motion-and-gesture.md), then the [motion craft checklist](../_shared/motion-craft.md) for timing, origin, and choreography values |
 | A component opens, closes, confirms, loads, or changes text (dropdown, modal, toast, tooltip, tabs, toggle, success, error, skeleton, AI status) | [transitions catalogue](references/transitions-catalog.md): the moment → transitions.dev slug map with a check per row; cite the slug in the handoff, never paste code |
 | A number the user changes on screen (total, price, balance, filtered stat) | [digit pop-in](references/library/signature-motion/06-digit-pop-in.md): the swap with fixed drivers and frame proof; live or polled numbers and status words route through its decision table |
 | Surface feels flat, empty, or needs a background (any surface) | [background textures](references/background-textures.md): 22 options, each with its job, cheap build, and failure mode |
@@ -205,7 +205,9 @@ Load only what the request needs.
   set, sheets with detents, large titles where the app uses them, and system
   back. Breaking a platform convention is a choice you must justify.
 - **Motion earns its place.** Something seen 100 times a day gets the
-  platform default or nothing. Delight is for rare moments.
+  platform default or nothing. Delight is for rare moments. Motion that
+  passes that gate follows the [motion craft checklist](../_shared/motion-craft.md)
+  (M1–M20); the contract cites the rule IDs and justifies any break.
 - **Never fabricate.** No invented metrics, testimonials, reviews, or claims.
   Use the product's real content, or mark a placeholder as one.
 - **Every correction becomes a rule.** Write it into the project's rule

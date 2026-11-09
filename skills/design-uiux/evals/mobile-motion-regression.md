@@ -44,6 +44,13 @@ answer where practical.
    passes. Check that the consistency count runs and catches a second accent
    hue, an off-scale radius, and two labels for one intent, and that
    high-frequency moments get no custom motion.
+12. **Menu, toast, and add-to-cart motion spec** — "Spec the motion for the
+   overflow menu, the saved toast, and the add-to-cart flight." Check that
+   the contract cites [motion craft](../../_shared/motion-craft.md) IDs: the
+   menu enters from and exits to its trigger at 0.95 (M10–M12), exits are
+   shorter than entrances (M15), the flight follows an arc (M7), the toast
+   has no bounce (M13), and success pairs a pulse with text (M8). It must not
+   add motion to the tab bar or a settings switch.
 
 ## Scoring
 
