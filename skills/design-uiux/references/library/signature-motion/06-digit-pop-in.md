@@ -1,8 +1,8 @@
 # Digit pop-in (a number the user just changed)
 
 The reference feel for a value that changes on screen because of what the user
-did. Source:
-[transitions.dev · Number pop-in](https://transitions.dev/detail.html?t=number-pop-in).
+did. Source: the "Number pop-in" transition from the transitions.dev library
+(by Jakub Antalik), adapted here. The attribution is in the footer.
 When a request says "animate the number", "make the total feel alive", or
 "the price/score/balance updates", this is the default proposal.
 
@@ -89,7 +89,7 @@ pasted. Distances are in `em` and the blur is a curve on the font size, so the
 same values fit a 12 px label and a 72 px hero number.
 
 ```css
-/* Number pop-in. Transition from transitions.dev (https://transitions.dev). */
+/* Number pop-in. Adapted from the transitions.dev "Number pop-in" transition (Jakub Antalik). */
 .t-digit-group {
   --digit-dur: 600ms;            /* anticipation + spring */
   --digit-exit-dur: 155ms;
@@ -225,7 +225,7 @@ value plainly.
 "use client";
 import { useState } from "react";
 
-// Number pop-in. Transition from transitions.dev (https://transitions.dev).
+// Number pop-in. Adapted from the transitions.dev "Number pop-in" transition (Jakub Antalik).
 export function DigitPopIn({ value, live = false }: { value: string; live?: boolean }) {
   const [pair, setPair] = useState({ value, from: value });
   if (pair.value !== value) setPair({ value, from: pair.value });
@@ -277,7 +277,7 @@ value that updates on its own.
 ## Build: vanilla driver (engineering copies; no framework)
 
 ```js
-// Number pop-in. Transition from transitions.dev (https://transitions.dev).
+// Number pop-in. Adapted from the transitions.dev "Number pop-in" transition (Jakub Antalik).
 // el is a <span class="t-digit-group" aria-hidden="true">; next is a formatted string.
 // The first call renders plainly; later calls animate the change.
 export function setDigits(el, next) {
@@ -407,7 +407,7 @@ until you reproduce them with the method above, which takes about a minute:
   time.
 
 ---
-Transition from [transitions.dev](https://transitions.dev) by Jakub Antalik,
+Adapted from the "Number pop-in" transition in the transitions.dev library, by Jakub Antalik,
 used under the Transitions.dev License: free to use and modify in products,
 not to be redistributed as a transitions library. See
 [NOTICE.md](../../../../../NOTICE.md). The driver fixes (the ghost-digit

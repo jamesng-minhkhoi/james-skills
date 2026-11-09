@@ -192,14 +192,13 @@ SOFTWARE.
 ## Digit pop-in transition (`skills/design-uiux/references/library/signature-motion/06-digit-pop-in.md`)
 
 The CSS keyframes, the tokens, and the vanilla driver are adapted from the
-"Number pop-in" transition on [transitions.dev](https://transitions.dev)
-([source](https://github.com/Jakubantalik/transitions.dev)), © 2026 Jakub
+"Number pop-in" transition from the transitions.dev library, © 2026 Jakub
 Antalik / Transitions.dev. They are used under the Transitions.dev License.
 That license allows use and modification in personal and commercial projects,
 and running them in coding agents. It does not allow redistributing the
 collection, or a substantial part of it, as a transitions library. This
 library carries only this one transition, and keeps the transitions.dev
-comment in its code. Full terms: https://transitions.dev/terms.html. The
+comment in its code. The full terms are in the Transitions.dev LICENSE. The
 driver fixes (the ghost-digit guard, the shrinking-value swap, plain first
 render, and re-render safety) are our own.
 
