@@ -15,6 +15,7 @@ Read only the topics the request calls for. All snippets follow the
 | [Numbers and counters](03-numbers-and-counters.md) | Metrics, revenue ticks, progress states landing truthfully |
 | [Pointer and device moments](04-pointer-and-device.md) | Cursor-following, tilt, magnetic buttons, gyro/webcam on web |
 | [Mobile equivalents](05-mobile-reanimated.md) | Translating the above to Expo + Reanimated, and what to skip |
+| [Digit pop-in](06-digit-pop-in.md) | A number the user just changed (total, price, filtered stat): the changed digits swap with a spring. The default for discrete changes; its table routes live numbers and words elsewhere |
 
 Non-negotiables carried into every topic:
 

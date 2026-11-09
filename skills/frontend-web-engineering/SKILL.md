@@ -46,6 +46,14 @@ behavior needs them, and Zustand for React client state. Use GSAP only as a
 secondary choice for heavy, timeline-based or scroll-triggered choreography
 that Framer Motion does not fit.
 
+For a catalogued component transition (a dropdown, modal, toast, tooltip,
+tabs, toggle, success, error, skeleton, or text swap), load the globally
+installed `transitions-dev` skill and paste its snippet verbatim, keeping the
+reduced-motion guard. Pre-tuned CSS beats hand-written Framer timings for
+these. For a number the user changes, copy the CSS and driver from design-uiux
+`references/library/signature-motion/06-digit-pop-in.md`, not from upstream
+`02-number-pop-in.md`, whose drivers draw ghost digits.
+
 Do not add `"use server"`, server actions, or server-component boundaries by
 habit. Treat them as deliberate exceptions for secrets, authorization, server-
 only data, SEO/initial-content requirements, or a measured performance need.

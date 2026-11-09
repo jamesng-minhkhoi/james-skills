@@ -13,6 +13,7 @@ propose the closest native behavior and name the substitution as a choice.
 | Masked line stagger | `Animated.Text` entering `FadeInDown`-style layouts, or shared-element handoff between route entry and hero | Direct equivalent; keep per-line, not per-glyph |
 | Viewport reveal system | `Animated.ScrollView` + `useAnimatedScrollHandler`/`useSharedValue` scroll-position thresholds, or Layout Animations for view entry | Direct equivalent (Shipped screens use platform entering/exit primitives first) |
 | Counter | `useDerivedValue` interpolating on a shared value; format inside a worklet | Direct; string formatting in worklets is cheap enough for 1–2 digits/60fps, otherwise tween stepped frames |
+| Digit pop-in ([06](06-digit-pop-in.md)) | Reanimated `Keyframe` entering/exiting with the same stops, keyed on the value; em distances become px from fontSize | Direct, minus blur, which React Native core lacks for text, so name that substitution. Splitting per digit is the narrow exception to the per-glyph rule below: only the changed digits of one number, usually 1 to 4 views |
 | Pointer tilt/magnet | No pointer. Do NOT fake via touch-move: dragging a *scrolling* page to tilt a card breaks scrolling | Substitute: spring press-in scale + native press feedback |
 | Variable-font hover weight | No hover. That moment does not exist on touch | Substitute: selected-state weight change, or skip the idea |
 | Cursor glare | No cursor | Skip; the native press state is the ergonomics |
@@ -42,6 +43,9 @@ drawn, the reduced experience is undesigned and the technique does not pass.
 
 - Per-glyph split animations on device: layout cost × glyph count on the UI
   thread; if splitting is essential, split per-line and use `FadeIn` masks.
+  The one exception is the changed digits of a single number in
+  [digit pop-in](06-digit-pop-in.md) (usually 1 to 4 views). Words and
+  headlines never split per glyph.
 - Scroll-jacked storytelling on touch: scrolled finger must own velocity
   ([scroll story · touch reality](../scroll-story/05-touch-and-mobile.md));
   pinning that intercepts swipe is the native selves worst offender.

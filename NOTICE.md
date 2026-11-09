@@ -189,5 +189,26 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
+## Digit pop-in transition (`skills/design-uiux/references/library/signature-motion/06-digit-pop-in.md`)
+
+The CSS keyframes, the tokens, and the vanilla driver are adapted from the
+"Number pop-in" transition on [transitions.dev](https://transitions.dev)
+([source](https://github.com/Jakubantalik/transitions.dev)), © 2026 Jakub
+Antalik / Transitions.dev. They are used under the Transitions.dev License.
+That license allows use and modification in personal and commercial projects,
+and running them in coding agents. It does not allow redistributing the
+collection, or a substantial part of it, as a transitions library. This
+library carries only this one transition, and keeps the transitions.dev
+comment in its code. Full terms: https://transitions.dev/terms.html. The
+driver fixes (the ghost-digit guard, the shrinking-value swap, plain first
+render, and re-render safety) are our own.
+
+The rest of the transitions.dev library is **not** included in this repo.
+`skills/design-uiux/references/transitions-catalog.md` maps product moments to
+the upstream transition names in our own words, with no code. The
+`transitions-dev` and `transitions-polish` skills are installed separately per
+machine (`npx skills add Jakubantalik/transitions.dev -g -s transitions-dev
+-s transitions-polish`), which their license explicitly permits.
+
 Rest of the library: © James. Offensive testing runs only where the operator is
 authorized — see the footer of each `offensive-*` skill.

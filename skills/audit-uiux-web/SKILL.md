@@ -174,7 +174,11 @@ Use the principles reference and rate each relevant area **Strong**, **Concern**
   cards, gradients, shadows, or decorative effects?
 - **Motion:** Does motion explain reveal, continuity, progress, hierarchy, or
   feedback? When requested, does it exist in meaningful state changes rather
-  than only hover or page-load polish? Is reduced motion supported?
+  than only hover or page-load polish? Is reduced motion supported? For
+  numbers the user changes and for catalogued components (dropdown, modal,
+  toast, tabs, toggle, success, error, skeleton), run the "Value changes and
+  catalogued component motion" checks in
+  [web UI forensics](references/web-ui-forensics.md) in every mode.
 - **Performance:** Check image/font loading, layout shift, long tasks, input
   response, expensive effects, animation performance, and content stability.
 - **Content and trust:** Does copy help decisions? Are terms, costs, defaults,

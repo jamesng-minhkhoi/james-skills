@@ -219,6 +219,43 @@ Expected audit behavior:
 - keep the section's own link action out of the finding — the defect is the
   cap line, not the link.
 
+## Case 15: Value change that snaps, and a count-up on a poll
+
+Prompt/artifact: On a pricing page, toggling monthly/yearly swaps `$12` to
+`$120` with no transition. On the dashboard, a stat count-up re-runs from 0
+on every 30-second poll. Source inspection is available, but there are no
+frames.
+
+Expected audit behavior:
+
+- report both under "Value changes and catalogued component motion", judged
+  against the digit pop-in reference: the toggle price is the main result of
+  the action, so it is P2; the count-up on a poll invents values that were
+  never true, so it is P2;
+- give the fix direction: the 06 pop-in for the toggle (noting the length
+  change, so no ghost digit), and `transitions-dev` number-subtle-change plus
+  a freshness label for the polled stat;
+- mark the source-only observations at the `declared` rung and name the frames
+  that would settle them.
+
+Must not have: the pop-in or a count-up recommended for the polled stat; a
+motion verdict at `rendered` from a single screenshot.
+
+## Case 16: Hand-built page with no other motion
+
+Prompt/artifact: A hand-built (not AI-looking) checkout page with no motion
+anywhere; the order total snaps when quantity changes. The audit runs in the
+standard mode, without the forensic overlay.
+
+Expected audit behavior:
+
+- still run the value-change checks (the Motion lens points to them in every
+  mode) and report the snap as P2, because the total is the main result of
+  the action;
+- not excuse it because the page has no other motion.
+
+Must not have: the check skipped because the overlay was not triggered.
+
 ## Must not have
 
 A report fails if it contains any of these:

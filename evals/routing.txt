@@ -92,3 +92,9 @@ tiktok-caption|social-copy|Draft a TikTok caption for a 20s clip showing our bug
 # the chosen static figure is diagram-design's job.
 chart-or-table|design-uiux|Should this revenue breakdown be a chart, a table, or a list? Design the screen.
 chart-static-figure|diagram-design|Draw our Q3 revenue breakdown as a publication chart for the docs.
+# transitions.dev (installed globally, not vendored): catalogued web transitions.
+transitions-add|transitions-dev/frontend-web-engineering|Add a smooth open and close transition to the delete-confirm modal in our Next.js app.
+transitions-tokens|transitions-polish|Scan our CSS for ad-hoc transition durations and easings and align them to motion tokens.
+number-user-change|frontend-web-engineering/design-uiux|Animate the cart total in our Next.js app when the quantity changes.
+number-live|transitions-dev/frontend-web-engineering|Our dashboard revenue tile polls every 30 seconds; make the number update look nice without being distracting.
+polish-vs-audit|improve-animations|Audit the motion in this app and give me a plan of fixes; the timing feels off in places.

@@ -76,6 +76,45 @@ separated is a generated-pattern tell. Check:
 - menus, dialogs, sheets, or tooltips without escape, focus return, touch, or
   no-hover behavior.
 
+### Value changes and catalogued component motion
+
+These checks run in every audit mode, not only the forensic overlay. The
+Motion lens in SKILL.md points here.
+
+Numbers the user changes, such as a cart total, a price toggle, a balance, or
+a filtered stat. Judge them against
+[digit pop-in](../../design-uiux/references/library/signature-motion/06-digit-pop-in.md):
+
+| Check | Severity |
+| --- | --- |
+| The value is the main result of the action (a total after a quantity change, the price on a plan toggle) and it snaps with no transition | P2 |
+| Any other user-changed value snaps. Report it whether or not the page animates other things | P3 |
+| A count-up runs through made-up in-between values for one discrete change | P2 (it shows numbers that were never true) |
+| No reduced-motion path, or a screen reader hears split or doubled digits | P2 |
+| A pop-in fires on polling or live ticks, where a quiet subtle change or nothing belongs (a *count-up* on a poll is the P2 row above, not this one) | P3 |
+| Every character animates, including the unchanged prefix and the separators; or a ghost old digit appears when the length changes (`$12` to `$120`) | P3 |
+| The row width jitters (no `tabular-nums`), or an `overflow: hidden` container clips the exit or the blur | P3 |
+| Two different number motions run on values visible at the same time | P3 |
+
+Catalogued components (a dropdown, modal, toast, tooltip, tabs, accordion,
+toggle, checkbox, success, error, skeleton, or AI status line). Judge them
+against the
+[transitions catalogue](../../design-uiux/references/transitions-catalog.md):
+
+- The state change is instant, or uses hand-rolled timing, where a
+  catalogued transition fits. Name the slug in the fix direction. This is P3,
+  or P2 when the missing motion hides cause and effect (for example, a panel
+  appears with no sign of where it came from).
+- A loading or AI-status animation keeps running after the work ends, or a
+  success animation plays before the write lands. This is P2 (fake feedback).
+- `transitions-polish`'s read-only `transitions review` output may support a
+  token-drift finding. It is `declared` evidence, not proof of the look.
+
+Evidence: paused frames or a recording, at 0, 100, 250, 450, and 730 ms after
+a real change for numbers. A snap seen only in the source is at the
+`declared` rung. A single screenshot cannot reach `rendered` for motion, so
+say which frames would settle the finding.
+
 ### Browser reality gaps
 
 - direct URL, refresh, back/forward, new tab, or query parameters break context;

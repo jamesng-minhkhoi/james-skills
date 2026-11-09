@@ -97,6 +97,7 @@ Use an observable failure rather than a taste judgement:
 | Motion accessibility failure | Reduced motion removes status, focus, or meaning | Equivalent task becomes unclear or inaccessible |
 | Runtime failure | Clipping, dropped frames, delayed response, or native mismatch is observed | Perceived instability and poor control |
 | Fake feedback | Animation implies success while data does not change or failure is hidden | Trust and functional integrity failure |
+| Silent or noisy value change | A total, price, or stat the user changed snaps with no swap (P2 when it is the main result of the action, otherwise P3); a count-up invents in-between values, including a count-up on a poll (P2); every digit animates, the width jitters, or a pop-in fires on live ticks (P3). Judge against [digit pop-in](../../design-uiux/references/library/signature-motion/06-digit-pop-in.md). A missing blur is the named native substitution, not a finding. A simulator recording reaches `interactive` at most | The user misses what their action changed, or the motion becomes noise |
 
 ## Severity guidance
 

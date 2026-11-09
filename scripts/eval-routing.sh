@@ -23,6 +23,11 @@ mkdir "$WORK/cwd"
 NAMES=()
 for dir in "$REPO"/skills/*/; do NAMES+=("$(basename "$dir")"); done
 for file in "$REPO"/agents/*.md; do NAMES+=("$(basename "$file" .md)"); done
+# Third-party skills that ROUTING.md routes to but this repo may not vendor.
+for name in transitions-dev transitions-polish; do
+  NAMES+=("$name")
+  [ -d "$HOME/.claude/skills/$name" ] || echo "warning: $name is not installed; cases expecting it will fail (npx skills add Jakubantalik/transitions.dev -g -s transitions-dev -s transitions-polish)" >&2
+done
 
 PROMPT_HEAD="Routing check — do NOT perform the task or call any tools. Given the \
 skills and subagents available to you, reply with ONE line: the skill name(s) \

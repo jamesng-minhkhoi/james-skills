@@ -165,3 +165,97 @@ Expected behavior:
 - no worklet code, dependency installation steps, or build wiring appear in
   the plan — implementation belongs to frontend-mobile-engineering;
 - open questions and `NOT_RUN`/`UNKNOWN` items are marked rather than glossed.
+
+## Case C10: A value the user changes gets the digit pop-in, cited, not pasted
+
+Prompt: "On the cart page, make the total feel alive when someone changes a
+quantity." (Next.js repo; Edit tools are available.)
+
+Expected behavior:
+
+- route to `library/signature-motion/06-digit-pop-in.md` (through the surface
+  table or the numbers topic) and pick the pop-in, not a count-up, because the
+  user's action causes one discrete change;
+- describe the feel in plain words in the option sheet: the shared prefix
+  holds still, the old digits lift and blur out, the new ones rise and
+  overshoot slightly, and the last two digits trail;
+- the handoff cites the 06 path and its "Build" sections for
+  `frontend-web-engineering` to copy; it names the reduced-motion path, the
+  `.sr-only` full value, and the frame proof at 0/100/250/450/730 ms;
+- treat the total above Checkout as fine placement (the eye confirms, then
+  moves on);
+- animate subtotal and total with one timing, or only the total.
+
+Must not have: design-uiux editing product CSS or adding `.sr-only` itself;
+keyframes retyped or "simplified" in the plan; a count-up through made-up
+totals; an added easing; `overflow: hidden` on the slot; motion claimed as
+`rendered` from a canvas board.
+
+## Case C11: Length changes do not draw ghost digits
+
+Prompt: "On the yearly toggle the price goes from `$12` to `$120`, and back
+when they switch to monthly. Use the number animation."
+
+Expected behavior:
+
+- follow 06's diff rule: `$12` stays still and only the `0` enters, with no
+  old `2` lifting out; and cite the worked-examples table;
+- in reverse (`$120` to `$12`), the `2` swaps in place and the `0`
+  disappears; it must neither snap with no motion nor flash `$10`;
+- for `10.49` to `9.99`, state that the old leading `1` disappears with no
+  exit, as the accepted limitation;
+- name the 06 drivers, not upstream `02-number-pop-in.md`.
+
+Must not have: the upstream driver recommended; a ghost-digit frame, a snap
+in either direction, or a never-true value (`$10`) accepted as correct.
+
+## Case C12: Expo value change is a behavior spec
+
+Prompt: "Expo cart screen: make the total feel alive when quantity changes."
+
+Expected behavior:
+
+- a behavior spec from 06's Mobile section: a Keyframe port with the same
+  stops, keyed on the value, the blur dropped and named as a substitution, em
+  converted to px, `tabular-nums`, and OS Reduce Motion;
+- resolve the per-glyph rule explicitly: per-digit is allowed only for the
+  changed digits of one number;
+- the target rung is `device`;
+- name `animate-expo` as the builder of the motion and
+  `frontend-mobile-engineering` as the owner of the data and state, matching
+  ROUTING.md.
+
+Must not have: Reanimated code in the plan; a per-letter split on words; two
+different owners named for the same motion.
+
+## Case C13: Live and polled numbers stay quiet
+
+Prompt: "Our revenue tile polls every 30 seconds and the BTC price ticks
+live. Make the numbers update nicely."
+
+Expected behavior:
+
+- classify both as data-driven, not user-caused, and route to
+  `transitions-dev` number-subtle-change (`36`), with a freshness label;
+- decline the pop-in, the spinning counter, and a count-up from 0 on each
+  poll.
+
+Must not have: the digit pop-in on a polled value; a count-up re-run on every
+poll; the 03 `Metric` count-up component or a looping ticker offered as "live".
+
+## Case C14: Catalogued components get a slug, not a hand-made animation
+
+Prompt: "Design the motion for our settings page: the save toast, the
+delete-confirm modal, and the plan tabs."
+
+Expected behavior:
+
+- open `references/transitions-catalog.md`; map the toast to toast (`22`),
+  the modal to modal (`06`), and the tabs to tabs-sliding (`16`); run each
+  row's gate; describe the feel in our own words;
+- the handoff cites `transitions-dev` slug and file and says "verbatim";
+- for an Expo version, cite the same slugs as behavior references for
+  `animate-expo`.
+
+Must not have: hand-written durations or keyframes for these components;
+upstream CSS pasted into the plan; a Pro transition proposed without a plan.

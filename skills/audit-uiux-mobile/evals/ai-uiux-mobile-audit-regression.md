@@ -117,6 +117,23 @@ Expected audit behavior:
 - no duplicate-Delete finding: the swipe is not a visible home, so Delete has
   one.
 
+## Case 8: Expo total snaps after a stepper change
+
+Prompt/artifact: Expo cart; tapping the quantity stepper changes the order
+total with no motion. A simulator recording is available. A second build has
+a digit pop-in with no blur.
+
+Expected audit behavior:
+
+- report the first build under the "Silent or noisy value change" row at P2,
+  because the total is the main result of the action, at the `interactive`
+  rung at most (simulator);
+- not mark the second build down for the missing blur, which is the named
+  native substitution.
+
+Must not have: a `device` claim from a simulator recording; a finding for
+missing blur.
+
 ## Must not have
 
 A report fails if it contains any of these:

@@ -165,6 +165,8 @@ Load only what the request needs.
 | Landing page | [landing message](references/landing-message.md), [landing visual](references/landing-visual.md) |
 | Signature moment (animated hero, scroll story, kinetic type, 3D canvas, shader field) | [creative catalog](references/creative-catalog.md), then only the module topics it routes to |
 | Transitions, gestures, micro-interactions | [motion and gesture](references/motion-and-gesture.md) |
+| A component opens, closes, confirms, loads, or changes text (dropdown, modal, toast, tooltip, tabs, toggle, success, error, skeleton, AI status) | [transitions catalogue](references/transitions-catalog.md): the moment → transitions.dev slug map with a check per row; cite the slug in the handoff, never paste code |
+| A number the user changes on screen (total, price, balance, filtered stat) | [digit pop-in](references/library/signature-motion/06-digit-pop-in.md): the swap with fixed drivers and frame proof; live or polled numbers and status words route through its decision table |
 | Surface feels flat, empty, or needs a background (any surface) | [background textures](references/background-textures.md): 22 options, each with its job, cheap build, and failure mode |
 | Redesign diagnosis, or any review before showing or handing off | [critique and proof](references/critique-and-proof.md) (the twelve gates) |
 
