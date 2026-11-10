@@ -202,12 +202,22 @@ comment in its code. The full terms are in the Transitions.dev LICENSE. The
 driver fixes (the ghost-digit guard, the shrinking-value swap, plain first
 render, and re-render safety) are our own.
 
-The rest of the transitions.dev library is **not** included in this repo.
+The rest of the transitions.dev library is not part of the distributed
+skills tree: no transition code from it appears anywhere outside
+`skills/design-uiux/references/library/signature-motion/06-digit-pop-in.md`.
 `skills/design-uiux/references/transitions-catalog.md` maps product moments to
 the upstream transition names in our own words, with no code. The
 `transitions-dev` and `transitions-polish` skills are installed separately per
 machine (`npx skills add Jakubantalik/transitions.dev -g -s transitions-dev
 -s transitions-polish`), which their license explicitly permits.
+
+A full upstream clone of the library (commit 20d70c1) is kept at
+`reference/transitions.dev` for personal reference only. It is licensed for
+use and modification in this repository's projects, but the Transitions.dev
+License does not permit redistributing the collection as a transitions
+library — anyone intending to make this repository (or a copy of it) public
+or shared must first remove that directory or obtain the owner's permission.
+Keep the upstream LICENSE alongside it unmodified.
 
 Rest of the library: © James. Offensive testing runs only where the operator is
 authorized — see the footer of each `offensive-*` skill.
