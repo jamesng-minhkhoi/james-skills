@@ -58,6 +58,10 @@ evidence. "Looks good", "seems clean", and "modern" are not verdicts.
    for comparison, sheet for a focused edit. No box inside a box for one
    item; no scroller inside a sheet's scroller; no table squeezed narrow. An
    empty field is an ordinary row, not a lone tile.
+   **Sheet gate (hard FAIL):** a sheet never holds a tab bar, segmented
+   control, or chip rail, in any option or board. A sheet is one focused
+   job; if it needs views, it is a screen. Choosing among a few answers is
+   rows, a wheel, or a menu.
    **Chrome budget:** desktop navigation and global parameters (date range,
    export) must share **1 single horizontal row** (height <= 64px), never
    splintering into 2 or 3 stacked control rows. Mobile must never stack multiple

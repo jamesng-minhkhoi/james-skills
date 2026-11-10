@@ -84,6 +84,8 @@ machine items ran.
 | The builder scored their own work | Hand the sheet and rubric to a fresh subagent or session |
 | A state was described but not built | Build it as its own entry and render it, or declare it out of scope |
 | An external font or image was blocked | Bundle the asset into the page folder and re-render |
+| Small inline pictures (avatar stacks, thumbnails in a sentence) "look broken" only on the real page | Render the block at 3× and crop to it; check shape, overlap, and that line spacing has not grown |
+| Motion was judged from one still | Render frames at several timestamps (start, mid-entry, settled, mid-loop) and at extreme gesture poses; check that text stays readable in every frame |
 
 ## Changing this reference
 

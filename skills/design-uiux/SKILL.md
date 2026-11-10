@@ -182,6 +182,9 @@ Load only what the request needs.
   when it answers a named question. Do not force everything into cards.
 - **One focal point and one primary action per screen.** Group with
   whitespace and surface tone before borders or shadows.
+- **No tabs, segmented controls or chip rails in a sheet.** Never draw one,
+  not even as one option among several. A sheet is one focused job; views
+  mean a screen. Gate 6 in [critique and proof](references/critique-and-proof.md).
 - **Gesture-first, with a visible and an assistive path.** On mobile, enter
   values and act on rows by drag, swipe, or scrub, because thumbs prefer them
   to tap-steppers and segmented tabs in a sheet. Each gesture also has a

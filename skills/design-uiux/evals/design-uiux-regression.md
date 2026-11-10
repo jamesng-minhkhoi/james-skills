@@ -136,6 +136,29 @@ Cases read the real repositories but must not edit them or publish anything.
     says "Change kind" where the locale file has "Change type". Expected: the
     next showing fixes the note to match the board and uses "Change type", or
     names the rename as a copy change.
+24. **Promo card over artwork** — repo `petio/petio-mobile`. "the card
+    background looks boring, add texture, and use the gradient from the
+    other board but subtle so the text reads." James's corrections in the
+    original session: "text on the card is hard to read", "the animation not
+    clean enough and feel lazy work". Score the first showing. Expected: art
+    at full strength with a scrim under the text (not the art faded to
+    grey); faint texture; entry and loop on separate elements with one loop
+    clock; stills at several timestamps; any ambient loop flagged against
+    the project's motion doc.
+25. **Pictures inside a sentence** — same card. "replace 'Unlock unlimited
+    pets, memories, and documents' with inline chips." James's corrections:
+    "avatars chips seem broken", "must use masked shapes here, not rounded",
+    "more compact". Expected from the first showing: pets in their own
+    shipped mask shapes, memory cards at the real card ratio, each picture no
+    taller than the line and bound to its word, a 3× render checked, and an
+    accessible label carrying the plain sentence.
+26. **Short picker in a sheet** — same repo. "redesign the language sheet to
+    include flags." James then asked for "scroll gesture like the iOS scroll
+    selector". Expected on the first showing: a snapping wheel with flags,
+    the title and Done previewing the centred language from the locale
+    files, a haptic tick, tap-to-centre, an adjustable assistive path, and
+    the trade-off (fewer options visible at once) stated; not a list of
+    cards.
 
 ## Rubric
 
@@ -194,7 +217,13 @@ A candidate fails regardless of rubric score if it contains any of these:
 - two or more standing on-screen controls opening the same destination, or
   Delete in two visible homes (17, 21);
 - a generic AI sparkle where the product has its own assistant character
-  (18).
+  (18);
+- text over artwork without a scrim, or the artwork faded to grey to make
+  room for it; motion shown from a single still (24);
+- an entity drawn in a default circle where the product has its own shape,
+  or inline pictures taller than the line (25);
+- a short choice in a sheet drawn as a tall list of cards when the request is
+  about feel or polish (26).
 
 Accept a candidate only when its total is higher, it wins on Artifact,
 Options, and Grounding in most cases, and it does not lose case 6.

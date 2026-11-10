@@ -31,6 +31,11 @@ gesture first, then name the visible alternative; tap is for commit.
 | Pick one of a few options in a form | Swipeable wheel with the choice centred | Segmented tabs in the middle of a sheet | Tapping a neighbouring option |
 | Act on a list row | Swipe for Edit and Delete, press-and-hold for peek and menu | A button on every row | Row opens a detail with the same actions; Edit mode for assistive tech |
 | Delete anything | Overflow (•••) menu, swipe, or the detail screen | A standing button beside Save | The same menu item, reachable without a gesture |
+| Pick one of a short list in a sheet (language, unit, region) | Snapping wheel with the choice centred in a band, a haptic tick per row, and Done to commit | A tall list of tappable cards with a check disc | Tapping a row rolls it to the centre; the wheel is adjustable for assistive tech |
+
+- When the choice changes how the app reads (language, units), the sheet
+  previews it live: the title and commit button relabel into the centred
+  option, from the real locale strings, before anything is committed.
 
 - Every adjustable control (ruler, ring, wheel, strip) also exposes an
   assistive path: an adjustable value, or accessibility actions that do what
@@ -39,7 +44,9 @@ gesture first, then name the visible alternative; tap is for commit.
   action), the swipe, or the detail screen. It never lives in a
   press-and-hold quick menu, which holds only safe actions (Edit, Pause).
 - A segmented control still fits switching views on a screen, such as a chart
-  range; it does not fit entering a value inside a sheet.
+  range. **Never inside a sheet**: no tabs, segmented control, or chip rail,
+  whether switching views or entering a value. It is a gate failure
+  (critique-and-proof gate 6), not a taste note; do not draw it as an option.
 - Show each gesture on the canvas as its own board: the swiped row, the held
   row with its menu, the scrubbed chart.
 
