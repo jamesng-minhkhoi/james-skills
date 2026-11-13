@@ -105,6 +105,13 @@ infer these from a static screenshot or source declaration.
   consequential icons need labels or supporting text.
 - Borders, elevation, gradients, glow, and glass should communicate grouping,
   affordance, depth, state, or brand. Flag effects with no functional role.
+- Grouping should follow proximity. Measure gaps inside and between groups on
+  the screenshot against the ratio in the gate 7 linked below; flag a uniform
+  stack. Flag controls that do not look tappable at rest, and icons or
+  outlines under 3:1 against their real background (WCAG 1.4.11), including
+  gradient-filled icons. The test and its fixes are owned by design-uiux
+  [critique and proof](../../design-uiux/references/critique-and-proof.md)
+  gates 7 and 11.
 - Component consistency should preserve meaning, not force every task into the
   same shape. Flag variants that differ without purpose and uniform components
   that erase meaningful hierarchy.

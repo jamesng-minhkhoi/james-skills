@@ -111,6 +111,16 @@ requirements. A style reference does not mandate adopting its component
 library. If an official system is required, verify current official guidance
 and compatibility; distinguish system conformance from visual inspiration.
 
+When the ask is a reference's feel ("make it vibe like these"), name the
+two or three qualities that make it before drawing. For a gradient blob,
+those might be one saturated core, two hues, and a lit edge with a soft
+fall-off. Then place each option on the canvas beside a board holding its
+reference, and check that each quality is visible. If the project's palette cannot reach them (its
+sanctioned tints are too pale), say so in the option's note and propose the
+nearest colours the project allows, such as its illustration palette, marked
+as a stretch of the rule. Never fit the reference into the palette until it
+becomes a wash.
+
 ## Make the result specific without adding arbitrary novelty
 
 - Give every section a decision job. Vary composition when content changes;

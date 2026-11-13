@@ -178,6 +178,131 @@ Cases read the real repositories but must not edit them or publish anything.
     (James: "bad u can see the issue here"). Expected: the menu on the top
     layer, opening upward when the chip is low, uncut, no dim; a local
     capture looked at before publishing.
+30. **Grouping by distance** — repo `LearningTime/emomo-redesign-task`
+    (design docs in `docs/`, rule table `docs/global-rules.md`), Home: a question ("How was
+    last night?") with three answer chips, then a row of four round shortcut
+    buttons (Sleep, Feeding, Unwell?, Add), every block 20 pt apart. "fix
+    spacing/padding please, show me on the canvas". James's corrections in the original session:
+    "hard for me to understand what components relates/belong to what
+    (Proximity Principle)". Expected on the first showing: gaps measured on
+    a headless render of the board; the largest gap inside each group at most
+    half the smallest gap between groups, in the project's spacing steps;
+    the shortcut row set apart (wider gap, or a hairline because it does a
+    different job) and shaped differently from the answers; gate 7 answered
+    with the measured gaps and their rung stated as `declared` (a board
+    capture), never `rendered`.
+31. **Controls that do not read as controls** — same repo and screen;
+    its rule table asks for skimming by picture (rule 56). "fix
+    accessibility such as color / text" on the canvas. Input includes James's corrections: "these buttons
+    needs icon or illustration its very hard to tell its an button", a
+    growth icon nearly invisible on its tinted disc, and "padding issues" on
+    a label touching its round button's edge. Expected: answers drawn as
+    buttons in the product's own button style, with an icon each because the
+    project's rule asks for it; icons and outlines measured
+    against their real disc (3:1), with gradient-filled SVGs made solid;
+    labels kept 8 pt clear of their shape's edge, with any reshaped control
+    marked new; the answers and the round places still differ in shape; gate
+    11 contrast given a measured verdict from the render (not `NOT_RUN` for
+    lack of a device), with gate 11 left `NOT_RUN` if every measured part
+    passes; the text audit not offered as proof of gate 11.
+32. **Fade over the last content** — same repo. A Home board whose floating
+    bottom bar carries a 116 px fade that starts above the bar and dims the
+    last row of round buttons. "the bottom looks washed out". Expected:
+    scroll to where the last content stops above the bar, measure the text
+    there, move the fade to start at the bar's top edge, and re-measure.
+In cases 33 onward, the quoted prompt is the input. "Corrections" are what
+James said in the original session: context for the judge, never input.
+
+33. **Words where a picture belongs** — repo `LearningTime/emomo-redesign-task`,
+    Home: an "Emomo asks" caps label over the question, an answered state
+    reading "You said: Not sure · today · Change", a source line "Prepared
+    answer · checked by our paediatrician", and a sick card headed
+    "Unwell · fever since this morning". Prompt: "make Home easier to
+    parse, show me on the canvas". This is a screen redesign, so gates then
+    options. Corrections: "use emomo avatar and make it like emomo saying
+    without the text", "use visual over plain text like this. And align
+    right", "use visual (such chips / icons etc..) and if its too confusing
+    consider ... (?) info button", "use an icon/indicators instead of
+    'unwell' text". Expected in every option shown, as a baseline rather
+    than an option axis: the mascot avatar beside a speech bubble; her
+    answer as a trailing reply bubble with the answer's icon and a visible
+    way to change it; the source as one icon chip plus an (i) button that
+    opens the full sentence; the sick label replaced by an icon indicator
+    because "Fever since this morning" stays visible, so gate 9 still
+    passes (the status explains the card; the action is "Check in now", so
+    the label itself is not a state she must act on); each accessibility label written in the board's note. A judge
+    accepts the one chip that replaces the source sentence and rejects a
+    candidate that adds chips replacing no text.
+34. **Main action on the leading side** — same repo. A health card with
+    "Check in now" (primary) left of "What to watch for", and a left-aligned
+    row "See the answer · Skip". Prompt: "main action must be on the
+    right". A small fix. Correction: "should have been aligned right to
+    comply uiux pattern for mobile". Expected: one proposal, with the
+    secondary leading and the primary trailing in every pair, the
+    text-button-plus-primary row aligned trailing, and every board swept
+    and listed for other pairs. Single primaries stay centred or full width.
+35. **One action where an object has several, and a vague edit mode** —
+    same repo. A Journal cover with a "Change cover" pill, and an Edit Home
+    board whose blocks keep their normal look, with an Add tile still in the
+    shortcut row and 2 pt padding. Prompt: "fix the cover button and make
+    Edit Home clearer". Corrections: "we can use ... icon here and have
+    action change cover show in dropdown, we might also need action like
+    remove, view and edit", "not good padding, confusing and unclear that
+    we are in edit mode". Expected: the cover's action set derived and
+    listed before drawing; a ••• button whose menu holds that set with
+    remove last and apart; edit mode named in the header, with Done; every
+    editable block carrying the same mark (a grabber, a badge, or a solid
+    tinted outline, never dashes); out-of-mode controls removed; padding at
+    least the normal screen's.
+36. **Long progress as dots, placeholder as text** — same repo. "Nights
+    plan · night 4 of 14" followed by 14 dots, and an Ask bar placeholder in
+    ink 2 at medium weight. Prompt: "the nights dots and the Ask bar text
+    look off". Corrections: "not good since too many dots. maybe ...
+    circle progress bar", "this text is place holder, should have been
+    dimmer". Expected: a small progress ring beside the count words, with
+    dots kept only for counts of five or fewer; the placeholder at lower
+    contrast than entered and secondary text, regular weight, 4.5:1 or
+    better, on its own token marked new.
+37. **A reference's feel flattened by the palette** — same repo; the
+    moodboard screens are in `brand reference/Apps` (a health assistant,
+    an AI UI kit, a planning app). Prompt: "they like Health assistant ·
+    Good evening, AI UI kit, Planning app a lot. They want gradient blob,
+    glass/neumorphic buttons to make the app feel modern and sleek. Show me
+    options". Correction, after a first round drawn in the guideline's pale
+    platform tints: "the blob still not design as how we vibe with the
+    references". Expected on the first showing: the references' qualities
+    named (a saturated core, two hues, a lit edge); each option on the
+    canvas beside a board holding its reference; the palette's gap stated,
+    with the nearest colours the guideline allows (its illustration
+    palette) proposed and flagged as a stretch; text on the blobs measured.
+38. **One-off tint and a missing material** — same repo, design-system
+    board. The Add door alone has a pink disc. The "Picked" swatch lacks the
+    corner sheen every other control has, because its fill is a raw hex.
+    Prompt: "check the primitives board before I share it". Corrections:
+    "why this one has pink color ?", "need faded edge (gradient like
+    primary and tonal controls too)". Expected: the consistency count flags
+    the single-use tint and the control missing its role's material before
+    showing. The fix applies the material by role class or token, and
+    either removes the tint or names it as a role marked new.
+39. **Role collapse in a palette remap** — same repo. A repaint script maps
+    an older palette onto the brand guideline's, and its map sends the
+    placeholder grey `#74747B` onto ink 2 `#605E61`, which secondary text
+    already uses. Prompt: "repaint every board to the new brand palette".
+    Expected: before showing, the consistency count lists the role pairs an
+    earlier fix separated (placeholder versus secondary text), flags this
+    collapse, and proposes a distinct placeholder value at 4.5:1 or better.
+40. **No photo yet** — any app with a user or child photo in its header.
+    Prompt: "design the profile header". Expected: the states include no
+    photo yet, drawn as a fallback illustration in the photo's shape plus an
+    add control with a 44 pt hit area; never a grey silhouette or initials.
+41. **A framing eyebrow** — same repo, the play-idea screen headed "Play
+    idea for today · if you like · 3 min" above "Smile and wait". Prompt:
+    "clean up this screen". Expected: the eyebrow removed per gate 8, with
+    the 3 min kept in the idea's own meta line because nothing else shows it.
+42. **Several actions on list rows** — any app. Prompt: "redesign my saved
+    payment cards list; each card can be edited or deleted". Expected: swipe
+    for Edit and Delete plus the detail screen with the same actions, per
+    "Act on a list row"; no ••• button on every row.
 
 ## Rubric
 
@@ -203,6 +328,10 @@ most; elsewhere score it only when it applies.
 | Gesture map | Each custom gesture names what already claims its motion and how it is resolved; no gesture is live mid-scroll in the scroll's direction (17, 20) |
 | Destinations | One standing control per destination, at most one custom gesture, one visible home for delete, merged or not (17, 19, 21) |
 | States carried | The current screen's status states are listed and drawn in every round (17, 22) |
+| Grouping and affordance | Gaps measured on the render group parts before groups; every control looks tappable at rest; icons and outlines measured at 3:1 against their real background (30, 31) |
+| Picture before words | Status, speaker, answer, and source lines are drawn as icon, avatar, bubble, or one chip, with a visible word wherever gate 9 needs one and each label in the board note; a long plan is a ring or bar; placeholder text has lower contrast than entered text (33, 36, 41) |
+| Action order and action sets | Primary trailing in every pair; a standalone object with several actions gets a ••• menu with its derived set, while list rows keep swipe; an entered mode is named in the header and marked without dashes (34, 35, 42) |
+| Reference feel | Options from named references are placed beside a board holding them; the qualities that make the reference are named and visible, and a palette gap is stated, not hidden (37) |
 | Vocabulary | Names the highest proof rung reached and never calls an unobserved state pass |
 
 ## Must not have
@@ -246,7 +375,29 @@ A candidate fails regardless of rubric score if it contains any of these:
 - optional details drawn as a stack of text fields (28), or a menu under the
   primary button, clipped, or published without a capture being looked at
   (29);
-- a third new direction drawn after two rejected rounds (27).
+- a third new direction drawn after two rejected rounds (27);
+- a screen whose blocks all sit the same distance apart, or a spacing pass
+  with no measured gaps (30);
+- answer chips that read as labels, an icon under 3:1 on its disc, or a
+  text-only contrast audit offered as proof that controls and icons pass
+  (31);
+- a fade judged at the top of the scroll only, or text left dimmed under
+  it (32);
+- a caps label, "You said:" line, or source sentence where the product has
+  an avatar, bubble, icon, or chip to say it (33);
+- a primary on the leading side of a pair, or a fix applied to one pair and
+  not swept (34);
+- a single-action pill on an object that has several actions, or an edit
+  mode that looks like the normal screen (35);
+- more than five progress dots for a plan, or placeholder text styled like
+  entered text (36);
+- reference-derived options shown without the reference beside them, or a
+  palette limit applied silently until the reference's feel is gone (37);
+- a tint used on one control only with no role, or a material missing from
+  one control of its role (38);
+- a palette remap that merges two roles an earlier fix separated (39);
+- a grey silhouette or initials for a missing photo (40);
+- a ••• button on every row of a list (42).
 
 Accept a candidate only when its total is higher, it wins on Artifact,
 Options, and Grounding in most cases, and it does not lose case 6.

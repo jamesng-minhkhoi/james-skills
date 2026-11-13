@@ -31,6 +31,7 @@ gesture first, then name the visible alternative; tap is for commit.
 | Pick one of a few options in a form | Swipeable wheel with the choice centred | Segmented tabs in the middle of a sheet | Tapping a neighbouring option |
 | Act on a list row | Swipe for Edit and Delete, press-and-hold for peek and menu | A button on every row | Row opens a detail with the same actions; Edit mode for assistive tech |
 | Delete anything | Overflow (•••) menu, swipe, or the detail screen | A standing button beside Save | The same menu item, reachable without a gesture |
+| Act on one standalone object with several actions (a cover photo, a profile picture; not a row in a list, which follows "Act on a list row") | A ••• button on the object opening a menu with its whole action set: view, change, edit, then remove last, apart, in the warning colour | One pill for the single action the brief named ("Change cover") | The object's detail screen with the same actions |
 | Fill optional details (clinic, maker, lot number) | Chips continuing the form's sentence, each opening a pull-down: recent values first, a list scoped to the earlier choice (makers for the chosen vaccine), "Other…"; a scan where a label exists (vial sticker) | A stack of empty text fields, or a two-up row of half-width fields | "Other…" opens a text field; notes stay behind an "Add a note" link |
 | Pick one of a short list in a sheet (language, unit, region) | Snapping wheel with the choice centred in a band, a haptic tick per row, and Done to commit | A tall list of tappable cards with a check disc | Tapping a row rolls it to the centre; the wheel is adjustable for assistive tech |
 
@@ -56,6 +57,24 @@ gesture first, then name the visible alternative; tap is for commit.
   range. **Never inside a sheet**: no tabs, segmented control, or chip rail,
   whether switching views or entering a value. It is a gate failure
   (critique-and-proof gate 6), not a taste note; do not draw it as an option.
+- **The main action sits on the trailing side.** In a pair, the secondary is
+  leading and the primary trailing ("What to watch for · Check in now").
+  A row of a text button plus a primary aligns trailing, under the thumb.
+  This matches the dialog order in Apple's HIG and Material Design
+  (`unverified`: not re-checked against current guidance). A single
+  primary may still be centred or full width. Sweep every board for pairs
+  when one is fixed, since a pair drawn one way is usually drawn that way
+  everywhere.
+- **Before drawing an object's controls, list its whole action set.** Ask
+  what a user does to this object over its life (see, replace, adjust,
+  remove), not only what the brief named. For a standalone object, two or
+  more actions mean the ••• menu in the table above.
+- **A mode the user enters (edit, select, reorder) is unmistakable.** The
+  header changes: the title or a subtitle says the mode is on, and Done
+  replaces the usual right action. Every editable part carries the same
+  mark: the platform's drag grabber or a hide/remove badge, or one solid
+  tinted outline, never dashes (a named tell). Controls that only belong outside the mode (Add on a row of
+  shortcuts) leave. Padding stays at least as roomy as the normal screen.
 - Show each gesture on the canvas as its own board: the swiped row, the held
   row with its menu, the scrubbed chart.
 

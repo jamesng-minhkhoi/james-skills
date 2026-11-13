@@ -71,6 +71,25 @@ evidence. "Looks good", "seems clean", and "modern" are not verdicts.
 7. **Hierarchy.** One focal point per screen; one scan order. Rows in a group
    do not all lead with the same glyph unless the glyph is what is being
    scanned. Whitespace groups before borders or shadows.
+   **Grouping (Proximity):** parts that belong together sit closer to each
+   other than to anything else (Gestalt law of proximity, Wertheimer 1923;
+   `attributed`); people read nearness as belonging before they read a
+   label (`inferred`).
+   Measure on the render, not the tokens: for each group, compare the largest
+   gap inside it with the smallest gap to a neighbouring group. The inside gap
+   is at most half of it (for example 8 inside, 24 between, in the project's
+   spacing steps). The ratio is a house rule, not a standard; this gate owns
+   it, and other files link here instead of restating it. A uniform stack
+   (every block 16 or 20 apart) is a finding, because the next group reads as
+   part of the last one: a row of shortcut buttons under a question's answers
+   reads as more answers. Fix in this order: the spacing; then a shared
+   surface only when the group is a set (gate 6 still bars a box around one
+   item); then a hairline, only where neighbouring groups do different jobs.
+   Groups that do different jobs also look different (similarity): answers
+   and navigation never share one shape. When answers become icon-and-label
+   buttons, the places beside them keep their own shape (for example round
+   buttons with the label underneath), and a gap or hairline separates the
+   two groups.
    **Time-to-first-figure:** primary business metrics or status must be visible
    above the fold on entry without initial scrolling.
 8. **Words.** Labels are at most four words in English and five in the
@@ -88,7 +107,30 @@ evidence. "Looks good", "seems clean", and "modern" are not verdicts.
 11. **Touch, platform, and access.** 44px targets on coarse pointers, 16px
     inputs, no hover-only action, safe-area clear, platform convention or a
     stated reason. Names, roles, focus order, contrast, zoom, and reduced
-    motion preserve the task. Mark `NOT_RUN` without a device or emulator.
+    motion preserve the task. Without a device or emulator, mark only the
+    device-only parts `NOT_RUN` (targets as felt, platform behaviour, screen
+    reader); contrast, affordance, and target geometry are measured on the
+    render. The gate is `FAIL` if any measured part fails; otherwise
+    `NOT_RUN`, naming the device parts still to check.
+    **Looks tappable:** at rest, each control reads as a control before its
+    label is read: a filled or raised surface, an outline at 3:1, or a
+    chevron on a row. A pale pill whose only edge is a near-background
+    hairline reads as text and FAILs. On a screen, an answer set (Yes / Not
+    yet, Better / Worse) is drawn as buttons, raised in the style the product
+    already uses for buttons (not a new shadow); when the project's docs ask
+    for skimming by picture, each answer carries an icon that says it before
+    the word does. In a sheet, gate 6 applies: rows, a wheel, or a menu.
+    **Non-text contrast:** icons, outlines, focus rings, and control edges
+    are at least 3:1 against what is actually behind them, such as a tinted
+    disc, a card, or a photo. WCAG 2.1 SC 1.4.11 (W3C 2018; `attributed`)
+    sets 3:1 for graphics needed to understand the content and for control
+    boundaries that identify a control; applying it to every icon and edge is
+    a house rule, stricter than the standard.
+    Measure the rendered pixel, not the token: an SVG with its own gradient
+    fill ignores the colour passed to it and can fade to nothing. Measure a
+    fade or scrim under a floating bar at the scroll position where the last
+    content stops above the bar: the fade starts at the bar's top edge, and
+    text above it keeps its full contrast. A text-only contrast audit does not answer this gate.
 12. **Proof.** Rendered at the real sizes (390/768/1440 or the project's
     equivalent), with the primary flow's states. No render, no `PASS`: mark
     `NOT_RUN` and name the gate for engineering.

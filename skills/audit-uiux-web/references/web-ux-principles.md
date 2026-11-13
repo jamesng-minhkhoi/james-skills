@@ -163,6 +163,12 @@ order, focus return, keyboard access, modal containment, contrast, zoom,
 non-color status, reduced motion, and target operability. Do not treat an
 automated accessibility score as proof of a usable journey.
 
+Grouping and controls: measure gaps inside and between groups on the render
+against the ratio in gate 7, and flag a uniform stack, controls that do not
+look clickable at rest, and icons or outlines under 3:1. Test and fixes:
+design-uiux [critique and proof](../../design-uiux/references/critique-and-proof.md)
+gates 7 and 11.
+
 ## Semantic color and visual restraint
 
 Treat color as a communication system:

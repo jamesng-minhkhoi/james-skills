@@ -57,6 +57,13 @@ like, and whether this request preserves the visual language or overhauls it.
   structure: if the real cause is structural, say so in one line and leave
   it for James to schedule. Show current and fixed side by side on the
   canvas. One proposal, no options, no research. Then wait.
+  A spacing, contrast, or "doesn't look tappable" fix still answers gates 7
+  and 11 with values measured on a headless render of the current board and
+  the fix (a capture of the board's own HTML, not a canvas screenshot).
+  If meeting them means reshaping a control, show the reshape beside the
+  value fix, marked new, for James to pick. Those values decide gates 7 and
+  11 for the drawing; the rung stays `declared`, and the capture is not the
+  rendered-proof sheet.
 - **Screen or flow redesign:** run the [twelve gates](references/critique-and-proof.md)
   first. The table is the brief: every gate answered, evidence beside every
   verdict, `NOT_RUN` where nothing was rendered. Then the full loop.
@@ -94,13 +101,21 @@ wizard), each option includes its navigation map: the steps, what kind of
 screen each is, and what back does. End with a recommendation and why. Then **stop and wait for the
 pick**. Do not build, and do not polish all of them.
 
+When the options come from named references, place each one on the canvas
+beside a board holding its reference before showing it. If the palette cannot reach the reference's
+feel, say so instead of hiding it
+([research and direction](references/research-and-direction.md#turn-references-into-a-usable-specification)).
+
 Final quality from the first round: real type, color, imagery, and states.
 A wireframe is only acceptable when James asks for one.
 
 ### 5. Refine the pick
 
 Apply James's feedback to the chosen option only. Add the states the flow
-can reach (empty, loading, error, long content, first use versus repeat use)
+can reach (empty, loading, error, long content, first use versus repeat use,
+missing user media such as no photo or avatar yet: a fallback illustration
+in the photo's own shape plus an add control, not a grey silhouette or
+initials)
 and the navigation map when there is more than one screen.
 
 Before drawing, list the status states the current screen shows (still
@@ -196,6 +211,11 @@ Load only what the request needs.
   when it answers a named question. Do not force everything into cards.
 - **One focal point and one primary action per screen.** Group with
   whitespace and surface tone before borders or shadows.
+- **Space shows what belongs together; controls look like controls.** Gaps
+  inside a group are at most half the smallest gap between groups
+  (Proximity), measured on the render. Every control reads as tappable at rest, and icons
+  and outlines hold 3:1 against what is behind them. Gates 7 and 11 in
+  [critique and proof](references/critique-and-proof.md).
 - **No tabs, segmented controls or chip rails in a sheet.** Never draw one,
   not even as one option among several. A sheet is one focused job; views
   mean a screen. Gate 6 in [critique and proof](references/critique-and-proof.md).
@@ -216,7 +236,10 @@ Load only what the request needs.
   [mobile patterns](references/mobile-patterns.md#glance-sheet-dedicated-screen).
 - **Pictures carry the meaning; text is the last resort.** A hero is an
   illustration or a data picture, not a title, a grey subtitle, and a number
-  saying the same thing. Details:
+  saying the same thing. The same goes for a status, speaker, answer, or
+  source line. Say it with an icon, the speaker's avatar, a reply bubble, or
+  one chip, while a visible word stays wherever gate 9 needs one; write each
+  accessibility label in the board's note. Details:
   [slop and consistency](references/slop-and-consistency.md).
 - **"Clean like Apple" means restraint inside the product's own language.**
   Cut text and decoration and keep native gestures, but keep the product's

@@ -152,6 +152,23 @@ Expected audit behavior:
   platform motion is exempt;
 - keep findings at P3 unless the drag lag blocks the task.
 
+## Case 10: Grouping and controls that read as text
+
+Prompt/artifact: A simulator screenshot of a Home screen: a question with
+three pale answer pills, then a row of round shortcut buttons, every block
+20 pt apart; a tile icon drawn with a gradient that fades to transparent on
+a pale disc; a "Journal" label inside a 60 pt circle touching its edge.
+
+Expected audit behavior:
+
+- measure the gaps and report that the shortcut row reads as more answers
+  (Proximity), with the measured values and the fix order (spacing, then a
+  hairline between groups with different jobs);
+- report the pills as not reading as buttons, the icon under 3:1 against its
+  disc, and the label's clearance, each with a crop as evidence;
+- report the measured contrast and gaps at the `rendered` rung, and mark
+  device and screen-reader checks `NOT_RUN`.
+
 ## Must not have
 
 A report fails if it contains any of these:
@@ -161,6 +178,9 @@ A report fails if it contains any of these:
 - a proof label or verdict outside the shared ontology;
 - a finding without a stable `F-mobile-<n>` ID;
 - an accessibility or interruption claim made without a device or runtime
-  observation;
+  observation (a contrast or geometry value measured on rendered pixels is
+  an observation at the `rendered` rung, not such a claim);
 - a gesture called fine on boards without checking what the content already
-  does with that motion (6).
+  does with that motion (6);
+- grouping or control contrast passed from a text-only contrast check, or a
+  uniform stack left unflagged (10).

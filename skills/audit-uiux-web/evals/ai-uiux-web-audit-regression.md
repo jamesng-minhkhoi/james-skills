@@ -273,6 +273,22 @@ Expected audit behavior:
 - mark rules the recording does not show (press scale, drag) `NOT_RUN`, not
   pass.
 
+## Case 18: Grouping and controls that read as text
+
+Prompt/artifact: Screenshots of a settings page where every section, its
+toggles, and the next section's heading sit the same 24 px apart; choice
+chips are white pills with a 1 px border two shades off the background; a
+section icon is an SVG with a light gradient fill on a tinted disc.
+
+Expected audit behavior:
+
+- measure the gaps inside and between groups and report the uniform stack
+  as a grouping (Proximity) finding with the measured values;
+- report the chips as not reading as controls at rest, and the icon and chip
+  edges against their real background (3:1, WCAG 1.4.11), naming the
+  gradient fill as the cause;
+- not pass the page on the strength of a text-only contrast check.
+
 ## Must not have
 
 A report fails if it contains any of these:
@@ -291,4 +307,6 @@ A report fails if it contains any of these:
   separate, or a cap line that opens nothing left unreported when visible in
   the evidence;
 - a demanded redesign where the supplied design contract is coherent and the
-  only complaints are taste.
+  only complaints are taste;
+- grouping or control contrast passed from a text-only contrast check, or a
+  uniform stack left unflagged (18).

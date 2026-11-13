@@ -43,7 +43,7 @@ that decided each one.
 | L6 | Shape reads at 375 | The screen's job and its one primary action are clear without hunting |
 | L7 | Copy is honest | No invented metric, logo, quote, person, or placeholder that reads as real |
 | L8 | States exist | Empty, loading, error, long-content, and first-use are built or declared out of scope |
-| L9 | Density and rhythm hold | At 25% zoom the page reads as deliberate groups; type, radius, and spacing share one scale |
+| L9 | Density and rhythm hold | At 25% zoom the page reads as deliberate groups; grouping passes gate 7, measured on the render; type, radius, and spacing share one scale |
 | L10 | Someone else scored it | A critic who did not build it scored the twelve gates with cited evidence, once before handoff and again after any gate regresses |
 
 Each eye item maps to a gate: L6 → 1 (Job) and 2 (One primary); L7 → 8 (Words);
@@ -86,6 +86,9 @@ machine items ran.
 | An external font or image was blocked | Bundle the asset into the page folder and re-render |
 | Small inline pictures (avatar stacks, thumbnails in a sentence) "look broken" only on the real page | Render the block at 3× and crop to it; check shape, overlap, and that line spacing has not grown |
 | A board was published without anyone looking at it, and the menu ended up under the button or a "dashed" chip rendered solid | Render each changed board locally at 390 wide before every publish, the first included, and look at the capture |
+| The text contrast audit passed, but an icon is nearly invisible on its disc | The audit measured text only. Measure each icon and outline against its real background (3:1); an SVG with its own gradient fill ignores the passed colour, so make it solid and re-render |
+| The last content above a floating bottom bar looks washed out | Scroll to where the last content stops above the bar; if the fade starts above the bar's top edge, move it down and re-measure the text |
+| A label touches the edge of its circle or pill | Crop the control at 2× and check clearance on the label's line; fix per the "Overlaps and padding" row in [slop and consistency](slop-and-consistency.md) |
 | Motion was judged from one still | Render frames at several timestamps (start, mid-entry, settled, mid-loop) and at extreme gesture poses; check that text stays readable in every frame |
 
 ## Changing this reference
