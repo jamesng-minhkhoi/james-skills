@@ -15,6 +15,8 @@ Read only the topics the request calls for. All snippets follow the
 | [Numbers and counters](03-numbers-and-counters.md) | Metrics, revenue ticks, progress states landing truthfully |
 | [Pointer and device moments](04-pointer-and-device.md) | Cursor-following, tilt, magnetic buttons, gyro/webcam on web |
 | [Mobile equivalents](05-mobile-reanimated.md) | Translating the above to Expo + Reanimated, and what to skip |
+| [Text focus-in](07-text-focus-in.md) | One short line that is "said" (mascot bubble, assistant greeting, caption): the whole line goes from blurred to sharp in one motion, never word by word |
+| [Celebration moments](08-celebration-moments.md) | Confetti, party poppers, milestone alerts: the gates a moment must pass, the yearly/rare/once/routine ladder, three treatments (burst from the subject, milestone card, mascot announces), piece physics, layering and Reduce Motion |
 | [Digit pop-in](06-digit-pop-in.md) | A number the user just changed (total, price, filtered stat): the changed digits swap with a spring. The default for discrete changes; its table routes live numbers and words elsewhere |
 
 Non-negotiables carried into every topic:

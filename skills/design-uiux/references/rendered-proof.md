@@ -85,6 +85,7 @@ machine items ran.
 | A state was described but not built | Build it as its own entry and render it, or declare it out of scope |
 | An external font or image was blocked | Bundle the asset into the page folder and re-render |
 | Small inline pictures (avatar stacks, thumbnails in a sentence) "look broken" only on the real page | Render the block at 3× and crop to it; check shape, overlap, and that line spacing has not grown |
+| A board was published without anyone looking at it, and the menu ended up under the button or a "dashed" chip rendered solid | Render each changed board locally at 390 wide before every publish, the first included, and look at the capture |
 | Motion was judged from one still | Render frames at several timestamps (start, mid-entry, settled, mid-loop) and at extreme gesture poses; check that text stays readable in every frame |
 
 ## Changing this reference

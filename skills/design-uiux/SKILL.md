@@ -135,6 +135,18 @@ per [rendered proof](references/rendered-proof.md), or record the `rendered`
 rung as not reached and its gates `NOT_RUN`. Overlaps and uneven padding
 show up only when rendered.
 
+Every showing, the first included, render each board you changed in a local
+browser (strip the canvas wrapper, capture at 390 wide) and look at the
+capture before publishing. That capture is not the `rendered` rung, but it
+catches what the markup hides: a menu drawn under the primary button or
+clipped by its sheet, a "dashed" chip that renders solid grey, a comma
+wrapping to the start of a line. Never describe a board's look in a note or
+reply that you did not see in a capture.
+
+After two rejected rounds in a row, stop drawing new directions. Put the
+earliest round James liked back on the canvas, ask what made it better, and
+refine that instead.
+
 Re-run the same twelve-gate table on the pick. A verdict that regressed is a
 new finding, even if the screen looks better.
 
@@ -167,6 +179,8 @@ Load only what the request needs.
 | Transitions, gestures, micro-interactions | [motion and gesture](references/motion-and-gesture.md), then the [motion craft checklist](../_shared/motion-craft.md) for timing, origin, and choreography values |
 | A component opens, closes, confirms, loads, or changes text (dropdown, modal, toast, tooltip, tabs, toggle, success, error, skeleton, AI status) | [transitions catalogue](references/transitions-catalog.md): the moment → transitions.dev slug map with a check per row; cite the slug in the handoff, never paste code |
 | A number the user changes on screen (total, price, balance, filtered stat) | [digit pop-in](references/library/signature-motion/06-digit-pop-in.md): the swap with fixed drivers and frame proof; live or polled numbers and status words route through its decision table |
+| One short line that is said or announced (mascot bubble, assistant greeting, caption) | [text focus-in](references/library/signature-motion/07-text-focus-in.md): the whole line goes from blurred to sharp in one motion; never stagger its words |
+| A celebration: confetti, party popper, milestone alert, birthday or anniversary | [celebration moments](references/library/signature-motion/08-celebration-moments.md): earn it (real, owned, rare, once, never grief), pick the tier's treatment, pieces made of the brand on their own layer |
 | Surface feels flat, empty, or needs a background (any surface) | [background textures](references/background-textures.md): 22 options, each with its job, cheap build, and failure mode |
 | Redesign diagnosis, or any review before showing or handing off | [critique and proof](references/critique-and-proof.md) (the twelve gates) |
 
@@ -204,6 +218,17 @@ Load only what the request needs.
   illustration or a data picture, not a title, a grey subtitle, and a number
   saying the same thing. Details:
   [slop and consistency](references/slop-and-consistency.md).
+- **"Clean like Apple" means restraint inside the product's own language.**
+  Cut text and decoration and keep native gestures, but keep the product's
+  type, surfaces and signature parts. Toy controls (rings, dials, vial
+  carousels) read as childish; stock iOS Settings or Health styling (grey
+  grouped cards, thin bars) reads as anonymous. Both were rejected.
+- **Select before typing.** Optional or detail inputs (clinic, maker, lot,
+  tags) are selectors: recent values first, a list scoped to earlier
+  choices, "Other…", or a scan. Free text sits behind a "Add a note" link.
+  A stack of empty text fields is never the answer to "too many fields";
+  progressive disclosure is. Patterns:
+  [touch-first input](references/mobile-patterns.md#touch-first-input-and-actions).
 - **Native fidelity on mobile.** Use platform controls, the platform symbol
   set, sheets with detents, large titles where the app uses them, and system
   back. Breaking a platform convention is a choice you must justify.

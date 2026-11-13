@@ -59,6 +59,8 @@ contracts.
 | A label whose old and new text share letters (Copy→Copied) | text-morph (`33`) | Short labels, such as buttons and chips |
 | A label whose old and new text share nothing (Processing→Done) | text-states-swap (`04`) | Short labels |
 | Values re-render because the view's data changed (period, currency) | text-swap-soft (`34`) | Every changed value uses the same treatment |
+| One short line that is said (mascot bubble, assistant greeting) | **build from [text focus-in](library/signature-motion/07-text-focus-in.md)** | Whole line blurs into focus in one motion; never per word |
+| A milestone, birthday or anniversary is celebrated | **build from [celebration moments](library/signature-motion/08-celebration-moments.md)** | Ladder decides the treatment; routine wins stay `success-check` / toast, never confetti |
 | Stacked headline and support lines enter | texts-reveal (`18`) | Hero copy, empty states, onboarding; never on every list row |
 | Words stream in from a model | streaming-text (`30`) | Only while real tokens arrive |
 | A donut or ring chart updates | donut-chart (`35`) | The chart must answer a named question |

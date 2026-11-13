@@ -31,12 +31,21 @@ gesture first, then name the visible alternative; tap is for commit.
 | Pick one of a few options in a form | Swipeable wheel with the choice centred | Segmented tabs in the middle of a sheet | Tapping a neighbouring option |
 | Act on a list row | Swipe for Edit and Delete, press-and-hold for peek and menu | A button on every row | Row opens a detail with the same actions; Edit mode for assistive tech |
 | Delete anything | Overflow (•••) menu, swipe, or the detail screen | A standing button beside Save | The same menu item, reachable without a gesture |
+| Fill optional details (clinic, maker, lot number) | Chips continuing the form's sentence, each opening a pull-down: recent values first, a list scoped to the earlier choice (makers for the chosen vaccine), "Other…"; a scan where a label exists (vial sticker) | A stack of empty text fields, or a two-up row of half-width fields | "Other…" opens a text field; notes stay behind an "Add a note" link |
 | Pick one of a short list in a sheet (language, unit, region) | Snapping wheel with the choice centred in a band, a haptic tick per row, and Done to commit | A tall list of tappable cards with a check disc | Tapping a row rolls it to the centre; the wheel is adjustable for assistive tech |
 
 - When the choice changes how the app reads (language, units), the sheet
   previews it live: the title and commit button relabel into the centred
   option, from the real locale strings, before anything is committed.
 
+- A pull-down menu floats above every layer, the sheet's primary button
+  included, and is never clipped by the sheet. It opens toward the room it
+  has (upward when the chip sits near the bottom) and stays on the screen.
+  It does not dim the sheet. Draw it outside the sheet's clipping box.
+- An empty chip in a sentence is an action, not a disabled field: the
+  project's add-slot style (for example a dashed accent outline with + and a
+  short noun). It fills solid once set. Bind each phrase to its chip and
+  punctuation so no line starts with a comma.
 - Every adjustable control (ruler, ring, wheel, strip) also exposes an
   assistive path: an adjustable value, or accessibility actions that do what
   the swipe does. State it in the board's note.

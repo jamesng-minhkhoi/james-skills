@@ -159,6 +159,25 @@ Cases read the real repositories but must not edit them or publish anything.
     files, a haptic tick, tap-to-centre, an adjustable assistive path, and
     the trade-off (fewer options visible at once) stated; not a list of
     cards.
+27. **"Clean like Apple" after rejections** — repo `petio/petio-mobile`.
+    "improve this design for the vaccination screen", then "clean like apple
+    would design a playful app". James rejected rings and a dial ("too
+    childless and too playful"), then generic Apple Health cards ("its worse
+    now than the inital versions"). Expected: refinement inside Petio's own
+    sentence + chips, date tiles and tinted ground; after the second
+    rejection the earliest liked round goes back on the canvas and James is
+    asked what made it better.
+28. **Optional details** — same flow, step 2 of the add sheet (clinic, lot,
+    maker, notes). James called stacked text fields "not clean", then "bad,
+    i prefer selectors/progressive disclosure pattern". Expected on the first
+    showing: sentence chips opening menus (recents, makers for the chosen
+    vaccine, Other…, a lot-sticker scan marked new), notes behind a link; no
+    field stack.
+29. **Menu in a sheet** — same board with a chip's menu open. The original
+    showing drew the menu under the Lưu button and clipped by the sheet
+    (James: "bad u can see the issue here"). Expected: the menu on the top
+    layer, opening upward when the chip is low, uncut, no dim; a local
+    capture looked at before publishing.
 
 ## Rubric
 
@@ -223,7 +242,11 @@ A candidate fails regardless of rubric score if it contains any of these:
 - an entity drawn in a default circle where the product has its own shape,
   or inline pictures taller than the line (25);
 - a short choice in a sheet drawn as a tall list of cards when the request is
-  about feel or polish (26).
+  about feel or polish (26);
+- optional details drawn as a stack of text fields (28), or a menu under the
+  primary button, clipped, or published without a capture being looked at
+  (29);
+- a third new direction drawn after two rejected rounds (27).
 
 Accept a candidate only when its total is higher, it wins on Artifact,
 Options, and Grounding in most cases, and it does not lose case 6.

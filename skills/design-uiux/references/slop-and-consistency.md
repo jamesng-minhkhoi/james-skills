@@ -32,6 +32,8 @@ what job it does there.
 | Text laid straight over a busy gradient or artwork, or a colourful gradient faded with opacity until it goes grey and muddy | Keep the art at full strength and add a scrim that is solid under the text and clears toward the art (for example 95% → 0 across the card). Render it and check every line of text on the darkest and lightest part behind it; texture (grain, pattern) stays faint, about 10–15% |
 | A card's copy squeezed into a narrow column, three or four short lines next to empty space | Use the card's width. Secondary copy one step smaller and lighter than body, ideally two lines; let the card grow for a longer locale rather than shrinking the type |
 | Small pictures inside a sentence (avatars, thumbnails, icons) drawn as default circles, stacked tight with rings, or taller than the line so the lines spread apart | Each picture keeps its shipped shape (the product's avatar mask, card ratio, document shape). Size it to the text, not above the line height (about 20 px beside 14 px text), overlap shapes only slightly, no rings, and bind each picture to its word so it never wraps alone |
+| Empty selector chips drawn grey with a solid outline, so they read as disabled; a comma or period wrapping to the start of a line | The project's add-slot style in the accent (dashed + a short noun where the project uses dashed for "put something here"); each phrase bound to its chip and punctuation |
+| A menu or popover drawn under the primary button, clipped by the sheet's edge, or dimming the whole sheet | The menu on the top layer, opening toward the room it has, fully on screen; no dim for a pull-down |
 | Shipped headline text swapped for a logo or glyph lockup nobody asked for | Keep the shipped text in the brand colour; a logo at text size breaks the line and loses legibility |
 | "Lazy" motion: entry and loop fighting over one element's transform, a separate timer per element so they drift apart, everything starting at once | Entry on a wrapper, the loop on the inner element; one shared loop clock that starts after the entry settles; text lands in a short stagger (60–80 ms), the visual last with a small overshoot. Check rendered frames at several timestamps before showing |
 
@@ -62,6 +64,7 @@ anti-slop pre-flight (MIT).
 | Destructive actions | Placed per [mobile patterns](mobile-patterns.md#touch-first-input-and-actions) |
 | Subject | Shown per [mobile patterns](mobile-patterns.md#glance-sheet-dedicated-screen) |
 | Labels for existing actions and statuses | The shipped string, verbatim (the locale file, or the source where it renders); a rename is named as a copy change in the board's note |
+| Overlays | Every open menu, popover, or picker is on top of every other layer, uncut, and inside the screen in the board's capture |
 | Canvas notes | Every claim in a note matches its board: the items a menu holds, where an action lives, which gesture opens what. Re-read the notes after the last board edit |
 | Status and data colors (dashboards) | Status colors never reused as chart series; a series keeps its color across charts |
 
